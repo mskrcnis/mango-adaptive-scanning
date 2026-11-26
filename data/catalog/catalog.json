@@ -1,0 +1,462 @@
+[
+  {
+    "id": "LED720-03AU",
+    "part_number": "LED720-03AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 720,
+    "center": 720,
+    "fwhm_nm": 23,
+    "fwhm": 23,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED720-03AU.csv",
+    "profile_sha256": "65c5ad4e1f3fa74ee27b0358d6cd77b5920c900ab835af57e53676887ecb1e48",
+    "support_fraction": 0.9807983963663149,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led720-03au.pdf",
+    "source_path": "data/catalog/sources/led720-03au.pdf",
+    "source_sha256": "73e20e12ad7b8b232d2265108ec237cd3b3f996229fd1504c61c0a7c093a7a98",
+    "source_page": 3,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 720.4694835680751,
+    "digitized_fwhm_nm": 22.535211267605632,
+    "center_min_nm": 710,
+    "center_max_nm": 730,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        614,
+        827,
+        347,
+        609
+      ],
+      "plot_wavelengths_nm": [
+        620,
+        820
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED720-03AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED740-01AU",
+    "part_number": "LED740-01AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 740,
+    "center": 740,
+    "fwhm_nm": 30,
+    "fwhm": 30,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED740-01AU.csv",
+    "profile_sha256": "35bfdfd14683693e40ae79e97a132be81dd0cbe0da44783ad01c82963c1d2fd8",
+    "support_fraction": 1.0,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led740-series.pdf",
+    "source_path": "data/catalog/sources/led740-series.pdf",
+    "source_sha256": "ec332c4dfbee354053fe3c2f62282f26342513a6c0c8df83e165ca66ecab8e0a",
+    "source_page": 6,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 738.4276729559748,
+    "digitized_fwhm_nm": 25.15723270440253,
+    "center_min_nm": null,
+    "center_max_nm": null,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        235,
+        394,
+        550,
+        783
+      ],
+      "plot_wavelengths_nm": [
+        690,
+        790
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED740-01AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED760-03AU",
+    "part_number": "LED760-03AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 760,
+    "center": 760,
+    "fwhm_nm": 30,
+    "fwhm": 30,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED760-03AU.csv",
+    "profile_sha256": "9771378e3c3bf4f5290f5098d119d84504abaa627b9fbccbd7fb798ebec6b26a",
+    "support_fraction": 1.0,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led760-series.pdf",
+    "source_path": "data/catalog/sources/led760-series.pdf",
+    "source_sha256": "8886435937543cbf666387e2c9ef9993246e192c23fd63bf776151d875451eac",
+    "source_page": 7,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 759.236641221374,
+    "digitized_fwhm_nm": 26.717557251908488,
+    "center_min_nm": null,
+    "center_max_nm": null,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        193,
+        455,
+        245,
+        632
+      ],
+      "plot_wavelengths_nm": [
+        710,
+        810
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED760-03AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED780-03AU",
+    "part_number": "LED780-03AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 780,
+    "center": 780,
+    "fwhm_nm": 27,
+    "fwhm": 27,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED780-03AU.csv",
+    "profile_sha256": "49f205811638b79989b93062898969f60ab95967c0c547162a0defe1ab4a84c9",
+    "support_fraction": 0.999821142889356,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led780-03au.pdf",
+    "source_path": "data/catalog/sources/led780-03au.pdf",
+    "source_sha256": "c7f7a6b9e6703846120564d8f1384e7ccc2369a55ac9e087b2f8e4195bda89f3",
+    "source_page": 3,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 779.5215311004785,
+    "digitized_fwhm_nm": 26.794258373205707,
+    "center_min_nm": 770,
+    "center_max_nm": 790,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        615,
+        824,
+        348,
+        605
+      ],
+      "plot_wavelengths_nm": [
+        680,
+        880
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED780-03AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED800-01AU",
+    "part_number": "LED800-01AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 800,
+    "center": 800,
+    "fwhm_nm": 29,
+    "fwhm": 29,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED800-01AU.csv",
+    "profile_sha256": "66b151e10ea3653ef6d95b6ae5f386125d5e3768fad9a4565a1011cba38dd640",
+    "support_fraction": 1.0,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led800-01au.pdf",
+    "source_path": "data/catalog/sources/led800-01au.pdf",
+    "source_sha256": "6897c19ab9babd2e7f23e9bd40de7ce629ee475ec53d0c978e635298c089f6b0",
+    "source_page": 3,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 800.0,
+    "digitized_fwhm_nm": 29.126213592232943,
+    "center_min_nm": 790,
+    "center_max_nm": 810,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        598,
+        804,
+        228,
+        482
+      ],
+      "plot_wavelengths_nm": [
+        700,
+        900
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED800-01AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED820-01AU",
+    "part_number": "LED820-01AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 820,
+    "center": 820,
+    "fwhm_nm": 35,
+    "fwhm": 35,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED820-01AU.csv",
+    "profile_sha256": "1ad9286b7db918939a33db15b6f3e7ee174aef0af21321feb7dd770d7359ef8c",
+    "support_fraction": 1.0,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led820-series.pdf",
+    "source_path": "data/catalog/sources/led820-series.pdf",
+    "source_sha256": "e930b856bdedcb30f43b96483b28a3adc25678e07f16104bb5440bbc4f4be985",
+    "source_page": 7,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 820.0,
+    "digitized_fwhm_nm": 25.590551181102455,
+    "center_min_nm": 805,
+    "center_max_nm": 835,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        195,
+        449,
+        260,
+        636
+      ],
+      "plot_wavelengths_nm": [
+        770,
+        870
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED820-01AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED850-03UP",
+    "part_number": "LED850-03UP",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 850,
+    "center": 850,
+    "fwhm_nm": 40,
+    "fwhm": 40,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED850-03UP.csv",
+    "profile_sha256": "49812371096ba8db5f858c4cc3cd81801ed1446b9b297055dfa93aaeb6830737",
+    "support_fraction": 1.0,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led850-series.pdf",
+    "source_path": "data/catalog/sources/led850-series.pdf",
+    "source_sha256": "85beda0132c7318d55bdc2945f81faad84b9215134fa5a6dff0d359849c67c59",
+    "source_page": 7,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 849.1803278688525,
+    "digitized_fwhm_nm": 42.62295081967204,
+    "center_min_nm": 835,
+    "center_max_nm": 865,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        202,
+        446,
+        263,
+        625
+      ],
+      "plot_wavelengths_nm": [
+        750,
+        950
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED850-03UP_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED890-03AU",
+    "part_number": "LED890-03AU",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 890,
+    "center": 890,
+    "fwhm_nm": 47,
+    "fwhm": 47,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED890-03AU.csv",
+    "profile_sha256": "8b27bea09ebb828b0a14742547de7532ae6e5866c9f0b05b9fec84bcb2d4e94b",
+    "support_fraction": 1.0,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led890-03au.pdf",
+    "source_path": "data/catalog/sources/led890-03au.pdf",
+    "source_sha256": "6d15e264f6d47d22acec2ba1022e2e96ecda0d6b60cea241af365afb8c60b520",
+    "source_page": 3,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 890.9708737864078,
+    "digitized_fwhm_nm": 46.60194174757271,
+    "center_min_nm": 875,
+    "center_max_nm": 895,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        601,
+        807,
+        228,
+        479
+      ],
+      "plot_wavelengths_nm": [
+        790,
+        990
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED890-03AU_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED910D-01",
+    "part_number": "LED910D-01",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 910,
+    "center": 910,
+    "fwhm_nm": 35,
+    "fwhm": 35,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED910D-01.csv",
+    "profile_sha256": "83d2fd94f0e04bee923aa5179df3a0bfeeb33e679385130808558087a3b57198",
+    "support_fraction": 0.9990188296993624,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led910d-01.pdf",
+    "source_path": "data/catalog/sources/led910d-01.pdf",
+    "source_sha256": "edbd7cda6f567f952cc9aba82f0b602e1e592f40812c03502ace1c6db5825f1c",
+    "source_page": 3,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 909.0291262135922,
+    "digitized_fwhm_nm": 34.95145631067953,
+    "center_min_nm": 900,
+    "center_max_nm": 920,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        601,
+        807,
+        222,
+        475
+      ],
+      "plot_wavelengths_nm": [
+        810,
+        1010
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED910D-01_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  },
+  {
+    "id": "LED940D-05",
+    "part_number": "LED940D-05",
+    "manufacturer": "Roithner Lasertechnik",
+    "center_nm": 940,
+    "center": 940,
+    "fwhm_nm": 40,
+    "fwhm": 40,
+    "profile_type": "digitized_datasheet_curve",
+    "profile_path": "data/catalog/profiles/LED940D-05.csv",
+    "profile_sha256": "b2eab42f578913ceb5c691273ae6bfe1b3f16c884d2eeb0a6c10a07c9acdb5d0",
+    "support_fraction": 0.9937899615547207,
+    "eligible": true,
+    "source": "https://www.roithner-laser.com/datasheets/led_div/led940d-05.pdf",
+    "source_path": "data/catalog/sources/led940d-05.pdf",
+    "source_sha256": "55541a70a7be1c93c7987a2f8c1c897a57b54de3086f630d3a9065127a70e502",
+    "source_page": 3,
+    "curve_origin": "typical manufacturer data-sheet plot, raster digitized at 1400 px page height",
+    "wavelength_units": "nm",
+    "detector_profile": "flat assumed; no detector specified or measured",
+    "reference_profile": "flat assumed; no reference optical spectrum supplied",
+    "digitized_peak_nm": 939.6958174904943,
+    "digitized_fwhm_nm": 39.9239543726236,
+    "center_min_nm": 930,
+    "center_max_nm": 955,
+    "digitization": {
+      "image_size": [
+        990,
+        1400
+      ],
+      "plot_pixels": [
+        522,
+        785,
+        895,
+        1218
+      ],
+      "plot_wavelengths_nm": [
+        780,
+        1080
+      ],
+      "dark_threshold": 95,
+      "endpoint_treatment": "zero at plot endpoints; zero outside plotted range",
+      "overlay": "data/catalog/qa/LED940D-05_trace_overlay.png"
+    },
+    "notes": "Approximate typical curve; not an individually measured emitter or calibrated detector system. Nominal widths and digitized widths may differ."
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "address": "http://127.0.0.1:33319",
+  "checks": {
+    "bounded_termination": true,
+    "html_route": true,
+    "http_cli_trace_identical": true,
+    "invalid_reading_rejected": true,
+    "manual_replay_trace_identical": true,
+    "no_repeated_requests": true,
+    "nonfinite_reading_rejected": true,
+    "unobserved_does_not_change_first_decision": true,
+    "unobserved_not_returned": true
+  },
+  "model_manifest_sha256": "9e75a2508137b22bd4b7d0e4b7f2d64e2e1e31bc45297e588ec4626e283b4863",
+  "port_closed_after_test": true,
+  "status": "passed"
+}

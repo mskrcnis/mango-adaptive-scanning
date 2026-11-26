@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "555a255522ec330437a6a879f5ab7fa4d9771906b60ee768b0eba7e232873fa0",
+  "command": "bash build_pdfs.sh",
+  "exit_code": 0,
+  "pages": {
+    "main": 17,
+    "supplement": 53
+  },
+  "passed": true,
+  "scope": "Archive extracted outside the project, no references to workspace assets required for TeX compilation."
+}

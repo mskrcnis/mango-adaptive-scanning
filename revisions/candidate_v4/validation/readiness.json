@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "scope": "prospective_research_validation_of_a_frozen_candidate",
+  "protocol_state": "draft_pending_collection_design",
+  "new_data_collected": false,
+  "new_outcomes_read": false,
+  "new_predictions_generated": false,
+  "candidate_freeze_permitted": true,
+  "candidate_freeze_evidence": {
+    "manifest": "../frozen/manifest.json",
+    "status": "frozen",
+    "selected_centers_nm": [
+      720,
+      760,
+      820,
+      890,
+      910,
+      940
+    ],
+    "model_status": "research candidate; independent validation not performed"
+  },
+  "descriptive_validation_ready": false,
+  "practical_acceptance_ready": false,
+  "practical_go_no_go": "not_evaluable",
+  "physical_device_validated": false,
+  "application": [
+    "research_paper_capability_and_limitations",
+    "eventual_harvest_timing_support"
+  ],
+  "absolute_rmsep_limit_pp": null,
+  "comparative_rmsep_margin_pp": null,
+  "comparative_margin_justification": null,
+  "availability_requirement": null,
+  "acceptance_gate_freeze": null,
+  "harvest_decision": {
+    "validated_pick_recommendation_available": false,
+    "current_output": "dry_matter_estimate_only",
+    "cultivar_and_market_scope": null,
+    "independent_threshold_or_maturity_criterion": null,
+    "criterion_source_and_agronomic_review": null,
+    "consequences_of_early_and_late_pick": null,
+    "model_to_decision_mapping": null,
+    "acceptable_decision_error_rates": null,
+    "field_pairing_and_destructive_assay_plan": null,
+    "reference_maturity_and_postharvest_outcome_plan": null,
+    "current_practice_comparison_design": null,
+    "harvest_validation_ready": false
+  },
+  "candidate_manifest_sha256": "ed11a3ee9ad1a793e139c60962d2a5e65cedc9322d12a3c1f7bd429d5a854902",
+  "model_bundle_sha256": "70f7e059f439c0f554ea652da0aece87896cf97c1d2c076690a3c536afddd3f7",
+  "study_registration_sha256": null,
+  "collection_design": {
+    "validation_mode": "spectral_replay",
+    "intended_population_scope": null,
+    "cultivars": null,
+    "new_season_ids": null,
+    "population_definition": null,
+    "independent_cluster_definition": null,
+    "recruitment_target_populations": null,
+    "recruitment_target_clusters": null,
+    "fruits_per_population_plan": null,
+    "repeated_scan_plan": null,
+    "minimum_eligible_scans_per_fruit": null,
+    "recruitment_stopping_rule": null,
+    "precision_target": null,
+    "precision_planning_assumptions_and_artifact": null,
+    "spectral_qc_sop_sha256": null,
+    "reference_assay_sop_sha256": null,
+    "assay_repeat_reconciliation_rule": null,
+    "independence_attestation": null,
+    "blinding_custodian_and_access_plan": null
+  },
+  "analysis": {
+    "primary_unit": "fruit",
+    "within_fruit_prediction_aggregation": "arithmetic_mean_of_paired_eligible_scan_predictions",
+    "reference_unit": "one_SOP_reconciled_fresh_weight_dry_matter_percent_per_fruit",
+    "pooled_weighting": "equal_weight_per_eligible_fruit",
+    "primary_endpoint": "fixed_six_RMSEP_pp",
+    "primary_comparison": "fixed_six_minus_full_eight_RMSEP_pp",
+    "context_comparison": "fixed_six_minus_rich_spectrum_RMSEP_pp",
+    "bootstrap_unit": "independent_population_cluster",
+    "bootstrap_stratification": "new_season",
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 42,
+    "interval": "two_sided_95_percentile",
+    "old_dataset_seasons_ineligible": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "future_season_generalization_claim": false,
+    "population_bootstrap_interval_prohibited_at_or_below_clusters_per_season": 2,
+    "minimum_clusters_for_potential_interval_reporting_per_season": 3,
+    "minimum_clusters_is_not_precision_justification": true,
+    "interval_reporting_requires_preregistered_precision_plan_support": true
+  },
+  "unresolved_blocks_descriptive_validation": [
+    "new_cohort_and_independence_not_documented",
+    "collection_sampling_and_precision_plan_not_frozen",
+    "quality_control_and_reference_assay_SOPs_not_frozen",
+    "blinding_and_prediction_freeze_process_not_instantiated"
+  ],
+  "unresolved_blocks_practical_acceptance_only": [
+    "absolute_error_tolerance_not_specified",
+    "comparative_margin_and_justification_not_specified",
+    "availability_and_other_application_requirements_not_specified",
+    "practical_acceptance_gate_not_frozen",
+    "cultivar_market_harvest_criterion_and_agronomic_review_not_specified",
+    "harvest_decision_rule_and_field_validation_plan_not_frozen"
+  ],
+  "notes": [
+    "Missing application tolerances do not block research-candidate freeze or descriptive validation after collection-design freeze.",
+    "No numeric sample size, application tolerance or physical instrument performance has been invented.",
+    "Any physical calibration-transfer cohort is development and must be disjoint from an independent hardware validation cohort."
+  ],
+  "candidate_selection_registration_sha256": "90056fa21901ebd7b53df82d5be71c68142f6548dbcde1e807644c50f0ad8226"
+}

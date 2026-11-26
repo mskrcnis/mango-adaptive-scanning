@@ -1,0 +1,25 @@
+{
+  "external_outcomes_accessed_for_any_amendment": false,
+  "prediction_driven_refinement_rounds": 0,
+  "implementation_repairs": [
+    {
+      "issue": "Supervised bank construction could see inner target-group assays",
+      "repair": "Reserve separate 15% bank-design harvest groups; exclude them from fitting and target cross-fitting for every bank",
+      "evidence": "docs/independent_method_review.md",
+      "prior_attempts": "results/attempts/pre_bank_design_split/",
+      "descendants": "All prior core fits invalidated and rerun before external scoring"
+    },
+    {
+      "issue": "Scaling outside grouped inner Lasso CV and bounded coordinate-descent convergence warnings",
+      "repair": "Fit each fold scaler on training rows; use same-objective LassoLars with unchanged alpha grid",
+      "evidence": "results/baseline_solver_audit.json",
+      "validation": "336 CV fits and eight final refits: zero warnings and KKT residuals below 1e-7"
+    },
+    {
+      "issue": "Floating-point gaps in probability-reliability bin edges",
+      "repair": "Use shared linspace edges, right-closed final bin; regression test covers exact decimal boundaries",
+      "evidence": "tests/test_metrics.py",
+      "scope": "Diagnostic only; fitted models and policy decisions unchanged; checkpoint-safe restart before scoring"
+    }
+  ]
+}

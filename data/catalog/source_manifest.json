@@ -1,0 +1,164 @@
+[
+  {
+    "path": "data/catalog/sources/led700-02au.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led700-02au.pdf",
+    "sha256": "b363b84649408edd9be952a7e4eb60023cf094bab303c1a47119f0c5a546270c",
+    "bytes": 1204519,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/led710-series.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led710-series.pdf",
+    "sha256": "114f3c5654ca3d48831257dfaa76454bd58bbebc5e1f368f72ee9d1abdd57a28",
+    "bytes": 1157968,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/led720-03au.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led720-03au.pdf",
+    "sha256": "73e20e12ad7b8b232d2265108ec237cd3b3f996229fd1504c61c0a7c093a7a98",
+    "bytes": 346438,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led740-series.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led740-series.pdf",
+    "sha256": "ec332c4dfbee354053fe3c2f62282f26342513a6c0c8df83e165ca66ecab8e0a",
+    "bytes": 582750,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led760-series.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led760-series.pdf",
+    "sha256": "8886435937543cbf666387e2c9ef9993246e192c23fd63bf776151d875451eac",
+    "bytes": 1040722,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led780-03au.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led780-03au.pdf",
+    "sha256": "c7f7a6b9e6703846120564d8f1384e7ccc2369a55ac9e087b2f8e4195bda89f3",
+    "bytes": 432432,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led800-01au.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led800-01au.pdf",
+    "sha256": "6897c19ab9babd2e7f23e9bd40de7ce629ee475ec53d0c978e635298c089f6b0",
+    "bytes": 1210953,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led820-series.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led820-series.pdf",
+    "sha256": "e930b856bdedcb30f43b96483b28a3adc25678e07f16104bb5440bbc4f4be985",
+    "bytes": 1147669,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led840_04au.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led840_04au.pdf",
+    "sha256": "2679edfea5d2ae63203cefdee1a24dc413442fc0a45a5369a091320431ccbfa0",
+    "bytes": 62108,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/led850-series.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led850-series.pdf",
+    "sha256": "85beda0132c7318d55bdc2945f81faad84b9215134fa5a6dff0d359849c67c59",
+    "bytes": 1134966,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led870_01up.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led870_01up.pdf",
+    "sha256": "bc9f5a0e109c150a39028c356b7c89eb79ee97800e0c7f58fc73332b97d57374",
+    "bytes": 117465,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/led890-03au.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led890-03au.pdf",
+    "sha256": "6d15e264f6d47d22acec2ba1022e2e96ecda0d6b60cea241af365afb8c60b520",
+    "bytes": 663669,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led910d-01.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led910d-01.pdf",
+    "sha256": "edbd7cda6f567f952cc9aba82f0b602e1e592f40812c03502ace1c6db5825f1c",
+    "bytes": 1248811,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led940d-05.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led940d-05.pdf",
+    "sha256": "55541a70a7be1c93c7987a2f8c1c897a57b54de3086f630d3a9065127a70e502",
+    "bytes": 723656,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": true
+  },
+  {
+    "path": "data/catalog/sources/led970d-03.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led970d-03.pdf",
+    "sha256": "eabf6993091cc2fe7b0a4a8a43cbff5a2828ba28d1f2918245a51c7ed42e7cde",
+    "bytes": 1278060,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/led980d-03.pdf",
+    "url": "https://www.roithner-laser.com/datasheets/led_div/led980d-03.pdf",
+    "sha256": "6ba1c641a64f04e41d93a15593b89711e91e8f507a2297dd0122e63d42bb7377",
+    "bytes": 1206898,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/marktech.html",
+    "url": "https://marktechopto.com/led-emitters/near-ir/",
+    "sha256": "4e5dabd8fd02bcf7fc03e9e1a8002fecd0962c680ab93620b2c550b697aabd74",
+    "bytes": 581864,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  },
+  {
+    "path": "data/catalog/sources/roithner.html",
+    "url": "https://www.roithner-laser.com/led_standard.html",
+    "sha256": "c8f63eee19beb275af192d371681eb9b5de2aeca3888b433cda7a25b581aa946",
+    "bytes": 180421,
+    "access_date": "2026-11-26",
+    "license": "Manufacturer copyright; public technical data sheet; redistribution license not asserted",
+    "used_primary": false
+  }
+]

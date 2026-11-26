@@ -1,0 +1,137 @@
+{
+  "blocking_issues": [],
+  "bytes": 90559,
+  "inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "inspection_method": "All eight prior PDF pages individually viewed at 110 dpi; current final PDF rerendered at same dpi and all eight PNG SHA256 hashes matched exactly",
+  "nonblocking_notes": [
+    "Continuation pages 3 and 7 do not repeat table headers.",
+    "Page 7 contains only two final sensitivity rows; pagination could be tightened in a later layout-only revision."
+  ],
+  "page_count": 8,
+  "pages": [
+    {
+      "notes": "Title, author-review designation, section heading and introductory paragraph are clear and within margins. Large whitespace precedes the landscape table by design.",
+      "page": 1,
+      "render_sha256": "68c4f011a3d58634e797c0d5aeec1da05301e150ae403d8eed5519f76c21fef5",
+      "status": "passed"
+    },
+    {
+      "notes": "Registered comparison table is legible; all seven columns and numeric rows fit the landscape page without overlap or clipping.",
+      "page": 2,
+      "render_sha256": "646d4898e87e9c97be6c3addea2943bd1e270b18086df77195ef91fc2a918829",
+      "status": "passed"
+    },
+    {
+      "notes": "Comparison-table continuation and closing rule fit. Nonblocking layout note: continuation page does not repeat column headers.",
+      "page": 3,
+      "render_sha256": "09cf559f57ca60528952a844cce5943d29028a011d6b67662be84c1c0434d1f8",
+      "status": "passed"
+    },
+    {
+      "notes": "Training-seed and optical-sensitivity explanation is clear and within margins. Large whitespace precedes landscape tables.",
+      "page": 4,
+      "render_sha256": "b10f8eca3a25c70187e6cbc81506736e85054ff447f3e32d8c31712841783f39",
+      "status": "passed"
+    },
+    {
+      "notes": "Seed table is legible; rows for seeds 7, 42 and 99 are visible and all seven columns fit without clipping.",
+      "page": 5,
+      "render_sha256": "ede6289e7726d5dfcd5e3866d459b865c87fb12c30d9051b8815fb304701970a",
+      "status": "passed"
+    },
+    {
+      "notes": "Optical-sensitivity table is legible and all six columns fit; high errors and undefined rates are printed as stored rather than suppressed.",
+      "page": 6,
+      "render_sha256": "6ae17a036b7953811ff36cf08618fc8b4b397541bec6e25fb63ffc7c37853d32",
+      "status": "passed"
+    },
+    {
+      "notes": "Final two sensitivity-table rows and closing rule fit. Nonblocking layout note: two orphan continuation rows occupy a separate page and column headers are not repeated.",
+      "page": 7,
+      "render_sha256": "7c2dff30d8bac8db968eb1c7536756c16ab1645a7a32053097954b9b50f2c0c3",
+      "status": "passed"
+    },
+    {
+      "notes": "Methods, unsuccessful comparisons, source-access limitations and software-handoff text are readable with clear headings and no overlap or clipping.",
+      "page": 8,
+      "render_sha256": "c0b22e708b8cb9b4bf6468ee81b248e88a1db2411910af83273739ca2d62d43a",
+      "status": "passed"
+    }
+  ],
+  "pdf_hash_unchanged_after_inspection": true,
+  "pdf_path": "manuscript/supplement.pdf",
+  "prior_inspected_pdf_sha256": "56fa309b351bb6763a3bf1662569f3a55549004c56b445ad81655fc1888347a9",
+  "render_command": "pdftoppm -r 110 -png manuscript/supplement.pdf /tmp/mango-supplement-guarded-qa-38xe8tqw/page",
+  "reviewed_at_utc": "2026-11-25T19:24:13.291641+00:00",
+  "scope": "Visual layout review of actual final supplement; current guarded-regeneration PDF has byte-identical page renders to the eight individually inspected pages",
+  "sha256": "eec63fcd889e0f131f4d5f4b93d6e9b73391ecc301ac0b62660596791ab09cc4",
+  "status": "passed",
+  "unchanged_render_verification": {
+    "all_eight_pngs_byte_identical": true,
+    "all_pages": [
+      {
+        "current_render_sha256": "68c4f011a3d58634e797c0d5aeec1da05301e150ae403d8eed5519f76c21fef5",
+        "identical": true,
+        "page": 1,
+        "previous_render_sha256": "68c4f011a3d58634e797c0d5aeec1da05301e150ae403d8eed5519f76c21fef5"
+      },
+      {
+        "current_render_sha256": "646d4898e87e9c97be6c3addea2943bd1e270b18086df77195ef91fc2a918829",
+        "identical": true,
+        "page": 2,
+        "previous_render_sha256": "646d4898e87e9c97be6c3addea2943bd1e270b18086df77195ef91fc2a918829"
+      },
+      {
+        "current_render_sha256": "09cf559f57ca60528952a844cce5943d29028a011d6b67662be84c1c0434d1f8",
+        "identical": true,
+        "page": 3,
+        "previous_render_sha256": "09cf559f57ca60528952a844cce5943d29028a011d6b67662be84c1c0434d1f8"
+      },
+      {
+        "current_render_sha256": "b10f8eca3a25c70187e6cbc81506736e85054ff447f3e32d8c31712841783f39",
+        "identical": true,
+        "page": 4,
+        "previous_render_sha256": "b10f8eca3a25c70187e6cbc81506736e85054ff447f3e32d8c31712841783f39"
+      },
+      {
+        "current_render_sha256": "ede6289e7726d5dfcd5e3866d459b865c87fb12c30d9051b8815fb304701970a",
+        "identical": true,
+        "page": 5,
+        "previous_render_sha256": "ede6289e7726d5dfcd5e3866d459b865c87fb12c30d9051b8815fb304701970a"
+      },
+      {
+        "current_render_sha256": "6ae17a036b7953811ff36cf08618fc8b4b397541bec6e25fb63ffc7c37853d32",
+        "identical": true,
+        "page": 6,
+        "previous_render_sha256": "6ae17a036b7953811ff36cf08618fc8b4b397541bec6e25fb63ffc7c37853d32"
+      },
+      {
+        "current_render_sha256": "7c2dff30d8bac8db968eb1c7536756c16ab1645a7a32053097954b9b50f2c0c3",
+        "identical": true,
+        "page": 7,
+        "previous_render_sha256": "7c2dff30d8bac8db968eb1c7536756c16ab1645a7a32053097954b9b50f2c0c3"
+      },
+      {
+        "current_render_sha256": "c0b22e708b8cb9b4bf6468ee81b248e88a1db2411910af83273739ca2d62d43a",
+        "identical": true,
+        "page": 8,
+        "previous_render_sha256": "c0b22e708b8cb9b4bf6468ee81b248e88a1db2411910af83273739ca2d62d43a"
+      }
+    ],
+    "guard_evidence": "Verification passed: reporting_only_guarded_rerun",
+    "guard_log": "results/final_verify_before_visual.log",
+    "new_render_directory": "/tmp/mango-supplement-guarded-qa-38xe8tqw",
+    "render_dpi": 110,
+    "status": "passed",
+    "verified_at_utc": "2026-11-25T19:26:21.456233+00:00"
+  }
+}

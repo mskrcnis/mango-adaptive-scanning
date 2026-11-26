@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "rows": 3,
+  "method": "Copied frozen bundle and CLI to a temporary directory; executed sparse input inference with sklearn, mango, torch and joblib imports blocked. Temporary copy removed.",
+  "predictions": [
+    15.727716758281927,
+    15.823828101756318,
+    15.090653102335455
+  ],
+  "candidate_manifest_sha256": "ed11a3ee9ad1a793e139c60962d2a5e65cedc9322d12a3c1f7bd429d5a854902",
+  "cli_source_sha256": "95a3cc7c64ad4667f1056cc5c747dd2cf53a324a10d7d763667ba5b6c8af8682"
+}

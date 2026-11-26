@@ -1,0 +1,55 @@
+{
+  "amendments": [
+    {
+      "cause": "Fancy column indexing creates F-contiguous original readings; complete-row boolean indexing in partial_predict creates C-contiguous readings. Repeating PLS bank prediction on C/F arrays with identical values reproduces the last-bit discrepancy.",
+      "check": "real_development_runtime_and_optical_contracts",
+      "classification": "numerical_test_strictness_correction_not_model_revision",
+      "core_models_or_scored_outputs_changed": false,
+      "elapsed_seconds": 1.0178289413452148,
+      "evidence": {
+        "all_bank_endpoint_absolute_tolerance_pp": 1e-12,
+        "all_bank_endpoint_dispatched_result_exact": true,
+        "all_bank_endpoint_max_abs_difference_pp": 2.842170943040401e-14,
+        "all_bank_endpoint_relative_tolerance": 0,
+        "all_bank_endpoint_same_frozen_reference": true,
+        "all_bank_endpoint_within_tolerance": true,
+        "c_vs_f_contiguous_bank_prediction_max_abs_difference_pp": 2.842170943040401e-14,
+        "constant_spectrum_preserved": true,
+        "dispatched_input_contiguity": {
+          "C": true,
+          "F": false
+        },
+        "gain_signs_exact": true,
+        "observed_zero_distinct": true,
+        "original_input_contiguity": {
+          "C": false,
+          "F": true
+        },
+        "real_development_rows": 12,
+        "runtime_no_assay_or_metadata_arguments": true,
+        "termination_methods": 9,
+        "unseen_nan_invariance": true,
+        "unsupported_emitter_rejected": true,
+        "zero_denominator_is_none": true
+      },
+      "initial_assertion": "assert_array_equal(partial_predict(fullmask), predict_bank(original_input))",
+      "initial_max_abs_difference_pp": 2.842170943040401e-14,
+      "invocation": ".venv/bin/python -c \"from mango.verification import _real_runtime_and_optics; print(_real_runtime_and_optics())\"",
+      "protected_frozen_and_checkpoint_files_unchanged": 330,
+      "returncode": 0,
+      "revised_assertion": "Identical bank-bundle object and input readings, exactly one call to the frozen bank predictor, and bitwise equality to its result for the dispatched array are required. Direct original-array comparison uses atol=1e-12 percentage points and rtol=0.",
+      "scored_outputs_unchanged": 15,
+      "source_dispatch_file": "mango/models.py",
+      "source_dispatch_sha256": "627f2faa5682b3e7425f36ecc0262ae33e19a01f9fba1638f06087377337575a",
+      "status": "passed",
+      "timestamp_utc": "2026-11-25T19:22:36.490728+00:00",
+      "tolerance_rationale": "Absolute 1e-12 percentage points accommodates observed float64 reduction order roundoff (2.84e-14), remains 5e11 times smaller than the registered 0.5 pp scientific tolerance, and cannot conceal a substantively distinct reference prediction."
+    },
+    {
+      "change": "Reuse checksummed reports when source, locked inputs, template and demo trace are unchanged; guarded verification still forces generation once for a changed reporting implementation.",
+      "classification": "reporting_cache_only",
+      "core_models_or_scored_outputs_changed": false,
+      "reason": "Preserve verified PDF hashes across unchanged normal workflow resumes."
+    }
+  ]
+}

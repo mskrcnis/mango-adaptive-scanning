@@ -1,0 +1,13 @@
+{
+  "fit_calls_in_evaluator": 0,
+  "large_absolute_error_definition": 2.0,
+  "lookahead": "Frozen training-only conditional two-step approximation, not author ACO replication.",
+  "point_sensitivity": "Separate frozen point-channel predictor/controller at nearest 3-nm channels to physical nominal centers. Own operating indices selected using three outer development folds at the same four-reading target.",
+  "prediction_cache_before_outcomes": true,
+  "primary_scenario": "nominal",
+  "profile_sensitivity": "Deployment response shift through the same frozen physical model, scaler, calibration and threshold; no retraining. Uniform center and width changes separately. Gaussian approximation separately labeled.",
+  "season5_intervals": "Population intervals suppressed for two harvest populations; group-specific paired estimates supplied.",
+  "seed_variability": "Seeds 7/42/99 retained separately; primary inferential seed 42. Cluster uncertainty is not seed variability.",
+  "static_models": "Fixed physical budgets 4/8 and ideal budgets 4/8/16 from frozen development-only sparse selection; units differ between finite-band LEDs and point wavelengths.",
+  "trace_boundaries": "Decision states contain acquired channel readings only. Assays and unattained reference predictions are exclusively in evaluator_only."
+}

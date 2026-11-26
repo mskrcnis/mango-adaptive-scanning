@@ -1,0 +1,39 @@
+{
+  "narrative_authors": {
+    "saranwong2004": "Saranwong et al.",
+    "subedi2007": "Subedi et al.",
+    "wendel2018": "Wendel et al.",
+    "anderson2020": "Anderson et al.",
+    "anderson2021local": "Anderson et al.",
+    "sun2020temperature": "Sun et al.",
+    "mishra2021transfer": "Mishra and Passos",
+    "mishra2021preprocessing": "Mishra et al.",
+    "mishra2021synergy": "Mishra and Passos",
+    "walsh2024": "Walsh et al.",
+    "walshthesis2024": "Walsh",
+    "dirks2022": "Dirks and Poole",
+    "gutierrez2019": "Guti\\'{e}rrez et al.",
+    "huang2015": "Huang and Gutierrez-Osuna",
+    "shim2018": "Shim et al.",
+    "covert2023": "Covert et al.",
+    "valancius2024": "Valancius et al.",
+    "jazbec2024": "Jazbec et al.",
+    "varma2006": "Varma and Simon",
+    "roberts2017": "Roberts et al."
+  },
+  "journal_abbreviations": {
+    "Computers and Electronics in Agriculture": "Comput Electron Agric",
+    "Postharvest Biology and Technology": "Postharvest Biol Technol",
+    "Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy": "Spectrochim Acta A Mol Biomol Spectrosc",
+    "Journal of Food Composition and Analysis": "J Food Compos Anal",
+    "Food Chemistry": "Food Chem",
+    "Journal of Food Science": "J Food Sci",
+    "Sensors and Actuators B: Chemical": "Sens Actuators B Chem",
+    "Chemometrics and Intelligent Laboratory Systems": "Chemometr Intell Lab Syst",
+    "Journal of Chemometrics": "J Chemom",
+    "Analytica Chimica Acta": "Anal Chim Acta",
+    "Applied Spectroscopy": "Appl Spectrosc"
+  },
+  "style_change": "inproceedings: add format.date year output.check before format.pages",
+  "class_unchanged": true
+}

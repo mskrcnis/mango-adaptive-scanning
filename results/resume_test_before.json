@@ -1,0 +1,14 @@
+{
+  "completed_checkpoint_hashes": {
+    "results/checkpoints/model_season1_swap_low_seed42.joblib": "a0dfb4c1ce75d3e391d3648549a6eff9f6179fca14f2491528d8c89eaa5f688b",
+    "results/checkpoints/model_season1_uniform_seed42.joblib": "28d43341133439491a1673a66069741f891cb0b4391ae99941df8b3a6bd557c8",
+    "results/checkpoints/path_s1_swap_low_proposed_seed42.joblib": "c79b44d2f53d267438d343dce693ee027de9d012a142083b71ea1db6e55c0d83",
+    "results/checkpoints/path_s1_swap_low_single_cnn_reference_seed42.joblib": "9271d1b09fd7413c89853d7d0150e35da2678fb0a0e604e21e1bd70d487a5e9a",
+    "results/checkpoints/path_s1_swap_low_single_seed42.joblib": "f2314a71a14bff98a0ee9e8cb408662a2967876c556ede839f844bf2a2f63659",
+    "results/checkpoints/path_s1_uniform_proposed_seed42.joblib": "c1b0892145d483f325ef12eea9c7e2d7236e0ce76d9676f16d317f344f8d552f",
+    "results/checkpoints/path_s1_uniform_single_cnn_reference_seed42.joblib": "dcc758d303bb05777300b869aa07dc56a2c2f2918502b8eeda975ab34bf24529",
+    "results/checkpoints/path_s1_uniform_single_seed42.joblib": "c07aa09e5e706c2d59dd6d3a8ebbebbc1884693fded3ccfb2a2a71d9cbc26058"
+  },
+  "expected": "resume reuses exact completed checkpoints; partial stage recomputed",
+  "timestamp": 1795632352.947268
+}

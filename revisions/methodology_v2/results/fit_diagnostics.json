@@ -1,0 +1,1154 @@
+[
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      21
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.599841785327671,
+    "positive_n": 14407,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6112915313514864,
+    "positive_n": 14682,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.5940128237155466,
+    "positive_n": 14267,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      26
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5952202514780581,
+    "positive_n": 14296,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      110
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.08318760929303022,
+    "positive_n": 1998,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6054209342992756,
+    "positive_n": 14541,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      22
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.6034640686152053,
+    "positive_n": 14494,
+    "scans": 4003,
+    "seed": 7,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      21
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6126655008743442,
+    "positive_n": 14715,
+    "scans": 4003,
+    "seed": 7,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.5940128237155466,
+    "positive_n": 14267,
+    "scans": 4003,
+    "seed": 7,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      26
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5952202514780581,
+    "positive_n": 14296,
+    "scans": 4003,
+    "seed": 7,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      110
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.08318760929303022,
+    "positive_n": 1998,
+    "scans": 4003,
+    "seed": 7,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6054209342992756,
+    "positive_n": 14541,
+    "scans": 4003,
+    "seed": 7,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      22
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.599300524606545,
+    "positive_n": 14394,
+    "scans": 4003,
+    "seed": 99,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6082521442251645,
+    "positive_n": 14609,
+    "scans": 4003,
+    "seed": 99,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.5940128237155466,
+    "positive_n": 14267,
+    "scans": 4003,
+    "seed": 99,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      26
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5952202514780581,
+    "positive_n": 14296,
+    "scans": 4003,
+    "seed": 99,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      110
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.08318760929303022,
+    "positive_n": 1998,
+    "scans": 4003,
+    "seed": 99,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6054209342992756,
+    "positive_n": 14541,
+    "scans": 4003,
+    "seed": 99,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      22
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.44533266716629194,
+    "positive_n": 10696,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 1,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6096261137480223,
+    "positive_n": 14642,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      50
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.29502872845365974,
+    "positive_n": 7086,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 1,
+    "iterations": [
+      18
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5672412357398617,
+    "positive_n": 13624,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      108
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.07885752352402364,
+    "positive_n": 1894,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 1,
+    "iterations": [
+      22
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.6007577650095761,
+    "positive_n": 14429,
+    "scans": 4003,
+    "seed": 42,
+    "states": 24018,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      17
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.47274280999528523,
+    "positive_n": 16043,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      21
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5817126355492692,
+    "positive_n": 19741,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.4430987741631306,
+    "positive_n": 15037,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5632072135785007,
+    "positive_n": 19113,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      88
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.10066006600660066,
+    "positive_n": 3416,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      17
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5818305044790193,
+    "positive_n": 19745,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      18
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.47112211221122113,
+    "positive_n": 15988,
+    "scans": 5656,
+    "seed": 7,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      19
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5818305044790193,
+    "positive_n": 19745,
+    "scans": 5656,
+    "seed": 7,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.4430987741631306,
+    "positive_n": 15037,
+    "scans": 5656,
+    "seed": 7,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5632072135785007,
+    "positive_n": 19113,
+    "scans": 5656,
+    "seed": 7,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      88
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.10066006600660066,
+    "positive_n": 3416,
+    "scans": 5656,
+    "seed": 7,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      17
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5818305044790193,
+    "positive_n": 19745,
+    "scans": 5656,
+    "seed": 7,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      17
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.4763967468175389,
+    "positive_n": 16167,
+    "scans": 5656,
+    "seed": 99,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      20
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5826261197548326,
+    "positive_n": 19772,
+    "scans": 5656,
+    "seed": 99,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.4430987741631306,
+    "positive_n": 15037,
+    "scans": 5656,
+    "seed": 99,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5632072135785007,
+    "positive_n": 19113,
+    "scans": 5656,
+    "seed": 99,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      88
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.10066006600660066,
+    "positive_n": 3416,
+    "scans": 5656,
+    "seed": 99,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      17
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5818305044790193,
+    "positive_n": 19745,
+    "scans": 5656,
+    "seed": 99,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      21
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.43154761904761907,
+    "positive_n": 14645,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 2,
+    "iterations": [
+      25
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5803276756247053,
+    "positive_n": 19694,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3671322489391796,
+    "positive_n": 12459,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 2,
+    "iterations": [
+      23
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.55749057048562,
+    "positive_n": 18919,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      107
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.11123880245167374,
+    "positive_n": 3775,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 2,
+    "iterations": [
+      19
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.5816242338519566,
+    "positive_n": 19738,
+    "scans": 5656,
+    "seed": 42,
+    "states": 33936,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      23
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.38703339882121807,
+    "positive_n": 7092,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      23
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.46037982973149966,
+    "positive_n": 8436,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      25
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3883431565160445,
+    "positive_n": 7116,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      22
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.49214145383104124,
+    "positive_n": 9018,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      104
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.044040602488539624,
+    "positive_n": 807,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      21
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.4768063741541148,
+    "positive_n": 8737,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      22
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3838135778214364,
+    "positive_n": 7033,
+    "scans": 3054,
+    "seed": 7,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      24
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.45612311722331367,
+    "positive_n": 8358,
+    "scans": 3054,
+    "seed": 7,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      25
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3883431565160445,
+    "positive_n": 7116,
+    "scans": 3054,
+    "seed": 7,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      22
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.49214145383104124,
+    "positive_n": 9018,
+    "scans": 3054,
+    "seed": 7,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      104
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.044040602488539624,
+    "positive_n": 807,
+    "scans": 3054,
+    "seed": 7,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      21
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.4768063741541148,
+    "positive_n": 8737,
+    "scans": 3054,
+    "seed": 7,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      20
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3846867496179873,
+    "positive_n": 7049,
+    "scans": 3054,
+    "seed": 99,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      24
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.4593975114603798,
+    "positive_n": 8418,
+    "scans": 3054,
+    "seed": 99,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      25
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3883431565160445,
+    "positive_n": 7116,
+    "scans": 3054,
+    "seed": 99,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      22
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.49214145383104124,
+    "positive_n": 9018,
+    "scans": 3054,
+    "seed": 99,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      104
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.044040602488539624,
+    "positive_n": 807,
+    "scans": 3054,
+    "seed": 99,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "swap_mid",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      21
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.4768063741541148,
+    "positive_n": 8737,
+    "scans": 3054,
+    "seed": 99,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      25
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.3419559048242742,
+    "positive_n": 6266,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "mlp_hybrid",
+    "held_season": 3,
+    "iterations": [
+      20
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.46201702685003276,
+    "positive_n": 8466,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      102
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.24470639598340974,
+    "positive_n": 4484,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "pls",
+    "held_season": 3,
+    "iterations": [
+      22
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.4625081859855927,
+    "positive_n": 8475,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      101
+    ],
+    "objective": "two_reference",
+    "positive_fraction": 0.06750709452084698,
+    "positive_n": 1237,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  },
+  {
+    "bank": "uniform",
+    "constant_class_fallback": false,
+    "family": "ridge",
+    "held_season": 3,
+    "iterations": [
+      23
+    ],
+    "objective": "single_reference",
+    "positive_fraction": 0.47336826020519535,
+    "positive_n": 8674,
+    "scans": 3054,
+    "seed": 42,
+    "states": 18324,
+    "warnings": []
+  }
+]

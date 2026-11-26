@@ -1,0 +1,1077 @@
+{
+  "rows": [
+    {
+      "assay": 17.77294948,
+      "bank_prediction": 16.69402194811121,
+      "candidate_count": 755,
+      "category": "premature_stop",
+      "g_bank": 0.026752082935335153,
+      "g_stop": 1.6983353436543176,
+      "group": "s4_pop112",
+      "interpretation": "Evaluator-only illustrative pairing; selected by a fixed descriptive rule, not inferential evidence.",
+      "proposed_absolute_error": 2.7772628755431086,
+      "proposed_prediction": 14.995686604456893,
+      "proposed_pulses": 2,
+      "qualifying_event_median_gain": 1.6983353436543176,
+      "rich_prediction": 16.720774031046545,
+      "row_id": "v3_011625",
+      "season": 4,
+      "selected_gain": 1.6983353436543176,
+      "selection_rule": "Qualifying event nearest within-season median gain; row ID breaks ties.",
+      "single_absolute_error": 2.7772628755431086,
+      "single_prediction": 14.995686604456893,
+      "single_pulses": 2,
+      "status": "selected",
+      "traces": {
+        "proposed": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.5754685958566262,
+            "predicted_error": null,
+            "prediction": 14.995686604456893,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.7352349706061351,
+              "LED940D-05": -0.6258975049692177
+            },
+            "stop": true
+          }
+        ],
+        "single": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.5729094678645472,
+            "predicted_error": null,
+            "prediction": 14.995686604456893,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.7352349706061351,
+              "LED940D-05": -0.6258975049692177
+            },
+            "stop": true
+          }
+        ]
+      }
+    },
+    {
+      "assay": 19.78384528,
+      "bank_prediction": 18.47008037842874,
+      "candidate_count": 253,
+      "category": "full_bank_limitation",
+      "g_bank": 1.0512903751025853,
+      "g_stop": 1.9090535104350081,
+      "group": "s4_pop112",
+      "interpretation": "Evaluator-only illustrative pairing; selected by a fixed descriptive rule, not inferential evidence.",
+      "proposed_absolute_error": 3.2228184120062693,
+      "proposed_prediction": 16.561026867993732,
+      "proposed_pulses": 2,
+      "qualifying_event_median_gain": 1.0512903751025853,
+      "rich_prediction": 20.046319806468677,
+      "row_id": "v3_011677",
+      "season": 4,
+      "selected_gain": 1.0512903751025853,
+      "selection_rule": "Qualifying event nearest within-season median gain; row ID breaks ties.",
+      "single_absolute_error": 3.2228184120062693,
+      "single_prediction": 16.561026867993732,
+      "single_pulses": 2,
+      "status": "selected",
+      "traces": {
+        "proposed": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.551937984496124,
+            "predicted_error": null,
+            "prediction": 16.561026867993732,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.602983112811169,
+              "LED940D-05": -0.5151402469822846
+            },
+            "stop": true
+          }
+        ],
+        "single": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.5,
+            "predicted_error": null,
+            "prediction": 16.561026867993732,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.602983112811169,
+              "LED940D-05": -0.5151402469822846
+            },
+            "stop": true
+          }
+        ]
+      }
+    },
+    {
+      "absolute_error_after": 0.16374624158062367,
+      "absolute_error_before": 1.4905896137712116,
+      "assay": 14.90593343,
+      "bank_prediction": 14.742187188419374,
+      "candidate_count": 90,
+      "category": "useful_continuation",
+      "continuation_states_available": true,
+      "g_bank": -0.570960127235038,
+      "g_stop": -1.7763568394002505e-15,
+      "group": "s4_pop103",
+      "interpretation": "Evaluator-only illustrative pairing; selected by a fixed descriptive rule, not inferential evidence.",
+      "next_led": "LED800-01AU",
+      "prediction_after": 14.742187188419376,
+      "prediction_before": 16.39652304377121,
+      "proposed_absolute_error": 0.16374624158062367,
+      "proposed_prediction": 14.742187188419376,
+      "proposed_pulses": 8,
+      "pulses_before": 7,
+      "qualifying_event_median_gain": 1.3027199619830494,
+      "recomputed_actual_one_step_gain": 1.326843372190588,
+      "rich_prediction": 14.171227061184336,
+      "row_id": "v3_010912",
+      "season": 4,
+      "selected_gain": 1.326843372190588,
+      "selected_local_channel": 3,
+      "selection_rule": "Actually continued material improvement nearest within-season median; row ID/depth break ties.",
+      "single_absolute_error": 0.16374624158062367,
+      "single_prediction": 14.742187188419376,
+      "single_prediction_at_same_depth": 16.39652304377121,
+      "single_pulses": 8,
+      "single_same_depth_note": "Actual visited state; channel masks may differ between policies.",
+      "status": "selected",
+      "traces": {
+        "proposed": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": "LED910D-01",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.363111243106488,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "next_led": "LED890-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.278270042293848,
+            "pulses": 3,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED780-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.272868964780955,
+            "pulses": 4,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED760-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.344127033973095,
+            "pulses": 5,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED780-03AU": -0.5216884030807669,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED820-01AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.44508163194321,
+            "pulses": 6,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED760-03AU": -0.506886159354777,
+              "LED780-03AU": -0.5216884030807669,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED800-01AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.39652304377121,
+            "pulses": 7,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED760-03AU": -0.506886159354777,
+              "LED780-03AU": -0.5216884030807669,
+              "LED820-01AU": -0.5363238703047557,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 14.742187188419376,
+            "pulses": 8,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED760-03AU": -0.506886159354777,
+              "LED780-03AU": -0.5216884030807669,
+              "LED800-01AU": -0.5320644535988621,
+              "LED820-01AU": -0.5363238703047557,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": true
+          }
+        ],
+        "single": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": "LED910D-01",
+            "p_stopgain": 0.7331189710610932,
+            "predicted_error": null,
+            "prediction": 16.363111243106488,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "next_led": "LED780-03AU",
+            "p_stopgain": 0.7331189710610932,
+            "predicted_error": null,
+            "prediction": 16.278270042293848,
+            "pulses": 3,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "next_led": "LED890-03AU",
+            "p_stopgain": 0.8888888888888888,
+            "predicted_error": null,
+            "prediction": 16.239471452778005,
+            "pulses": 4,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED780-03AU": -0.5216884030807669,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED760-03AU",
+            "p_stopgain": 0.8888888888888888,
+            "predicted_error": null,
+            "prediction": 16.344127033973095,
+            "pulses": 5,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED780-03AU": -0.5216884030807669,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED820-01AU",
+            "p_stopgain": 0.7331189710610932,
+            "predicted_error": null,
+            "prediction": 16.44508163194321,
+            "pulses": 6,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED760-03AU": -0.506886159354777,
+              "LED780-03AU": -0.5216884030807669,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED800-01AU",
+            "p_stopgain": 0.7331189710610932,
+            "predicted_error": null,
+            "prediction": 16.39652304377121,
+            "pulses": 7,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED760-03AU": -0.506886159354777,
+              "LED780-03AU": -0.5216884030807669,
+              "LED820-01AU": -0.5363238703047557,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.7331189710610932,
+            "predicted_error": null,
+            "prediction": 14.742187188419376,
+            "pulses": 8,
+            "readings": {
+              "LED720-03AU": -0.34446751020247446,
+              "LED760-03AU": -0.506886159354777,
+              "LED780-03AU": -0.5216884030807669,
+              "LED800-01AU": -0.5320644535988621,
+              "LED820-01AU": -0.5363238703047557,
+              "LED890-03AU": -0.49344218268978324,
+              "LED910D-01": -0.48581645481781277,
+              "LED940D-05": -0.42202592915982196
+            },
+            "stop": true
+          }
+        ]
+      }
+    },
+    {
+      "assay": 13.47832,
+      "bank_prediction": 14.201844488101042,
+      "candidate_count": 106,
+      "category": "premature_stop",
+      "g_bank": -0.681863488015626,
+      "g_stop": 1.3899062455813471,
+      "group": "s5_pop128",
+      "interpretation": "Evaluator-only illustrative pairing; selected by a fixed descriptive rule, not inferential evidence.",
+      "proposed_absolute_error": 2.1134307336823888,
+      "proposed_prediction": 15.591750733682389,
+      "proposed_pulses": 2,
+      "qualifying_event_median_gain": 1.3632206573603138,
+      "rich_prediction": 12.072932023883332,
+      "row_id": "v3_011722",
+      "season": 5,
+      "selected_gain": 1.3899062455813471,
+      "selection_rule": "Qualifying event nearest within-season median gain; row ID breaks ties.",
+      "single_absolute_error": 2.1134307336823888,
+      "single_prediction": 15.591750733682389,
+      "single_pulses": 2,
+      "status": "selected",
+      "traces": {
+        "proposed": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.5754685958566262,
+            "predicted_error": null,
+            "prediction": 15.591750733682389,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.4347407567741264,
+              "LED940D-05": -0.45357167889978156
+            },
+            "stop": true
+          }
+        ],
+        "single": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.5729094678645472,
+            "predicted_error": null,
+            "prediction": 15.591750733682389,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.4347407567741264,
+              "LED940D-05": -0.45357167889978156
+            },
+            "stop": true
+          }
+        ]
+      }
+    },
+    {
+      "assay": 14.81178,
+      "bank_prediction": 16.029854177480825,
+      "candidate_count": 9,
+      "category": "full_bank_limitation",
+      "g_bank": 1.1574230652396444,
+      "g_stop": 0.0,
+      "group": "s5_pop128",
+      "interpretation": "Evaluator-only illustrative pairing; selected by a fixed descriptive rule, not inferential evidence.",
+      "proposed_absolute_error": 1.2180741774808244,
+      "proposed_prediction": 16.029854177480825,
+      "proposed_pulses": 8,
+      "qualifying_event_median_gain": 1.1574230652396444,
+      "rich_prediction": 14.75112888775882,
+      "row_id": "v3_011703",
+      "season": 5,
+      "selected_gain": 1.1574230652396444,
+      "selection_rule": "Qualifying event nearest within-season median gain; row ID breaks ties.",
+      "single_absolute_error": 0.19073101587042451,
+      "single_prediction": 15.002511015870425,
+      "single_pulses": 2,
+      "status": "selected",
+      "traces": {
+        "proposed": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": "LED890-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 15.002511015870425,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "next_led": "LED820-01AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 14.925779436641477,
+            "pulses": 3,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED890-03AU": -0.5463035907626184,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "next_led": "LED910D-01",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 15.047006494835472,
+            "pulses": 4,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED820-01AU": -0.5965874538170597,
+              "LED890-03AU": -0.5463035907626184,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED760-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 15.038674446416834,
+            "pulses": 5,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED820-01AU": -0.5965874538170597,
+              "LED890-03AU": -0.5463035907626184,
+              "LED910D-01": -0.5369947440077819,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED780-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 15.048825185016113,
+            "pulses": 6,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED760-03AU": -0.5594415335703343,
+              "LED820-01AU": -0.5965874538170597,
+              "LED890-03AU": -0.5463035907626184,
+              "LED910D-01": -0.5369947440077819,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED800-01AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 15.121208248178576,
+            "pulses": 7,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED760-03AU": -0.5594415335703343,
+              "LED780-03AU": -0.5774409990921776,
+              "LED820-01AU": -0.5965874538170597,
+              "LED890-03AU": -0.5463035907626184,
+              "LED910D-01": -0.5369947440077819,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.029854177480825,
+            "pulses": 8,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED760-03AU": -0.5594415335703343,
+              "LED780-03AU": -0.5774409990921776,
+              "LED800-01AU": -0.5904522646972918,
+              "LED820-01AU": -0.5965874538170597,
+              "LED890-03AU": -0.5463035907626184,
+              "LED910D-01": -0.5369947440077819,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": true
+          }
+        ],
+        "single": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.616822429906542,
+            "predicted_error": null,
+            "prediction": 15.002511015870425,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.3825902713894376,
+              "LED940D-05": -0.4578785202929826
+            },
+            "stop": true
+          }
+        ]
+      }
+    },
+    {
+      "absolute_error_after": 0.741993541488263,
+      "absolute_error_before": 1.89734118795376,
+      "assay": 16.89858,
+      "bank_prediction": 16.15658645851172,
+      "candidate_count": 54,
+      "category": "useful_continuation",
+      "continuation_states_available": true,
+      "g_bank": -1.5424060055983553,
+      "g_stop": -1.7763568394002505e-14,
+      "group": "s5_pop128",
+      "interpretation": "Evaluator-only illustrative pairing; selected by a fixed descriptive rule, not inferential evidence.",
+      "next_led": "LED820-01AU",
+      "prediction_after": 16.156586458511736,
+      "prediction_before": 15.001238812046239,
+      "proposed_absolute_error": 0.741993541488263,
+      "proposed_prediction": 16.156586458511736,
+      "proposed_pulses": 8,
+      "pulses_before": 7,
+      "qualifying_event_median_gain": 1.177904239296975,
+      "recomputed_actual_one_step_gain": 1.155347646465497,
+      "rich_prediction": 14.614180452913363,
+      "row_id": "v3_011696",
+      "season": 5,
+      "selected_gain": 1.155347646465497,
+      "selected_local_channel": 4,
+      "selection_rule": "Actually continued material improvement nearest within-season median; row ID/depth break ties.",
+      "single_absolute_error": 2.202179894746809,
+      "single_prediction": 14.69640010525319,
+      "single_prediction_at_same_depth": null,
+      "single_pulses": 2,
+      "single_same_depth_note": "Single-reference policy did not reach this depth; no hypothetical state is shown.",
+      "status": "selected",
+      "traces": {
+        "proposed": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": "LED760-03AU",
+            "p_stopgain": 0.615705931495405,
+            "predicted_error": null,
+            "prediction": 14.69640010525319,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": "LED800-01AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 14.66389596434945,
+            "pulses": 3,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED760-03AU": -0.5945599077419159,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": "LED890-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 14.539529210875031,
+            "pulses": 4,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED760-03AU": -0.5945599077419159,
+              "LED800-01AU": -0.621456055171373,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "next_led": "LED910D-01",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 14.310514057174004,
+            "pulses": 5,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED760-03AU": -0.5945599077419159,
+              "LED800-01AU": -0.621456055171373,
+              "LED890-03AU": -0.5753937498306403,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED780-03AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 14.737595709375569,
+            "pulses": 6,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED760-03AU": -0.5945599077419159,
+              "LED800-01AU": -0.621456055171373,
+              "LED890-03AU": -0.5753937498306403,
+              "LED910D-01": -0.5659246476918333,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            "next_led": "LED820-01AU",
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 15.001238812046239,
+            "pulses": 7,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED760-03AU": -0.5945599077419159,
+              "LED780-03AU": -0.6094570374398751,
+              "LED800-01AU": -0.621456055171373,
+              "LED890-03AU": -0.5753937498306403,
+              "LED910D-01": -0.5659246476918333,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": false
+          },
+          {
+            "mask": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.6475924633635729,
+            "predicted_error": null,
+            "prediction": 16.156586458511736,
+            "pulses": 8,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED760-03AU": -0.5945599077419159,
+              "LED780-03AU": -0.6094570374398751,
+              "LED800-01AU": -0.621456055171373,
+              "LED820-01AU": -0.6267127429402677,
+              "LED890-03AU": -0.5753937498306403,
+              "LED910D-01": -0.5659246476918333,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": true
+          }
+        ],
+        "single": [
+          {
+            "mask": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "next_led": null,
+            "p_stopgain": 0.5781563126252504,
+            "predicted_error": null,
+            "prediction": 14.69640010525319,
+            "pulses": 2,
+            "readings": {
+              "LED720-03AU": -0.4540282336936269,
+              "LED940D-05": -0.4837102154378854
+            },
+            "stop": true
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Retrospective descriptive diagnostics from frozen predictions; no fitting, threshold selection or outcome-driven change."
+}

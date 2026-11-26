@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "pdf": "manuscript/main.pdf",
+  "sha256": "af7a09a96937da86de6722fbfb0d4849bfe0d1573313af5e10647c88f915966e",
+  "pages": 12,
+  "inspection": "All 12 pages individually viewed; the final regenerated PDF renders pixel-identically to all inspected pages. The example-trace PNG was also inspected. No clipping, overlap, unresolved references or blocking layout issues. Pages containing only floats are intentional.",
+  "page_checks": [
+    {
+      "page": 1,
+      "render_sha256": "95dac1c249f2975d3272f5611d6562f5ced98174d9f211397ef1c6bce12bd3c1",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 2,
+      "render_sha256": "f6d4abb2b7cc56a2c3db2d5119b175d93eb65437a3b73827d0443044e7a8669c",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 3,
+      "render_sha256": "284c10857a0e308bc1a4fc59314af3b7824728a0ed979060e1139ee787c49d13",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 4,
+      "render_sha256": "cfabd0f120efec9bab0441f5550ae93937f1454564cd7fbbdfacc59d08cba3e1",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 5,
+      "render_sha256": "079a0d335b3ecb47112213739dc614ba0cb9bc42e0218cb9b3be0a8db9c87d7f",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 6,
+      "render_sha256": "b9285590da68cdda28209d5bd973fed29680ab0d826fab4c02e1e830e388694c",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 7,
+      "render_sha256": "82a3a9d035857136e9a6887481131c32da85d5c661804e21cf318dc29f9f0780",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 8,
+      "render_sha256": "022c389fa0a916b174c183df0ba29a30d13e64fda580947e9ce9817150991449",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 9,
+      "render_sha256": "37e089246877c8937fc1fd3dababd9d33ee7a19d91b4a73a73add7024286768b",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 10,
+      "render_sha256": "a18f4d929dbbfab30cd731495ad35f7ddc9211359a13be71188a663c9ed079e0",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 11,
+      "render_sha256": "c7f6b0e5871e9a30b945fbab24c79235b142bb527eedffef6697c527db3895be",
+      "identical_to_visually_inspected_render": true
+    },
+    {
+      "page": 12,
+      "render_sha256": "e43cb53db509bcaf0196c0f7bc8007f0195aee876335622833df17713227ab71",
+      "identical_to_visually_inspected_render": true
+    }
+  ]
+}

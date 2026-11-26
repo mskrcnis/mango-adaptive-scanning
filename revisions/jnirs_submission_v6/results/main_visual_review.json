@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-11-26T09:23:43.672086+00:00",
+  "scope": "Individual visual inspection of the rendered final manuscript; no scientific reevaluation.",
+  "pdf_path": "revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Manuscript.pdf",
+  "pdf_sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
+  "pdf_page_count": 16,
+  "pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "pages_inspected_count": 16,
+  "render_dpi": 110,
+  "rendered_page_count": 16,
+  "status": "pass",
+  "defects": [],
+  "checks": {
+    "all_pages_visually_inspected": true,
+    "no_clipping_or_overlap": true,
+    "no_blank_pages": true,
+    "figures_and_tables_legible": true,
+    "references_and_equations_rendered": true,
+    "no_dummy_publisher_metadata": true
+  },
+  "final_bibliography_update": {
+    "changed_render_pages": [
+      16
+    ],
+    "identical_to_previously_inspected_render_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "page_16_reinspected_after_metadata_completion": true
+  },
+  "nonblocking_observations": [
+    "Author identity and author-dependent declaration fields remain explicit pending author input.",
+    "Page 14 contains declarations with intentional open space."
+  ],
+  "page_reviews": [
+    {
+      "pages": [
+        1
+      ],
+      "finding": "Title, abstract, seven keywords and correspondence area are within margins; author fields are explicit."
+    },
+    {
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "finding": "Related-work hierarchy, superscript citations and Table 1 are legible."
+    },
+    {
+      "pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "finding": "Tables 2-3, Figure 1, equations and methods fit within margins."
+    },
+    {
+      "pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "finding": "Figures 2-4 and Tables 4-6 are sharp and legible; line styles and confidence intervals are distinguishable."
+    },
+    {
+      "pages": [
+        13,
+        14
+      ],
+      "finding": "Conclusion and declarations render without clipping; pending fields remain intentional."
+    },
+    {
+      "pages": [
+        15,
+        16
+      ],
+      "finding": "All 30 numbered references render; long URLs wrap within margins. Page 16 checked again after adding the official conference page range."
+    }
+  ],
+  "render_sha256": {
+    "page-01.png": "421f5048766925413c16f5a4912736509411593aa4716ae0004649d3853a0d1b",
+    "page-02.png": "3d1a313a2c8ef0b208cb536f0e970904b90898fe557b0f649ad07eefa19c5055",
+    "page-03.png": "7e373ef6fda06b26088d7c319561b7445ca32daf62eecb600ed6cae07bd61044",
+    "page-04.png": "a8072205fe95fb258b2c7dc3ca53872487721e8c734ce6ebdbd09dcad0650d7c",
+    "page-05.png": "3643b2a9b18502985044e0b7b6a349a2d61c061a2e16ef78d37ac1899924dc19",
+    "page-06.png": "8c9a24bd95a1d8eef80450cd0a035e7f96ab5f786c6ea37aaccfce926a872c17",
+    "page-07.png": "b4023ae79cba9a3ebd33234e016f58c14b111084e7baff48d7b17ac582d05966",
+    "page-08.png": "adb9f3859459798b8f137f13fa8e19179ec085f5ed85516f23718a1feb5ad6bb",
+    "page-09.png": "3ad9b41742a6a357f067dfb8133625077e0d0b1cd5f05c054be89b451667bdff",
+    "page-10.png": "74f6632e3a35d05f26da6f474d7e1336aae43f9ab5239317716e7dff0ff303c9",
+    "page-11.png": "f1ccfe2d89fd432fca4514f43d7f5b628d869f532d33e6fd63a7db744e77aa7f",
+    "page-12.png": "fbc87ade76e790e4e3ae196eda83452f7a21a2880af0b4c6d7642823fce9a59c",
+    "page-13.png": "7ac3b6af6fd72655998f6c5aaab4219205c5dd788e12f1cec9ddf2672bd0a94f",
+    "page-14.png": "4e08586ff03828086a4f8dcecc71861ca9ec179388fb3ad1fb955047018835f3",
+    "page-15.png": "608dceab7e388d216f34c4059559536983db85e72f289cabfadf3409b137db17",
+    "page-16.png": "f423394b197a42de81a58ed92fb77cdeff30d749c205d089359e5d8c2a94eba1"
+  },
+  "limitations": [
+    "Visual approval covers the current PDF bytes only; edits to author fields require rebuilding and a renewed layout check."
+  ]
+}

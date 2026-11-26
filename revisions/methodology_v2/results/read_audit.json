@@ -1,0 +1,35 @@
+{
+  "allowed_data_paths_read": [
+    "data/catalog/catalog.json",
+    "data/catalog/profiles/LED720-03AU.csv",
+    "data/catalog/profiles/LED740-01AU.csv",
+    "data/catalog/profiles/LED760-03AU.csv",
+    "data/catalog/profiles/LED780-03AU.csv",
+    "data/catalog/profiles/LED800-01AU.csv",
+    "data/catalog/profiles/LED820-01AU.csv",
+    "data/catalog/profiles/LED850-03UP.csv",
+    "data/catalog/profiles/LED890-03AU.csv",
+    "data/catalog/profiles/LED910D-01.csv",
+    "data/catalog/profiles/LED940D-05.csv",
+    "data/processed/development.csv",
+    "data/processed/metadata.csv",
+    "results/checkpoints/model_season1_swap_mid_seed42.joblib",
+    "results/checkpoints/model_season1_swap_mid_seed7.joblib",
+    "results/checkpoints/model_season1_swap_mid_seed99.joblib",
+    "results/checkpoints/model_season1_uniform_seed42.joblib",
+    "results/checkpoints/model_season2_swap_mid_seed42.joblib",
+    "results/checkpoints/model_season2_swap_mid_seed7.joblib",
+    "results/checkpoints/model_season2_swap_mid_seed99.joblib",
+    "results/checkpoints/model_season2_uniform_seed42.joblib",
+    "results/checkpoints/model_season3_swap_mid_seed42.joblib",
+    "results/checkpoints/model_season3_swap_mid_seed7.joblib",
+    "results/checkpoints/model_season3_swap_mid_seed99.joblib",
+    "results/checkpoints/model_season3_uniform_seed42.joblib"
+  ],
+  "external_access_denied": true,
+  "seasons": [
+    1,
+    2,
+    3
+  ]
+}

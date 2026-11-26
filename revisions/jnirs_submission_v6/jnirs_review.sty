@@ -1,0 +1,38 @@
+% Author-side review presentation; the distributed sagej.cls is unchanged.
+% JNIRS does not prescribe a particular LaTeX page size or column count.
+\ProvidesPackage{jnirs_review}[2026/11/26 JNIRS author review presentation]
+\geometry{a4paper,textwidth=170mm,textheight=245mm,headsep=14pt,headheight=15pt}
+\raggedbottom
+\def\journalname{Journal of Near Infrared Spectroscopy}
+\makeatletter
+% Suppress the generic class's fictitious issue/year/DOI publication block.
+% A submitted manuscript has no assigned publisher bibliographic metadata.
+\def\@maketitle{%
+  \begingroup
+  \sagesf
+  \noindent{\small\journalname\hfill Original Research Article}\par
+  \vspace{14pt}
+  {\titlesize\bfseries\raggedright\@title\par}
+  \vspace{12pt}
+  {\large\bfseries\raggedright\@author\par}
+  \vspace{18pt}
+  \noindent\usebox\absbox\par
+  \vspace{10pt}
+  \noindent\@keywords\par
+  \endgroup
+  \vspace{18pt}
+}
+\def\ps@sagepage{%
+  \def\@oddhead{\small\sagesf Mango dry-matter prediction\hfill\thepage}
+  \let\@evenhead\@oddhead
+  \def\@oddfoot{\hfil\scriptsize Prepared for JNIRS using the Sage LaTeX class\hfil}
+  \let\@evenfoot\@oddfoot
+}
+\def\ps@title{%
+  \def\@oddhead{}
+  \let\@evenhead\@oddhead
+  \def\@oddfoot{\hfil\scriptsize Prepared for JNIRS using the Sage LaTeX class\hfil}
+  \let\@evenfoot\@oddfoot
+}
+\makeatother
+\AtBeginDocument{\pagestyle{sagepage}}

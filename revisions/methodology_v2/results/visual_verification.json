@@ -1,0 +1,14 @@
+{
+  "inspected": [
+    "figures/predictors_by_depth.png",
+    "figures/stopping_frontiers.png"
+  ],
+  "method": "Rendered PNG inspection by root; labels, legends, units and all three panels are legible; PDF counterparts generated from the same figures.",
+  "passed": true,
+  "sha256": {
+    "figures/predictors_by_depth.pdf": "1a387e3492d94f66fc00d651e3f827b8a4e2fa3ce93c59a8c39a6d9f06665f8d",
+    "figures/predictors_by_depth.png": "9b20bc707f7482823dac79132e2c69a8aeb69c22d25f85088c2f1a34529044e8",
+    "figures/stopping_frontiers.pdf": "5e21ce0c38a2b302968a264ab8ca150f3b2792ddd92a33fa82bb0145622e2280",
+    "figures/stopping_frontiers.png": "1dbd5454f6bd4d8b5948df4b0950eecaff04184e353db00363a62a723bb7c499"
+  }
+}

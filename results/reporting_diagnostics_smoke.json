@@ -1,0 +1,22 @@
+{
+  "attempts": [
+    {
+      "reason": "Initial expected agreement denominator omitted a pair exactly at the inclusive 0.50 pp boundary; generator correctly counted it.",
+      "status": "fixture_assertion_corrected"
+    },
+    {
+      "status": "passed"
+    }
+  ],
+  "checks": [
+    "all seven outputs generated",
+    "both policies paired for all selected examples",
+    "actual before-after useful gain independently reproduced",
+    "inclusive reference-agreement boundary and joint/conditional denominators verified",
+    "exact role/part membership exported",
+    "checksum corruption rejected",
+    "no model fitting called"
+  ],
+  "scope": "Entire diagnostic generator exercised on explicit synthetic arithmetic/software fixture in isolated temporary directory; no external outcomes read",
+  "status": "passed"
+}

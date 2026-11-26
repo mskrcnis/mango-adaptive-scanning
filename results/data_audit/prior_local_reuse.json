@@ -1,0 +1,63 @@
+{
+  "prior_project": "/home/mskr/Research/Agro/Pratyu",
+  "known_reuse": true,
+  "prior_scope": "Fixed point-wavelength budgets 4, 8, 16 and full 103; development seasons 1-3; external scoring seasons 4 and 5.",
+  "evidence": [
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/README.md",
+      "exists": true,
+      "bytes": 7516,
+      "contents_read_this_audit": true
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/config/experiment.json",
+      "exists": true,
+      "bytes": 1308,
+      "contents_read_this_audit": true
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/mango/data.py",
+      "exists": true,
+      "bytes": 20437,
+      "contents_read_this_audit": true
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/mango/evaluate.py",
+      "exists": true,
+      "bytes": 17010,
+      "contents_read_this_audit": true
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/outputs/full/model_lock.json",
+      "exists": true,
+      "bytes": 18194,
+      "contents_read_this_audit": false
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/outputs/full/prediction_freeze.json",
+      "exists": true,
+      "bytes": 267,
+      "contents_read_this_audit": false
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/outputs/full/predictions.csv",
+      "exists": true,
+      "bytes": 20555757,
+      "contents_read_this_audit": false
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/outputs/full/metrics.csv",
+      "exists": true,
+      "bytes": 13827,
+      "contents_read_this_audit": false
+    },
+    {
+      "path": "/home/mskr/Research/Agro/Pratyu/outputs/full/main_comparison.csv",
+      "exists": true,
+      "bytes": 4860,
+      "contents_read_this_audit": false
+    }
+  ],
+  "current_numeric_external_results_read": false,
+  "interpretation": "These seasons have been used in a prior local research project and are not previously untouched project-lineage test data. Current sealed evaluation prevents direct refitting on their outcomes in this run but cannot erase earlier benchmark exposure. Fresh-season physical validation is required for stronger independent claims."
+}

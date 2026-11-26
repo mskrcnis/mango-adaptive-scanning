@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "checked_at_utc": "2026-11-26T04:04:47.710995+00:00",
+  "scope": "JSON parse, header-only template/schema agreement and readiness boundary checks; no scientific validation",
+  "template_count": 13,
+  "templates": [
+    {
+      "file": "populations.csv",
+      "header_columns": 11,
+      "data_rows": 0,
+      "sha256": "8e960a2e4cb33e8b62bf7e8319b30cc760294a52b9b7dfed28b0093f3b7cff9a"
+    },
+    {
+      "file": "fruits.csv",
+      "header_columns": 10,
+      "data_rows": 0,
+      "sha256": "ece404bc6037f6f06f3dce6f2c72789e28f2c4f296da813994e6ef302c50c92d"
+    },
+    {
+      "file": "scans.csv",
+      "header_columns": 14,
+      "data_rows": 0,
+      "sha256": "798b36e6a4b1a07d76c621fb8f24194b7ecd876fe9eff7353340bbfcb9980783"
+    },
+    {
+      "file": "spectral_values.csv",
+      "header_columns": 5,
+      "data_rows": 0,
+      "sha256": "47d5fc75da2cb0b87037d242ea1261df5e09223cf723dea9822fb32e0bfc1668"
+    },
+    {
+      "file": "assay_aliquots_restricted.csv",
+      "header_columns": 11,
+      "data_rows": 0,
+      "sha256": "d104a93ff81cecc17dc31bbd1dbda93f9bde1d324e8d3f749d11e2effe2a959e"
+    },
+    {
+      "file": "assay_references_restricted.csv",
+      "header_columns": 8,
+      "data_rows": 0,
+      "sha256": "a76ced218d55a63d59a61eea8a88375faf55f61b801a424b416180ebe88be2e7"
+    },
+    {
+      "file": "assay_linkage_restricted.csv",
+      "header_columns": 7,
+      "data_rows": 0,
+      "sha256": "441cac09488ef62333881124095093fefa11b94654a5833db605b509af6832bf"
+    },
+    {
+      "file": "scan_predictions.csv",
+      "header_columns": 9,
+      "data_rows": 0,
+      "sha256": "9b6d74c43bab1e05172e4b62f76b1c6cf9fa071280080a8d6acbe2ce75a7f2c6"
+    },
+    {
+      "file": "fruit_predictions.csv",
+      "header_columns": 10,
+      "data_rows": 0,
+      "sha256": "a8cdc684a66e4cdef1c1fc6a605d029fe70b7dd315dff2571241b8200f3e0545"
+    },
+    {
+      "file": "qc_dispositions.csv",
+      "header_columns": 9,
+      "data_rows": 0,
+      "sha256": "5ebb63d2bf00d3eba99a44ffb318b6345bbd25448b85eba8350810952b9062ba"
+    },
+    {
+      "file": "freeze_manifest.csv",
+      "header_columns": 9,
+      "data_rows": 0,
+      "sha256": "45a3755e41b9b3cd30e522bc890035b31e2bafce62cfd77e2e60af88bf6798d9"
+    },
+    {
+      "file": "independence_checks.csv",
+      "header_columns": 10,
+      "data_rows": 0,
+      "sha256": "8fc29fcc81482d594323bb22217f4accbf27b31734a4857263bf3a099b68561a"
+    },
+    {
+      "file": "harvest_observations_optional.csv",
+      "header_columns": 13,
+      "data_rows": 0,
+      "sha256": "a9f9783396565dab1e1b89d2d8b789efaa9a179b7a1efdc1ed9ed2e534370c1f"
+    }
+  ],
+  "new_data_rows": 0,
+  "model_fit_performed": false,
+  "new_outcomes_loaded": false,
+  "readiness_interval_gate_checked": {
+    "two_or_fewer_clusters_intervals_prohibited": true,
+    "three_clusters_alone_insufficient": true,
+    "preregistered_precision_plan_required": true
+  }
+}

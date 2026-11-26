@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "checks": {
+    "all_30_sources_cited_and_rendered_in_first_citation_order": true,
+    "bibliography_keys_and_dois_unique": true,
+    "no_uncited_reference_padding": true,
+    "all_supplement_citations_resolved": true,
+    "sage_class_options": true,
+    "unstructured_abstract": true,
+    "at_least_five_keywords": true,
+    "all_journal_declaration_headings": true,
+    "ai_assistance_disclosed_without_invented_human_review": true,
+    "distributed_class_and_style_unchanged": true,
+    "local_bst_only_adds_conference_year": true,
+    "main_clean_latex_log": true,
+    "main_clean_bibtex_log": true,
+    "main_no_blank_pages": true,
+    "main_no_unresolved_citations_or_publisher_placeholders": true,
+    "main_delivery_matches_compiled_pdf": true,
+    "main_all_pages_visually_reviewed_at_current_hash": true,
+    "supplement_clean_latex_log": true,
+    "supplement_clean_bibtex_log": true,
+    "supplement_no_blank_pages": true,
+    "supplement_no_unresolved_citations_or_publisher_placeholders": true,
+    "supplement_delivery_matches_compiled_pdf": true,
+    "supplement_all_pages_visually_reviewed_at_current_hash": true,
+    "independent_content_review_passed": true,
+    "independent_content_review_core_hashes_current": true,
+    "main_all_scientific_numeric_tokens_preserved": true,
+    "abstract_all_numeric_tokens_preserved": true,
+    "supplement_all_scientific_numeric_tokens_preserved": true,
+    "all_generated_table_sources_unchanged": true,
+    "all_v5_files_preserved": true
+  },
+  "details": {
+    "documents": {
+      "main": {
+        "pages": 16,
+        "sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
+        "size_bytes": 292125
+      },
+      "supplement": {
+        "pages": 52,
+        "sha256": "026df52037203f7ac53a366e52a13d449271db8bc796ebbb5d0af8280aeb1913",
+        "size_bytes": 256534
+      }
+    },
+    "abstract_words_whitespace_count": 256,
+    "main_figures": 4,
+    "main_tables": 6,
+    "keywords": 7,
+    "references": 30,
+    "v5_files_checked": 364,
+    "altered_v5_files": [],
+    "main_scientific_numeric_tokens": 255,
+    "supplement_scientific_numeric_tokens": 8662,
+    "unchanged_table_fragments": 9
+  },
+  "scope": "Formatting, source preservation and document integrity. Existing numerical audits are inherited, not rerun model evaluations.",
+  "author_inputs_pending": true,
+  "submission_performed": false
+}

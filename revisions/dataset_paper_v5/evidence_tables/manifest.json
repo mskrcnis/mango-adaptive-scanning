@@ -1,0 +1,90 @@
+{
+  "evidence_tables/original/external_delta_sensitivity.csv": {
+    "sha256": "92c9167bf2d8d0befc4735570532e984b7321bdcd9a7201df0469d01a7948cdf",
+    "source": "results/external_delta_sensitivity.csv"
+  },
+  "evidence_tables/original/external_group_metrics.csv": {
+    "sha256": "486cc3c95601d8b91efe6f4f8a58916b32ff5c5098e0a25c7aa0f31482d1a5ec",
+    "source": "results/external_group_metrics.csv"
+  },
+  "evidence_tables/original/external_led_usage.csv": {
+    "sha256": "3d000345dfe48a31cb71ce4c484206859c916ba733e3842cc2d4cebbf1421a53",
+    "source": "results/external_led_usage.csv"
+  },
+  "evidence_tables/original/external_metrics.csv": {
+    "sha256": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5",
+    "source": "results/external_metrics.csv"
+  },
+  "evidence_tables/original/external_one_step_diagnostics.csv": {
+    "sha256": "ba3751ddb45b32f3b8ad49abff639d3d837c036668646c80f158714341989f6a",
+    "source": "results/external_one_step_diagnostics.csv"
+  },
+  "evidence_tables/original/frozen_curves.csv": {
+    "sha256": "b918d4401deacbbfa3fcd2559c1898b1c540d3ddbb54421225c3541db9e924ba",
+    "source": "results/frozen_curves.csv"
+  },
+  "evidence_tables/original/paired_examples.csv": {
+    "sha256": "1d6a229b2b713b78b9ea2bd1e1f78aa828d07d56c20dcf47ccac6fcda42e30a4",
+    "source": "results/paired_examples.csv"
+  },
+  "evidence_tables/original/reference_agreement_errors.csv": {
+    "sha256": "04244da9de69169682f6e8195849058e0674395fc78375d6a24e01f01887527c",
+    "source": "results/reference_agreement_errors.csv"
+  },
+  "evidence_tables/original/selected_bank_parts.csv": {
+    "sha256": "5a0d77fcc9d745b33832b8c6f175834b5c93333ffee79c6c0352a700df62bd7f",
+    "source": "results/selected_bank_parts.csv"
+  },
+  "evidence_tables/v2/endpoint_summary.csv": {
+    "sha256": "1b52471fc98e3601b5a9bd285e65b50c9a929b328b898397aaf85b7611611486",
+    "source": "revisions/methodology_v2/results/endpoint_summary.csv"
+  },
+  "evidence_tables/v2/paired_comparisons.csv": {
+    "sha256": "fdcc3eb55d0f0ab5ef1725e4f47b77bc00809d52ee3b6678cfd375524bcba123",
+    "source": "revisions/methodology_v2/results/paired_comparisons.csv"
+  },
+  "evidence_tables/v2/policy_metrics.csv": {
+    "sha256": "f66fe5501bb060794408a287d26b57888356ad91e22bb2c9834b9fc269bdc0f0",
+    "source": "revisions/methodology_v2/results/policy_metrics.csv"
+  },
+  "evidence_tables/v2/predictor_metrics.csv": {
+    "sha256": "06b8a810abe9f9f8c99ef1b115d1844c98aaa101013aea123e98b7244fb7e74f",
+    "source": "revisions/methodology_v2/results/predictor_metrics.csv"
+  },
+  "evidence_tables/v2/threshold_curves.csv": {
+    "sha256": "f672cee8dd2a59d158e2c7f04856d41a1f6f1837e2f174709e520d6d874040c7",
+    "source": "revisions/methodology_v2/results/threshold_curves.csv"
+  },
+  "evidence_tables/v3/comparisons.csv": {
+    "sha256": "0eaa7cb7dc6526935e5329f30f0af44bda629255f5df8de9678ea1a3b42f39a3",
+    "source": "revisions/fixed_design_v3/results/comparisons.csv"
+  },
+  "evidence_tables/v3/design_composition.csv": {
+    "sha256": "692a0e01aa571b4677e7e5ddd9d07dbde80eb3fead3ad9f27ce1a320a47864dd",
+    "source": "revisions/fixed_design_v3/results/design_composition.csv"
+  },
+  "evidence_tables/v3/design_orders.csv": {
+    "sha256": "0df07b0902dbb06a34b16232d6e5f00591947127e4d0c3483a425208fc20d1f9",
+    "source": "revisions/fixed_design_v3/results/design_orders.csv"
+  },
+  "evidence_tables/v3/design_subsets.csv": {
+    "sha256": "37c6da5ab166a37effa6ecc25e34b0d627acff9266341bd11f7f962d644b4210",
+    "source": "revisions/fixed_design_v3/results/design_subsets.csv"
+  },
+  "evidence_tables/v3/metrics.csv": {
+    "sha256": "b7fb6d2805e7169913bcdefdf5afcca05c5fc4548c705be120d4d32739cd6b41",
+    "source": "revisions/fixed_design_v3/results/metrics.csv"
+  },
+  "evidence_tables/v3/selected_designs.csv": {
+    "sha256": "54479aaca26d2d91d0a47e81051570f623c2e794a92a3ab937e11069a36e49ba",
+    "source": "revisions/fixed_design_v3/results/selected_designs.csv"
+  },
+  "evidence_tables/v3/selection_stability.csv": {
+    "sha256": "4476f62806503b480de69b58cc005ee678b7f05ca42dad203d77475e8384a023",
+    "source": "revisions/fixed_design_v3/results/selection_stability.csv"
+  },
+  "evidence_tables/v3/threshold_curves.csv": {
+    "sha256": "785391d608897c37d14436cdf0d6967726303e6d4ae14eb08e04921e03337351",
+    "source": "revisions/fixed_design_v3/results/threshold_curves.csv"
+  }
+}

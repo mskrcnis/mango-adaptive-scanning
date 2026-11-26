@@ -1,0 +1,26 @@
+{
+  "retrieved_date": "2026-11-26",
+  "distribution": "Posit rticles public source mirror of Sage class; NOT a successful download of current official ZIP",
+  "source_repository": "https://github.com/rstudio/rticles",
+  "files": {
+    "sagej.cls": {
+      "url": "https://raw.githubusercontent.com/rstudio/rticles/master/inst/rmarkdown/templates/sage/skeleton/sagej.cls",
+      "sha256": "4e736e371937216f5d1ef4470c2357c844755e0ebbade8888f0b94b8a17c9793",
+      "size": 15374,
+      "pinned_url": "https://raw.githubusercontent.com/rstudio/rticles/accdfa39225570a8ad9b786fbb3077060d1e12a5/inst/rmarkdown/templates/sage/skeleton/sagej.cls"
+    },
+    "sagev.bst": {
+      "url": "https://raw.githubusercontent.com/rstudio/rticles/master/inst/rmarkdown/templates/sage/skeleton/sagev.bst",
+      "sha256": "113da1cae672949bb2e496e095507e3897a7e20206ac7186e0870b9ee63abfaa",
+      "size": 27111,
+      "pinned_url": "https://raw.githubusercontent.com/rstudio/rticles/accdfa39225570a8ad9b786fbb3077060d1e12a5/inst/rmarkdown/templates/sage/skeleton/sagev.bst"
+    }
+  },
+  "official_download_attempt": {
+    "url": "https://www.sagepub.com/docs/default-source/rp-pages/info-for-authors/sage-latex-template.zip?sfvrsn=54789065_1",
+    "status": 403,
+    "error": "Sage request could not be verified; blocked public download"
+  },
+  "class_last_commit": "3340e40084f4bb7c9a336e3943afc90bb7741d7a",
+  "repository_revision": "accdfa39225570a8ad9b786fbb3077060d1e12a5"
+}

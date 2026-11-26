@@ -1,0 +1,38 @@
+{
+  "external_evaluation": false,
+  "files": {
+    "environment.json": "3e218b88757a424a1dec9b7f22cd933488f32bb742916d19044d526733dffc49",
+    "feature_schema.json": "546bb559c20345fd203cf60280cebfd7d45e8a858ef57f66f86943c756c745dc",
+    "inference.py": "92a16e7d9fd0be1d5ed2869a420b31a6cc39b5e5437e19d986cc76e0b97cef45",
+    "model_card.md": "f012276a7175b726a1c3564aa842db1ab0eeec659b3570073f4a3795bd5db3e6",
+    "models.joblib": "70f7e059f439c0f554ea652da0aece87896cf97c1d2c076690a3c536afddd3f7",
+    "portable_models.json": "8b73c3644e90b9a5d5dd8d7197c98bb25b19070f1c29e83ca10eac4ca11027e7",
+    "response_weights.json": "55b710f26ff649280142a275619e4747f1bbaebb8219fcc022e91a8889946b07",
+    "selection_protocol.md": "54b22f50341150003dc2635e7e070ba5f55182a2b7ae3b484728e3b16663f3a2",
+    "selection_spec.json": "2bee7a50e938a3e1e23c72a49bb8d759f0ae81978e9d92e583fbf762049295e8",
+    "training_rows.csv": "ca54784f4584b07fece2b60e526b99544bf68fea3f9ff6459f2f76407531eb22"
+  },
+  "harvest_recommendations_enabled": false,
+  "model_checkpoint_sha256": "70f7e059f439c0f554ea652da0aece87896cf97c1d2c076690a3c536afddd3f7",
+  "registration_dependency": "331d3fd399f1fa79c6cea49884da53b8d31e514d54b588f92f63c6dbb7209ad4",
+  "schema_version": 1,
+  "scientific_status": "research candidate frozen; independent and physical validation not performed",
+  "selected_centers_nm": [
+    720,
+    760,
+    820,
+    890,
+    910,
+    940
+  ],
+  "selected_indices": [
+    0,
+    1,
+    4,
+    5,
+    6,
+    7
+  ],
+  "selection_checkpoint_sha256": "0e6b37c19eb4732e8713c3094dfe4aa7c1ada641b28753bfcefa47fcff5f1504",
+  "status": "frozen"
+}

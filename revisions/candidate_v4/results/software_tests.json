@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "tests_passed": 22,
+  "seconds": 1.51,
+  "exit_code": 0,
+  "command": ".venv/bin/python -m pytest -q revisions/candidate_v4/test_candidate.py",
+  "output": "22 passed in 1.51s",
+  "test_source_sha256": "9e6d5fd21efbe6f34827863d369493a11e57b9c64f3831283dfc02a088fa8815"
+}

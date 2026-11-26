@@ -1,0 +1,140 @@
+{
+  "commands": [
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_main_0.log"
+    },
+    {
+      "command": [
+        "bibtex",
+        "main"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_main_1.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_main_2.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_main_3.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_main_4.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "supplement.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_supplement_0.log"
+    },
+    {
+      "command": [
+        "bibtex",
+        "supplement"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_supplement_1.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "supplement.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_supplement_2.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "supplement.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_supplement_3.log"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "supplement.tex"
+      ],
+      "exit_code": 0,
+      "log": "results/compile_supplement_4.log"
+    }
+  ],
+  "inputs_sha256": {
+    "figures/controlled_contrasts.pdf": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
+    "figures/fixed_budget_results.pdf": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e",
+    "figures/original/calibration.pdf": "0622a270a0e47f49799ce4344cd49731ba882bacefb6ecb217a511dd32fda853",
+    "figures/original/error_pulses.pdf": "2f00946c33745f4436bed771994838fd37b618f0b38b109a5e77782da256e1af",
+    "figures/original/example_trace.pdf": "c26e8990645f91b2ebdacba1e8ea5144449b87aebcd3eb0fe4e3d445f1e4776f",
+    "figures/original/led_profiles.pdf": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382",
+    "figures/original/missed_and_bank_losses.pdf": "21b412b8198cf3e597fed6552d69d43183beb2f78dba58946c27eed7fe45e1ac",
+    "figures/original/signed_gains.pdf": "7f0b9156756bab19228cd9b26d3bddae704d64bfe291fcb5e6c2b97cbfc773a4",
+    "figures/original/study_design.pdf": "d780aaff53bce08d4d9612bb14f7044e9153b9f41528bc71025904ed2c2e4549",
+    "figures/v2/predictors_by_depth.pdf": "1a387e3492d94f66fc00d651e3f827b8a4e2fa3ce93c59a8c39a6d9f06665f8d",
+    "figures/v2/stopping_frontiers.pdf": "5e21ce0c38a2b302968a264ab8ca150f3b2792ddd92a33fa82bb0145622e2280",
+    "figures/v3/designed_stopping_frontiers.pdf": "acd061c7a29fe8ff7f1295f6158353878dba6c5584941faf7daba748b1a23325",
+    "figures/v3/fixed_design_curves.pdf": "665b32c772a5f15b5b79f9405e0c17811e95946274c56d1cc6ad5e38a9cead24",
+    "manuscript/compact_stopping.tex": "132084a929acf2302af760abe8002d41348d11864274b7eaeaa8d822aa7ee856",
+    "manuscript/generated_diagnostics.tex": "399b9705636ad679cf63272f28735dfe81a01e20446e7a4e0eb27fc7a38f4bde",
+    "manuscript/generated_fixed.tex": "da2f3dfbdd5b45b1acaf8f247eea6ce2b3db1e3a0a92bfee5d847b6f38f02aaa",
+    "manuscript/generated_primary.tex": "1155c254d6f1adf8f8113ec09d49887501b6f244c688931b5f721ebef15089d0",
+    "manuscript/generated_stopping.tex": "a8c9d535ae435192fa7c1c9c60e4cc7669fc47422d64dcbaf5d81958955ceab2",
+    "manuscript/main.tex": "e9a2363365e75ff392a279854e613e5bd56afaa64d1c85b6a88245e3a586f6e0",
+    "manuscript/original_controls_table.tex": "aa1ac80355016da04e902abb99b1a13261e59fb77df18b3a2b2707e765414983",
+    "manuscript/original_mechanism_table.tex": "393f9716d061b80a046569f524eff6e47d5508b9c85c3d4c4d7e28b058b4fe63",
+    "manuscript/original_primary_table.tex": "63c8a15581ea1d18f175763dd1c915b5df8869b241fbbcc7301ec51ad6d92e67",
+    "manuscript/original_uncertainty_table.tex": "58dd8d58a494a12d9c5f3c1b83782e3268d2c1a5914725c107882bf4b5949dfd",
+    "manuscript/references.bib": "6a5894f81787f368538c5c368484f49fa3dae13b4e44249eb61626062c9d3244",
+    "manuscript/supplement.tex": "69d8bb1b6d23f65256d084b7a12225b8bf17bb2742d11cc8af234b712cda0a17"
+  },
+  "outputs_sha256": {
+    "output/pdf/Mango_Dataset_Study.pdf": "cf2c5c2d2e83e96edc7a861cb442b09d8e89216f42207478dd8971288b37f457",
+    "output/pdf/Mango_Dataset_Supplement.pdf": "6799925fb69b8156b67d63a2c482ac826b41007c072692ffee23a29114bf7189"
+  },
+  "passed": true
+}

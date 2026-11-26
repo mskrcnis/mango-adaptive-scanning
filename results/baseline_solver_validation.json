@@ -1,0 +1,110 @@
+{
+  "rows": [
+    {
+      "cv_warning_count": 0,
+      "family": "rich",
+      "fold": 1,
+      "max_cv_iterations": 170,
+      "max_cv_kkt": 2.1101875672183135e-13,
+      "max_dual_gap": 4.598132985478287e-11,
+      "n_fit": 4003,
+      "refit_dual_gap": 4.608502468528286e-11,
+      "refit_kkt": 1.52664868051898e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.5021391808986664
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "physical_uniform",
+      "fold": 1,
+      "max_cv_iterations": 20,
+      "max_cv_kkt": 1.204931621601353e-12,
+      "max_dual_gap": 1.0077527146101772e-09,
+      "n_fit": 4003,
+      "refit_dual_gap": 3.185645081060784e-10,
+      "refit_kkt": 4.865093110274429e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.09459812799468637
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "rich",
+      "fold": 2,
+      "max_cv_iterations": 177,
+      "max_cv_kkt": 8.302826794528203e-08,
+      "max_dual_gap": 1.1244399144294537e-05,
+      "n_fit": 5656,
+      "refit_dual_gap": 3.5764835537577255e-11,
+      "refit_kkt": 2.402451881097084e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.47286032140254974
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "physical_uniform",
+      "fold": 2,
+      "max_cv_iterations": 14,
+      "max_cv_kkt": 1.373316743527933e-12,
+      "max_dual_gap": 8.653363581245799e-10,
+      "n_fit": 5656,
+      "refit_dual_gap": 5.07940689509212e-10,
+      "refit_kkt": 4.537970070246991e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.08312066225335002
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "rich",
+      "fold": 3,
+      "max_cv_iterations": 137,
+      "max_cv_kkt": 2.1622886315665613e-13,
+      "max_dual_gap": 7.816081115663565e-11,
+      "n_fit": 3054,
+      "refit_dual_gap": 1.6055040630291728e-10,
+      "refit_kkt": 3.370286092308633e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.36202742997556925
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "physical_uniform",
+      "fold": 3,
+      "max_cv_iterations": 20,
+      "max_cv_kkt": 9.233176967134507e-13,
+      "max_dual_gap": 2.189264325380691e-10,
+      "n_fit": 3054,
+      "refit_dual_gap": 1.0701162178605728e-10,
+      "refit_kkt": 1.9184236447686298e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.0733256540261209
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "rich",
+      "fold": null,
+      "max_cv_iterations": 158,
+      "max_cv_kkt": 3.0909297473943886e-13,
+      "max_dual_gap": 1.4198764386463836e-10,
+      "n_fit": 6826,
+      "refit_dual_gap": 1.298983698383438e-10,
+      "refit_kkt": 3.67091854960519e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.5431473790667951
+    },
+    {
+      "cv_warning_count": 0,
+      "family": "physical_uniform",
+      "fold": null,
+      "max_cv_iterations": 20,
+      "max_cv_kkt": 1.4104158243882434e-12,
+      "max_dual_gap": 7.115041888994256e-10,
+      "n_fit": 6826,
+      "refit_dual_gap": 1.7632084681196147e-10,
+      "refit_kkt": 7.082702615590977e-13,
+      "refit_warning_count": 0,
+      "seconds": 0.09111344581469893
+    }
+  ],
+  "scope": "development only, all actual fitting partitions; full grid and uniform physical bank",
+  "status": "passed"
+}

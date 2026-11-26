@@ -1,0 +1,20 @@
+DRAFT FOR AUTHOR COMPLETION - NOT SENT
+
+Dear Editor,
+
+Please consider "Adaptive versus fixed spectral acquisition for mango dry-matter prediction: a seasonal benchmark and controlled diagnosis" as an Original Research Article in the Journal of Near Infrared Spectroscopy.
+
+The manuscript examines spectral acquisition and chemometric prediction using the public Mendeley version-3 mango dataset. Its contribution is a controlled evaluation of the partial predictor, full-bank reference, acquisition order and stopping objective. The original adaptive comparison is qualified by unequal acquisition budgets; subsequent exploratory analyses diagnose these effects and identify improvements from fixed-channel selection. The negative adaptive findings and unsuccessful sensitivities are reported alongside the favorable fixed-design comparisons.
+
+The work fits the journal's coverage of near-infrared spectroscopy, agricultural applications and chemometric data handling. All sparse channels are simulated from recorded spectra under documented response assumptions. The paper makes no claim of measured scanner energy savings, a universally validated six-channel device or an established harvest recommendation.
+
+OpenAI Codex assisted research-code implementation/debugging, execution and reporting, literature-source checking, manuscript drafting/revision and LaTeX preparation. The Acknowledgements disclose these uses. [Authors: describe the human verification actually completed and resolve eligibility under Sage's current AI policy before submission. Do not treat disclosure as proof of compliance.]
+
+[Authors: confirm that the manuscript is original, not simultaneously under consideration elsewhere, that all eligible authors approve submission, that rights/permissions are in order, and disclose any preprint or previous dissemination.]
+
+The accompanying materials comprise the manuscript PDF, editable LaTeX and bibliography sources, separate vector figures, and the supplementary methods/results PDF with its description.
+
+Sincerely,
+[Corresponding author]
+[Affiliation and postal address]
+[Email]

@@ -1,0 +1,6 @@
+{
+  "status": "unavailable",
+  "attempted": "cua.createBrowserTab(\"iab\", \"http://127.0.0.1:8765\", {visible:true})",
+  "reason": "The browser access host is unavailable",
+  "scope": "Live browser screenshot inspection unavailable; functional HTTP replay/manual/export checks are separately recorded in app_test.json."
+}

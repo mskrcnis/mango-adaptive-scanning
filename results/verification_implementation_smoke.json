@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "independent RMSEP/MAE/bias/pulse recomputation",
+    "incorrect saved cell rejected",
+    "module compiled/imported"
+  ],
+  "no_external_outcomes_opened": true,
+  "scope": "Synthetic arithmetic/software fixture only; no external outcomes or fitted research models accessed",
+  "status": "passed"
+}

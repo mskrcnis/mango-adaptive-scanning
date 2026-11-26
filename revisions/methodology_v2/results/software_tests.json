@@ -1,0 +1,8 @@
+{
+  "command": ".venv/bin/python -m pytest -q revisions/methodology_v2/test_revision.py",
+  "evidence": "Executed by root after final test additions; tool returned exit code 0 and 22 passed.",
+  "observed_duration_seconds": 2.81,
+  "passed": true,
+  "test_source_sha256": "94a4842b1bc81746e0fb928578b17a79c13184147fe49eb96b41a8bf8883c1b1",
+  "tests": 22
+}

@@ -1,0 +1,268 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{saranwong2004}
+Saranwong S, Sornsrivichai J and Kawano S.
+\newblock Prediction of ripe-stage eating quality of mango fruit from its
+  harvest quality measured nondestructively by near infrared spectroscopy.
+\newblock \emph{Postharvest Biol Technol} 2004; 31(2): 137--145.
+\newblock \doi{10.1016/j.postharvbio.2003.08.007}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.postharvbio.2003.08.007}.
+
+\bibitem{subedi2007}
+Subedi PP, Walsh KB and Owens G.
+\newblock Prediction of mango eating quality at harvest using short-wave near
+  infrared spectrometry.
+\newblock \emph{Postharvest Biol Technol} 2007; 43(3): 326--334.
+\newblock \doi{10.1016/j.postharvbio.2006.09.012}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.postharvbio.2006.09.012}.
+
+\bibitem{wendel2018}
+Wendel A, Underwood J and Walsh K.
+\newblock Maturity estimation of mangoes using hyperspectral imaging from a
+  ground based mobile platform.
+\newblock \emph{Comput Electron Agric} 2018; 155: 298--313.
+\newblock \doi{10.1016/j.compag.2018.10.021}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.compag.2018.10.021}.
+
+\bibitem{anderson2020}
+Anderson NT, Walsh KB, Subedi PP et~al.
+\newblock Achieving robustness across season, location and cultivar for a
+  {NIRS} model for intact mango fruit dry matter content.
+\newblock \emph{Postharvest Biol Technol} 2020; 168: 111202.
+\newblock \doi{10.1016/j.postharvbio.2020.111202}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.postharvbio.2020.111202}.
+
+\bibitem{anderson2021local}
+Anderson NT, Walsh KB, Flynn JR et~al.
+\newblock Achieving robustness across season, location and cultivar for a
+  {NIRS} model for intact mango fruit dry matter content. {II}. local {PLS} and
+  nonlinear models.
+\newblock \emph{Postharvest Biol Technol} 2021; 171: 111358.
+\newblock \doi{10.1016/j.postharvbio.2020.111358}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.postharvbio.2020.111358}.
+
+\bibitem{andersondata2024}
+Anderson N, Walsh K, Subedi P et~al.
+\newblock Mango {DMC} and spectra anderson et al. 2020.
+\newblock Mendeley Data, version 3 [dataset], 2024.
+\newblock \doi{10.17632/46htwnp833.3}.
+\newblock \urlprefix\url{https://data.mendeley.com/datasets/46htwnp833/3}.
+\newblock Version 3, published 6 February 2024.
+
+\bibitem{sun2020temperature}
+Sun X, Subedi P and Walsh KB.
+\newblock Achieving robustness to temperature change of a {NIRS-PLSR} model for
+  intact mango fruit dry matter content.
+\newblock \emph{Postharvest Biol Technol} 2020; 162: 111117.
+\newblock \doi{10.1016/j.postharvbio.2019.111117}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.postharvbio.2019.111117}.
+
+\bibitem{mishra2021transfer}
+Mishra P and Passos D.
+\newblock Deep chemometrics: Validation and transfer of a global deep
+  near-infrared fruit model to use it on a new portable instrument.
+\newblock \emph{J Chemom} 2021; 35(10): e3367.
+\newblock \doi{10.1002/cem.3367}.
+\newblock \urlprefix\url{https://doi.org/10.1002/cem.3367}.
+
+\bibitem{mishra2023}
+Mishra P and Woltering E.
+\newblock Semi-supervised robust models for predicting dry matter in mango
+  fruit with near-infrared spectroscopy.
+\newblock \emph{Postharvest Biol Technol} 2023; 200: 112335.
+\newblock \doi{10.1016/j.postharvbio.2023.112335}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.postharvbio.2023.112335}.
+
+\bibitem{mishra2021preprocessing}
+Mishra P, Rutledge DN, Roger JM et~al.
+\newblock Chemometric pre-processing can negatively affect the performance of
+  near-infrared spectroscopy models for fruit quality prediction.
+\newblock \emph{Talanta} 2021; 229: 122303.
+\newblock \doi{10.1016/j.talanta.2021.122303}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.talanta.2021.122303}.
+
+\bibitem{mishra2021synergy}
+Mishra P and Passos D.
+\newblock A synergistic use of chemometrics and deep learning improved the
+  predictive performance of near-infrared spectroscopy models for dry matter
+  prediction in mango fruit.
+\newblock \emph{Chemometr Intell Lab Syst} 2021; 212: 104287.
+\newblock \doi{10.1016/j.chemolab.2021.104287}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.chemolab.2021.104287}.
+
+\bibitem{walsh2024}
+Walsh J, Neupane A and Li M.
+\newblock Evaluation of {1D} convolutional neural network in estimation of
+  mango dry matter content.
+\newblock \emph{Spectrochim Acta A Mol Biomol Spectrosc} 2024; 311: 124003.
+\newblock \doi{10.1016/j.saa.2024.124003}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.saa.2024.124003}.
+
+\bibitem{walshthesis2024}
+Walsh JP.
+\newblock \emph{Deep Learning in Estimation of Fruit Attributes Using Near
+  Infrared Spectroscopy}.
+\newblock Master of research thesis, Central Queensland University, 2024.
+\newblock \doi{10.25946/27208401}.
+\newblock
+  \urlprefix\url{https://acquire.cqu.edu.au/articles/thesis/Deep_Learning_in_Estimation_of_Fruit_Attributes_Using_Near_Infrared_Spectroscopy/27208401}.
+\newblock Chapter 3 supplies author methods context for the adapted CNN
+  reference.
+
+\bibitem{yang2025}
+Yang D and Hu J.
+\newblock Enhancing the robustness of the {1-D CNN} model through {NIRS} data
+  augmentation based on sparse autoencoder and {CARS} feature selection for
+  mango {DMC} determination.
+\newblock \emph{J Food Compos Anal} 2025; 148: 108380.
+\newblock \doi{10.1016/j.jfca.2025.108380}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.jfca.2025.108380}.
+
+\bibitem{yang2026}
+Yang Y, Zhang Y, Yu L et~al.
+\newblock Pre-harvest and post-harvest plant-based food quality evaluation
+  based on near-infrared spectroscopy coupled with multiscale deep ensemble
+  learning.
+\newblock \emph{Food Chem} 2026; 508: 148344.
+\newblock \doi{10.1016/j.foodchem.2026.148344}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.foodchem.2026.148344}.
+
+\bibitem{ma2026}
+Ma Qx, Kan Hx, Chen R et~al.
+\newblock From memorization to generalization: {L1-BO-SVR} for robust {Vis-NIR}
+  prediction of mango dry matter across diverse cultivars, origins, and harvest
+  years.
+\newblock \emph{J Food Sci} 2026; 91(11): e71616.
+\newblock \doi{10.1111/1750-3841.71616}.
+\newblock \urlprefix\url{https://doi.org/10.1111/1750-3841.71616}.
+
+\bibitem{dirks2022}
+Dirks M and Poole D.
+\newblock Automatic neural network hyperparameter optimization for
+  extrapolation: Lessons learned from visible and near-infrared spectroscopy of
+  mango fruit.
+\newblock \emph{Chemometr Intell Lab Syst} 2022; 231: 104685.
+\newblock \doi{10.1016/j.chemolab.2022.104685}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.chemolab.2022.104685}.
+
+\bibitem{norgaard2000ipls}
+N{\o}rgaard L, Saudland A, Wagner J et~al.
+\newblock Interval partial least-squares regression ({iPLS}): A comparative
+  chemometric study with an example from near-infrared spectroscopy.
+\newblock \emph{Appl Spectrosc} 2000; 54(3): 413--419.
+\newblock \doi{10.1366/0003702001949500}.
+\newblock
+  \urlprefix\url{https://journals.sagepub.com/doi/10.1366/0003702001949500}.
+
+\bibitem{araujo2001spa}
+Ara\'{u}jo MCU, Saldanha TCB, Galv\~{a}o RKH et~al.
+\newblock The successive projections algorithm for variable selection in
+  spectroscopic multicomponent analysis.
+\newblock \emph{Chemometr Intell Lab Syst} 2001; 57(2): 65--73.
+\newblock \doi{10.1016/S0169-7439(01)00119-8}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0169743901001198}.
+
+\bibitem{li2009cars}
+Li H, Liang Y, Xu Q et~al.
+\newblock Key wavelengths screening using competitive adaptive reweighted
+  sampling method for multivariate calibration.
+\newblock \emph{Anal Chim Acta} 2009; 648(1): 77--84.
+\newblock \doi{10.1016/j.aca.2009.06.046}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0003267009008332}.
+
+\bibitem{gutierrez2019}
+Guti\'{e}rrez S, Wendel A and Underwood J.
+\newblock Spectral filter design based on in-field hyperspectral imaging and
+  machine learning for mango ripeness estimation.
+\newblock \emph{Comput Electron Agric} 2019; 164: 104890.
+\newblock \doi{10.1016/j.compag.2019.104890}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.compag.2019.104890}.
+
+\bibitem{huang2015}
+Huang J and Gutierrez-Osuna R.
+\newblock Active wavelength selection for mixture analysis with tunable
+  infrared detectors.
+\newblock \emph{Sens Actuators B Chem} 2015; 208: 245--257.
+\newblock \doi{10.1016/j.snb.2014.10.094}.
+\newblock \urlprefix\url{https://doi.org/10.1016/j.snb.2014.10.094}.
+
+\bibitem{shim2018}
+Shim H, Hwang SJ and Yang E.
+\newblock Joint active feature acquisition and classification with
+  variable-size set encoding.
+\newblock In Bengio S, Wallach H, Larochelle H et~al. (eds.) \emph{Advances in
+  Neural Information Processing Systems}, volume~31. Curran Associates, Inc.,
+  2018, pp. 1368--1378.
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper/2018/hash/e5841df2166dd424a57127423d276bbe-Abstract.html}.
+
+\bibitem{covert2023}
+Covert IC, Qiu W, Lu M et~al.
+\newblock Learning to maximize mutual information for dynamic feature
+  selection.
+\newblock In \emph{Proceedings of the 40th International Conference on Machine
+  Learning}, \emph{Proceedings of Machine Learning Research}, volume 202. 2023,
+  pp. 6424--6447.
+\newblock \urlprefix\url{https://proceedings.mlr.press/v202/covert23a.html}.
+
+\bibitem{valancius2024}
+Valancius M, Lennon M and Oliva J.
+\newblock Acquisition conditioned oracle for nongreedy active feature
+  acquisition.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning}, \emph{Proceedings of Machine Learning Research}, volume 235. 2024,
+  pp. 48957--48975.
+\newblock \urlprefix\url{https://proceedings.mlr.press/v235/valancius24a.html}.
+
+\bibitem{jazbec2024}
+Jazbec M, Timans A, Had\v{z}i~Veljkovi\'{c} T et~al.
+\newblock Fast yet safe: Early-exiting with risk control.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~37. Curran Associates, Inc., 2024, pp. 129825--129854.
+\newblock \doi{10.52202/079017-4124}.
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/ea5a63f7ddb82e58623693fd1f4933f7-Abstract-Conference.html}.
+
+\bibitem{baarc2026}
+Chalain~Valapil AA, Venkataramanan A and Denzler J.
+\newblock {BAARC}: Uncertainty-driven adaptive partial spectral measurement to
+  full reconstruction for material classification, 2026.
+\newblock \doi{10.48550/arXiv.2610.32505}.
+\newblock \urlprefix\url{https://arxiv.org/abs/2610.32505}.
+\newblock Preprint, version 1, 23 October 2026, \eprint[arXiv]{2610.32505}.
+
+\bibitem{varma2006}
+Varma S and Simon R.
+\newblock Bias in error estimation when using cross-validation for model
+  selection.
+\newblock \emph{BMC Bioinformatics} 2006; 7: 91.
+\newblock \doi{10.1186/1471-2105-7-91}.
+\newblock
+  \urlprefix\url{https://link.springer.com/article/10.1186/1471-2105-7-91}.
+
+\bibitem{roberts2017}
+Roberts DR, Bahn V, Ciuti S et~al.
+\newblock Cross-validation strategies for data with temporal, spatial,
+  hierarchical, or phylogenetic structure.
+\newblock \emph{Ecography} 2017; 40(8): 913--929.
+\newblock \doi{10.1111/ecog.02881}.
+\newblock
+  \urlprefix\url{https://nsojournals.onlinelibrary.wiley.com/doi/full/10.1111/ecog.02881}.
+
+\bibitem{roithnercatalog}
+{Roithner Lasertechnik}.
+\newblock Standard {LEDs}: component data sheets and emission profiles.
+\newblock \urlprefix\url{https://www.roithner-laser.com/led_standard.html}.
+\newblock Accessed 26 November 2026; undated catalog and component sheets;
+  exact part sheets and hashes retained in the optical source manifest.
+
+\end{thebibliography}

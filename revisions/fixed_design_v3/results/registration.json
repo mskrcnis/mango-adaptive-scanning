@@ -1,0 +1,88 @@
+{
+  "banks": {
+    "swap_mid": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "uniform": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9
+    ]
+  },
+  "cases": [
+    [
+      1,
+      "swap_mid"
+    ],
+    [
+      1,
+      "uniform"
+    ],
+    [
+      2,
+      "swap_mid"
+    ],
+    [
+      2,
+      "uniform"
+    ],
+    [
+      3,
+      "swap_mid"
+    ],
+    [
+      3,
+      "uniform"
+    ]
+  ],
+  "dependencies": {
+    "data/catalog/catalog.json": "1753072e3e08a7ff951bdc8feb7b54118645397fef043a63a7384b90c185ab57",
+    "data/catalog/profiles/LED720-03AU.csv": "65c5ad4e1f3fa74ee27b0358d6cd77b5920c900ab835af57e53676887ecb1e48",
+    "data/catalog/profiles/LED740-01AU.csv": "35bfdfd14683693e40ae79e97a132be81dd0cbe0da44783ad01c82963c1d2fd8",
+    "data/catalog/profiles/LED760-03AU.csv": "9771378e3c3bf4f5290f5098d119d84504abaa627b9fbccbd7fb798ebec6b26a",
+    "data/catalog/profiles/LED780-03AU.csv": "49f205811638b79989b93062898969f60ab95967c0c547162a0defe1ab4a84c9",
+    "data/catalog/profiles/LED800-01AU.csv": "66b151e10ea3653ef6d95b6ae5f386125d5e3768fad9a4565a1011cba38dd640",
+    "data/catalog/profiles/LED820-01AU.csv": "1ad9286b7db918939a33db15b6f3e7ee174aef0af21321feb7dd770d7359ef8c",
+    "data/catalog/profiles/LED850-03UP.csv": "49812371096ba8db5f858c4cc3cd81801ed1446b9b297055dfa93aaeb6830737",
+    "data/catalog/profiles/LED890-03AU.csv": "8b27bea09ebb828b0a14742547de7532ae6e5866c9f0b05b9fec84bcb2d4e94b",
+    "data/catalog/profiles/LED910D-01.csv": "83d2fd94f0e04bee923aa5179df3a0bfeeb33e679385130808558087a3b57198",
+    "data/catalog/profiles/LED940D-05.csv": "b2eab42f578913ceb5c691273ae6bfe1b3f16c884d2eeb0a6c10a07c9acdb5d0",
+    "data/manifest.json": "dee8f73750de60bf2c67677fcd6abf95e4d3f7052a7be6937c71b9eb875d109e",
+    "data/processed/development.csv": "4def3700270d122462fe972071b934b5f12a8665205c2757a72b99677a4b0caf",
+    "data/processed/metadata.csv": "d1c11924736edb43ee9530eabd70f20e3bdf4e9511f38241f9c93d56eda93bec",
+    "mango/data.py": "78bf75bb0f82662744a1e62ba7acb9d3b392ff0ca0993a8d02f2c6d72b65c784",
+    "mango/models.py": "627f2faa5682b3e7425f36ecc0262ae33e19a01f9fba1638f06087377337575a",
+    "mango/optics.py": "bd0bcea51af33a485fdecbe50ed319cf1a047e5bf9882bdcd41f659a64639ec9",
+    "mango/training.py": "499ba5e8344cd0b5806933e9879021f09f4e5477170d8ec3ae78cec6f7aef1ee",
+    "results/fold_assignments.json": "833e3a924ec38620916e68cfa582c97731c0fe59290a183634962e3c5eb3f5c6",
+    "revisions/fixed_design_v3/design.py": "d82cd9c641ef9be41e770003f4a160dbd3e43e1023fedb9ad5836df3188d20a0",
+    "revisions/fixed_design_v3/pipeline.py": "824888574e1f828da5c1cdce647063f347602b113b0bb0e413eba4600cde3fbd",
+    "revisions/fixed_design_v3/protocol.md": "5b8a1af1644ef4680261d8d7572db7ccfeb37885b86c563d1884c1fe17d538bc",
+    "revisions/methodology_v2/pipeline.py": "8c2ef638be61f0c4f97c6f6826a454ed57f967a4db42d10fd511493cde5c59e0",
+    "revisions/methodology_v2/results/checkpoints/case_s1_swap_mid_seed42.joblib": "2b2ddbaf4654b215afe2bbe8a0c9f6a3872be7506db28f3904180a91098a8c94",
+    "revisions/methodology_v2/results/checkpoints/case_s1_uniform_seed42.joblib": "98f28f584d446ea0855aab77828a55c73fb3055afe07589a47d42bdef9cc8c1e",
+    "revisions/methodology_v2/results/checkpoints/case_s2_swap_mid_seed42.joblib": "903c9cdb351ef0b3f1cb63caacac26cab13d118c212b53a89a33fa292882c780",
+    "revisions/methodology_v2/results/checkpoints/case_s2_uniform_seed42.joblib": "742bb470cf6bc1abbf5484ccc69c076e9fac3ae73f24cb96bd62f87f9271d061",
+    "revisions/methodology_v2/results/checkpoints/case_s3_swap_mid_seed42.joblib": "dc4b3c1a7ffd2855e1213bc3b2fa38a6782a7a75a2d100ad90c1d58c65ffdabc",
+    "revisions/methodology_v2/results/checkpoints/case_s3_uniform_seed42.joblib": "87c050954a33b1856f1d329cd1f451a9c4a7eaaef33268b26eac498e61c83406",
+    "revisions/methodology_v2/stopping.py": "085f21de04fb6874a4017bf92f98d8fcb2fb75d10f457a9e975e044e6401343b"
+  },
+  "dependency": "96d5c4f4ddeb07a65bdbef1127f334534d6f9aea4463a76c7f3a30f0c5202465",
+  "external_evaluation": false,
+  "families": [
+    "pls",
+    "ridge"
+  ]
+}

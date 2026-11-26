@@ -1,0 +1,595 @@
+{
+  "files": [
+    {
+      "id": 49736973,
+      "name": "Walsh Jeremy - Master of Research Thesis.pdf",
+      "size": 4377249,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/49736973",
+      "supplied_md5": "1b54f6b95aa33ad558153889039754d5",
+      "computed_md5": "1b54f6b95aa33ad558153889039754d5",
+      "mimetype": "application/pdf"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 11563255,
+      "full_name": "Jeremy Walsh",
+      "first_name": "Jeremy",
+      "last_name": "Walsh",
+      "is_active": true,
+      "url_name": "Jeremy_Walsh",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [
+    {
+      "name": "External Author Affiliations",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 1000
+        },
+        "placeholder": "External Author Affiliations"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Editor",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Editor"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Volume",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 50
+        },
+        "placeholder": "Volume"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Issue",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 35
+        },
+        "placeholder": "Issue"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Start Page",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 15
+        },
+        "placeholder": "Start page"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "End Page",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 15
+        },
+        "placeholder": "End page"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Number of Pages",
+      "value": "162",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 30
+        },
+        "placeholder": "Number of Pages"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Start Date",
+      "value": "",
+      "settings": {},
+      "field_type": "date",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Finish Date",
+      "value": "",
+      "settings": {},
+      "field_type": "date",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "eISSN",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 8,
+          "max_length": 11
+        },
+        "placeholder": "eISSN"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "ISSN",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 8,
+          "max_length": 11
+        },
+        "placeholder": "ISSN"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "ISBN-10",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 10,
+          "max_length": 13
+        },
+        "placeholder": "ISBN-10"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "ISBN-13",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 13,
+          "max_length": 17
+        },
+        "placeholder": "ISBN-13"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Location",
+      "value": "Central Queensland University",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Location"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Publisher",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Publisher"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Place of Publication",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Place of Publication"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Publisher License",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Publisher License"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Publisher DOI",
+      "value": [],
+      "settings": {
+        "placeholder": "Publisher DOI",
+        "is_multiple": false
+      },
+      "field_type": "url",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Full Text URL",
+      "value": [],
+      "settings": {
+        "placeholder": "Full Text URL",
+        "is_multiple": false
+      },
+      "field_type": "url",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Additional Rights",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 2,
+          "max_length": 3000
+        },
+        "placeholder": "Additional Rights"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Language",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Language"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Peer Reviewed",
+      "value": "",
+      "settings": {
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "placeholder": "Peer Reviewed",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Open Access",
+      "value": [
+        "Yes"
+      ],
+      "settings": {
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "placeholder": "Open Access",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Version",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Version"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Cultural Warning",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 161,
+          "max_length": 200
+        },
+        "placeholder": "Cultural Warning"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Acceptance Date",
+      "value": "",
+      "settings": {},
+      "field_type": "date",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Author Research Institute",
+      "value": "",
+      "settings": {
+        "options": [
+          "Appleton Institute",
+          "Centre for Intelligent Systems",
+          "Centre for Railway Engineering",
+          "Centre for Regional Advancement of Learning, Equity, Access and Participation (LEAP)",
+          "Centre for Indigenous Health Equity Research",
+          "Centre for Tourism and Regional Opportunities",
+          "Centre for Research in Equity and Advancement of Teaching & Education (CREATE)",
+          "Coastal Marine Ecosystems Research Centre (CMERC)",
+          "Institute for Future Farming Systems",
+          "Queensland Centre for Domestic and Family Violence",
+          "Centre for Regional Economics and Supply Chain (RESC)",
+          "Jawun Research Centre"
+        ],
+        "placeholder": "Author Research Institute",
+        "is_multiple": true
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Era Eligible",
+      "value": [
+        "No"
+      ],
+      "settings": {
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "placeholder": "Era Eligible",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Medium",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Medium"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Parent Title",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 5000
+        },
+        "placeholder": "Parent Title"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Geolocation",
+      "value": "",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 1000
+        },
+        "placeholder": "Geolocation"
+      },
+      "field_type": "textarea",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Supervisor",
+      "value": "Arjun Neupane, Michael Li and Anand Koirala",
+      "settings": {
+        "validations": {
+          "min_length": 1,
+          "max_length": 250
+        },
+        "placeholder": "Supervisor"
+      },
+      "field_type": "text",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Thesis Type",
+      "value": [
+        "Master's by Research Thesis"
+      ],
+      "settings": {
+        "options": [
+          "Undergraduate Thesis",
+          "Master's by Coursework Thesis",
+          "Master's by Research Thesis",
+          "Doctoral Thesis",
+          "Undergraduate Dissertation"
+        ],
+        "placeholder": "Thesis Type",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    },
+    {
+      "name": "Thesis Format",
+      "value": [
+        "Traditional"
+      ],
+      "settings": {
+        "options": [
+          "Traditional",
+          "By publication",
+          "With publication",
+          "By creative work",
+          "Traditional, With Publication, By Creative Work",
+          "Traditional, With publication",
+          "With publication, Traditional"
+        ],
+        "placeholder": "Thesis Format",
+        "is_multiple": false
+      },
+      "field_type": "dropdown",
+      "order": null,
+      "is_mandatory": false
+    }
+  ],
+  "figshare_url": "https://acquire.cqu.edu.au/articles/thesis/Deep_Learning_in_Estimation_of_Fruit_Attributes_Using_Near_Infrared_Spectroscopy/27208401",
+  "download_disabled": false,
+  "description": "<p>Determining the Dry Matter Content (DMC) of mango fruit is important for assessing harvest maturity and ensuring the quality of the ripened fruit. Near Infrared (NIR) spectroscopy offers a non-invasive approach to estimate fruit attributes, including DMC, by deducing chemical information from spectra collected from the fruit utilising predictive models, termed chemometrics. However, heterogeneity in growing conditions, fruit varieties, and instrumental differences impacts model performances, which has hindered the widespread practical adoption of NIR spectroscopy within the fruit industry. This research aims to address these challenges by developing robust, global models that accommodate seasonal, conditional, and instrumental variations, allowing for the simplified deployment of new instruments without local calibration.\u00a0</p>\n<p>A review of existing literature on chemometrics for fruit quality evaluation was conducted, with a particular focus on one dimensional (1D) Convolutional Neural Networks (CNNs). Although CNNs are a relatively recent addition to this field, their success in analogous domains such as image and audio processing positions them as a potent tool for enhancing the accuracy and robustness of NIR-based fruit quality prediction models. The literature review systematically dissects the advantages and shortcomings of the use of 1D CNNs in spectroscopy, spotlighting the necessity for further research such as the spectral wavelength range and pretreatment, and the optimal CNN architecture for this specific application.\u00a0</p>\n<p>The initial empirical phase of this research validated the superiority of CNN models over traditional methods like Partial Least Squares (PLS) and shallow Artificial Neural Networks (ANNs) through a rigorous comparison using a multi-season mango NIR dataset from a single instrument that has been used in previous publications. This study established a new benchmark for prediction accuracy, with the CNN model achieving a Root Mean Square Error of Prediction (RMSEP) of 0.77 %FW when tested on a subsequent season of fruit. The interplay between model type and spectral preprocessing proved to be critical, with the CNN model able to make particular use of a concatenation of spectral pretreatments. The sensitivity of neural network model training to the use of different seeds for generating pseudo-random sequences was documented, with a standard deviation in RMSEP for 50 ANN and CNN models, trained with varied random seeds, of 0.03%FW and 0.02%FW, respectively. It is recommended that this variation be documented in future studies.\u00a0</p>\n<p>To build upon these findings from a single instrument dataset, an extensive dataset encompassing over 85,000 spectra from numerous spectrometers, fruit populations, and seasons, was compiled and made publicly accessible. This initiative aims to catalyse further chemometric research by providing a common ground for comparison and validation of diverse analytical techniques. Utilising this dataset, the optimal methodologies for PLS, ANN, and CNN, as established in earlier comparisons with a single instrument dataset, were implemented on this broader dataset, initially without additional optimisation. The models were trained using over 55,000 spectra from three seasons and 21 instruments and tested on a separate validation set from two subsequent seasons, comprising 12,539 spectra from 25 instruments, including 8 instruments not used during training. This approach resulted in RMSEP scores of 1.19, 0.94, and 1.24 %FW for the PLS, ANN, and CNN models, respectively. Following Bayesian Optimisation of spectral preprocessing methods, wavelength selections, and CNN hyperparameters, the CNN model's RMSEP improved to 0.93 %FW. This process identified the optimal wavelength range for the CNN model as 402 to 990 nm, an increased range compared to the previously established range of 684 to 990 nm for PLS modelling for a similar dataset. Subsequently, the architecture and hyperparameters of the CNN model were optimised, which improved the calibration results but resulted in a slightly worse RMSEP on the unseen validation set (0.96 %FW). Optimised PLS and ANN models achieved RMSEPs of 1.19 and 0.96 %FW respectively. Finally, the optimised PLS, ANN and CNN models were retrained using the combined training and validation set (five seasons) and tested on a new holdout set consisting of populations from a subsequent two growing seasons. The RMSEP on this set was 0.93, 1.24 and 1.37 %FW for the optimised PLS, ANN and CNN models respectively indicating that the ANN and CNN models were overfit after optimisation. This result was attributed to further variation in the holdout set despite the extensive dataset used in training. The PLS result demonstrates that a global model for prediction of mango fruit DMC is feasible, capable of accommodating a wide range of growing conditions, cultivars, physiological stages, and instruments.\u00a0</p>\n<p>Further research on the design and training of deep learning architectures to achieve generalisability as well as calibration accuracy is recommended, to fully explore the potential of this modelling type. To this end, the public release of the extensive dataset is anticipated to be a valuable resource for the chemometric community, fostering innovation and collaboration in the pursuit of enhancing fruit quality evaluation using NIR spectroscopy.</p>",
+  "funding": null,
+  "funding_list": [],
+  "version": 1,
+  "status": "public",
+  "size": 4377249,
+  "created_date": "2024-10-11T00:51:10Z",
+  "modified_date": "2026-03-19T12:08:50Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 107,
+    "name": "CQUniversity Thesis 1.0",
+    "url": "https://libguides.library.cqu.edu.au/acquirelicences/thesis1"
+  },
+  "tags": [
+    "Deep learning",
+    "Fruit Attributes",
+    "Near Infrared Spectroscopy",
+    "Dry Matter Content (DMC)",
+    "Mango"
+  ],
+  "keywords": [
+    "Deep learning",
+    "Fruit Attributes",
+    "Near Infrared Spectroscopy",
+    "Dry Matter Content (DMC)",
+    "Mango"
+  ],
+  "categories": [
+    {
+      "id": 28846,
+      "title": "Modelling and simulation",
+      "parent_id": 28825,
+      "path": "/28798/28825/28846",
+      "source_id": "460207",
+      "taxonomy_id": 100
+    },
+    {
+      "id": 24070,
+      "title": "Post harvest horticultural technologies (incl. transportation and storage)",
+      "parent_id": 24052,
+      "path": "/23812/24052/24070",
+      "source_id": "300806",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [],
+  "has_linked_file": false,
+  "citation": "Walsh, Jeremy (2024). Deep Learning in Estimation of Fruit Attributes Using Near Infrared Spectroscopy. CQUniversity. Thesis. https://doi.org/10.25946/27208401",
+  "related_materials": [],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 27208401,
+  "title": "Deep Learning in Estimation of Fruit Attributes Using Near Infrared Spectroscopy",
+  "doi": "10.25946/27208401",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/27208401",
+  "published_date": "2024-10-11T00:51:10Z",
+  "thumb": "https://s3-eu-west-1.amazonaws.com/ppreviews-cqu-0121624439/49736973/thumb.png",
+  "defined_type": 8,
+  "defined_type_name": "thesis",
+  "group_id": 30575,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/27208401",
+  "url_public_api": "https://api.figshare.com/v2/articles/27208401",
+  "url_private_html": "https://figshare.com/account/articles/27208401",
+  "url_public_html": "https://acquire.cqu.edu.au/articles/thesis/Deep_Learning_in_Estimation_of_Fruit_Attributes_Using_Near_Infrared_Spectroscopy/27208401",
+  "timeline": {
+    "posted": "2024-10-11T00:51:10",
+    "publisherPublication": "2024-08-31T00:00:00",
+    "firstOnline": "2024-10-11"
+  },
+  "resource_title": null,
+  "resource_doi": null
+}

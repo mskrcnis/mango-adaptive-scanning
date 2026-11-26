@@ -1,0 +1,19 @@
+{
+  "command": ".venv/bin/python -m results.data_audit.verify_data",
+  "checks": {
+    "development_and_feature_readers_do_not_open_sealed_files": true,
+    "external_features_have_no_target": true,
+    "common_grid_103_and_exact_units": true,
+    "development_seasons_exactly_1_2_3": true,
+    "external_seasons_exactly_4_5": true,
+    "development_external_groups_disjoint": true,
+    "source_rows_unique": true,
+    "repeat_population_groups_do_not_cross_outer_inner_or_calibration_splits": true,
+    "external_outcomes_reject_draft_empty_and_invalid_locks": true,
+    "resume_does_not_change_prepared_artifacts_or_manifest": true,
+    "all_prepared_hashes_verified": true,
+    "no_exact_spectra_cross_partitions": true
+  },
+  "status": "passed",
+  "external_outcomes_opened": false
+}

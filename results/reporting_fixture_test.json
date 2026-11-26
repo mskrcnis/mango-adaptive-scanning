@@ -1,0 +1,61 @@
+{
+  "attempts": [
+    {
+      "schema_and_tex_compile": true,
+      "stage": "generate_reports",
+      "status": "passed"
+    }
+  ],
+  "authorized_production_edits": [
+    "main_template.tex belowcaptionskip 5pt",
+    "reporting.py supplement belowcaptionskip 5pt",
+    "reporting.py study diagram arrow directions"
+  ],
+  "elapsed_seconds": 8.87889936286956,
+  "external_data_accessed": false,
+  "fixture_directory": "/tmp/mango-reporting-TEST-FIXTURE-vxk6nv4p",
+  "fixture_model_aliases": {
+    "physical_sparse_svr_4": "actual fixed_length4 pilot predictions",
+    "physical_sparse_svr_8": "pilot full_bank predictions",
+    "walsh_adapted": "pilot rich_cnn predictions"
+  },
+  "fixture_schema_repair": {
+    "cause": "Fixture optical rows incorrectly reused scientific operating_point",
+    "first_expanded_fixture_exception": "ValueError: Expected one row: ('uniform', 'proposed', 4, 'scientific', 42, 3)",
+    "production_code_bug": false,
+    "repair": "Matched actual evaluator: response_shift operating_point"
+  },
+  "generated_pdf_files": [
+    "figures/calibration.pdf",
+    "figures/error_pulses.pdf",
+    "figures/example_trace.pdf",
+    "figures/led_profiles.pdf",
+    "figures/missed_and_bank_losses.pdf",
+    "figures/signed_gains.pdf",
+    "figures/study_design.pdf",
+    "manuscript/main.pdf",
+    "manuscript/supplement.pdf"
+  ],
+  "independent_numeric_cell_checks": {
+    "cells": 26,
+    "source": "temporary fixture prediction rows only",
+    "status": "passed",
+    "values_checked": 104
+  },
+  "main_warnings": [],
+  "model_fitting_called": false,
+  "rendered_pages": 18,
+  "reporting_source_sha256": "bc1e9b4c480de0be18568019a346ef8fc0bcce9bcfb0dcb6ecff608df15953ff",
+  "scope": "SOFTWARE TEST ONLY: development/pilot predictions relabeled4/5 solely to exercise report schema; not external experimental results",
+  "status": "passed",
+  "supplement_warnings": [],
+  "template_sha256": "2f5469c67401bfc956f29d9537093accff03edda9e6e00ebc464995b6a0c60fe",
+  "visual_qa": {
+    "findings": "No clipping or overlap. Diagram arrows now lock to observed-only replay to external evaluation. Controls and uncertainty tables readable; separate seed/sensitivity landscape tables fit their pages. Caption spacing 5pt.",
+    "main_pages": 12,
+    "pages_inspected": 18,
+    "scope": "temporary development-only fixture PDFs",
+    "status": "passed",
+    "supplement_pages": 6
+  }
+}

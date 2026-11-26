@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "method": "Both PNG figures opened and visually inspected at final generated size by the root agent; axes, labels, legends, points and panels are legible without clipping.",
+  "files": {
+    "figures/designed_stopping_frontiers.png": "78b902ad16c3a53e961cfca3a65f5cc064c162713e60cba3712759c1aa631d5f",
+    "figures/fixed_design_curves.png": "e69d9bd8c5285bb33cf539b9b98b9facb57d63c74125542bd1be6dbba706632e"
+  },
+  "scope": "Visual layout and readability; numerical values independently checked in verification.json."
+}

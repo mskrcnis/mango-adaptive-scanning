@@ -1,0 +1,13 @@
+{
+  "design_lock_sha256": "04aac93203bab1cc4e2fc528a2fe7ec132ee37267e291d0533e1d274b65d868c",
+  "external_reads": false,
+  "paths": [
+    "revisions/methodology_v2/results/checkpoints/case_s1_swap_mid_seed42.joblib",
+    "revisions/methodology_v2/results/checkpoints/case_s1_uniform_seed42.joblib",
+    "revisions/methodology_v2/results/checkpoints/case_s2_swap_mid_seed42.joblib",
+    "revisions/methodology_v2/results/checkpoints/case_s2_uniform_seed42.joblib",
+    "revisions/methodology_v2/results/checkpoints/case_s3_swap_mid_seed42.joblib",
+    "revisions/methodology_v2/results/checkpoints/case_s3_uniform_seed42.joblib"
+  ],
+  "stage": "evaluate"
+}

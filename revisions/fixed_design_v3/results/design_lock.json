@@ -1,0 +1,13 @@
+{
+  "completed_all_designs_before_evaluation": true,
+  "design_sha256": {
+    "results/checkpoints/design_s1_swap_mid.joblib": "404575c9561e3398847418c172390ff61be5793b0163ecf381be75d0a9d80b1c",
+    "results/checkpoints/design_s1_uniform.joblib": "92fdb5c0508d755cd094131aa133ba93937c9a31000f67d9a46277b2f248db3d",
+    "results/checkpoints/design_s2_swap_mid.joblib": "457bd40eab839024c03bb2115b0657d52eb7666213e5489c9627f9c74d67fa4b",
+    "results/checkpoints/design_s2_uniform.joblib": "958dfd42aaf71c8b6db055f957e862f2d1f3223af6315118aab83bd327b8cb83",
+    "results/checkpoints/design_s3_swap_mid.joblib": "0adbab36b60150c585cd73fc5e691319a65531c94bb47fbaaa11cb3f5621cc3a",
+    "results/checkpoints/design_s3_uniform.joblib": "5f303cbddda3b3a68ca79d9f559d593a5a9250aa791ae98fd86455eb9f9c1c91"
+  },
+  "external_evaluation": false,
+  "registration_dependency": "96d5c4f4ddeb07a65bdbef1127f334534d6f9aea4463a76c7f3a30f0c5202465"
+}

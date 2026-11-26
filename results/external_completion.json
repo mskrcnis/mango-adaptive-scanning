@@ -1,0 +1,30 @@
+{
+  "curve_rows": 1316,
+  "elapsed_seconds": 24.262208938598633,
+  "external_seasons": [
+    4,
+    5
+  ],
+  "freeze_sha256": "9e75a2508137b22bd4b7d0e4b7f2d64e2e1e31bc45297e588ec4626e283b4863",
+  "metric_rows": 176,
+  "no_training_or_selection_calls": true,
+  "outputs": {
+    "results/action_diagnostics.json": "7d7ec812ceaee2810e9987c1eaee55618b56d1212894f71da2215c97c88433b7",
+    "results/calibration.json": "01478e12df1a7fb71853ec04e180e93cfda5978f4d2f2ea56d65d29b58da7890",
+    "results/external_delta_sensitivity.csv": "92c9167bf2d8d0befc4735570532e984b7321bdcd9a7201df0469d01a7948cdf",
+    "results/external_evaluation_scope.json": "0d02d6c9d518fe5f148c5d681819197517f67f83f9efe2a26cec6e827d921a0e",
+    "results/external_gain_distributions.json": "81376ab3bd836cff75c270469c396827e2d9b086063f855b41eae207d39d9fb3",
+    "results/external_group_metrics.csv": "486cc3c95601d8b91efe6f4f8a58916b32ff5c5098e0a25c7aa0f31482d1a5ec",
+    "results/external_led_usage.csv": "3d000345dfe48a31cb71ce4c484206859c916ba733e3842cc2d4cebbf1421a53",
+    "results/external_metrics.csv": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5",
+    "results/external_one_step_diagnostics.csv": "ba3751ddb45b32f3b8ad49abff639d3d837c036668646c80f158714341989f6a",
+    "results/external_prediction_freeze.json": "30ad352ae2b18f010ef315e912ce9740ec5388d7e5e30456d222298ca56e2300",
+    "results/external_predictions.csv": "92b592a25c955c357090e240b96140ffd062425b3594f9b408eaacc60cb891c4",
+    "results/external_sensitivity_exclusions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "results/external_traces.jsonl.gz": "556e974fd14ef60788089bdca63c2264593ff6ae06057c81e8d0c39c7a271448",
+    "results/external_uncertainty.json": "0d2222213bbe704e3028bb0695e0c00e852baaaf54fe251e4382a860487b9de8",
+    "results/frozen_curves.csv": "b918d4401deacbbfa3fcd2559c1898b1c540d3ddbb54421225c3541db9e924ba"
+  },
+  "prediction_rows": 155584,
+  "status": "complete"
+}

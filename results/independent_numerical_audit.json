@@ -1,0 +1,1651 @@
+{
+  "checks": [
+    {
+      "check": "final primary bank equals expected development-selected swap_mid",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 single has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season4 single has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season4 single n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 single signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 single signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 full_bank signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_pls signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 rich_cnn signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 walsh_adapted signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season4 paired assays agree",
+      "passed": true
+    },
+    {
+      "check": "season4 paired harvest groups agree",
+      "passed": true
+    },
+    {
+      "check": "season4 same frozen bank reference",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed-minus-single point orientation dimensions",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed-minus-single point orientation[0]",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed-minus-single point orientation[1]",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed-minus-single point orientation[2]",
+      "passed": true
+    },
+    {
+      "check": "season4 proposed-minus-single point orientation[3]",
+      "passed": true
+    },
+    {
+      "check": "season4 achieved budget comparability",
+      "passed": true
+    },
+    {
+      "check": "season4 group denominator",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals dimensions",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[0] dimensions",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[0][0]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[0][1]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[1] dimensions",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[1][0]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[1][1]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[2] dimensions",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[2][0]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[2][1]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[3] dimensions",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[3][0]",
+      "passed": true
+    },
+    {
+      "check": "season4 independent cluster-weight bootstrap intervals[3][1]",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 single has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season5 single has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season5 single n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 single signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 single signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 full_bank signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_pls signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 rich_cnn signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted has one summary row",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted has unique complete scan records",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted mae recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted bias recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted r2 recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted mean_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted median_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted p95_pulses recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted early_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted early_fraction recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted missed_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted missed_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted missed_unconditional recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted bank_loss_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted bank_loss_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted large_absolute_error_n recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted large_absolute_error_rate recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted bank_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted rich_rmsep recomputed",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted signed g_stop preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 walsh_adapted signed g_bank preserved",
+      "passed": true
+    },
+    {
+      "check": "season5 paired assays agree",
+      "passed": true
+    },
+    {
+      "check": "season5 paired harvest groups agree",
+      "passed": true
+    },
+    {
+      "check": "season5 same frozen bank reference",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed-minus-single point orientation dimensions",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed-minus-single point orientation[0]",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed-minus-single point orientation[1]",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed-minus-single point orientation[2]",
+      "passed": true
+    },
+    {
+      "check": "season5 proposed-minus-single point orientation[3]",
+      "passed": true
+    },
+    {
+      "check": "season5 achieved budget comparability",
+      "passed": true
+    },
+    {
+      "check": "season5 group denominator",
+      "passed": true
+    },
+    {
+      "check": "season5 population intervals suppressed",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop128 dimensions",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop128[0]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop128[1]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop128[2]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop128[3]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop129 dimensions",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop129[0]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop129[1]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop129[2]",
+      "passed": true
+    },
+    {
+      "check": "season5 group s5_pop129[3]",
+      "passed": true
+    }
+  ],
+  "external_assays_reopened": false,
+  "failed_checks": [],
+  "maximum_absolute_numeric_discrepancy": 0.0,
+  "primary_rule": "swap_mid",
+  "primary_seed": 42,
+  "scope": "Independent saved-table arithmetic only; no model, sealed data, evaluation or fitting code imported.",
+  "script_sha256": "55993add18fcf013e0b92c01f93405db5f3f23ced6e069c887ef8f539b78b47f",
+  "season_results": {
+    "4": {
+      "achieved_budget_comparable": false,
+      "engineering_criteria": {
+        "at_least_25percent_pulse_reduction": false,
+        "both_numerical_prototype_criteria_pass": false,
+        "engineering_policy_rmsep": 1.2609257079465708,
+        "full_bank_rmsep": 1.2318415404099716,
+        "mean_pulses": 7.941988950276243,
+        "pulse_reduction": 0.007251381215469643,
+        "rmsep_increase": 0.029084167536599148,
+        "rmsep_increase_within_0p25": true
+      },
+      "independently_recomputed_intervals": [
+        [
+          -0.1654264596892356,
+          -0.014237321275974253
+        ],
+        [
+          0.3274773064668061,
+          1.1944765104525614
+        ],
+        [
+          -0.015135958199885675,
+          0.03844315672515785
+        ],
+        [
+          -0.06911264386808182,
+          -0.021768541822310642
+        ]
+      ],
+      "independently_recomputed_points": [
+        -0.08078409744550674,
+        0.731353591160221,
+        0.012236994219653186,
+        -0.04419889502762431
+      ],
+      "interpretation_limit": "A pulse gap greater than 0.25 precludes an unqualified matched-budget superiority interpretation; external thresholds were not retuned.",
+      "n_harvest_groups": 18,
+      "orientation": "proposed minus single; negative RMSEP difference favors proposed",
+      "paired_estimands": [
+        "rmsep_difference",
+        "pulse_difference",
+        "conditional_missed_difference",
+        "unconditional_missed_difference"
+      ],
+      "primary_scientific_and_references": {
+        "full_bank": {
+          "bank_loss_n": 253,
+          "bank_loss_rate": 0.17472375690607736,
+          "bank_rmsep": 1.2318415404099716,
+          "bias": 0.1272667430283324,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 146,
+          "large_absolute_error_rate": 0.10082872928176796,
+          "mae": 0.9340419618009655,
+          "mean_pulses": 8.0,
+          "median_pulses": 8.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 1448,
+          "p95_pulses": 8.0,
+          "r2": 0.7869189801770272,
+          "rich_rmsep": 1.4771556201887897,
+          "rmsep": 1.2318415404099716
+        },
+        "proposed": {
+          "bank_loss_n": 253,
+          "bank_loss_rate": 0.17472375690607736,
+          "bank_rmsep": 1.2318415404099716,
+          "bias": -0.8359573655656333,
+          "early_fraction": 0.8632596685082873,
+          "early_n": 1250,
+          "large_absolute_error_n": 534,
+          "large_absolute_error_rate": 0.3687845303867403,
+          "mae": 2.0148823204810777,
+          "mean_pulses": 3.0959944751381214,
+          "median_pulses": 2.0,
+          "missed_n": 755,
+          "missed_rate": 0.604,
+          "missed_unconditional": 0.5214088397790055,
+          "n": 1448,
+          "p95_pulses": 8.0,
+          "r2": -0.002315402404580169,
+          "rich_rmsep": 1.4771556201887897,
+          "rmsep": 2.6716813824198264
+        },
+        "rich_cnn": {
+          "bank_loss_n": 253,
+          "bank_loss_rate": 0.17472375690607736,
+          "bank_rmsep": 1.2318415404099716,
+          "bias": -0.640765453065392,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 216,
+          "large_absolute_error_rate": 0.14917127071823205,
+          "mae": 1.0603327163316918,
+          "mean_pulses": 103.0,
+          "median_pulses": 103.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 1448,
+          "p95_pulses": 103.0,
+          "r2": 0.6829038831997205,
+          "rich_rmsep": 1.4771556201887897,
+          "rmsep": 1.502719506175565
+        },
+        "rich_pls": {
+          "bank_loss_n": 253,
+          "bank_loss_rate": 0.17472375690607736,
+          "bank_rmsep": 1.2318415404099716,
+          "bias": 0.1222609745593166,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 247,
+          "large_absolute_error_rate": 0.17058011049723756,
+          "mae": 1.1907816388253951,
+          "mean_pulses": 103.0,
+          "median_pulses": 103.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 1448,
+          "p95_pulses": 103.0,
+          "r2": 0.6936008343610781,
+          "rich_rmsep": 1.4771556201887897,
+          "rmsep": 1.4771556201887897
+        },
+        "single": {
+          "bank_loss_n": 253,
+          "bank_loss_rate": 0.17472375690607736,
+          "bank_rmsep": 1.2318415404099716,
+          "bias": -0.9003225367838399,
+          "early_fraction": 0.9558011049723757,
+          "early_n": 1384,
+          "large_absolute_error_n": 556,
+          "large_absolute_error_rate": 0.3839779005524862,
+          "mae": 2.0844919155323045,
+          "mean_pulses": 2.3646408839779007,
+          "median_pulses": 2.0,
+          "missed_n": 819,
+          "missed_rate": 0.5917630057803468,
+          "missed_unconditional": 0.5656077348066298,
+          "n": 1448,
+          "p95_pulses": 6.0,
+          "r2": -0.06384617850813057,
+          "rich_rmsep": 1.4771556201887897,
+          "rmsep": 2.752465479865333
+        },
+        "walsh_adapted": {
+          "bank_loss_n": 253,
+          "bank_loss_rate": 0.17472375690607736,
+          "bank_rmsep": 1.2318415404099716,
+          "bias": -0.4874156635987447,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 160,
+          "large_absolute_error_rate": 0.11049723756906077,
+          "mae": 0.9540507180587103,
+          "mean_pulses": 103.0,
+          "median_pulses": 103.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 1448,
+          "p95_pulses": 103.0,
+          "r2": 0.7714096242652498,
+          "rich_rmsep": 1.4771556201887897,
+          "rmsep": 1.2758847094689736
+        }
+      },
+      "season5_group_estimates": null
+    },
+    "5": {
+      "achieved_budget_comparable": false,
+      "engineering_criteria": {
+        "at_least_25percent_pulse_reduction": false,
+        "both_numerical_prototype_criteria_pass": false,
+        "engineering_policy_rmsep": 1.2437976699593551,
+        "full_bank_rmsep": 1.2437976699593567,
+        "mean_pulses": 8.0,
+        "pulse_reduction": 0.0,
+        "rmsep_increase": -1.5543122344752192e-15,
+        "rmsep_increase_within_0p25": true
+      },
+      "independently_recomputed_intervals": null,
+      "independently_recomputed_points": [
+        -0.17437011848460648,
+        2.440625,
+        0.03266331658291455,
+        -0.159375
+      ],
+      "interpretation_limit": "A pulse gap greater than 0.25 precludes an unqualified matched-budget superiority interpretation; external thresholds were not retuned.",
+      "n_harvest_groups": 2,
+      "orientation": "proposed minus single; negative RMSEP difference favors proposed",
+      "paired_estimands": [
+        "rmsep_difference",
+        "pulse_difference",
+        "conditional_missed_difference",
+        "unconditional_missed_difference"
+      ],
+      "primary_scientific_and_references": {
+        "full_bank": {
+          "bank_loss_n": 9,
+          "bank_loss_rate": 0.028125,
+          "bank_rmsep": 1.2437976699593567,
+          "bias": -0.7189342563775738,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 30,
+          "large_absolute_error_rate": 0.09375,
+          "mae": 0.9155807140589165,
+          "mean_pulses": 8.0,
+          "median_pulses": 8.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 320,
+          "p95_pulses": 8.0,
+          "r2": 0.4347230720635823,
+          "rich_rmsep": 2.229071469138056,
+          "rmsep": 1.2437976699593567
+        },
+        "proposed": {
+          "bank_loss_n": 9,
+          "bank_loss_rate": 0.028125,
+          "bank_rmsep": 1.2437976699593567,
+          "bias": -1.13268209302516,
+          "early_fraction": 0.621875,
+          "early_n": 199,
+          "large_absolute_error_n": 84,
+          "large_absolute_error_rate": 0.2625,
+          "mae": 1.4350997255369784,
+          "mean_pulses": 4.809375,
+          "median_pulses": 4.0,
+          "missed_n": 106,
+          "missed_rate": 0.5326633165829145,
+          "missed_unconditional": 0.33125,
+          "n": 320,
+          "p95_pulses": 8.0,
+          "r2": -0.4573703154222595,
+          "rich_rmsep": 2.229071469138056,
+          "rmsep": 1.9971195756537476
+        },
+        "rich_cnn": {
+          "bank_loss_n": 9,
+          "bank_loss_rate": 0.028125,
+          "bank_rmsep": 1.2437976699593567,
+          "bias": -1.0896637789468764,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 62,
+          "large_absolute_error_rate": 0.19375,
+          "mae": 1.2646657430467605,
+          "mean_pulses": 103.0,
+          "median_pulses": 103.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 320,
+          "p95_pulses": 103.0,
+          "r2": 0.04838744391332672,
+          "rich_rmsep": 2.229071469138056,
+          "rmsep": 1.6137980665901948
+        },
+        "rich_pls": {
+          "bank_loss_n": 9,
+          "bank_loss_rate": 0.028125,
+          "bank_rmsep": 1.2437976699593567,
+          "bias": -1.9484049351854593,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 138,
+          "large_absolute_error_rate": 0.43125,
+          "mae": 1.9753564201788827,
+          "mean_pulses": 103.0,
+          "median_pulses": 103.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 320,
+          "p95_pulses": 103.0,
+          "r2": -0.8155564989636899,
+          "rich_rmsep": 2.229071469138056,
+          "rmsep": 2.229071469138056
+        },
+        "single": {
+          "bank_loss_n": 9,
+          "bank_loss_rate": 0.028125,
+          "bank_rmsep": 1.2437976699593567,
+          "bias": -1.2642789138325796,
+          "early_fraction": 0.98125,
+          "early_n": 314,
+          "large_absolute_error_n": 103,
+          "large_absolute_error_rate": 0.321875,
+          "mae": 1.629385525939643,
+          "mean_pulses": 2.36875,
+          "median_pulses": 2.0,
+          "missed_n": 157,
+          "missed_rate": 0.5,
+          "missed_unconditional": 0.490625,
+          "n": 320,
+          "p95_pulses": 4.0,
+          "r2": -0.7229684586914886,
+          "rich_rmsep": 2.229071469138056,
+          "rmsep": 2.171489694138354
+        },
+        "walsh_adapted": {
+          "bank_loss_n": 9,
+          "bank_loss_rate": 0.028125,
+          "bank_rmsep": 1.2437976699593567,
+          "bias": -1.4963906250457764,
+          "early_fraction": 0.0,
+          "early_n": 0,
+          "large_absolute_error_n": 66,
+          "large_absolute_error_rate": 0.20625,
+          "mae": 1.5645981309604642,
+          "mean_pulses": 103.0,
+          "median_pulses": 103.0,
+          "missed_n": 0,
+          "missed_rate": null,
+          "missed_unconditional": 0.0,
+          "n": 320,
+          "p95_pulses": 103.0,
+          "r2": -0.15519941353903044,
+          "rich_rmsep": 2.229071469138056,
+          "rmsep": 1.7780648181708003
+        }
+      },
+      "season5_group_estimates": {
+        "s5_pop128": [
+          -0.07505179276052765,
+          2.725,
+          0.09367088607594931,
+          -0.125
+        ],
+        "s5_pop129": [
+          -0.29920152011923196,
+          2.15625,
+          -0.02894327894327897,
+          -0.19375000000000003
+        ]
+      }
+    }
+  },
+  "sources": {
+    "results/external_completion.json": "234a3e146425a8e6d941f4a581c9bc233f64bb6574f9246e02afe0964274b3d4",
+    "results/external_metrics.csv": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5",
+    "results/external_predictions.csv": "92b592a25c955c357090e240b96140ffd062425b3594f9b408eaacc60cb891c4",
+    "results/external_uncertainty.json": "0d2222213bbe704e3028bb0695e0c00e852baaaf54fe251e4382a860487b9de8",
+    "results/frozen/manifest.json": "9e75a2508137b22bd4b7d0e4b7f2d64e2e1e31bc45297e588ec4626e283b4863"
+  },
+  "status": "passed"
+}

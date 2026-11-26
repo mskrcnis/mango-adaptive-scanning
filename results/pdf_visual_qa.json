@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "hashes": {
+    "manuscript/main.pdf": "af7a09a96937da86de6722fbfb0d4849bfe0d1573313af5e10647c88f915966e",
+    "manuscript/supplement.pdf": "eec63fcd889e0f131f4d5f4b93d6e9b73391ecc301ac0b62660596791ab09cc4"
+  },
+  "main_pages_inspected": 12,
+  "supplement_pages_inspected": 8,
+  "inspection_evidence": [
+    "results/main_visual_qa.json",
+    "results/supplement_visual_qa.json"
+  ],
+  "method": "Individual rendered-page inspection, followed by exact PNG-byte equality after the reporting-cache-only regeneration.",
+  "blocking_issues": [],
+  "author_fields": "Only author identities and declarations remain explicitly marked for author input."
+}

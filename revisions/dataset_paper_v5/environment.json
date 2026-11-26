@@ -1,0 +1,12 @@
+{
+  "python": "3.8.20",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.17",
+  "reporting_dependencies": {
+    "numpy": "1.24.3",
+    "pandas": "2.0.3",
+    "matplotlib": "3.7.5",
+    "pypdf": "4.3.1",
+    "Pillow": "10.3.0"
+  },
+  "model_environment_unchanged": "Existing scientific package versions remain pinned by prior stages; pypdf 4.3.1 added solely for document QA."
+}

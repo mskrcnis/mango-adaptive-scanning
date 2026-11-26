@@ -1,0 +1,103 @@
+{
+  "cases": [
+    [
+      1,
+      "swap_mid",
+      42
+    ],
+    [
+      1,
+      "swap_mid",
+      7
+    ],
+    [
+      1,
+      "swap_mid",
+      99
+    ],
+    [
+      1,
+      "uniform",
+      42
+    ],
+    [
+      2,
+      "swap_mid",
+      42
+    ],
+    [
+      2,
+      "swap_mid",
+      7
+    ],
+    [
+      2,
+      "swap_mid",
+      99
+    ],
+    [
+      2,
+      "uniform",
+      42
+    ],
+    [
+      3,
+      "swap_mid",
+      42
+    ],
+    [
+      3,
+      "swap_mid",
+      7
+    ],
+    [
+      3,
+      "swap_mid",
+      99
+    ],
+    [
+      3,
+      "uniform",
+      42
+    ]
+  ],
+  "dependencies": {
+    "data/catalog/catalog.json": "1753072e3e08a7ff951bdc8feb7b54118645397fef043a63a7384b90c185ab57",
+    "data/catalog/profiles/LED720-03AU.csv": "65c5ad4e1f3fa74ee27b0358d6cd77b5920c900ab835af57e53676887ecb1e48",
+    "data/catalog/profiles/LED740-01AU.csv": "35bfdfd14683693e40ae79e97a132be81dd0cbe0da44783ad01c82963c1d2fd8",
+    "data/catalog/profiles/LED760-03AU.csv": "9771378e3c3bf4f5290f5098d119d84504abaa627b9fbccbd7fb798ebec6b26a",
+    "data/catalog/profiles/LED780-03AU.csv": "49f205811638b79989b93062898969f60ab95967c0c547162a0defe1ab4a84c9",
+    "data/catalog/profiles/LED800-01AU.csv": "66b151e10ea3653ef6d95b6ae5f386125d5e3768fad9a4565a1011cba38dd640",
+    "data/catalog/profiles/LED820-01AU.csv": "1ad9286b7db918939a33db15b6f3e7ee174aef0af21321feb7dd770d7359ef8c",
+    "data/catalog/profiles/LED850-03UP.csv": "49812371096ba8db5f858c4cc3cd81801ed1446b9b297055dfa93aaeb6830737",
+    "data/catalog/profiles/LED890-03AU.csv": "8b27bea09ebb828b0a14742547de7532ae6e5866c9f0b05b9fec84bcb2d4e94b",
+    "data/catalog/profiles/LED910D-01.csv": "83d2fd94f0e04bee923aa5179df3a0bfeeb33e679385130808558087a3b57198",
+    "data/catalog/profiles/LED940D-05.csv": "b2eab42f578913ceb5c691273ae6bfe1b3f16c884d2eeb0a6c10a07c9acdb5d0",
+    "data/manifest.json": "dee8f73750de60bf2c67677fcd6abf95e4d3f7052a7be6937c71b9eb875d109e",
+    "data/processed/development.csv": "4def3700270d122462fe972071b934b5f12a8665205c2757a72b99677a4b0caf",
+    "data/processed/metadata.csv": "d1c11924736edb43ee9530eabd70f20e3bdf4e9511f38241f9c93d56eda93bec",
+    "mango/data.py": "78bf75bb0f82662744a1e62ba7acb9d3b392ff0ca0993a8d02f2c6d72b65c784",
+    "mango/models.py": "627f2faa5682b3e7425f36ecc0262ae33e19a01f9fba1638f06087377337575a",
+    "mango/optics.py": "bd0bcea51af33a485fdecbe50ed319cf1a047e5bf9882bdcd41f659a64639ec9",
+    "mango/training.py": "499ba5e8344cd0b5806933e9879021f09f4e5477170d8ec3ae78cec6f7aef1ee",
+    "pipeline.py": "8c2ef638be61f0c4f97c6f6826a454ed57f967a4db42d10fd511493cde5c59e0",
+    "protocol.md": "e5a7c2d6e740dabb5c0f228838bcd72b6c47ab819ba4e27e3e70b78eac1653f8",
+    "results/checkpoints/model_season1_swap_mid_seed42.joblib": "804031a5f1ee94404ed242333752e72e729e2c83d5e912becedb6af28ae124f7",
+    "results/checkpoints/model_season1_swap_mid_seed7.joblib": "40cfc127263362e694d761a9cd9d2d68fa5255d8c8dda50e01640d1aaaa78f89",
+    "results/checkpoints/model_season1_swap_mid_seed99.joblib": "0931c7eb774d970408241c74f6430f23115a32a7d03a00bc6d57b8179e64fd56",
+    "results/checkpoints/model_season1_uniform_seed42.joblib": "d9765f1f00e43968df609f418b1acfd324f77351b98066950fc8889089093944",
+    "results/checkpoints/model_season2_swap_mid_seed42.joblib": "d25a71ecd9d2074a5b54262ec543102de4e4a208d708cbfcb5c0d7cbded3fde8",
+    "results/checkpoints/model_season2_swap_mid_seed7.joblib": "34fd3eb2f878fe5d36ddc13273ed517e63c2b54d812bc49b748bc38a823b631f",
+    "results/checkpoints/model_season2_swap_mid_seed99.joblib": "deeda08ebe2c26141e879938f87f80709743b41108016377333a174d9ad08c61",
+    "results/checkpoints/model_season2_uniform_seed42.joblib": "9168594af8b7a293df96f5145e92260d29220e8ce6569ab2ceae5a6c6a973f54",
+    "results/checkpoints/model_season3_swap_mid_seed42.joblib": "b3edee99044278cafeaa09bd0dec3230ada295167d6a09e1c5e06f08cd6e9dc2",
+    "results/checkpoints/model_season3_swap_mid_seed7.joblib": "51d1e5c93259c255365876c353f127a3f6d321a1582508237adbca1dba94ed4a",
+    "results/checkpoints/model_season3_swap_mid_seed99.joblib": "3f1c307b2f91f34101b7c49b6360d4ba93b04a805a7ba487fb85ebe754524284",
+    "results/checkpoints/model_season3_uniform_seed42.joblib": "92f0c06ae305f1ddb7f212a338c7bbeba1ae4212d87272ae787c64b2d669debd",
+    "results/fold_assignments.json": "833e3a924ec38620916e68cfa582c97731c0fe59290a183634962e3c5eb3f5c6",
+    "stopping.py": "085f21de04fb6874a4017bf92f98d8fcb2fb75d10f457a9e975e044e6401343b"
+  },
+  "dependency": "1d74d2800865a595b4dbc6ed527f40ddc17a2b1691fee9273f324fb9daa785ce",
+  "external_evaluation": false,
+  "protocol": "protocol.md"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "images": [
+    {
+      "path": "figures/fixed_budget_results.png",
+      "sha256": "cfed048fc695f7d8fa0b7bf1f276e9186b40b9231298f48031998289ab279602",
+      "status": "PASS",
+      "review": "Visually inspected at generated resolution; text and marks legible, no clipping or legend overlap."
+    },
+    {
+      "path": "figures/controlled_contrasts.png",
+      "sha256": "ef181ac5c681cc243096953ca6c29afd3652c4eb2ea80159ef0a41243f949a99",
+      "status": "PASS",
+      "review": "Visually inspected at generated resolution; text and marks legible, no clipping or legend overlap."
+    }
+  ]
+}

@@ -1,0 +1,662 @@
+{
+  "schema_version": "1.0",
+  "templates_are_header_only": true,
+  "schemas": {
+    "populations.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "season_id",
+        "type": "string",
+        "description": "New season identifier; not original dataset seasons 1\u20135."
+      },
+      {
+        "name": "population_id",
+        "type": "string",
+        "description": "Unique harvest population; stable across all linked files."
+      },
+      {
+        "name": "analysis_cluster_id",
+        "type": "string",
+        "description": "Independent population cluster used for resampling; shared where populations are dependent."
+      },
+      {
+        "name": "orchard_or_supplier_id",
+        "type": "string",
+        "description": "Pseudonymous source identifier; retain linkage under custody."
+      },
+      {
+        "name": "block_or_lot_id",
+        "type": "string",
+        "description": "Source block or lot identifier."
+      },
+      {
+        "name": "cultivar",
+        "type": "string",
+        "description": "Recorded cultivar, not inferred from spectra."
+      },
+      {
+        "name": "harvest_window_start",
+        "type": "date",
+        "description": "ISO 8601 date."
+      },
+      {
+        "name": "harvest_window_end",
+        "type": "date",
+        "description": "ISO 8601 date."
+      },
+      {
+        "name": "recruitment_rule_id",
+        "type": "string",
+        "description": "Registered recruitment rule."
+      },
+      {
+        "name": "independence_attestation_id",
+        "type": "string",
+        "description": "Evidence that original seasons 1\u20135 and shared fruit/derived observations are excluded."
+      }
+    ],
+    "fruits.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "fruit_id",
+        "type": "string",
+        "description": "Unique physical fruit identifier, never a scan identifier."
+      },
+      {
+        "name": "population_id",
+        "type": "string",
+        "description": "Foreign key to populations.csv."
+      },
+      {
+        "name": "enrolled_at_utc",
+        "type": "datetime",
+        "description": "ISO 8601 UTC with Z suffix."
+      },
+      {
+        "name": "harvested_at_utc",
+        "type": "datetime",
+        "description": "Actual harvest time; empty when not known, with a documented reason."
+      },
+      {
+        "name": "collection_site",
+        "type": "string",
+        "description": "Collection site, using registered categories."
+      },
+      {
+        "name": "handling_protocol_id",
+        "type": "string",
+        "description": "Registered handling/storage procedure."
+      },
+      {
+        "name": "eligibility_status",
+        "type": "enum",
+        "description": "eligible, ineligible, or pending; determined without model errors."
+      },
+      {
+        "name": "eligibility_reason",
+        "type": "string",
+        "description": "Required reason for noneligible or pending status."
+      },
+      {
+        "name": "disposition",
+        "type": "enum",
+        "description": "enrolled, withdrawn, lost, or analyzed; preserve all recruited fruit."
+      }
+    ],
+    "scans.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "scan_id",
+        "type": "string",
+        "description": "Globally unique scan identifier."
+      },
+      {
+        "name": "fruit_id",
+        "type": "string",
+        "description": "Foreign key to fruits.csv."
+      },
+      {
+        "name": "scanned_at_utc",
+        "type": "datetime",
+        "description": "ISO 8601 UTC scan timestamp."
+      },
+      {
+        "name": "instrument_id",
+        "type": "string",
+        "description": "Instrument and calibration record identifier."
+      },
+      {
+        "name": "measurement_mode",
+        "type": "enum",
+        "description": "spectral_replay or physical_device; do not pool modes."
+      },
+      {
+        "name": "scan_site",
+        "type": "string",
+        "description": "Registered position on fruit."
+      },
+      {
+        "name": "repeat_index",
+        "type": "integer",
+        "description": "One-based repeat index within fruit/site."
+      },
+      {
+        "name": "raw_file_path",
+        "type": "string",
+        "description": "Relative path under the source archive; no external traversal."
+      },
+      {
+        "name": "raw_file_sha256",
+        "type": "sha256",
+        "description": "Lowercase SHA-256 of unmodified source bytes."
+      },
+      {
+        "name": "spectral_schema_id",
+        "type": "string",
+        "description": "Frozen wavelength grid, units and signal-representation schema."
+      },
+      {
+        "name": "acquisition_protocol_id",
+        "type": "string",
+        "description": "Frozen acquisition procedure."
+      },
+      {
+        "name": "qc_status",
+        "type": "enum",
+        "description": "pass, fail, or pending based on registered outcome-independent rules."
+      },
+      {
+        "name": "qc_reason_code",
+        "type": "string",
+        "description": "Required for fail or pending; rule IDs must be registered."
+      }
+    ],
+    "spectral_values.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "scan_id",
+        "type": "string",
+        "description": "Foreign key to scans.csv."
+      },
+      {
+        "name": "wavelength_nm",
+        "type": "number",
+        "description": "Wavelength in nm; exact frozen grid required for replay."
+      },
+      {
+        "name": "signal_value",
+        "type": "number",
+        "description": "Finite untransformed supplied input value in declared representation."
+      },
+      {
+        "name": "signal_representation",
+        "type": "string",
+        "description": "Frozen input representation; do not silently change log or absorbance convention."
+      }
+    ],
+    "assay_aliquots_restricted.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "lab_sample_id",
+        "type": "string",
+        "description": "Blinded laboratory sample identifier; no model predictions supplied."
+      },
+      {
+        "name": "aliquot_id",
+        "type": "string",
+        "description": "Unique technical aliquot ID."
+      },
+      {
+        "name": "fresh_mass_g",
+        "type": "number",
+        "description": "Positive recorded fresh sample mass in grams."
+      },
+      {
+        "name": "dry_mass_g",
+        "type": "number",
+        "description": "Recorded dry sample mass in grams under assay SOP."
+      },
+      {
+        "name": "assay_method_id",
+        "type": "string",
+        "description": "Frozen validated reference SOP/version."
+      },
+      {
+        "name": "assay_batch_id",
+        "type": "string",
+        "description": "Laboratory batch identifier."
+      },
+      {
+        "name": "drying_endpoint_record",
+        "type": "string",
+        "description": "Evidence required by assay SOP; do not invent a fixed drying duration."
+      },
+      {
+        "name": "assayed_at_utc",
+        "type": "datetime",
+        "description": "ISO 8601 UTC timestamp."
+      },
+      {
+        "name": "assay_qc_status",
+        "type": "enum",
+        "description": "pass, fail, or pending under frozen laboratory rules."
+      },
+      {
+        "name": "assay_qc_reason",
+        "type": "string",
+        "description": "Required for fail or pending."
+      }
+    ],
+    "assay_references_restricted.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "lab_sample_id",
+        "type": "string",
+        "description": "One reconciled reference per blinded laboratory sample."
+      },
+      {
+        "name": "reference_dm_percent",
+        "type": "number",
+        "description": "Fresh-weight dry matter percent, from 100 * dry_mass / fresh_mass and registered reconciliation."
+      },
+      {
+        "name": "reconciliation_rule_id",
+        "type": "string",
+        "description": "Frozen rule resolving technical replicates; do not choose best agreement with predictions."
+      },
+      {
+        "name": "reference_qc_status",
+        "type": "enum",
+        "description": "pass, fail, or pending."
+      },
+      {
+        "name": "reference_qc_reason",
+        "type": "string",
+        "description": "Required for fail or pending."
+      },
+      {
+        "name": "assay_archive_sha256",
+        "type": "sha256",
+        "description": "Hash of retained laboratory aliquot archive."
+      },
+      {
+        "name": "assay_frozen_at_utc",
+        "type": "datetime",
+        "description": "Reference freeze time before model-linkage release."
+      }
+    ],
+    "assay_linkage_restricted.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "fruit_id",
+        "type": "string",
+        "description": "Foreign key to fruits.csv."
+      },
+      {
+        "name": "lab_sample_id",
+        "type": "string",
+        "description": "Foreign key to assay_references_restricted.csv."
+      },
+      {
+        "name": "custodian_id",
+        "type": "string",
+        "description": "Person/role controlling linkage release."
+      },
+      {
+        "name": "released_at_utc",
+        "type": "datetime",
+        "description": "Release time after predictions have been frozen."
+      },
+      {
+        "name": "prediction_freeze_id",
+        "type": "string",
+        "description": "Foreign key to an immutable prediction freeze."
+      },
+      {
+        "name": "prediction_manifest_sha256",
+        "type": "sha256",
+        "description": "Hash of complete frozen prediction manifest before linkage."
+      }
+    ],
+    "scan_predictions.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "scan_id",
+        "type": "string",
+        "description": "Foreign key to scans.csv."
+      },
+      {
+        "name": "fruit_id",
+        "type": "string",
+        "description": "Must agree with scan-to-fruit metadata."
+      },
+      {
+        "name": "model_id",
+        "type": "enum",
+        "description": "fixed_six, full_eight, or rich_spectrum."
+      },
+      {
+        "name": "model_bundle_sha256",
+        "type": "sha256",
+        "description": "Hash identifying frozen bundle used at inference."
+      },
+      {
+        "name": "predicted_dm_percent",
+        "type": "number_or_empty",
+        "description": "Finite dry-matter prediction; empty only for a logged prediction failure."
+      },
+      {
+        "name": "prediction_status",
+        "type": "enum",
+        "description": "success or failure."
+      },
+      {
+        "name": "failure_reason",
+        "type": "string",
+        "description": "Required for failure; never substitute zero for a failure."
+      },
+      {
+        "name": "predicted_at_utc",
+        "type": "datetime",
+        "description": "Prediction timestamp before assay linkage."
+      }
+    ],
+    "fruit_predictions.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "fruit_id",
+        "type": "string",
+        "description": "One row per fruit/model for aggregation."
+      },
+      {
+        "name": "model_id",
+        "type": "enum",
+        "description": "fixed_six, full_eight, or rich_spectrum."
+      },
+      {
+        "name": "model_bundle_sha256",
+        "type": "sha256",
+        "description": "Hash identifying the frozen inference bundle."
+      },
+      {
+        "name": "mean_predicted_dm_percent",
+        "type": "number_or_empty",
+        "description": "Arithmetic mean of common eligible scan predictions; empty when fruit unavailable."
+      },
+      {
+        "name": "eligible_paired_scan_count",
+        "type": "integer",
+        "description": "Same retained scan set across all three models for a fruit."
+      },
+      {
+        "name": "scan_prediction_sd_pp",
+        "type": "number_or_empty",
+        "description": "Descriptive repeat variation; empty with fewer than two scans."
+      },
+      {
+        "name": "availability_status",
+        "type": "enum",
+        "description": "available or unavailable under registered minimum scan count."
+      },
+      {
+        "name": "availability_reason",
+        "type": "string",
+        "description": "Required if unavailable."
+      },
+      {
+        "name": "prediction_freeze_id",
+        "type": "string",
+        "description": "Immutable freeze identifier before assay linkage."
+      }
+    ],
+    "qc_dispositions.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "record_type",
+        "type": "enum",
+        "description": "fruit, scan, assay, or source."
+      },
+      {
+        "name": "record_id",
+        "type": "string",
+        "description": "Identifier in corresponding retained table."
+      },
+      {
+        "name": "rule_id",
+        "type": "string",
+        "description": "Registered outcome-independent QC rule."
+      },
+      {
+        "name": "decision",
+        "type": "enum",
+        "description": "retain, exclude, or quarantine."
+      },
+      {
+        "name": "reason",
+        "type": "string",
+        "description": "Human-readable evidence for decision."
+      },
+      {
+        "name": "decided_at_utc",
+        "type": "datetime",
+        "description": "Timestamp of QC decision."
+      },
+      {
+        "name": "decided_by_role",
+        "type": "string",
+        "description": "Role making the decision."
+      },
+      {
+        "name": "validation_outcomes_accessed",
+        "type": "boolean",
+        "description": "true or false; true requires protocol-deviation disclosure."
+      }
+    ],
+    "freeze_manifest.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "freeze_id",
+        "type": "string",
+        "description": "Immutable stage freeze identifier."
+      },
+      {
+        "name": "stage",
+        "type": "enum",
+        "description": "registration, model, inputs, qc, scan_predictions, fruit_predictions, assays, linkage, or analysis."
+      },
+      {
+        "name": "artifact_path",
+        "type": "string",
+        "description": "Relative archive path."
+      },
+      {
+        "name": "artifact_sha256",
+        "type": "sha256",
+        "description": "SHA-256 of exact frozen bytes."
+      },
+      {
+        "name": "frozen_at_utc",
+        "type": "datetime",
+        "description": "UTC timestamp."
+      },
+      {
+        "name": "custodian_id",
+        "type": "string",
+        "description": "Responsible custodian or automated process."
+      },
+      {
+        "name": "prior_freeze_id",
+        "type": "string",
+        "description": "Earlier immutable freeze if this is an amendment; empty otherwise."
+      },
+      {
+        "name": "amendment_reason",
+        "type": "string",
+        "description": "Required if superseding a prior freeze; preserve prior artifact."
+      }
+    ],
+    "independence_checks.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Registered study identifier."
+      },
+      {
+        "name": "source_id",
+        "type": "string",
+        "description": "Prospective source or archive identifier."
+      },
+      {
+        "name": "source_sha256",
+        "type": "sha256",
+        "description": "Hash of original source artifact."
+      },
+      {
+        "name": "lineage_evidence",
+        "type": "string",
+        "description": "Origin, date and custody evidence beyond filename."
+      },
+      {
+        "name": "old_dataset_overlap_check",
+        "type": "enum",
+        "description": "clear, overlap, or unresolved."
+      },
+      {
+        "name": "duplicate_check_method",
+        "type": "string",
+        "description": "Byte hashes plus fruit/source lineage review; spectral similarity if registered."
+      },
+      {
+        "name": "duplicate_check_result",
+        "type": "string",
+        "description": "Retain exact findings, including ambiguous transformed duplicates."
+      },
+      {
+        "name": "decision",
+        "type": "enum",
+        "description": "eligible, ineligible, or quarantine."
+      },
+      {
+        "name": "reviewer_role",
+        "type": "string",
+        "description": "Attestation/review role."
+      },
+      {
+        "name": "reviewed_at_utc",
+        "type": "datetime",
+        "description": "UTC timestamp."
+      }
+    ],
+    "harvest_observations_optional.csv": [
+      {
+        "name": "study_id",
+        "type": "string",
+        "description": "Separate registered harvest study identifier."
+      },
+      {
+        "name": "observation_id",
+        "type": "string",
+        "description": "Unique field/quality observation identifier."
+      },
+      {
+        "name": "fruit_id",
+        "type": "string",
+        "description": "Physical fruit identifier; do not pretend matched fruit are identical."
+      },
+      {
+        "name": "population_id",
+        "type": "string",
+        "description": "Prospective field population."
+      },
+      {
+        "name": "paired_or_sentinel_fruit_id",
+        "type": "string",
+        "description": "Matched/sentinel fruit if destructive assay uses another fruit; empty if inapplicable."
+      },
+      {
+        "name": "criterion_id",
+        "type": "string",
+        "description": "Independently sourced and frozen cultivar/market maturity criterion."
+      },
+      {
+        "name": "decision_rule_id",
+        "type": "string",
+        "description": "Frozen model-to-harvest decision rule, if evaluated."
+      },
+      {
+        "name": "observed_at_utc",
+        "type": "datetime",
+        "description": "Field or quality observation timestamp."
+      },
+      {
+        "name": "observation_type",
+        "type": "string",
+        "description": "Registered variable: actual harvest, maturity assessment, or postharvest outcome."
+      },
+      {
+        "name": "observation_value",
+        "type": "string",
+        "description": "Value using the registered outcome definition."
+      },
+      {
+        "name": "observation_units",
+        "type": "string",
+        "description": "Registered units or categorical coding."
+      },
+      {
+        "name": "assessor_blinded_to_model",
+        "type": "boolean",
+        "description": "true or false; retain actual blinding state."
+      },
+      {
+        "name": "followup_protocol_id",
+        "type": "string",
+        "description": "Frozen postharvest handling/assessment protocol if relevant."
+      }
+    ]
+  }
+}

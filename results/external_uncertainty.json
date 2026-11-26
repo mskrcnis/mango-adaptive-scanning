@@ -1,0 +1,597 @@
+{
+  "4|correlation|42": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.24536424409538674,
+        -0.000894688651448278
+      ],
+      [
+        0.1799522693936068,
+        0.7557830941767505
+      ],
+      [
+        -0.0073041963201170065,
+        0.010347858084884224
+      ],
+      [
+        -0.043545786748208394,
+        -0.008712385011426061
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      -0.09231879905015505,
+      0.4330110497237569,
+      0.0012637922524559864,
+      -0.024171270718231996
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "accuracy",
+    "rule": "correlation",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.1654264596892356,
+        -0.014237321275974253
+      ],
+      [
+        0.3274773064668061,
+        1.1944765104525614
+      ],
+      [
+        -0.015135958199885675,
+        0.03844315672515785
+      ],
+      [
+        -0.06911264386808182,
+        -0.021768541822310642
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      -0.08078409744550674,
+      0.731353591160221,
+      0.012236994219653186,
+      -0.04419889502762431
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|7": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.08566793042982847,
+        0.0034438323616613133
+      ],
+      [
+        0.240534778720633,
+        1.414895549500454
+      ],
+      [
+        -0.007025583804382352,
+        0.02715933551781549
+      ],
+      [
+        -0.08702467211503354,
+        -0.004057760373158465
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      -0.03483913641874148,
+      0.7541436464088398,
+      0.008999433979417937,
+      -0.03936464088397795
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 7
+  },
+  "4|swap_mid|99": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.05156530567552873,
+        0.10169949225782468
+      ],
+      [
+        0.03575730413932547,
+        0.5545871702059278
+      ],
+      [
+        -0.01191856057078874,
+        0.004220546147069137
+      ],
+      [
+        -0.02718246836603713,
+        0.005378734389479715
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      0.021067324933958798,
+      0.2755524861878453,
+      -0.0037540620065232844,
+      -0.01104972375690616
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 99
+  },
+  "4|uniform|42": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.7611224180023762,
+        0.15437717469353832
+      ],
+      [
+        2.2493069457990407,
+        3.8592229137068452
+      ],
+      [
+        -0.05865056231952141,
+        0.09144385534668918
+      ],
+      [
+        -0.2730248266230013,
+        -0.11861817635136643
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      -0.2811725323351464,
+      3.060082872928177,
+      0.005242676695279724,
+      -0.19060773480662982
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "independent",
+    "rule": "uniform",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 42
+  },
+  "4|uniform|7": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.8889920842733563,
+        0.014287642060296422
+      ],
+      [
+        2.115585482686682,
+        3.419710195530726
+      ],
+      [
+        -0.11361115835753598,
+        0.00827079025847064
+      ],
+      [
+        -0.30916505731457283,
+        -0.12392598587233723
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      -0.4385998251666505,
+      2.7727900552486187,
+      -0.05998481397114658,
+      -0.21339779005524862
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "independent",
+    "rule": "uniform",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 7
+  },
+  "4|uniform|99": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": [
+      [
+        -0.8534676649653302,
+        0.20358189491911524
+      ],
+      [
+        2.4241391999538213,
+        4.026774754383961
+      ],
+      [
+        -0.09180355753770429,
+        0.10144627643993853
+      ],
+      [
+        -0.3050024511091269,
+        -0.11838840716345518
+      ]
+    ],
+    "n_boot": 1000,
+    "n_groups": 18,
+    "operating_point": "scientific",
+    "point": [
+      -0.31648057527092144,
+      3.2472375690607733,
+      -0.0040859988776655864,
+      -0.21132596685082872
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "independent",
+    "rule": "uniform",
+    "scope": "harvest-population cluster resampling within this sampled season",
+    "season": 4,
+    "seed": 99
+  },
+  "5|correlation|42": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        0.029572281408661638,
+        1.575,
+        -0.010416666666666657,
+        -0.03125
+      ],
+      "s5_pop129": [
+        -0.10119566828821314,
+        0.525,
+        -0.01745129870129869,
+        -0.024999999999999994
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.02947028207072444,
+      1.05,
+      -0.014052013422818782,
+      -0.02812500000000001
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "accuracy",
+    "rule": "correlation",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        -0.07505179276052765,
+        2.725,
+        0.09367088607594931,
+        -0.125
+      ],
+      "s5_pop129": [
+        -0.29920152011923196,
+        2.15625,
+        -0.02894327894327897,
+        -0.19375000000000003
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.17437011848460648,
+      2.440625,
+      0.03266331658291455,
+      -0.159375
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|7": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        -0.09499112416472766,
+        2.7375,
+        0.16715243369280086,
+        -0.06874999999999998
+      ],
+      "s5_pop129": [
+        -0.13897845843902012,
+        1.30625,
+        -0.023975396974832086,
+        -0.11249999999999999
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.11481402516286732,
+      2.021875,
+      0.06458617381204868,
+      -0.09062499999999996
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 7
+  },
+  "5|swap_mid|99": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        -0.13628013244138693,
+        1.35,
+        0.009177087535296446,
+        -0.043749999999999956
+      ],
+      "s5_pop129": [
+        -0.14247997065167728,
+        1.075,
+        -0.026742734890354725,
+        -0.07499999999999996
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.1383330997013421,
+      1.2125,
+      -0.009164535379369232,
+      -0.05937500000000001
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 99
+  },
+  "5|uniform|42": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        -0.6419139488453873,
+        4.075,
+        -0.0723720418271877,
+        -0.33749999999999997
+      ],
+      "s5_pop129": [
+        -0.333520464173396,
+        3.0,
+        -0.018341513820718136,
+        -0.17500000000000004
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.4953318865564844,
+      3.5375,
+      -0.05055711362085957,
+      -0.25625
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "independent",
+    "rule": "uniform",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 42
+  },
+  "5|uniform|7": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        -0.5530518817699974,
+        3.33125,
+        -0.03785147801009375,
+        -0.26875000000000004
+      ],
+      "s5_pop129": [
+        -0.2843114043176005,
+        2.59375,
+        -0.007990867579908634,
+        -0.16875
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.42238930938870634,
+      2.9625,
+      -0.023341105605751478,
+      -0.21875
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "independent",
+    "rule": "uniform",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 7
+  },
+  "5|uniform|99": {
+    "achieved_budget_comparable": false,
+    "contrast": "proposed_minus_single",
+    "estimands": [
+      "rmsep_difference",
+      "pulse_difference",
+      "conditional_missed_difference",
+      "unconditional_missed_difference"
+    ],
+    "group_estimates": {
+      "s5_pop128": [
+        -0.7265964870574619,
+        4.1875,
+        -0.09533227848101267,
+        -0.40625
+      ],
+      "s5_pop129": [
+        -0.29671978689578116,
+        3.25,
+        0.020821283979178762,
+        -0.16875
+      ]
+    },
+    "interpretation": "Negative RMSEP difference favors proposed; a budget gap outside the frozen margin makes an isolated efficiency claim inconclusive. Frozen curves supplied; no external threshold tuning.",
+    "intervals": null,
+    "n_boot": 1000,
+    "n_groups": 2,
+    "operating_point": "scientific",
+    "point": [
+      -0.5243990734712645,
+      3.71875,
+      -0.041935483870967794,
+      -0.28750000000000003
+    ],
+    "pulse_comparability_margin": 0.25,
+    "roles": "independent",
+    "rule": "uniform",
+    "scope": "Only 2 harvest populations: population-level confidence intervals suppressed; group-specific estimates supplied.",
+    "season": 5,
+    "seed": 99
+  }
+}

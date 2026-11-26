@@ -1,0 +1,18 @@
+{
+  "constant_spectrum_max_abs_error": 2.220446049250313e-16,
+  "eligible_channels": 10,
+  "support_rejection": "Unsupported emitter unsupported980: response mass 0.665729 < 0.95",
+  "support_fractions": {
+    "LED720-03AU": 0.9807767771900399,
+    "LED740-01AU": 1.0,
+    "LED760-03AU": 1.0,
+    "LED780-03AU": 0.9998205518875911,
+    "LED800-01AU": 1.0000000000000002,
+    "LED820-01AU": 1.0,
+    "LED850-03UP": 1.0,
+    "LED890-03AU": 1.0000000000000004,
+    "LED910D-01": 0.9990183602981277,
+    "LED940D-05": 0.9937872614570276
+  },
+  "normalization_pass": true
+}

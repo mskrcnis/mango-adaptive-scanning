@@ -1,0 +1,1834 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=18mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,pdflscape}
+\usepackage[super,sort&compress]{natbib}
+\usepackage{times}
+\input{author_details.tex}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\belowcaptionskip}{5pt}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\newcommand{\RMSEP}{\operatorname{RMSEP}}
+\begin{document}
+\title{Supplementary methods and complete operating-point results:\\Adaptive versus fixed spectral acquisition for mango dry-matter prediction: a seasonal benchmark and controlled diagnosis}
+\author{\AuthorNames}
+\date{}
+\maketitle
+\tableofcontents
+\clearpage
+\section{Scope, provenance and interpretation}
+This supplement integrates the completed original analysis (O), the matched-predictor and stopping diagnostic (revision 2, V2), the design-only fixed-subset/order analysis (revision 3, V3), and the final research-artifact freeze (revision 4, V4). These are distinct stages, not independent replications. The present consolidation (revision 5) only reads and reports saved evidence; it performs no refitting, threshold search, bank selection or later-season rescoring.
+
+All empirical observations come from version 3 of the same public mango dataset.\citep{andersondata2024} Seasons 4 and 5 are later-season benchmark splits within that dataset. They are not a new external dataset collected for this paper. They had also been examined in earlier local work; their benchmark reuse is disclosed. V2 and V3 were motivated after the original analysis and reuse development seasons 1--3. Their conclusions are exploratory even though each revision fixed its own rules before its new computations. V4 is a selected final model artifact, not an independently evaluated fourth study.
+
+The paper asks what prediction accuracy can be obtained at fixed simulated acquisition counts, whether a bank-reference stopping objective has a demonstrated advantage under matched controls, and how predictor choice and acquisition order explain observed behavior. A negative adaptive-objective result is a substantive outcome. Harvest timing supplies motivation only: observed targets are dry matter, not validated harvest decisions or postharvest quality outcomes. Physical hardware, a harvest threshold and new field collection are outside the completed dataset-study scope; they are not missing prerequisites for this empirical report.
+
+Errors are in dry-matter percentage points (pp). A ``reading'' is one simulated finite-band acquisition unless an ideal-point or full-spectrum grid count is explicitly named. Such counts are not measured energy or latency. In original result identifiers, \texttt{physical\_...} means a model using the finite-band emulator; it does not mean physically measured LED hardware. ``Full bank'' and ``rich reference'' name fitted predictors, not error-free oracles or information-theoretic limits.
+
+\subsection{Observations and grouping}
+The verified source contains 12,011 spectral scans, not 12,011 verified unique fruits. Its common comparison grid is 103 wavelengths from 684 to 990 nm in steps of 3 nm. Seasons 1, 2 and 3 contain 3,914, 1,363 and 4,966 scans in 25, 19 and 50 documented harvest populations; seasons 4 and 5 contain 1,448 and 320 scans in 18 and 2 populations. Verified fruit identities and per-record instrument serial identities are unavailable. Consequently all analyses are scan-weighted and keep each documented season/population together. No fruit identities or fruit weights are inferred from similar spectra or equal assay values. The source hash is \path{1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1}. Exact common-grid duplicate spectra were not found in the recorded audit.
+
+\subsection{Split roles and the pre-benchmark leakage repair}
+Each development fold holds out a complete season. Of the other seasons' harvest groups, 20\% are reserved for calibration using seed 31415. A further 15\% of the non-calibration groups are reserved for bank design using seed 2718. Remaining groups fit predictors and controllers. An audit identified that using supervised bank construction on all fitting labels could let a target population's outcome influence its own bank before out-of-fold target generation. Preliminary descendants were invalidated, archived and rerun with the separate design groups before the original later-season scoring. The final results in this supplement use the corrected partitions. This repair is distinct from the later exploratory V2/V3 questions.
+
+Every inner scaler, predictor and reference used to generate controller targets is fitted on the corresponding inner fitting groups. No held-season, calibration or bank-design target enters that fit. The exact row and group memberships are retained in \path{results/fold_assignments.json}. The final original later-season bundles use the same role-separation scheme on all development seasons; V4 intentionally uses a different finalization rule described below.
+
+\clearpage
+\begingroup\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{lllll}
+\caption{Original, V2 and V3 role counts: scans / harvest populations. Final O is the original final-fit partition, not the V4 refit.}\label{tab:roles}\\
+\toprule
+Held season & Core fit & Design & Calibration & Held evaluation \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Held season & Core fit & Design & Calibration & Held evaluation \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & 4003 / 46 & 998 / 9 & 1328 / 14 & 3914 / 25 \\
+2 & 5656 / 51 & 953 / 9 & 2271 / 15 & 1363 / 19 \\
+3 & 3054 / 29 & 857 / 6 & 1366 / 9 & 4966 / 50 \\
+Final O & 6826 / 63 & 1300 / 12 & 2117 / 19 & 0 / 0 \\
+\end{longtable}
+\endgroup
+
+\section{Finite-band forward model and acquisition interface}
+For apparent absorbance $A_{ik}$ at wavelength $\lambda_k$, the emulator first forms relative intensity $r_{ik}=10^{-A_{ik}}$. For emitter response $s_j(\lambda_k)$ and trapezoidal bin width $\Delta\lambda_k$, normalized nonnegative weights are
+\[
+ w_{jk}=\frac{s_j(\lambda_k)\Delta\lambda_k}{\sum_l s_j(\lambda_l)\Delta\lambda_l},\qquad
+ z_{ij}=-\log_{10}\!\left(\sum_k w_{jk}10^{-A_{ik}}\right).
+\]
+Endpoint quadrature widths are 1.5 nm and interior widths 3 nm. A per-row numerical absorbance shift stabilizes exponentials without changing this ratio. Averaging absorbances instead of intensities would be a different forward model. The F-750 documentation gives Log(1/Reflectance), but the logarithm base was not verified at firmware level; base 10 is an explicitly adopted apparent-absorbance convention. Detector and reference response are assumed flat because calibrated response curves are absent.
+
+Ten distinct component families have digitized typical manufacturer emission plots.\citep{roithnercatalog} Their nominal centers are 720, 740, 760, 780, 800, 820, 850, 890, 910 and 940 nm. Source PDFs, rendered plots, traced pixels, curve CSVs and hashes are retained in \path{data/catalog/}. The interpolation is of an emitter response onto the observed spectral grid, not imputation of an unobserved fruit reading. Each admitted trace has at least 95\% of its modeled response mass inside the observed wavelength range. Mass outside each plotted curve's finite support is assumed zero; coverage is therefore a modeled property, not a certified real-device bound. Absolute emitted power is discarded by normalization.
+
+The primary eight-channel bank P (\texttt{swap\_mid}) has centers 720, 760, 780, 800, 820, 890, 910 and 940 nm. The catalog-only sensitivity U (\texttt{uniform}) has centers 720, 740, 780, 800, 820, 850, 910 and 940 nm. Original bank C denotes the supervised correlation rule; its membership is separately retained by fold and final role. Every policy initially acquires the lowest and highest bank centers and charges both readings. At eight installed channels there are $2^6=64$ reachable masks, of which 63 are nonterminal, and $6!=720$ orders of the remaining channels.
+
+At sparse inference, only acquired scalar readings and their binary availability mask enter the model. Missing values are replaced with training means before scaling, then zeroed; an acquired zero remains distinguishable through the mask. No sparse inference uses full-spectrum SNV, a full-spectrum derivative, hidden readings, assay, season, population or reference prediction. The full spectrum is used offline to generate emulator channels and by the explicitly rich comparator. The sequential API requests one channel at a time. Its read boundary and saved traces test software behavior, not an optical device.
+
+\subsection{Optical sensitivity definitions}
+Original sensitivity rows include center shifts of $\pm3$ nm, width multipliers 0.9 and 1.1, a Gaussian response constructed from catalog nominal peak/width, and ideal grid-point channels. These are declared simulation perturbations, not certified manufacturer tolerances. The shifted-width/Gaussian scenarios apply the nominally trained finite-band models without retraining; ideal-point models have their own development fitting and operating points. The Gaussian substitution is especially different for parts whose drawn curve width differs from the tabulated typical width. Large prediction errors after a response change are retained. If the full-bank comparator fails under mismatch, a low missed-correction fraction relative to that failed predictor does not establish safe stopping. No unsupported profile was silently renormalized into eligibility; the saved scored sensitivity exclusions list is empty for the registered scored scenarios.
+
+\section{Original predictive and acquisition methods}
+\subsection{Partial predictor and references}
+The masked multilayer perceptron (MLP) has 64/32 ReLU hidden units and a scalar standardized-assay output. Input width is twice the number of installed channels (values plus mask). It trains for 80 epochs using one randomly chosen reachable nonterminal mask per scan per epoch, AdamW at 0.002, weight decay $10^{-4}$ and batch size 2,048. The executed workflow uses equal scan weights, rather than the unused group-weighting default in the lower-level training helper. The MLP is not trained as a raw full-mask predictor. At full acquisition the pipeline dispatches to its frozen complete-bank PLS with six components and autoscaling. This estimator switch motivates the V2 decomposition below.
+
+The primary rich predictor applies row SNV, then an 11-point Savitzky--Golay second derivative with polynomial degree two and 3-nm spacing, then autoscaled PLS with 12 components. Standard deviations in SNV are bounded below by $10^{-8}$. PLS uses a 500-iteration limit; component counts are capped by feature count and the number of training rows minus one. A generic secondary spectral CNN uses convolutions with 8 and 16 channels, kernels 7 and 5, factor-two average pooling and a 32-unit dense layer, trained for 55 epochs. It supplies a separately labeled single-CNN-reference controller sensitivity, not the primary stopping target.
+
+A separate Walsh-architecture reference follows the checked author architecture:\citep{walsh2024} one width-21 convolutional filter, ELU, flattening, dense ELU layers 36/18/12 and scalar output; He-normal kernels and L2 coefficient 0.0055. Adam starts at 0.005, batch size 128, maximum 750 epochs; the scheduler halves the rate after 25 unimproved epochs with floor $10^{-6}$, and early stopping restores the best state after 50 unimproved epochs (minimum improvement $10^{-5}$). Twenty percent of its supplied fitting populations are reserved for early stopping; the scaler uses only the remaining groups. This is an adaptation to 103 raw absorbance inputs and this study's grouped splits, not a reproduction of the authors' concatenated 618-feature model or published score. Framework and random-stream differences are also retained as limitations.
+
+\subsection{Cross-fitted signed gains and controller training}
+For scan $i$, acquired set $S$, assay $y_i$, partial prediction $f_S$, bank predictor $f_B$ and rich predictor $f_F$, define
+\[
+ e_{S,i}=|y_i-f_S|,\quad e_{B,i}=|y_i-f_B|,\quad e_{F,i}=|y_i-f_F|,\qquad
+ g_{B,i}(S)=e_{S,i}-e_{B,i},\quad g_{F,i}(S)=e_{S,i}-e_{F,i}.
+\]
+The proposed (bank-reference) label is $\mathbb{1}\{g_B>0.50\}$; the rich-reference comparator uses $\mathbb{1}\{g_F>0.50\}$. Positive labels mean additional bank/rich prediction can materially correct this fitted state's absolute assay error. Signed one-step action targets are $e_S-e_{S\cup\{j\}}$ for every unread $j$; negative gains are retained. Each controller has a shared 64/32 ReLU encoder, a binary gain head, one signed action-gain score per LED and an auxiliary absolute-error estimate. The loss is binary cross-entropy plus scaled action MSE plus 0.25 times scaled absolute-error MSE. All 63 nonterminal masks receive equal weight within each scan, and three group-disjoint inner folds generate every training target. Controllers train for 25 epochs with matched initialization, state sequence, action labels and effort. Shared encoders can nevertheless learn different action scores, which is why the original joint-controller comparison does not isolate stopping alone.
+
+Isotonic calibration uses disjoint calibration groups along complete sequential paths. Final stopping follows the calibrated probability and frozen threshold, with termination forced at eight readings. Full-mask dispatch makes the bank-relative terminal gain exactly zero. Rich-reference error can remain lower or higher than bank error; neither error is constrained to be an optical lower bound.
+
+\subsection{Baseline definitions and numerical repair}
+Fixed ordering ranks channels by mean training out-of-fold one-step gain from the initial state. Fixed-length controls follow this order at lengths 2--8; seeded random ordering uses a reproducible permutation. The uncertainty comparator thresholds the same observed-input error head and follows the proposed action head. The look-ahead comparator uses a training-fitted regularized conditional Gaussian over standardized channels, three conditional draws per prospective reading and a two-step branch in which the second choice depends on the imagined first reading. It minimizes estimated terminal residual risk. The terminal residual model is ridge fitted to out-of-fold full-bank absolute errors. Actual hidden replay readings never supply imagined future observations. This is a bounded conditional-risk approximation, not an implementation of acquisition-conditioned oracle.\citep{valancius2024}
+
+Static finite-band controls use budgets 4 and 8; ideal point controls use 4, 8 and 16 measured-grid features. A training-only sparse ordering tunes 14 Lasso penalties from $10^{-4}$ to $10^{-0.3}$ with three grouped folds and fold-specific scaling, then refits on core groups. The selected feature sets are given to autoscaled PLS with $\min(6,K)$ components, standardized RBF SVR ($C=10$, $\epsilon=0.1$, gamma=scale), or standardized 64/32 MLP regression (160 iterations, batch 256, L2 parameter 0.01, no early stopping). These static networks are not the masked runtime MLP.
+
+Before later-season scoring, coordinate-descent Lasso remained unconverged even at 50,000 iterations. Deterministic LassoLars solved the same objective with a 2,000-step limit and Gram precomputation. The held-season-1 solver audit had all 42 inner fits and the final refit without convergence warnings, KKT residual below $2.2\times10^{-13}$ and primal--dual gap below $4.7\times10^{-11}$. Solver choice used convergence diagnostics only; neither its penalty grid nor partitions changed. Unsuccessful attempts remain archived.
+
+\subsection{Original operating points and uncertainty}
+The original scientific rule minimizes distance from four mean development readings, then worst-season RMSEP, then threshold, over the fixed grid $0,0.05,\ldots,1$. Its stricter engineering search requires every development season to satisfy missed-correction rate at most 10\%, bank-loss rate at most 10\%, RMSEP at most rich-reference RMSEP +0.25 pp and mean readings at most four. Undefined missed rates cannot pass that search. When infeasible, the recorded fallback minimizes the largest normalized violation, then worst-season RMSEP and mean readings; it is not relabeled feasible. A separate illustrative screening statement uses at most +0.25 pp versus the full bank and at least 25\% fewer mean readings. These two sets of criteria must not be conflated. The original development engineering search was infeasible; every original E row is its recorded descriptive fallback, not a feasible selected prototype.
+
+A missed material correction is an early stop with $e_S-e_B>\delta$. Its conditional rate is missed count divided by early-stop count, undefined when no scans stop early. The unconditional rate divides by all scans. Bank-loss rate uses $e_B-e_F>\delta$. Agreement between two predictions is not equivalent to correctness against the assay. All original operating decisions were frozen before the later-season benchmark outcomes were loaded. Achieved mean-reading differences exceeding 0.25 make objective comparisons budget-confounded; plotting a held-data frontier does not permit threshold retuning.
+
+Paired uncertainty resamples complete harvest populations 1,000 times with seed 42, where the registered minimum group count is met. Original and V2 rules require at least five populations; V3 held seasons have 25, 19 and 50. Season 5 has only two populations and therefore has no reported population-bootstrap interval. Intervals condition on sampled populations, fitted models and selected designs, not new-season uncertainty. No multiplicity adjustment or seed-selection claim is made. Seeds 7, 42 and 99 describe fitting variation, not independent biological replication.
+
+\section{Complete original later-season benchmark results}
+Table~\ref{tab:original} reports all 176 saved operating points, including original baselines, both additional seeds and every scored optical scenario. P, U and C identify the banks defined above. Point S is scientific, E is the original engineering point and Ref is a reference/static model. Scenario N is nominal, C-/C+ shifts centers by $-3/+3$ nm, W-/W+ scales width by 0.9/1.1, Gauss substitutes nominal Gaussian responses, and Points uses separately fitted ideal-point channels. Full-spectrum counts of 103 and ideal counts are feature counts, not directly comparable hardware costs. The ``missed/early'' entry exposes the denominator rather than treating an undefined rate as zero.
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrlllrrlr}
+\caption{All original later-season scored operating points, reproduced from the frozen metrics.}\label{tab:original}\\
+\toprule
+Season & Bank & Seed & Scenario & Method & Point & RMSEP & Readings & Missed/early & Rate \\
+\midrule
+\endfirsthead
+\multicolumn{10}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Seed & Scenario & Method & Point & RMSEP & Readings & Missed/early & Rate \\
+\midrule
+\endhead
+\midrule
+\multicolumn{10}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+4 & C & 42 & N & \texttt{full\_bank} & Ref & 1.3296 & 8.000 & 0/0 & -- \\
+4 & C & 42 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & C & 42 & N & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & C & 42 & N & \texttt{proposed} & S & 2.7503 & 2.439 & 852/1388 & 0.614 \\
+4 & C & 42 & N & \texttt{single} & S & 2.8426 & 2.006 & 887/1448 & 0.613 \\
+4 & P & 42 & N & \texttt{full\_bank} & Ref & 1.2318 & 8.000 & 0/0 & -- \\
+4 & P & 42 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & N & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & N & \texttt{proposed} & S & 2.6717 & 3.096 & 755/1250 & 0.604 \\
+4 & P & 42 & N & \texttt{proposed} & E & 1.2609 & 7.942 & 30/45 & 0.667 \\
+4 & P & 42 & N & \texttt{single} & S & 2.7525 & 2.365 & 819/1384 & 0.592 \\
+4 & P & 42 & N & \texttt{single\_cnn\_reference} & S & 2.6118 & 3.107 & 795/1317 & 0.604 \\
+4 & P & 42 & N & \texttt{uncertainty} & S & 2.3638 & 4.908 & 549/880 & 0.624 \\
+4 & P & 42 & N & \texttt{fixed\_order} & S & 2.6899 & 3.046 & 759/1254 & 0.605 \\
+4 & P & 42 & N & \texttt{random\_order} & S & 2.6622 & 3.171 & 741/1218 & 0.608 \\
+4 & P & 42 & N & \texttt{fixed\_length} & S & 2.8512 & 4.000 & 840/1448 & 0.580 \\
+4 & P & 42 & N & \texttt{lookahead} & S & 2.6574 & 3.077 & 748/1253 & 0.597 \\
+4 & P & 7 & N & \texttt{full\_bank} & Ref & 1.2318 & 8.000 & 0/0 & -- \\
+4 & P & 7 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 7 & N & \texttt{rich\_cnn} & Ref & 1.5935 & 103.000 & 0/0 & -- \\
+4 & P & 7 & N & \texttt{proposed} & S & 2.6995 & 3.258 & 746/1249 & 0.597 \\
+4 & P & 7 & N & \texttt{single} & S & 2.7344 & 2.504 & 803/1365 & 0.588 \\
+4 & P & 99 & N & \texttt{full\_bank} & Ref & 1.2318 & 8.000 & 0/0 & -- \\
+4 & P & 99 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 99 & N & \texttt{rich\_cnn} & Ref & 1.4323 & 103.000 & 0/0 & -- \\
+4 & P & 99 & N & \texttt{proposed} & S & 2.7089 & 2.498 & 787/1402 & 0.561 \\
+4 & P & 99 & N & \texttt{single} & S & 2.6878 & 2.222 & 803/1421 & 0.565 \\
+4 & U & 42 & N & \texttt{full\_bank} & Ref & 2.2368 & 8.000 & 0/0 & -- \\
+4 & U & 42 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & U & 42 & N & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & U & 42 & N & \texttt{proposed} & S & 2.5533 & 5.392 & 282/688 & 0.410 \\
+4 & U & 42 & N & \texttt{single} & S & 2.8345 & 2.331 & 558/1379 & 0.405 \\
+4 & U & 7 & N & \texttt{full\_bank} & Ref & 2.2368 & 8.000 & 0/0 & -- \\
+4 & U & 7 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & U & 7 & N & \texttt{rich\_cnn} & Ref & 1.5935 & 103.000 & 0/0 & -- \\
+4 & U & 7 & N & \texttt{proposed} & S & 2.3492 & 5.474 & 209/627 & 0.333 \\
+4 & U & 7 & N & \texttt{single} & S & 2.7878 & 2.702 & 518/1317 & 0.393 \\
+4 & U & 99 & N & \texttt{full\_bank} & Ref & 2.2368 & 8.000 & 0/0 & -- \\
+4 & U & 99 & N & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & U & 99 & N & \texttt{rich\_cnn} & Ref & 1.4323 & 103.000 & 0/0 & -- \\
+4 & U & 99 & N & \texttt{proposed} & S & 2.4838 & 5.534 & 256/648 & 0.395 \\
+4 & U & 99 & N & \texttt{single} & S & 2.8002 & 2.287 & 562/1408 & 0.399 \\
+4 & P & 42 & Static & \texttt{physical\_plsr\_4} & Ref & 1.2415 & 4.000 & 203/1448 & 0.140 \\
+4 & P & 42 & Static & \texttt{physical\_sparse\_svr\_4} & Ref & 2.3605 & 4.000 & 734/1448 & 0.507 \\
+4 & P & 42 & Static & \texttt{physical\_mlp\_4} & Ref & 2.6146 & 4.000 & 776/1448 & 0.536 \\
+4 & P & 42 & Static & \texttt{physical\_plsr\_8} & Ref & 1.2318 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{physical\_sparse\_svr\_8} & Ref & 2.5039 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{physical\_mlp\_8} & Ref & 2.5962 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{ideal\_plsr\_4} & Ref & 2.6823 & 4.000 & 857/1448 & 0.592 \\
+4 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_4} & Ref & 2.3644 & 4.000 & 754/1448 & 0.521 \\
+4 & P & 42 & Static & \texttt{ideal\_mlp\_4} & Ref & 2.3939 & 4.000 & 811/1448 & 0.560 \\
+4 & P & 42 & Static & \texttt{ideal\_plsr\_8} & Ref & 2.7807 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_8} & Ref & 2.5236 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{ideal\_mlp\_8} & Ref & 2.4916 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{ideal\_plsr\_16} & Ref & 1.2994 & 16.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_16} & Ref & 1.5538 & 16.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{ideal\_mlp\_16} & Ref & 1.1155 & 16.000 & 0/0 & -- \\
+4 & P & 42 & Static & \texttt{walsh\_adapted} & Ref & 1.2759 & 103.000 & 0/0 & -- \\
+4 & P & 42 & Points & \texttt{full\_bank} & Ref & 1.4962 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Points & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & Points & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & Points & \texttt{proposed} & S & 2.7422 & 2.459 & 847/1399 & 0.605 \\
+4 & P & 42 & Points & \texttt{single} & S & 2.7605 & 2.039 & 870/1448 & 0.601 \\
+4 & P & 42 & C- & \texttt{full\_bank} & Ref & 1.4481 & 8.000 & 0/0 & -- \\
+4 & P & 42 & C- & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & C- & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & C- & \texttt{proposed} & S & 3.0377 & 2.824 & 766/1327 & 0.577 \\
+4 & P & 42 & C- & \texttt{single} & S & 3.0854 & 2.177 & 806/1422 & 0.567 \\
+4 & P & 42 & C+ & \texttt{full\_bank} & Ref & 2.8005 & 8.000 & 0/0 & -- \\
+4 & P & 42 & C+ & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & C+ & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & C+ & \texttt{proposed} & S & 2.7610 & 2.854 & 385/1316 & 0.293 \\
+4 & P & 42 & C+ & \texttt{single} & S & 2.6608 & 2.506 & 385/1372 & 0.281 \\
+4 & P & 42 & W- & \texttt{full\_bank} & Ref & 8.7145 & 8.000 & 0/0 & -- \\
+4 & P & 42 & W- & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & W- & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & W- & \texttt{proposed} & S & 4.2218 & 3.084 & 18/1248 & 0.014 \\
+4 & P & 42 & W- & \texttt{single} & S & 3.2258 & 2.382 & 20/1383 & 0.014 \\
+4 & P & 42 & W+ & \texttt{full\_bank} & Ref & 7.8239 & 8.000 & 0/0 & -- \\
+4 & P & 42 & W+ & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & W+ & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & W+ & \texttt{proposed} & S & 3.7298 & 3.119 & 6/1249 & 0.005 \\
+4 & P & 42 & W+ & \texttt{single} & S & 3.1004 & 2.321 & 6/1395 & 0.004 \\
+4 & P & 42 & Gauss & \texttt{full\_bank} & Ref & 78.5047 & 8.000 & 0/0 & -- \\
+4 & P & 42 & Gauss & \texttt{rich\_pls} & Ref & 1.4772 & 103.000 & 0/0 & -- \\
+4 & P & 42 & Gauss & \texttt{rich\_cnn} & Ref & 1.5027 & 103.000 & 0/0 & -- \\
+4 & P & 42 & Gauss & \texttt{proposed} & S & 7.4291 & 2.181 & 0/1436 & 0.000 \\
+4 & P & 42 & Gauss & \texttt{single} & S & 3.7661 & 2.124 & 0/1446 & 0.000 \\
+5 & C & 42 & N & \texttt{full\_bank} & Ref & 2.2378 & 8.000 & 0/0 & -- \\
+5 & C & 42 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & C & 42 & N & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & C & 42 & N & \texttt{proposed} & S & 2.1719 & 3.050 & 61/298 & 0.205 \\
+5 & C & 42 & N & \texttt{single} & S & 2.2014 & 2.000 & 70/320 & 0.219 \\
+5 & P & 42 & N & \texttt{full\_bank} & Ref & 1.2438 & 8.000 & 0/0 & -- \\
+5 & P & 42 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & N & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & N & \texttt{proposed} & S & 1.9971 & 4.809 & 106/199 & 0.533 \\
+5 & P & 42 & N & \texttt{proposed} & E & 1.2438 & 8.000 & 0/0 & -- \\
+5 & P & 42 & N & \texttt{single} & S & 2.1715 & 2.369 & 157/314 & 0.500 \\
+5 & P & 42 & N & \texttt{single\_cnn\_reference} & S & 2.1264 & 3.259 & 153/300 & 0.510 \\
+5 & P & 42 & N & \texttt{uncertainty} & S & 1.6575 & 7.028 & 54/88 & 0.614 \\
+5 & P & 42 & N & \texttt{fixed\_order} & S & 2.0128 & 4.641 & 110/208 & 0.529 \\
+5 & P & 42 & N & \texttt{random\_order} & S & 1.8280 & 5.100 & 93/180 & 0.517 \\
+5 & P & 42 & N & \texttt{fixed\_length} & S & 2.2303 & 4.000 & 164/320 & 0.512 \\
+5 & P & 42 & N & \texttt{lookahead} & S & 1.9109 & 4.737 & 103/202 & 0.510 \\
+5 & P & 7 & N & \texttt{full\_bank} & Ref & 1.2438 & 8.000 & 0/0 & -- \\
+5 & P & 7 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 7 & N & \texttt{rich\_cnn} & Ref & 1.2681 & 103.000 & 0/0 & -- \\
+5 & P & 7 & N & \texttt{proposed} & S & 1.9746 & 5.234 & 123/207 & 0.594 \\
+5 & P & 7 & N & \texttt{single} & S & 2.0894 & 3.212 & 152/287 & 0.530 \\
+5 & P & 99 & N & \texttt{full\_bank} & Ref & 1.2438 & 8.000 & 0/0 & -- \\
+5 & P & 99 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 99 & N & \texttt{rich\_cnn} & Ref & 1.4283 & 103.000 & 0/0 & -- \\
+5 & P & 99 & N & \texttt{proposed} & S & 2.1963 & 3.581 & 149/276 & 0.540 \\
+5 & P & 99 & N & \texttt{single} & S & 2.3347 & 2.369 & 168/306 & 0.549 \\
+5 & U & 42 & N & \texttt{full\_bank} & Ref & 1.4959 & 8.000 & 0/0 & -- \\
+5 & U & 42 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & U & 42 & N & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & U & 42 & N & \texttt{proposed} & S & 1.7980 & 5.697 & 74/167 & 0.443 \\
+5 & U & 42 & N & \texttt{single} & S & 2.2934 & 2.159 & 156/316 & 0.494 \\
+5 & U & 7 & N & \texttt{full\_bank} & Ref & 1.4959 & 8.000 & 0/0 & -- \\
+5 & U & 7 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & U & 7 & N & \texttt{rich\_cnn} & Ref & 1.2681 & 103.000 & 0/0 & -- \\
+5 & U & 7 & N & \texttt{proposed} & S & 1.7125 & 5.963 & 59/141 & 0.418 \\
+5 & U & 7 & N & \texttt{single} & S & 2.1348 & 3.000 & 129/292 & 0.442 \\
+5 & U & 99 & N & \texttt{full\_bank} & Ref & 1.4959 & 8.000 & 0/0 & -- \\
+5 & U & 99 & N & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & U & 99 & N & \texttt{rich\_cnn} & Ref & 1.4283 & 103.000 & 0/0 & -- \\
+5 & U & 99 & N & \texttt{proposed} & S & 1.8348 & 6.050 & 79/155 & 0.510 \\
+5 & U & 99 & N & \texttt{single} & S & 2.3592 & 2.331 & 171/310 & 0.552 \\
+5 & P & 42 & Static & \texttt{physical\_plsr\_4} & Ref & 1.8527 & 4.000 & 243/320 & 0.759 \\
+5 & P & 42 & Static & \texttt{physical\_sparse\_svr\_4} & Ref & 1.5299 & 4.000 & 118/320 & 0.369 \\
+5 & P & 42 & Static & \texttt{physical\_mlp\_4} & Ref & 1.5938 & 4.000 & 130/320 & 0.406 \\
+5 & P & 42 & Static & \texttt{physical\_plsr\_8} & Ref & 1.2438 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{physical\_sparse\_svr\_8} & Ref & 1.6044 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{physical\_mlp\_8} & Ref & 1.6838 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{ideal\_plsr\_4} & Ref & 1.8375 & 4.000 & 146/320 & 0.456 \\
+5 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_4} & Ref & 1.9166 & 4.000 & 156/320 & 0.487 \\
+5 & P & 42 & Static & \texttt{ideal\_mlp\_4} & Ref & 1.6719 & 4.000 & 138/320 & 0.431 \\
+5 & P & 42 & Static & \texttt{ideal\_plsr\_8} & Ref & 1.9172 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_8} & Ref & 1.7952 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{ideal\_mlp\_8} & Ref & 1.7178 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{ideal\_plsr\_16} & Ref & 2.0432 & 16.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_16} & Ref & 1.5582 & 16.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{ideal\_mlp\_16} & Ref & 1.4552 & 16.000 & 0/0 & -- \\
+5 & P & 42 & Static & \texttt{walsh\_adapted} & Ref & 1.7781 & 103.000 & 0/0 & -- \\
+5 & P & 42 & Points & \texttt{full\_bank} & Ref & 1.6839 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Points & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & Points & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & Points & \texttt{proposed} & S & 2.0066 & 2.122 & 103/318 & 0.324 \\
+5 & P & 42 & Points & \texttt{single} & S & 2.0099 & 2.081 & 101/320 & 0.316 \\
+5 & P & 42 & C- & \texttt{full\_bank} & Ref & 2.2191 & 8.000 & 0/0 & -- \\
+5 & P & 42 & C- & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & C- & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & C- & \texttt{proposed} & S & 2.6904 & 4.191 & 86/250 & 0.344 \\
+5 & P & 42 & C- & \texttt{single} & S & 2.6711 & 2.212 & 101/316 & 0.320 \\
+5 & P & 42 & C+ & \texttt{full\_bank} & Ref & 2.2931 & 8.000 & 0/0 & -- \\
+5 & P & 42 & C+ & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & C+ & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & C+ & \texttt{proposed} & S & 1.7953 & 3.875 & 44/241 & 0.183 \\
+5 & P & 42 & C+ & \texttt{single} & S & 1.8216 & 2.425 & 58/318 & 0.182 \\
+5 & P & 42 & W- & \texttt{full\_bank} & Ref & 8.5578 & 8.000 & 0/0 & -- \\
+5 & P & 42 & W- & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & W- & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & W- & \texttt{proposed} & S & 5.3753 & 4.694 & 1/214 & 0.005 \\
+5 & P & 42 & W- & \texttt{single} & S & 2.4049 & 2.384 & 2/314 & 0.006 \\
+5 & P & 42 & W+ & \texttt{full\_bank} & Ref & 9.1773 & 8.000 & 0/0 & -- \\
+5 & P & 42 & W+ & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & W+ & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & W+ & \texttt{proposed} & S & 5.8626 & 4.838 & 0/200 & 0.000 \\
+5 & P & 42 & W+ & \texttt{single} & S & 2.5119 & 2.369 & 0/314 & 0.000 \\
+5 & P & 42 & Gauss & \texttt{full\_bank} & Ref & 85.2067 & 8.000 & 0/0 & -- \\
+5 & P & 42 & Gauss & \texttt{rich\_pls} & Ref & 2.2291 & 103.000 & 0/0 & -- \\
+5 & P & 42 & Gauss & \texttt{rich\_cnn} & Ref & 1.6138 & 103.000 & 0/0 & -- \\
+5 & P & 42 & Gauss & \texttt{proposed} & S & 17.4010 & 2.444 & 0/306 & 0.000 \\
+5 & P & 42 & Gauss & \texttt{single} & S & 2.0589 & 2.209 & 0/320 & 0.000 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\subsection{Alternative material-gain definitions}
+The following table preserves all 352 recorded diagnostic evaluations at $\delta=0.25$ and $1.00$ pp, paired by the same 176 frozen operating points. These definitions are applied to existing predictions only: controllers, calibration, thresholds and acquisition paths are unchanged. They are not retrained-$\delta$ experiments. A dash means zero early-stop denominator; a bank-loss rate can be zero because a shifted bank predictor has ceased to offer useful corrections, not because the sparse policy is accurate.
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrlllrrrr}
+\caption{Complete descriptive delta sensitivity: conditional missed rates and bank-loss rates for unchanged policies.}\label{tab:delta}\\
+\toprule
+Season & Bank & Seed & Scenario & Method & Point & Miss .25 & Miss 1.0 & Bank .25 & Bank 1.0 \\
+\midrule
+\endfirsthead
+\multicolumn{10}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Seed & Scenario & Method & Point & Miss .25 & Miss 1.0 & Bank .25 & Bank 1.0 \\
+\midrule
+\endhead
+\midrule
+\multicolumn{10}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+4 & C & 42 & N & \texttt{full\_bank} & Ref & -- & -- & 0.294 & 0.114 \\
+4 & C & 42 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.294 & 0.114 \\
+4 & C & 42 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.294 & 0.114 \\
+4 & C & 42 & N & \texttt{proposed} & S & 0.684 & 0.455 & 0.294 & 0.114 \\
+4 & C & 42 & N & \texttt{single} & S & 0.681 & 0.451 & 0.294 & 0.114 \\
+4 & P & 42 & N & \texttt{full\_bank} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{proposed} & S & 0.690 & 0.438 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{proposed} & E & 0.800 & 0.333 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{single} & S & 0.671 & 0.422 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{single\_cnn\_reference} & S & 0.681 & 0.437 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{uncertainty} & S & 0.708 & 0.476 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{fixed\_order} & S & 0.686 & 0.439 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{random\_order} & S & 0.685 & 0.442 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{fixed\_length} & S & 0.666 & 0.424 & 0.257 & 0.093 \\
+4 & P & 42 & N & \texttt{lookahead} & S & 0.683 & 0.437 & 0.257 & 0.093 \\
+4 & P & 7 & N & \texttt{full\_bank} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 7 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 7 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 7 & N & \texttt{proposed} & S & 0.685 & 0.455 & 0.257 & 0.093 \\
+4 & P & 7 & N & \texttt{single} & S & 0.675 & 0.440 & 0.257 & 0.093 \\
+4 & P & 99 & N & \texttt{full\_bank} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 99 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 99 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 99 & N & \texttt{proposed} & S & 0.641 & 0.412 & 0.257 & 0.093 \\
+4 & P & 99 & N & \texttt{single} & S & 0.641 & 0.412 & 0.257 & 0.093 \\
+4 & U & 42 & N & \texttt{full\_bank} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 42 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 42 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 42 & N & \texttt{proposed} & S & 0.481 & 0.305 & 0.487 & 0.313 \\
+4 & U & 42 & N & \texttt{single} & S & 0.458 & 0.292 & 0.487 & 0.313 \\
+4 & U & 7 & N & \texttt{full\_bank} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 7 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 7 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 7 & N & \texttt{proposed} & S & 0.400 & 0.250 & 0.487 & 0.313 \\
+4 & U & 7 & N & \texttt{single} & S & 0.484 & 0.287 & 0.487 & 0.313 \\
+4 & U & 99 & N & \texttt{full\_bank} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 99 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 99 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.487 & 0.313 \\
+4 & U & 99 & N & \texttt{proposed} & S & 0.455 & 0.287 & 0.487 & 0.313 \\
+4 & U & 99 & N & \texttt{single} & S & 0.459 & 0.291 & 0.487 & 0.313 \\
+4 & P & 42 & Static & \texttt{physical\_plsr\_4} & Ref & 0.293 & 0.015 & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{physical\_sparse\_svr\_4} & Ref & 0.577 & 0.381 & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{physical\_mlp\_4} & Ref & 0.617 & 0.416 & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{physical\_plsr\_8} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{physical\_sparse\_svr\_8} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{physical\_mlp\_8} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_plsr\_4} & Ref & 0.672 & 0.455 & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_4} & Ref & 0.606 & 0.369 & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_mlp\_4} & Ref & 0.637 & 0.381 & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_plsr\_8} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_8} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_mlp\_8} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_plsr\_16} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_16} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{ideal\_mlp\_16} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Static & \texttt{walsh\_adapted} & Ref & -- & -- & 0.257 & 0.093 \\
+4 & P & 42 & Points & \texttt{full\_bank} & Ref & -- & -- & 0.376 & 0.160 \\
+4 & P & 42 & Points & \texttt{rich\_pls} & Ref & -- & -- & 0.376 & 0.160 \\
+4 & P & 42 & Points & \texttt{rich\_cnn} & Ref & -- & -- & 0.376 & 0.160 \\
+4 & P & 42 & Points & \texttt{proposed} & S & 0.673 & 0.462 & 0.376 & 0.160 \\
+4 & P & 42 & Points & \texttt{single} & S & 0.672 & 0.463 & 0.376 & 0.160 \\
+4 & P & 42 & C- & \texttt{full\_bank} & Ref & -- & -- & 0.394 & 0.182 \\
+4 & P & 42 & C- & \texttt{rich\_pls} & Ref & -- & -- & 0.394 & 0.182 \\
+4 & P & 42 & C- & \texttt{rich\_cnn} & Ref & -- & -- & 0.394 & 0.182 \\
+4 & P & 42 & C- & \texttt{proposed} & S & 0.646 & 0.442 & 0.394 & 0.182 \\
+4 & P & 42 & C- & \texttt{single} & S & 0.637 & 0.432 & 0.394 & 0.182 \\
+4 & P & 42 & C+ & \texttt{full\_bank} & Ref & -- & -- & 0.733 & 0.564 \\
+4 & P & 42 & C+ & \texttt{rich\_pls} & Ref & -- & -- & 0.733 & 0.564 \\
+4 & P & 42 & C+ & \texttt{rich\_cnn} & Ref & -- & -- & 0.733 & 0.564 \\
+4 & P & 42 & C+ & \texttt{proposed} & S & 0.315 & 0.252 & 0.733 & 0.564 \\
+4 & P & 42 & C+ & \texttt{single} & S & 0.302 & 0.243 & 0.733 & 0.564 \\
+4 & P & 42 & W- & \texttt{full\_bank} & Ref & -- & -- & 0.999 & 0.997 \\
+4 & P & 42 & W- & \texttt{rich\_pls} & Ref & -- & -- & 0.999 & 0.997 \\
+4 & P & 42 & W- & \texttt{rich\_cnn} & Ref & -- & -- & 0.999 & 0.997 \\
+4 & P & 42 & W- & \texttt{proposed} & S & 0.014 & 0.010 & 0.999 & 0.997 \\
+4 & P & 42 & W- & \texttt{single} & S & 0.015 & 0.009 & 0.999 & 0.997 \\
+4 & P & 42 & W+ & \texttt{full\_bank} & Ref & -- & -- & 0.996 & 0.994 \\
+4 & P & 42 & W+ & \texttt{rich\_pls} & Ref & -- & -- & 0.996 & 0.994 \\
+4 & P & 42 & W+ & \texttt{rich\_cnn} & Ref & -- & -- & 0.996 & 0.994 \\
+4 & P & 42 & W+ & \texttt{proposed} & S & 0.005 & 0.003 & 0.996 & 0.994 \\
+4 & P & 42 & W+ & \texttt{single} & S & 0.004 & 0.004 & 0.996 & 0.994 \\
+4 & P & 42 & Gauss & \texttt{full\_bank} & Ref & -- & -- & 1.000 & 1.000 \\
+4 & P & 42 & Gauss & \texttt{rich\_pls} & Ref & -- & -- & 1.000 & 1.000 \\
+4 & P & 42 & Gauss & \texttt{rich\_cnn} & Ref & -- & -- & 1.000 & 1.000 \\
+4 & P & 42 & Gauss & \texttt{proposed} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
+4 & P & 42 & Gauss & \texttt{single} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
+5 & C & 42 & N & \texttt{full\_bank} & Ref & -- & -- & 0.350 & 0.037 \\
+5 & C & 42 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.350 & 0.037 \\
+5 & C & 42 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.350 & 0.037 \\
+5 & C & 42 & N & \texttt{proposed} & S & 0.258 & 0.124 & 0.350 & 0.037 \\
+5 & C & 42 & N & \texttt{single} & S & 0.259 & 0.144 & 0.350 & 0.037 \\
+5 & P & 42 & N & \texttt{full\_bank} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{proposed} & S & 0.653 & 0.377 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{proposed} & E & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{single} & S & 0.618 & 0.338 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{single\_cnn\_reference} & S & 0.607 & 0.347 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{uncertainty} & S & 0.705 & 0.398 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{fixed\_order} & S & 0.644 & 0.380 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{random\_order} & S & 0.622 & 0.339 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{fixed\_length} & S & 0.653 & 0.338 & 0.031 & 0.016 \\
+5 & P & 42 & N & \texttt{lookahead} & S & 0.634 & 0.347 & 0.031 & 0.016 \\
+5 & P & 7 & N & \texttt{full\_bank} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 7 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 7 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 7 & N & \texttt{proposed} & S & 0.681 & 0.372 & 0.031 & 0.016 \\
+5 & P & 7 & N & \texttt{single} & S & 0.638 & 0.359 & 0.031 & 0.016 \\
+5 & P & 99 & N & \texttt{full\_bank} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 99 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 99 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 99 & N & \texttt{proposed} & S & 0.641 & 0.355 & 0.031 & 0.016 \\
+5 & P & 99 & N & \texttt{single} & S & 0.663 & 0.395 & 0.031 & 0.016 \\
+5 & U & 42 & N & \texttt{full\_bank} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 42 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 42 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 42 & N & \texttt{proposed} & S & 0.509 & 0.240 & 0.087 & 0.022 \\
+5 & U & 42 & N & \texttt{single} & S & 0.589 & 0.307 & 0.087 & 0.022 \\
+5 & U & 7 & N & \texttt{full\_bank} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 7 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 7 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 7 & N & \texttt{proposed} & S & 0.546 & 0.262 & 0.087 & 0.022 \\
+5 & U & 7 & N & \texttt{single} & S & 0.562 & 0.264 & 0.087 & 0.022 \\
+5 & U & 99 & N & \texttt{full\_bank} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 99 & N & \texttt{rich\_pls} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 99 & N & \texttt{rich\_cnn} & Ref & -- & -- & 0.087 & 0.022 \\
+5 & U & 99 & N & \texttt{proposed} & S & 0.555 & 0.316 & 0.087 & 0.022 \\
+5 & U & 99 & N & \texttt{single} & S & 0.629 & 0.355 & 0.087 & 0.022 \\
+5 & P & 42 & Static & \texttt{physical\_plsr\_4} & Ref & 0.881 & 0.178 & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{physical\_sparse\_svr\_4} & Ref & 0.475 & 0.188 & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{physical\_mlp\_4} & Ref & 0.519 & 0.244 & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{physical\_plsr\_8} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{physical\_sparse\_svr\_8} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{physical\_mlp\_8} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_plsr\_4} & Ref & 0.575 & 0.322 & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_4} & Ref & 0.603 & 0.325 & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_mlp\_4} & Ref & 0.516 & 0.241 & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_plsr\_8} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_8} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_mlp\_8} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_plsr\_16} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_sparse\_svr\_16} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{ideal\_mlp\_16} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Static & \texttt{walsh\_adapted} & Ref & -- & -- & 0.031 & 0.016 \\
+5 & P & 42 & Points & \texttt{full\_bank} & Ref & -- & -- & 0.097 & 0.009 \\
+5 & P & 42 & Points & \texttt{rich\_pls} & Ref & -- & -- & 0.097 & 0.009 \\
+5 & P & 42 & Points & \texttt{rich\_cnn} & Ref & -- & -- & 0.097 & 0.009 \\
+5 & P & 42 & Points & \texttt{proposed} & S & 0.418 & 0.223 & 0.097 & 0.009 \\
+5 & P & 42 & Points & \texttt{single} & S & 0.409 & 0.209 & 0.097 & 0.009 \\
+5 & P & 42 & C- & \texttt{full\_bank} & Ref & -- & -- & 0.366 & 0.069 \\
+5 & P & 42 & C- & \texttt{rich\_pls} & Ref & -- & -- & 0.366 & 0.069 \\
+5 & P & 42 & C- & \texttt{rich\_cnn} & Ref & -- & -- & 0.366 & 0.069 \\
+5 & P & 42 & C- & \texttt{proposed} & S & 0.412 & 0.244 & 0.366 & 0.069 \\
+5 & P & 42 & C- & \texttt{single} & S & 0.373 & 0.222 & 0.366 & 0.069 \\
+5 & P & 42 & C+ & \texttt{full\_bank} & Ref & -- & -- & 0.509 & 0.322 \\
+5 & P & 42 & C+ & \texttt{rich\_pls} & Ref & -- & -- & 0.509 & 0.322 \\
+5 & P & 42 & C+ & \texttt{rich\_cnn} & Ref & -- & -- & 0.509 & 0.322 \\
+5 & P & 42 & C+ & \texttt{proposed} & S & 0.212 & 0.116 & 0.509 & 0.322 \\
+5 & P & 42 & C+ & \texttt{single} & S & 0.217 & 0.126 & 0.509 & 0.322 \\
+5 & P & 42 & W- & \texttt{full\_bank} & Ref & -- & -- & 0.988 & 0.984 \\
+5 & P & 42 & W- & \texttt{rich\_pls} & Ref & -- & -- & 0.988 & 0.984 \\
+5 & P & 42 & W- & \texttt{rich\_cnn} & Ref & -- & -- & 0.988 & 0.984 \\
+5 & P & 42 & W- & \texttt{proposed} & S & 0.005 & 0.005 & 0.988 & 0.984 \\
+5 & P & 42 & W- & \texttt{single} & S & 0.006 & 0.006 & 0.988 & 0.984 \\
+5 & P & 42 & W+ & \texttt{full\_bank} & Ref & -- & -- & 1.000 & 1.000 \\
+5 & P & 42 & W+ & \texttt{rich\_pls} & Ref & -- & -- & 1.000 & 1.000 \\
+5 & P & 42 & W+ & \texttt{rich\_cnn} & Ref & -- & -- & 1.000 & 1.000 \\
+5 & P & 42 & W+ & \texttt{proposed} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
+5 & P & 42 & W+ & \texttt{single} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
+5 & P & 42 & Gauss & \texttt{full\_bank} & Ref & -- & -- & 1.000 & 1.000 \\
+5 & P & 42 & Gauss & \texttt{rich\_pls} & Ref & -- & -- & 1.000 & 1.000 \\
+5 & P & 42 & Gauss & \texttt{rich\_cnn} & Ref & -- & -- & 1.000 & 1.000 \\
+5 & P & 42 & Gauss & \texttt{proposed} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
+5 & P & 42 & Gauss & \texttt{single} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{lrllrrrr}
+\caption{Season-5 primary-bank results by each of its two harvest populations; no population-bootstrap intervals are assigned.}\label{tab:season5groups}\\
+\toprule
+Population & Scans & Method & Point & RMSEP & MAE & Bias & Readings \\
+\midrule
+\endfirsthead
+\multicolumn{8}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Population & Scans & Method & Point & RMSEP & MAE & Bias & Readings \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+s5\_pop128 & 160 & \texttt{full\_bank} & Ref & 1.3793 & 1.0452 & -0.8938 & 8.000 \\
+s5\_pop129 & 160 & \texttt{full\_bank} & Ref & 1.0916 & 0.7859 & -0.5440 & 8.000 \\
+s5\_pop128 & 160 & \texttt{rich\_pls} & Ref & 2.3418 & 2.1031 & -2.0929 & 103.000 \\
+s5\_pop129 & 160 & \texttt{rich\_pls} & Ref & 2.1104 & 1.8476 & -1.8039 & 103.000 \\
+s5\_pop128 & 160 & \texttt{proposed} & S & 2.2511 & 1.6498 & -1.4138 & 4.950 \\
+s5\_pop129 & 160 & \texttt{proposed} & S & 1.7057 & 1.2204 & -0.8516 & 4.669 \\
+s5\_pop128 & 160 & \texttt{proposed} & E & 1.3793 & 1.0452 & -0.8938 & 8.000 \\
+s5\_pop129 & 160 & \texttt{proposed} & E & 1.0916 & 0.7859 & -0.5440 & 8.000 \\
+s5\_pop128 & 160 & \texttt{single} & S & 2.3262 & 1.7464 & -1.4974 & 2.225 \\
+s5\_pop129 & 160 & \texttt{single} & S & 2.0049 & 1.5124 & -1.0312 & 2.513 \\
+s5\_pop128 & 160 & \texttt{physical\_plsr\_4} & Ref & 1.9911 & 1.7013 & -1.6575 & 4.000 \\
+s5\_pop129 & 160 & \texttt{physical\_plsr\_4} & Ref & 1.7032 & 1.4689 & -1.3850 & 4.000 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\subsection{Action-head diagnostics}
+One-step diagnostics distinguish evaluator-forced full trajectories (F) from continuations actually taken by the frozen policy (A). Hindsight gains, rank correlations and regrets are evaluated after the decision using the assay and possible actions; they are never controller inputs. At each visited state the action regret is the hindsight-best signed gain minus the chosen signed gain. These are descriptive mechanism checks, not an independent performance endpoint. Table~\ref{tab:action} retains every saved season/method/depth/scope summary.
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rllrrrrrrrr}
+\caption{All saved action-head diagnostics (B: proposed bank-reference controller; R: rich-reference controller).}\label{tab:action}\\
+\toprule
+Season & Obj. & Scope & Depth & States & Pred. gain & Actual gain & Gain $>0$ & Gain $>.5$ & Rank corr. & Regret \\
+\midrule
+\endfirsthead
+\multicolumn{11}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Obj. & Scope & Depth & States & Pred. gain & Actual gain & Gain $>0$ & Gain $>.5$ & Rank corr. & Regret \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+4 & B & F & 2 & 1448 & 0.0533 & 0.0196 & 0.512 & 0.020 & -0.090 & 0.2303 \\
+4 & B & F & 3 & 1448 & 0.0303 & -0.0315 & 0.550 & 0.010 & -0.040 & 0.1985 \\
+4 & B & F & 4 & 1448 & 0.0115 & -0.0272 & 0.490 & 0.015 & -0.125 & 0.1903 \\
+4 & B & F & 5 & 1448 & 0.0004 & 0.0648 & 0.579 & 0.041 & -0.014 & 0.0893 \\
+4 & B & F & 6 & 1448 & 0.0012 & -0.0167 & 0.478 & 0.000 & -0.064 & 0.0756 \\
+4 & B & F & 7 & 1448 & 0.8475 & 1.1756 & 0.760 & 0.566 & -- & 0.0000 \\
+4 & R & F & 2 & 1448 & 0.0399 & 0.0238 & 0.514 & 0.017 & -0.058 & 0.2261 \\
+4 & R & F & 3 & 1448 & 0.0198 & -0.0083 & 0.527 & 0.006 & -0.021 & 0.1800 \\
+4 & R & F & 4 & 1448 & 0.0177 & 0.0555 & 0.559 & 0.048 & 0.018 & 0.1069 \\
+4 & R & F & 5 & 1448 & 0.0063 & -0.0112 & 0.463 & 0.008 & -0.050 & 0.1149 \\
+4 & R & F & 6 & 1448 & -0.0065 & -0.0077 & 0.501 & 0.000 & 0.095 & 0.0635 \\
+4 & R & F & 7 & 1448 & 0.8916 & 1.1326 & 0.759 & 0.555 & -- & 0.0000 \\
+5 & B & F & 2 & 320 & 0.0339 & -0.0748 & 0.281 & 0.000 & -0.206 & 0.1778 \\
+5 & B & F & 3 & 320 & 0.0361 & -0.0271 & 0.362 & 0.006 & -0.081 & 0.1575 \\
+5 & B & F & 4 & 320 & 0.0188 & 0.0149 & 0.562 & 0.000 & -0.065 & 0.1128 \\
+5 & B & F & 5 & 320 & 0.0034 & 0.0294 & 0.616 & 0.009 & -0.150 & 0.0910 \\
+5 & B & F & 6 & 320 & 0.0189 & 0.0383 & 0.675 & 0.000 & 0.100 & 0.0350 \\
+5 & B & F & 7 & 320 & 1.3418 & 0.7276 & 0.734 & 0.531 & -- & 0.0000 \\
+5 & R & F & 2 & 320 & 0.0433 & -0.0570 & 0.322 & 0.000 & -0.118 & 0.1600 \\
+5 & R & F & 3 & 320 & 0.0382 & -0.0227 & 0.388 & 0.013 & -0.134 & 0.1478 \\
+5 & R & F & 4 & 320 & 0.0285 & 0.0071 & 0.519 & 0.003 & 0.076 & 0.1098 \\
+5 & R & F & 5 & 320 & 0.0096 & 0.0689 & 0.719 & 0.019 & 0.186 & 0.0315 \\
+5 & R & F & 6 & 320 & 0.0295 & 0.0236 & 0.656 & 0.000 & 0.137 & 0.0277 \\
+5 & R & F & 7 & 320 & 1.4008 & 0.6885 & 0.709 & 0.516 & -- & 0.0000 \\
+4 & B & A & 2 & 358 & 0.0268 & 0.0219 & 0.620 & 0.000 & 0.008 & 0.1356 \\
+4 & B & A & 3 & 321 & 0.0250 & 0.0179 & 0.648 & 0.000 & -0.013 & 0.1019 \\
+4 & B & A & 4 & 270 & 0.0077 & -0.0079 & 0.511 & 0.000 & 0.044 & 0.0951 \\
+4 & B & A & 5 & 242 & -0.0055 & 0.0113 & 0.471 & 0.008 & 0.093 & 0.0445 \\
+4 & B & A & 6 & 198 & 0.0423 & -0.0235 & 0.399 & 0.000 & 0.030 & 0.0260 \\
+4 & B & A & 7 & 198 & 1.4627 & 0.7107 & 0.626 & 0.444 & -- & 0.0000 \\
+4 & R & A & 2 & 133 & 0.0435 & 0.0116 & 0.564 & 0.000 & -0.022 & 0.1711 \\
+4 & R & A & 3 & 97 & 0.0074 & -0.0116 & 0.505 & 0.000 & -0.049 & 0.1523 \\
+4 & R & A & 4 & 85 & 0.0087 & 0.0105 & 0.565 & 0.000 & -0.005 & 0.0844 \\
+4 & R & A & 5 & 79 & 0.0032 & -0.0004 & 0.405 & 0.000 & 0.000 & 0.0683 \\
+4 & R & A & 6 & 70 & 0.0069 & -0.0150 & 0.514 & 0.000 & -0.086 & 0.0516 \\
+4 & R & A & 7 & 64 & 1.4335 & 0.7695 & 0.719 & 0.531 & -- & 0.0000 \\
+5 & B & A & 2 & 197 & 0.0288 & -0.0600 & 0.279 & 0.000 & -0.200 & 0.1822 \\
+5 & B & A & 3 & 175 & 0.0355 & -0.0276 & 0.377 & 0.000 & 0.009 & 0.1628 \\
+5 & B & A & 4 & 150 & 0.0171 & 0.0243 & 0.620 & 0.000 & -0.097 & 0.1311 \\
+5 & B & A & 5 & 135 & 0.0116 & 0.0437 & 0.637 & 0.000 & -0.226 & 0.1147 \\
+5 & B & A & 6 & 121 & 0.0446 & 0.0551 & 0.727 & 0.000 & -0.074 & 0.0527 \\
+5 & B & A & 7 & 121 & 1.5602 & 0.5032 & 0.669 & 0.446 & -- & 0.0000 \\
+5 & R & A & 2 & 53 & 0.0431 & -0.0292 & 0.340 & 0.000 & -0.029 & 0.1565 \\
+5 & R & A & 3 & 23 & 0.0044 & 0.0354 & 0.609 & 0.000 & 0.030 & 0.0872 \\
+5 & R & A & 4 & 14 & 0.0145 & -0.0025 & 0.571 & 0.000 & 0.143 & 0.0588 \\
+5 & R & A & 5 & 14 & 0.0074 & -0.0148 & 0.286 & 0.000 & -0.286 & 0.0587 \\
+5 & R & A & 6 & 8 & 0.0043 & 0.0526 & 0.750 & 0.000 & 0.750 & 0.0091 \\
+5 & R & A & 7 & 6 & 1.0381 & -0.1958 & 0.500 & 0.000 & -- & 0.0000 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\section{V2: matched predictors, endpoint decomposition and stopping-only controls}
+V2 begins after the original study was inspected. It uses development seasons 1--3 only, the same role partitions and optical emulator, primary bank P at seeds 42/7/99 and sensitivity U at seed 42 (12 cases). Neither features nor assays from seasons 4--5 are loaded or rescored. No new bank is searched. All full-mask MLP entries are labeled \emph{Hybrid}: the seven-reading masked MLP dispatches to PLS at eight readings. A raw full-mask MLP estimate was not available and is not invented.
+
+\subsection{Subset-specific prediction and the common order}
+For each of the 64 reachable masks, fit a separate autoscaled PLS with $\min(6,|S|)$ components or a StandardScaler-plus-ridge model with $\alpha=10$. Hyperparameters are fixed. Three-fold grouped out-of-fold predictions reuse exactly the original core target partitions; calibration and held-season predictions use all core fitting groups. Scalers are fitted only within their associated fitting fold. Existing MLP predictions are reused on those same rows and masks. At eight channels, subset PLS reproduces the original complete-bank predictor.
+
+All predictor families and both stopping objectives follow one assay-independent catalog order: begin with endpoints; repeatedly choose the unread center with largest minimum distance to the acquired centers, breaking ties by the lower center/index. For P the order is 720, 940, 820, 890, 760, 780, 800, 910 nm; U is 720, 940, 820, 780, 850, 910, 740, 800 nm. This ensures identical acquired subsets in family comparisons, but does not assert predictive optimality of wavelength spacing.
+
+At depth $d$, the common-order error uses its single prefix. The all-mask RMSEP pools squared errors over scans and every reachable depth-$d$ mask with equal mask weight before taking the square root; it is not the mean of mask RMSEPs. The numbers of masks at depths 2--8 are 1, 6, 15, 20, 15, 6 and 1. No best held-data subset is selected. Table~\ref{tab:v2predictors} reports all 504 held predictor-depth cells, compacted to 72 rows. Common-order rows also contain all 252 fixed-length policy RMSEPs. Additional core-OOF/calibration summaries are retained in the 1,512-row source file; their errors are training/tuning diagnostics, not independent validation.
+
+\subsection{Endpoint identity}
+For every scan on the common order, V2 separates the signed hybrid absolute-error reduction into
+\[
+ |y-f_{\mathrm{MLP},7}|-|y-f_{\mathrm{PLS},8}|
+ =\bigl(|y-f_{\mathrm{MLP},7}|-|y-f_{\mathrm{PLS},7}|\bigr)
+ +\bigl(|y-f_{\mathrm{PLS},7}|-|y-f_{\mathrm{PLS},8}|\bigr).
+\]
+The first term changes estimator at an identical seven-channel subset. The second adds the final channel within PLS. Means preserve this identity; individual confidence intervals need not add endpoint-by-endpoint. Negative terms are retained. For P most average improvement persists within PLS, whereas U's last channel slightly worsens mean absolute error and the estimator replacement accounts for its positive hybrid endpoint change. This is bank/order-dependent model behavior, not irreducible spectral information.
+
+\subsection{Matched stopping learner and threshold rules}
+Each predictor family supplies its own $f_S$ and $f_B$; $f_F$ is the saved rich PLS. Two logistic regressions use identical observed standardized readings and masks, identical six nonterminal states per scan, $C=1$, L-BFGS, tolerance $10^{-7}$, maximum 2,000 iterations and no class/group reweighting. A one-class training event uses its constant probability. A convergence warning fails the fit rather than silently providing an unconverged policy. There is no action head in V2: only $\mathbb{1}\{e_S-e_B>.5\}$ versus $\mathbb{1}\{e_S-e_F>.5\}$ differs. Isotonic regression fits all nonterminal calibration-path states with probabilities clipped outside its fitting range. The same reserved calibration groups then select thresholds; this is tuning, with the held season remaining separate.
+
+A policy stops at the first calibrated gain probability less than or equal to threshold, with forced stop at depth eight. The scientific threshold is closest to four mean calibration readings, then smallest calibration RMSEP, then lower threshold. The engineering threshold uses the separate two-condition screen: mean readings at most six and RMSEP no more than 0.25 pp above its own same-family full bank; among feasible thresholds choose fewest readings, then RMSEP, then lower threshold. If none is feasible, the explicitly descriptive fallback minimizes largest normalized violation, total violation, RMSEP, readings and threshold in that order. Calibration feasibility (Cal) and held-season screen success (Held) are separate table entries. These rules differ from the stricter original engineering search.
+
+Every fixed length 2--8 and every probability threshold on the registered grid is retained. Brier scores concern each objective's own event and cannot be read as a common-target superiority measure. An achieved mean-reading gap above 0.25 prevents an unqualified objective comparison even when both calibration selections targeted four. Paired contrasts below retain all seeds and both banks, including unfavorable and budget-incomparable cases; all corresponding predictive metrics remain in the companion CSVs.
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrllrrrrrrrr}
+\caption{All held-season V2 predictor errors and all common-order fixed-length controls. Hybrid at depth 8 equals PLS.}\label{tab:v2predictors}\\
+\toprule
+Season & Bank & Seed & Predictor & Scope & Scans & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule
+\endfirsthead
+\multicolumn{13}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Seed & Predictor & Scope & Scans & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule
+\endhead
+\midrule
+\multicolumn{13}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & 42 & Hybrid & All masks & 3914 & 2.3752 & 2.3454 & 2.3244 & 2.3151 & 2.3131 & 2.3157 & 1.2418 \\
+1 & P & 42 & Hybrid & Order & 3914 & 2.3752 & 2.3640 & 2.3304 & 2.3210 & 2.3080 & 2.3254 & 1.2418 \\
+1 & P & 42 & PLS & All masks & 3914 & 2.3813 & 2.3435 & 2.2950 & 2.0499 & 1.8338 & 1.6304 & 1.2418 \\
+1 & P & 42 & PLS & Order & 3914 & 2.3813 & 2.3722 & 2.3717 & 2.1602 & 2.1501 & 2.1548 & 1.2418 \\
+1 & P & 42 & Ridge & All masks & 3914 & 2.3832 & 2.3464 & 2.3197 & 2.2789 & 2.2378 & 2.2028 & 2.1740 \\
+1 & P & 42 & Ridge & Order & 3914 & 2.3832 & 2.3731 & 2.3718 & 2.2486 & 2.2488 & 2.2460 & 2.1740 \\
+1 & P & 7 & Hybrid & All masks & 3914 & 2.3906 & 2.3448 & 2.3224 & 2.3085 & 2.3038 & 2.3031 & 1.2418 \\
+1 & P & 7 & Hybrid & Order & 3914 & 2.3906 & 2.3565 & 2.3563 & 2.3197 & 2.3298 & 2.3101 & 1.2418 \\
+1 & P & 7 & PLS & All masks & 3914 & 2.3813 & 2.3435 & 2.2950 & 2.0499 & 1.8338 & 1.6304 & 1.2418 \\
+1 & P & 7 & PLS & Order & 3914 & 2.3813 & 2.3722 & 2.3717 & 2.1602 & 2.1501 & 2.1548 & 1.2418 \\
+1 & P & 7 & Ridge & All masks & 3914 & 2.3832 & 2.3464 & 2.3197 & 2.2789 & 2.2378 & 2.2028 & 2.1740 \\
+1 & P & 7 & Ridge & Order & 3914 & 2.3832 & 2.3731 & 2.3718 & 2.2486 & 2.2488 & 2.2460 & 2.1740 \\
+1 & P & 99 & Hybrid & All masks & 3914 & 2.3737 & 2.3446 & 2.3288 & 2.3223 & 2.3200 & 2.3210 & 1.2418 \\
+1 & P & 99 & Hybrid & Order & 3914 & 2.3737 & 2.3650 & 2.3304 & 2.3296 & 2.3399 & 2.3306 & 1.2418 \\
+1 & P & 99 & PLS & All masks & 3914 & 2.3813 & 2.3435 & 2.2950 & 2.0499 & 1.8338 & 1.6304 & 1.2418 \\
+1 & P & 99 & PLS & Order & 3914 & 2.3813 & 2.3722 & 2.3717 & 2.1602 & 2.1501 & 2.1548 & 1.2418 \\
+1 & P & 99 & Ridge & All masks & 3914 & 2.3832 & 2.3464 & 2.3197 & 2.2789 & 2.2378 & 2.2028 & 2.1740 \\
+1 & P & 99 & Ridge & Order & 3914 & 2.3832 & 2.3731 & 2.3718 & 2.2486 & 2.2488 & 2.2460 & 2.1740 \\
+1 & U & 42 & Hybrid & All masks & 3914 & 2.3701 & 2.3418 & 2.3253 & 2.3192 & 2.3200 & 2.3247 & 1.9780 \\
+1 & U & 42 & Hybrid & Order & 3914 & 2.3701 & 2.3515 & 2.3237 & 2.3110 & 2.3300 & 2.3312 & 1.9780 \\
+1 & U & 42 & PLS & All masks & 3914 & 2.3813 & 2.3444 & 2.2952 & 2.1731 & 2.0768 & 1.9921 & 1.9780 \\
+1 & U & 42 & PLS & Order & 3914 & 2.3813 & 2.3722 & 2.2858 & 2.2379 & 1.8722 & 1.9664 & 1.9780 \\
+1 & U & 42 & Ridge & All masks & 3914 & 2.3832 & 2.3482 & 2.3122 & 2.2649 & 2.2246 & 2.1884 & 2.1540 \\
+1 & U & 42 & Ridge & Order & 3914 & 2.3832 & 2.3731 & 2.2968 & 2.2811 & 2.1782 & 2.1538 & 2.1540 \\
+2 & P & 42 & Hybrid & All masks & 1363 & 1.7815 & 1.7587 & 1.7487 & 1.7430 & 1.7377 & 1.7334 & 1.2932 \\
+2 & P & 42 & Hybrid & Order & 1363 & 1.7815 & 1.7711 & 1.7400 & 1.7489 & 1.7461 & 1.7388 & 1.2932 \\
+2 & P & 42 & PLS & All masks & 1363 & 1.8136 & 1.7784 & 1.7127 & 1.5010 & 1.3703 & 1.2691 & 1.2932 \\
+2 & P & 42 & PLS & Order & 1363 & 1.8136 & 1.7994 & 1.7702 & 1.5792 & 1.6229 & 1.6324 & 1.2932 \\
+2 & P & 42 & Ridge & All masks & 1363 & 1.8141 & 1.7801 & 1.7574 & 1.7104 & 1.6627 & 1.6239 & 1.5944 \\
+2 & P & 42 & Ridge & Order & 1363 & 1.8141 & 1.7999 & 1.7828 & 1.6858 & 1.6873 & 1.6863 & 1.5944 \\
+2 & P & 7 & Hybrid & All masks & 1363 & 1.8151 & 1.7761 & 1.7623 & 1.7556 & 1.7508 & 1.7434 & 1.2932 \\
+2 & P & 7 & Hybrid & Order & 1363 & 1.8151 & 1.7658 & 1.7526 & 1.7519 & 1.7653 & 1.7453 & 1.2932 \\
+2 & P & 7 & PLS & All masks & 1363 & 1.8136 & 1.7784 & 1.7127 & 1.5010 & 1.3703 & 1.2691 & 1.2932 \\
+2 & P & 7 & PLS & Order & 1363 & 1.8136 & 1.7994 & 1.7702 & 1.5792 & 1.6229 & 1.6324 & 1.2932 \\
+2 & P & 7 & Ridge & All masks & 1363 & 1.8141 & 1.7801 & 1.7574 & 1.7104 & 1.6627 & 1.6239 & 1.5944 \\
+2 & P & 7 & Ridge & Order & 1363 & 1.8141 & 1.7999 & 1.7828 & 1.6858 & 1.6873 & 1.6863 & 1.5944 \\
+2 & P & 99 & Hybrid & All masks & 1363 & 1.7929 & 1.7693 & 1.7539 & 1.7421 & 1.7318 & 1.7228 & 1.2932 \\
+2 & P & 99 & Hybrid & Order & 1363 & 1.7929 & 1.7584 & 1.7517 & 1.7336 & 1.7202 & 1.7173 & 1.2932 \\
+2 & P & 99 & PLS & All masks & 1363 & 1.8136 & 1.7784 & 1.7127 & 1.5010 & 1.3703 & 1.2691 & 1.2932 \\
+2 & P & 99 & PLS & Order & 1363 & 1.8136 & 1.7994 & 1.7702 & 1.5792 & 1.6229 & 1.6324 & 1.2932 \\
+2 & P & 99 & Ridge & All masks & 1363 & 1.8141 & 1.7801 & 1.7574 & 1.7104 & 1.6627 & 1.6239 & 1.5944 \\
+2 & P & 99 & Ridge & Order & 1363 & 1.8141 & 1.7999 & 1.7828 & 1.6858 & 1.6873 & 1.6863 & 1.5944 \\
+2 & U & 42 & Hybrid & All masks & 1363 & 1.7656 & 1.7557 & 1.7525 & 1.7487 & 1.7445 & 1.7390 & 1.3568 \\
+2 & U & 42 & Hybrid & Order & 1363 & 1.7656 & 1.7639 & 1.7568 & 1.7410 & 1.7383 & 1.7446 & 1.3568 \\
+2 & U & 42 & PLS & All masks & 1363 & 1.8136 & 1.7817 & 1.7206 & 1.5936 & 1.5216 & 1.3930 & 1.3568 \\
+2 & U & 42 & PLS & Order & 1363 & 1.8136 & 1.7994 & 1.7322 & 1.7100 & 1.2311 & 1.3453 & 1.3568 \\
+2 & U & 42 & Ridge & All masks & 1363 & 1.8141 & 1.7834 & 1.7499 & 1.6968 & 1.6489 & 1.6040 & 1.5599 \\
+2 & U & 42 & Ridge & Order & 1363 & 1.8141 & 1.7999 & 1.7508 & 1.7390 & 1.5658 & 1.5584 & 1.5599 \\
+3 & P & 42 & Hybrid & All masks & 4966 & 2.3648 & 2.4278 & 2.4644 & 2.4786 & 2.4795 & 2.4714 & 1.2070 \\
+3 & P & 42 & Hybrid & Order & 4966 & 2.3648 & 2.4653 & 2.4573 & 2.5373 & 2.5461 & 2.4949 & 1.2070 \\
+3 & P & 42 & PLS & All masks & 4966 & 2.5228 & 2.5341 & 2.4736 & 2.1629 & 1.9322 & 1.6943 & 1.2070 \\
+3 & P & 42 & PLS & Order & 4966 & 2.5228 & 2.5529 & 2.6223 & 2.3250 & 2.3409 & 2.3663 & 1.2070 \\
+3 & P & 42 & Ridge & All masks & 4966 & 2.5182 & 2.5255 & 2.5122 & 2.4693 & 2.4194 & 2.3735 & 2.3339 \\
+3 & P & 42 & Ridge & Order & 4966 & 2.5182 & 2.5480 & 2.5842 & 2.3978 & 2.3966 & 2.3964 & 2.3339 \\
+3 & P & 7 & Hybrid & All masks & 4966 & 2.3640 & 2.4435 & 2.4885 & 2.4947 & 2.4780 & 2.4522 & 1.2070 \\
+3 & P & 7 & Hybrid & Order & 4966 & 2.3640 & 2.3861 & 2.4817 & 2.5087 & 2.4963 & 2.4291 & 1.2070 \\
+3 & P & 7 & PLS & All masks & 4966 & 2.5228 & 2.5341 & 2.4736 & 2.1629 & 1.9322 & 1.6943 & 1.2070 \\
+3 & P & 7 & PLS & Order & 4966 & 2.5228 & 2.5529 & 2.6223 & 2.3250 & 2.3409 & 2.3663 & 1.2070 \\
+3 & P & 7 & Ridge & All masks & 4966 & 2.5182 & 2.5255 & 2.5122 & 2.4693 & 2.4194 & 2.3735 & 2.3339 \\
+3 & P & 7 & Ridge & Order & 4966 & 2.5182 & 2.5480 & 2.5842 & 2.3978 & 2.3966 & 2.3964 & 2.3339 \\
+3 & P & 99 & Hybrid & All masks & 4966 & 2.3274 & 2.4044 & 2.4670 & 2.5064 & 2.5360 & 2.5629 & 1.2070 \\
+3 & P & 99 & Hybrid & Order & 4966 & 2.3274 & 2.3443 & 2.4057 & 2.4779 & 2.5413 & 2.4906 & 1.2070 \\
+3 & P & 99 & PLS & All masks & 4966 & 2.5228 & 2.5341 & 2.4736 & 2.1629 & 1.9322 & 1.6943 & 1.2070 \\
+3 & P & 99 & PLS & Order & 4966 & 2.5228 & 2.5529 & 2.6223 & 2.3250 & 2.3409 & 2.3663 & 1.2070 \\
+3 & P & 99 & Ridge & All masks & 4966 & 2.5182 & 2.5255 & 2.5122 & 2.4693 & 2.4194 & 2.3735 & 2.3339 \\
+3 & P & 99 & Ridge & Order & 4966 & 2.5182 & 2.5480 & 2.5842 & 2.3978 & 2.3966 & 2.3964 & 2.3339 \\
+3 & U & 42 & Hybrid & All masks & 4966 & 2.4202 & 2.4559 & 2.4779 & 2.4913 & 2.4975 & 2.4961 & 2.1453 \\
+3 & U & 42 & Hybrid & Order & 4966 & 2.4202 & 2.4806 & 2.5356 & 2.4376 & 2.4453 & 2.5150 & 2.1453 \\
+3 & U & 42 & PLS & All masks & 4966 & 2.5228 & 2.5262 & 2.4357 & 2.2685 & 2.2099 & 2.1829 & 2.1453 \\
+3 & U & 42 & PLS & Order & 4966 & 2.5228 & 2.5529 & 2.3564 & 2.2343 & 1.9208 & 2.1113 & 2.1453 \\
+3 & U & 42 & Ridge & All masks & 4966 & 2.5182 & 2.5188 & 2.4862 & 2.4219 & 2.3598 & 2.3023 & 2.2491 \\
+3 & U & 42 & Ridge & Order & 4966 & 2.5182 & 2.5480 & 2.4406 & 2.3879 & 2.2955 & 2.2512 & 2.2491 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrrlll}
+\caption{All V2 endpoint decompositions: mean signed absolute-error reduction [95\% population-bootstrap interval].}\label{tab:endpoint}\\
+\toprule
+Season & Bank & Seed & Groups & Total hybrid & MLP7 $\rightarrow$ PLS7 & PLS7 $\rightarrow$ PLS8 \\
+\midrule
+\endfirsthead
+\multicolumn{7}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Seed & Groups & Total hybrid & MLP7 $\rightarrow$ PLS7 & PLS7 $\rightarrow$ PLS8 \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & 42 & 25 & 0.9337 [0.6356, 1.2688] & 0.1277 [0.0029, 0.2393] & 0.8060 [0.5588, 1.0550] \\
+1 & P & 7 & 25 & 0.9253 [0.6420, 1.2471] & 0.1194 [0.0066, 0.2278] & 0.8060 [0.5588, 1.0550] \\
+1 & P & 99 & 25 & 0.9406 [0.6534, 1.2816] & 0.1346 [0.0081, 0.2502] & 0.8060 [0.5588, 1.0550] \\
+1 & U & 42 & 25 & 0.2999 [0.0700, 0.5254] & 0.3097 [0.0761, 0.5381] & -0.0098 [-0.0147, -0.0055] \\
+2 & P & 42 & 19 & 0.3772 [0.2150, 0.5688] & 0.0858 [-0.0044, 0.1852] & 0.2914 [0.1544, 0.4411] \\
+2 & P & 7 & 19 & 0.3824 [0.2107, 0.5837] & 0.0911 [0.0072, 0.1845] & 0.2914 [0.1544, 0.4411] \\
+2 & P & 99 & 19 & 0.3676 [0.2271, 0.5328] & 0.0762 [-0.0245, 0.1934] & 0.2914 [0.1544, 0.4411] \\
+2 & U & 42 & 19 & 0.3325 [0.1932, 0.4908] & 0.3451 [0.2086, 0.4967] & -0.0127 [-0.0284, 0.0040] \\
+3 & P & 42 & 50 & 1.0071 [0.7147, 1.3116] & 0.1013 [-0.0283, 0.2284] & 0.9058 [0.5950, 1.1969] \\
+3 & P & 7 & 50 & 0.9765 [0.7110, 1.2432] & 0.0706 [-0.0558, 0.2024] & 0.9058 [0.5950, 1.1969] \\
+3 & P & 99 & 50 & 1.0185 [0.7460, 1.3083] & 0.1127 [-0.0351, 0.2618] & 0.9058 [0.5950, 1.1969] \\
+3 & U & 42 & 50 & 0.3249 [0.0033, 0.6402] & 0.3490 [0.0287, 0.6646] & -0.0241 [-0.0322, -0.0157] \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrlllrrrlll}
+\caption{All 144 V2 stopping operating points. Cal/Held denote engineering feasibility/success only; scientific rows have no such pass label.}\label{tab:v2adaptive}\\
+\toprule
+Season & Bank & Seed & Predictor & Obj. & Point & $\tau$ & RMSEP & Readings & Missed/early & Cal & Held \\
+\midrule
+\endfirsthead
+\multicolumn{12}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Seed & Predictor & Obj. & Point & $\tau$ & RMSEP & Readings & Missed/early & Cal & Held \\
+\midrule
+\endhead
+\midrule
+\multicolumn{12}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & 42 & Hybrid & B & S & 0.65 & 2.3752 & 2.000 & 2266/3914 & -- & -- \\
+1 & P & 42 & Hybrid & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & 42 & Hybrid & R & S & 0.70 & 1.9628 & 4.055 & 1493/2664 & -- & -- \\
+1 & P & 42 & Hybrid & R & E & 0.40 & 1.3447 & 7.429 & 195/393 & no & no \\
+1 & P & 42 & PLS & B & S & 0.70 & 2.3814 & 2.001 & 2266/3914 & -- & -- \\
+1 & P & 42 & PLS & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & 42 & PLS & R & S & 0.70 & 2.0250 & 4.515 & 1760/3243 & -- & -- \\
+1 & P & 42 & PLS & R & E & 0.50 & 1.2939 & 7.692 & 179/395 & no & no \\
+1 & P & 42 & Ridge & B & S & 0.10 & 2.3202 & 4.100 & 320/3914 & -- & -- \\
+1 & P & 42 & Ridge & B & E & 0.50 & 2.3832 & 2.000 & 940/3914 & yes & yes \\
+1 & P & 42 & Ridge & R & S & 0.75 & 2.3003 & 3.926 & 584/2778 & -- & -- \\
+1 & P & 42 & Ridge & R & E & 0.90 & 2.3838 & 2.016 & 942/3910 & yes & yes \\
+1 & P & 7 & Hybrid & B & S & 0.65 & 2.3574 & 2.101 & 2217/3849 & -- & -- \\
+1 & P & 7 & Hybrid & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & 7 & Hybrid & R & S & 0.70 & 1.9796 & 4.000 & 1514/2704 & -- & -- \\
+1 & P & 7 & Hybrid & R & E & 0.50 & 1.3687 & 7.145 & 291/611 & no & no \\
+1 & P & 7 & PLS & B & S & 0.70 & 2.3814 & 2.001 & 2266/3914 & -- & -- \\
+1 & P & 7 & PLS & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & 7 & PLS & R & S & 0.70 & 2.0250 & 4.515 & 1760/3243 & -- & -- \\
+1 & P & 7 & PLS & R & E & 0.50 & 1.2939 & 7.692 & 179/395 & no & no \\
+1 & P & 7 & Ridge & B & S & 0.10 & 2.3202 & 4.100 & 320/3914 & -- & -- \\
+1 & P & 7 & Ridge & B & E & 0.50 & 2.3832 & 2.000 & 940/3914 & yes & yes \\
+1 & P & 7 & Ridge & R & S & 0.75 & 2.3003 & 3.926 & 584/2778 & -- & -- \\
+1 & P & 7 & Ridge & R & E & 0.90 & 2.3838 & 2.016 & 942/3910 & yes & yes \\
+1 & P & 99 & Hybrid & B & S & 0.65 & 2.3737 & 2.000 & 2261/3914 & -- & -- \\
+1 & P & 99 & Hybrid & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & 99 & Hybrid & R & S & 0.70 & 1.9452 & 4.109 & 1463/2656 & -- & -- \\
+1 & P & 99 & Hybrid & R & E & 0.50 & 1.3922 & 7.052 & 340/680 & no & no \\
+1 & P & 99 & PLS & B & S & 0.70 & 2.3814 & 2.001 & 2266/3914 & -- & -- \\
+1 & P & 99 & PLS & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & 99 & PLS & R & S & 0.70 & 2.0250 & 4.515 & 1760/3243 & -- & -- \\
+1 & P & 99 & PLS & R & E & 0.50 & 1.2939 & 7.692 & 179/395 & no & no \\
+1 & P & 99 & Ridge & B & S & 0.10 & 2.3202 & 4.100 & 320/3914 & -- & -- \\
+1 & P & 99 & Ridge & B & E & 0.50 & 2.3832 & 2.000 & 940/3914 & yes & yes \\
+1 & P & 99 & Ridge & R & S & 0.75 & 2.3003 & 3.926 & 584/2778 & -- & -- \\
+1 & P & 99 & Ridge & R & E & 0.90 & 2.3838 & 2.016 & 942/3910 & yes & yes \\
+1 & U & 42 & Hybrid & B & S & 0.50 & 2.3701 & 2.000 & 1689/3914 & -- & -- \\
+1 & U & 42 & Hybrid & B & E & 0.00 & 1.9780 & 8.000 & 0/0 & no & no \\
+1 & U & 42 & Hybrid & R & S & 0.70 & 2.1263 & 4.198 & 1040/2560 & -- & -- \\
+1 & U & 42 & Hybrid & R & E & 0.65 & 2.0935 & 4.451 & 959/2398 & yes & yes \\
+1 & U & 42 & PLS & B & S & 0.50 & 2.2892 & 3.156 & 1524/3914 & -- & -- \\
+1 & U & 42 & PLS & B & E & 0.40 & 1.8826 & 5.940 & 195/3914 & yes & yes \\
+1 & U & 42 & PLS & R & S & 0.65 & 2.0061 & 4.558 & 890/3914 & -- & -- \\
+1 & U & 42 & PLS & R & E & 0.65 & 2.0061 & 4.558 & 890/3914 & yes & yes \\
+1 & U & 42 & Ridge & B & S & 0.10 & 2.3321 & 3.692 & 526/3914 & -- & -- \\
+1 & U & 42 & Ridge & B & E & 0.55 & 2.3832 & 2.000 & 1044/3914 & yes & yes \\
+1 & U & 42 & Ridge & R & S & 0.75 & 2.2645 & 4.243 & 567/3084 & -- & -- \\
+1 & U & 42 & Ridge & R & E & 0.85 & 2.3794 & 2.232 & 1010/3912 & yes & yes \\
+2 & P & 42 & Hybrid & B & S & 0.50 & 1.4474 & 5.627 & 207/552 & -- & -- \\
+2 & P & 42 & Hybrid & B & E & 0.50 & 1.4474 & 5.627 & 207/552 & yes & yes \\
+2 & P & 42 & Hybrid & R & S & 0.70 & 1.5403 & 4.705 & 311/757 & -- & -- \\
+2 & P & 42 & Hybrid & R & E & 0.65 & 1.4519 & 5.578 & 211/559 & yes & yes \\
+2 & P & 42 & PLS & B & S & 0.50 & 1.8128 & 2.002 & 613/1363 & -- & -- \\
+2 & P & 42 & PLS & B & E & 0.45 & 1.3571 & 7.383 & 117/426 & no & no \\
+2 & P & 42 & PLS & R & S & 0.70 & 1.7765 & 2.371 & 585/1362 & -- & -- \\
+2 & P & 42 & PLS & R & E & 0.65 & 1.4048 & 6.900 & 179/613 & no & no \\
+2 & P & 42 & Ridge & B & S & 0.20 & 1.7285 & 3.765 & 134/1363 & -- & -- \\
+2 & P & 42 & Ridge & B & E & 0.35 & 1.8141 & 2.000 & 309/1363 & yes & yes \\
+2 & P & 42 & Ridge & R & S & 0.70 & 1.6796 & 5.280 & 110/771 & -- & -- \\
+2 & P & 42 & Ridge & R & E & 0.80 & 1.8128 & 2.009 & 306/1363 & yes & yes \\
+2 & P & 7 & Hybrid & B & S & 0.50 & 1.8154 & 2.013 & 605/1360 & -- & -- \\
+2 & P & 7 & Hybrid & B & E & 0.45 & 1.4210 & 5.929 & 187/495 & no & yes \\
+2 & P & 7 & Hybrid & R & S & 0.70 & 1.5490 & 4.567 & 329/793 & -- & -- \\
+2 & P & 7 & Hybrid & R & E & 0.70 & 1.5490 & 4.567 & 329/793 & yes & no \\
+2 & P & 7 & PLS & B & S & 0.50 & 1.8128 & 2.002 & 613/1363 & -- & -- \\
+2 & P & 7 & PLS & B & E & 0.45 & 1.3571 & 7.383 & 117/426 & no & no \\
+2 & P & 7 & PLS & R & S & 0.70 & 1.7765 & 2.371 & 585/1362 & -- & -- \\
+2 & P & 7 & PLS & R & E & 0.65 & 1.4048 & 6.900 & 179/613 & no & no \\
+2 & P & 7 & Ridge & B & S & 0.20 & 1.7285 & 3.765 & 134/1363 & -- & -- \\
+2 & P & 7 & Ridge & B & E & 0.35 & 1.8141 & 2.000 & 309/1363 & yes & yes \\
+2 & P & 7 & Ridge & R & S & 0.70 & 1.6796 & 5.280 & 110/771 & -- & -- \\
+2 & P & 7 & Ridge & R & E & 0.80 & 1.8128 & 2.009 & 306/1363 & yes & yes \\
+2 & P & 99 & Hybrid & B & S & 0.50 & 1.4532 & 5.624 & 217/566 & -- & -- \\
+2 & P & 99 & Hybrid & B & E & 0.50 & 1.4532 & 5.624 & 217/566 & yes & yes \\
+2 & P & 99 & Hybrid & R & S & 0.70 & 1.5105 & 5.056 & 279/690 & -- & -- \\
+2 & P & 99 & Hybrid & R & E & 0.70 & 1.5105 & 5.056 & 279/690 & yes & yes \\
+2 & P & 99 & PLS & B & S & 0.50 & 1.8128 & 2.002 & 613/1363 & -- & -- \\
+2 & P & 99 & PLS & B & E & 0.45 & 1.3571 & 7.383 & 117/426 & no & no \\
+2 & P & 99 & PLS & R & S & 0.70 & 1.7765 & 2.371 & 585/1362 & -- & -- \\
+2 & P & 99 & PLS & R & E & 0.65 & 1.4048 & 6.900 & 179/613 & no & no \\
+2 & P & 99 & Ridge & B & S & 0.20 & 1.7285 & 3.765 & 134/1363 & -- & -- \\
+2 & P & 99 & Ridge & B & E & 0.35 & 1.8141 & 2.000 & 309/1363 & yes & yes \\
+2 & P & 99 & Ridge & R & S & 0.70 & 1.6796 & 5.280 & 110/771 & -- & -- \\
+2 & P & 99 & Ridge & R & E & 0.80 & 1.8128 & 2.009 & 306/1363 & yes & yes \\
+2 & U & 42 & Hybrid & B & S & 0.45 & 1.7662 & 2.009 & 567/1361 & -- & -- \\
+2 & U & 42 & Hybrid & B & E & 0.40 & 1.4545 & 6.088 & 154/440 & no & no \\
+2 & U & 42 & Hybrid & R & S & 0.70 & 1.5950 & 4.441 & 331/813 & -- & -- \\
+2 & U & 42 & Hybrid & R & E & 0.70 & 1.5950 & 4.441 & 331/813 & yes & yes \\
+2 & U & 42 & PLS & B & S & 0.40 & 1.3749 & 4.999 & 352/1363 & -- & -- \\
+2 & U & 42 & PLS & B & E & 0.40 & 1.3749 & 4.999 & 352/1363 & yes & yes \\
+2 & U & 42 & PLS & R & S & 0.60 & 1.3669 & 4.902 & 357/1363 & -- & -- \\
+2 & U & 42 & PLS & R & E & 0.70 & 1.7577 & 2.552 & 556/1363 & yes & no \\
+2 & U & 42 & Ridge & B & S & 0.25 & 1.7807 & 2.867 & 273/1363 & -- & -- \\
+2 & U & 42 & Ridge & B & E & 0.30 & 1.8141 & 2.000 & 323/1363 & yes & no \\
+2 & U & 42 & Ridge & R & S & 0.65 & 1.6857 & 4.519 & 164/1229 & -- & -- \\
+2 & U & 42 & Ridge & R & E & 0.80 & 1.8122 & 2.018 & 319/1363 & yes & no \\
+3 & P & 42 & Hybrid & B & S & 0.60 & 1.9997 & 5.080 & 1539/2823 & -- & -- \\
+3 & P & 42 & Hybrid & B & E & 0.45 & 1.9276 & 5.549 & 1288/2407 & no & no \\
+3 & P & 42 & Hybrid & R & S & 0.65 & 2.0970 & 3.759 & 2018/3663 & -- & -- \\
+3 & P & 42 & Hybrid & R & E & 0.50 & 1.7803 & 5.795 & 1099/2107 & no & no \\
+3 & P & 42 & PLS & B & S & 0.60 & 2.4834 & 3.671 & 2813/4526 & -- & -- \\
+3 & P & 42 & PLS & B & E & 0.50 & 2.0202 & 6.309 & 1369/2299 & no & no \\
+3 & P & 42 & PLS & R & S & 0.55 & 2.0538 & 4.736 & 1615/2904 & -- & -- \\
+3 & P & 42 & PLS & R & E & 0.50 & 1.7135 & 6.399 & 839/1555 & no & no \\
+3 & P & 42 & Ridge & B & S & 0.10 & 2.5771 & 4.279 & 786/4966 & -- & -- \\
+3 & P & 42 & Ridge & B & E & 1.00 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & 42 & Ridge & R & S & 0.65 & 2.5289 & 3.938 & 968/3524 & -- & -- \\
+3 & P & 42 & Ridge & R & E & 0.75 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & 7 & Hybrid & B & S & 0.60 & 2.1780 & 3.376 & 2380/4150 & -- & -- \\
+3 & P & 7 & Hybrid & B & E & 0.50 & 1.8202 & 5.640 & 1229/2343 & no & no \\
+3 & P & 7 & Hybrid & R & S & 0.65 & 2.1070 & 3.611 & 2090/3763 & -- & -- \\
+3 & P & 7 & Hybrid & R & E & 0.50 & 1.7526 & 5.763 & 1122/2116 & no & no \\
+3 & P & 7 & PLS & B & S & 0.60 & 2.4834 & 3.671 & 2813/4526 & -- & -- \\
+3 & P & 7 & PLS & B & E & 0.50 & 2.0202 & 6.309 & 1369/2299 & no & no \\
+3 & P & 7 & PLS & R & S & 0.55 & 2.0538 & 4.736 & 1615/2904 & -- & -- \\
+3 & P & 7 & PLS & R & E & 0.50 & 1.7135 & 6.399 & 839/1555 & no & no \\
+3 & P & 7 & Ridge & B & S & 0.10 & 2.5771 & 4.279 & 786/4966 & -- & -- \\
+3 & P & 7 & Ridge & B & E & 1.00 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & 7 & Ridge & R & S & 0.65 & 2.5289 & 3.938 & 968/3524 & -- & -- \\
+3 & P & 7 & Ridge & R & E & 0.75 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & 99 & Hybrid & B & S & 0.60 & 2.0494 & 4.091 & 2049/3691 & -- & -- \\
+3 & P & 99 & Hybrid & B & E & 0.50 & 1.8185 & 5.457 & 1327/2525 & no & no \\
+3 & P & 99 & Hybrid & R & S & 0.65 & 1.9706 & 4.074 & 1854/3435 & -- & -- \\
+3 & P & 99 & Hybrid & R & E & 0.45 & 1.5816 & 6.413 & 807/1567 & no & no \\
+3 & P & 99 & PLS & B & S & 0.60 & 2.4834 & 3.671 & 2813/4526 & -- & -- \\
+3 & P & 99 & PLS & B & E & 0.50 & 2.0202 & 6.309 & 1369/2299 & no & no \\
+3 & P & 99 & PLS & R & S & 0.55 & 2.0538 & 4.736 & 1615/2904 & -- & -- \\
+3 & P & 99 & PLS & R & E & 0.50 & 1.7135 & 6.399 & 839/1555 & no & no \\
+3 & P & 99 & Ridge & B & S & 0.10 & 2.5771 & 4.279 & 786/4966 & -- & -- \\
+3 & P & 99 & Ridge & B & E & 1.00 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & 99 & Ridge & R & S & 0.65 & 2.5289 & 3.938 & 968/3524 & -- & -- \\
+3 & P & 99 & Ridge & R & E & 0.75 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & U & 42 & Hybrid & B & S & 0.50 & 2.3309 & 3.886 & 1617/3643 & -- & -- \\
+3 & U & 42 & Hybrid & B & E & 0.40 & 2.2198 & 5.942 & 866/2072 & no & yes \\
+3 & U & 42 & Hybrid & R & S & 0.65 & 2.2923 & 4.214 & 1454/3307 & -- & -- \\
+3 & U & 42 & Hybrid & R & E & 0.55 & 2.1583 & 5.609 & 901/2228 & no & yes \\
+3 & U & 42 & PLS & B & S & 0.50 & 2.4296 & 3.702 & 2113/4966 & -- & -- \\
+3 & U & 42 & PLS & B & E & 0.40 & 2.3708 & 4.708 & 2008/4966 & yes & yes \\
+3 & U & 42 & PLS & R & S & 0.60 & 2.3482 & 4.079 & 1804/3973 & -- & -- \\
+3 & U & 42 & PLS & R & E & 0.45 & 2.1280 & 7.207 & 291/815 & no & no \\
+3 & U & 42 & Ridge & B & S & 0.15 & 2.4038 & 4.269 & 635/4966 & -- & -- \\
+3 & U & 42 & Ridge & B & E & 0.35 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
+3 & U & 42 & Ridge & R & S & 0.65 & 2.4873 & 4.316 & 1042/3267 & -- & -- \\
+3 & U & 42 & Ridge & R & E & 0.75 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\subsection{Complete V2 paired contrasts}
+For Table~\ref{tab:v2paired}, BR is bank-reference minus rich-reference stopping; B4 is bank-reference stopping minus the four-reading common-order predictor; PM is the named predictor minus the masked MLP at the identical depth. S/E denote scientific/engineering points, and 4/7 denote exact fixed depth. Positive $\Delta$RMSEP favors the second comparator; positive $\Delta$readings means the first spends more. ``Budget'' uses the registered absolute mean-reading gap at most 0.25. The paired intervals condition on the fitted pipeline and sampled harvest populations; they do not resolve unequal costs or repeated development use.
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrllllrl}
+\caption{All 192 V2 paired comparisons; no bank, predictor, seed or registered contrast is omitted.}\label{tab:v2paired}\\
+\toprule
+Season & Bank & Seed & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta$readings & Budget \\
+\midrule
+\endfirsthead
+\multicolumn{9}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Seed & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta$readings & Budget \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & 42 & Hybrid & BR & S & 0.4124 [0.2297, 0.6774] & -2.055 & no \\
+1 & P & 42 & Hybrid & B4 & S & 0.0449 [0.0142, 0.0792] & -2.000 & no \\
+1 & P & 42 & Hybrid & BR & E & -0.1029 [-0.2463, 0.0018] & 0.571 & no \\
+1 & P & 42 & Hybrid & B4 & E & -1.0886 [-1.4322, -0.7927] & 4.000 & no \\
+1 & P & 42 & PLS & BR & S & 0.3564 [0.1691, 0.6192] & -2.514 & no \\
+1 & P & 42 & PLS & B4 & S & 0.0096 [0.0008, 0.0163] & -1.999 & no \\
+1 & P & 42 & PLS & BR & E & -0.0522 [-0.1011, -0.0042] & 0.308 & no \\
+1 & P & 42 & PLS & B4 & E & -1.1299 [-1.4832, -0.8306] & 4.000 & no \\
+1 & P & 42 & Ridge & BR & S & 0.0199 [-0.0296, 0.0722] & 0.174 & yes \\
+1 & P & 42 & Ridge & B4 & S & -0.0516 [-0.1023, -0.0024] & 0.100 & yes \\
+1 & P & 42 & Ridge & BR & E & -0.0007 [-0.0022, 0.0000] & -0.016 & yes \\
+1 & P & 42 & Ridge & B4 & E & 0.0114 [0.0020, 0.0214] & -2.000 & no \\
+1 & P & 42 & PLS & PM & 4 & 0.0414 [-0.0556, 0.1278] & -- & -- \\
+1 & P & 42 & PLS & PM & 7 & -0.1706 [-0.2892, -0.0421] & -- & -- \\
+1 & P & 42 & Ridge & PM & 4 & 0.0414 [-0.0489, 0.1212] & -- & -- \\
+1 & P & 42 & Ridge & PM & 7 & -0.0794 [-0.1515, -0.0117] & -- & -- \\
+1 & P & 7 & Hybrid & BR & S & 0.3778 [0.2065, 0.6216] & -1.899 & no \\
+1 & P & 7 & Hybrid & B4 & S & 0.0012 [-0.0636, 0.0459] & -1.899 & no \\
+1 & P & 7 & Hybrid & BR & E & -0.1270 [-0.2808, -0.0125] & 0.855 & no \\
+1 & P & 7 & Hybrid & B4 & E & -1.1145 [-1.4631, -0.8155] & 4.000 & no \\
+1 & P & 7 & PLS & BR & S & 0.3564 [0.1691, 0.6192] & -2.514 & no \\
+1 & P & 7 & PLS & B4 & S & 0.0096 [0.0008, 0.0163] & -1.999 & no \\
+1 & P & 7 & PLS & BR & E & -0.0522 [-0.1011, -0.0042] & 0.308 & no \\
+1 & P & 7 & PLS & B4 & E & -1.1299 [-1.4832, -0.8306] & 4.000 & no \\
+1 & P & 7 & Ridge & BR & S & 0.0199 [-0.0296, 0.0722] & 0.174 & yes \\
+1 & P & 7 & Ridge & B4 & S & -0.0516 [-0.1023, -0.0024] & 0.100 & yes \\
+1 & P & 7 & Ridge & BR & E & -0.0007 [-0.0022, 0.0000] & -0.016 & yes \\
+1 & P & 7 & Ridge & B4 & E & 0.0114 [0.0020, 0.0214] & -2.000 & no \\
+1 & P & 7 & PLS & PM & 4 & 0.0155 [-0.0776, 0.1023] & -- & -- \\
+1 & P & 7 & PLS & PM & 7 & -0.1553 [-0.2660, -0.0434] & -- & -- \\
+1 & P & 7 & Ridge & PM & 4 & 0.0155 [-0.0730, 0.0984] & -- & -- \\
+1 & P & 7 & Ridge & PM & 7 & -0.0640 [-0.1332, -0.0059] & -- & -- \\
+1 & P & 99 & Hybrid & BR & S & 0.4285 [0.2398, 0.7148] & -2.109 & no \\
+1 & P & 99 & Hybrid & B4 & S & 0.0433 [0.0040, 0.0807] & -2.000 & no \\
+1 & P & 99 & Hybrid & BR & E & -0.1504 [-0.3313, -0.0140] & 0.948 & no \\
+1 & P & 99 & Hybrid & B4 & E & -1.0886 [-1.4272, -0.7928] & 4.000 & no \\
+1 & P & 99 & PLS & BR & S & 0.3564 [0.1691, 0.6192] & -2.514 & no \\
+1 & P & 99 & PLS & B4 & S & 0.0096 [0.0008, 0.0163] & -1.999 & no \\
+1 & P & 99 & PLS & BR & E & -0.0522 [-0.1011, -0.0042] & 0.308 & no \\
+1 & P & 99 & PLS & B4 & E & -1.1299 [-1.4832, -0.8306] & 4.000 & no \\
+1 & P & 99 & Ridge & BR & S & 0.0199 [-0.0296, 0.0722] & 0.174 & yes \\
+1 & P & 99 & Ridge & B4 & S & -0.0516 [-0.1023, -0.0024] & 0.100 & yes \\
+1 & P & 99 & Ridge & BR & E & -0.0007 [-0.0022, 0.0000] & -0.016 & yes \\
+1 & P & 99 & Ridge & B4 & E & 0.0114 [0.0020, 0.0214] & -2.000 & no \\
+1 & P & 99 & PLS & PM & 4 & 0.0413 [-0.0625, 0.1328] & -- & -- \\
+1 & P & 99 & PLS & PM & 7 & -0.1759 [-0.2964, -0.0446] & -- & -- \\
+1 & P & 99 & Ridge & PM & 4 & 0.0413 [-0.0584, 0.1309] & -- & -- \\
+1 & P & 99 & Ridge & PM & 7 & -0.0846 [-0.1645, -0.0081] & -- & -- \\
+1 & U & 42 & Hybrid & BR & S & 0.2438 [0.1020, 0.4250] & -2.198 & no \\
+1 & U & 42 & Hybrid & B4 & S & 0.0464 [0.0139, 0.0781] & -2.000 & no \\
+1 & U & 42 & Hybrid & BR & E & -0.1156 [-0.2964, 0.0733] & 3.549 & no \\
+1 & U & 42 & Hybrid & B4 & E & -0.3457 [-0.5869, -0.0969] & 4.000 & no \\
+1 & U & 42 & PLS & BR & S & 0.2831 [0.1201, 0.4494] & -1.402 & no \\
+1 & U & 42 & PLS & B4 & S & 0.0034 [-0.0744, 0.0885] & -0.844 & no \\
+1 & U & 42 & PLS & BR & E & -0.1236 [-0.2262, -0.0024] & 1.382 & no \\
+1 & U & 42 & PLS & B4 & E & -0.4032 [-0.5588, -0.2348] & 1.940 & no \\
+1 & U & 42 & Ridge & BR & S & 0.0677 [0.0226, 0.1304] & -0.551 & no \\
+1 & U & 42 & Ridge & B4 & S & 0.0353 [-0.0080, 0.0863] & -0.308 & no \\
+1 & U & 42 & Ridge & BR & E & 0.0038 [-0.0001, 0.0103] & -0.232 & yes \\
+1 & U & 42 & Ridge & B4 & E & 0.0863 [0.0202, 0.1600] & -2.000 & no \\
+1 & U & 42 & PLS & PM & 4 & -0.0379 [-0.1360, 0.0451] & -- & -- \\
+1 & U & 42 & PLS & PM & 7 & -0.3647 [-0.6088, -0.1129] & -- & -- \\
+1 & U & 42 & Ridge & PM & 4 & -0.0269 [-0.1026, 0.0359] & -- & -- \\
+1 & U & 42 & Ridge & PM & 7 & -0.1773 [-0.2613, -0.0960] & -- & -- \\
+2 & P & 42 & Hybrid & BR & S & -0.0929 [-0.1455, -0.0456] & 0.922 & no \\
+2 & P & 42 & Hybrid & B4 & S & -0.2926 [-0.4901, -0.1142] & 1.627 & no \\
+2 & P & 42 & Hybrid & BR & E & -0.0045 [-0.0274, 0.0188] & 0.049 & yes \\
+2 & P & 42 & Hybrid & B4 & E & -0.2926 [-0.4901, -0.1142] & 1.627 & no \\
+2 & P & 42 & PLS & BR & S & 0.0362 [0.0154, 0.0599] & -0.368 & no \\
+2 & P & 42 & PLS & B4 & S & 0.0426 [0.0217, 0.0669] & -1.998 & no \\
+2 & P & 42 & PLS & BR & E & -0.0477 [-0.1142, 0.0091] & 0.483 & no \\
+2 & P & 42 & PLS & B4 & E & -0.4131 [-0.6507, -0.1843] & 3.383 & no \\
+2 & P & 42 & Ridge & BR & S & 0.0489 [-0.0072, 0.1164] & -1.515 & no \\
+2 & P & 42 & Ridge & B4 & S & -0.0542 [-0.1197, 0.0043] & -0.235 & yes \\
+2 & P & 42 & Ridge & BR & E & 0.0012 [0.0000, 0.0048] & -0.009 & yes \\
+2 & P & 42 & Ridge & B4 & E & 0.0313 [0.0134, 0.0513] & -2.000 & no \\
+2 & P & 42 & PLS & PM & 4 & 0.0302 [-0.0379, 0.1099] & -- & -- \\
+2 & P & 42 & PLS & PM & 7 & -0.1064 [-0.2047, -0.0034] & -- & -- \\
+2 & P & 42 & Ridge & PM & 4 & 0.0427 [-0.0228, 0.1242] & -- & -- \\
+2 & P & 42 & Ridge & PM & 7 & -0.0524 [-0.0985, -0.0063] & -- & -- \\
+2 & P & 7 & Hybrid & BR & S & 0.2664 [0.0890, 0.4732] & -2.554 & no \\
+2 & P & 7 & Hybrid & B4 & S & 0.0628 [0.0147, 0.1049] & -1.987 & no \\
+2 & P & 7 & Hybrid & BR & E & -0.1281 [-0.2014, -0.0616] & 1.362 & no \\
+2 & P & 7 & Hybrid & B4 & E & -0.3317 [-0.5493, -0.1337] & 1.929 & no \\
+2 & P & 7 & PLS & BR & S & 0.0362 [0.0154, 0.0599] & -0.368 & no \\
+2 & P & 7 & PLS & B4 & S & 0.0426 [0.0217, 0.0669] & -1.998 & no \\
+2 & P & 7 & PLS & BR & E & -0.0477 [-0.1142, 0.0091] & 0.483 & no \\
+2 & P & 7 & PLS & B4 & E & -0.4131 [-0.6507, -0.1843] & 3.383 & no \\
+2 & P & 7 & Ridge & BR & S & 0.0489 [-0.0072, 0.1164] & -1.515 & no \\
+2 & P & 7 & Ridge & B4 & S & -0.0542 [-0.1197, 0.0043] & -0.235 & yes \\
+2 & P & 7 & Ridge & BR & E & 0.0012 [0.0000, 0.0048] & -0.009 & yes \\
+2 & P & 7 & Ridge & B4 & E & 0.0313 [0.0134, 0.0513] & -2.000 & no \\
+2 & P & 7 & PLS & PM & 4 & 0.0176 [-0.0556, 0.1098] & -- & -- \\
+2 & P & 7 & PLS & PM & 7 & -0.1129 [-0.2082, -0.0124] & -- & -- \\
+2 & P & 7 & Ridge & PM & 4 & 0.0301 [-0.0409, 0.1198] & -- & -- \\
+2 & P & 7 & Ridge & PM & 7 & -0.0589 [-0.1037, -0.0062] & -- & -- \\
+2 & P & 99 & Hybrid & BR & S & -0.0572 [-0.1155, -0.0105] & 0.569 & no \\
+2 & P & 99 & Hybrid & B4 & S & -0.2985 [-0.4824, -0.1301] & 1.624 & no \\
+2 & P & 99 & Hybrid & BR & E & -0.0572 [-0.1155, -0.0105] & 0.569 & no \\
+2 & P & 99 & Hybrid & B4 & E & -0.2985 [-0.4824, -0.1301] & 1.624 & no \\
+2 & P & 99 & PLS & BR & S & 0.0362 [0.0154, 0.0599] & -0.368 & no \\
+2 & P & 99 & PLS & B4 & S & 0.0426 [0.0217, 0.0669] & -1.998 & no \\
+2 & P & 99 & PLS & BR & E & -0.0477 [-0.1142, 0.0091] & 0.483 & no \\
+2 & P & 99 & PLS & B4 & E & -0.4131 [-0.6507, -0.1843] & 3.383 & no \\
+2 & P & 99 & Ridge & BR & S & 0.0489 [-0.0072, 0.1164] & -1.515 & no \\
+2 & P & 99 & Ridge & B4 & S & -0.0542 [-0.1197, 0.0043] & -0.235 & yes \\
+2 & P & 99 & Ridge & BR & E & 0.0012 [0.0000, 0.0048] & -0.009 & yes \\
+2 & P & 99 & Ridge & B4 & E & 0.0313 [0.0134, 0.0513] & -2.000 & no \\
+2 & P & 99 & PLS & PM & 4 & 0.0185 [-0.0644, 0.1026] & -- & -- \\
+2 & P & 99 & PLS & PM & 7 & -0.0849 [-0.1979, 0.0219] & -- & -- \\
+2 & P & 99 & Ridge & PM & 4 & 0.0311 [-0.0475, 0.1157] & -- & -- \\
+2 & P & 99 & Ridge & PM & 7 & -0.0309 [-0.0993, 0.0267] & -- & -- \\
+2 & U & 42 & Hybrid & BR & S & 0.1712 [0.0673, 0.2914] & -2.432 & no \\
+2 & U & 42 & Hybrid & B4 & S & 0.0095 [-0.0142, 0.0364] & -1.991 & no \\
+2 & U & 42 & Hybrid & BR & E & -0.1405 [-0.2224, -0.0778] & 1.647 & no \\
+2 & U & 42 & Hybrid & B4 & E & -0.3022 [-0.4579, -0.1525] & 2.088 & no \\
+2 & U & 42 & PLS & BR & S & 0.0080 [-0.1238, 0.1285] & 0.096 & yes \\
+2 & U & 42 & PLS & B4 & S & -0.3573 [-0.5590, -0.1388] & 0.999 & no \\
+2 & U & 42 & PLS & BR & E & -0.3828 [-0.5961, -0.1612] & 2.446 & no \\
+2 & U & 42 & PLS & B4 & E & -0.3573 [-0.5590, -0.1388] & 0.999 & no \\
+2 & U & 42 & Ridge & BR & S & 0.0951 [0.0353, 0.1543] & -1.652 & no \\
+2 & U & 42 & Ridge & B4 & S & 0.0299 [0.0063, 0.0524] & -1.133 & no \\
+2 & U & 42 & Ridge & BR & E & 0.0019 [0.0000, 0.0073] & -0.018 & yes \\
+2 & U & 42 & Ridge & B4 & E & 0.0633 [0.0191, 0.1001] & -2.000 & no \\
+2 & U & 42 & PLS & PM & 4 & -0.0246 [-0.0776, 0.0327] & -- & -- \\
+2 & U & 42 & PLS & PM & 7 & -0.3993 [-0.5518, -0.2705] & -- & -- \\
+2 & U & 42 & Ridge & PM & 4 & -0.0059 [-0.0563, 0.0537] & -- & -- \\
+2 & U & 42 & Ridge & PM & 7 & -0.1862 [-0.2485, -0.1278] & -- & -- \\
+3 & P & 42 & Hybrid & BR & S & -0.0974 [-0.2254, 0.0016] & 1.321 & no \\
+3 & P & 42 & Hybrid & B4 & S & -0.4577 [-0.7045, -0.2624] & 1.080 & no \\
+3 & P & 42 & Hybrid & BR & E & 0.1473 [0.0119, 0.2748] & -0.246 & yes \\
+3 & P & 42 & Hybrid & B4 & E & -0.5297 [-0.7824, -0.3231] & 1.549 & no \\
+3 & P & 42 & PLS & BR & S & 0.4296 [0.2631, 0.6038] & -1.065 & no \\
+3 & P & 42 & PLS & B4 & S & -0.1389 [-0.2119, -0.0765] & -0.329 & no \\
+3 & P & 42 & PLS & BR & E & 0.3067 [-0.0025, 0.6792] & -0.090 & yes \\
+3 & P & 42 & PLS & B4 & E & -0.6020 [-0.7874, -0.4426] & 2.309 & no \\
+3 & P & 42 & Ridge & BR & S & 0.0483 [-0.0128, 0.1055] & 0.341 & no \\
+3 & P & 42 & Ridge & B4 & S & -0.0071 [-0.0341, 0.0165] & 0.279 & no \\
+3 & P & 42 & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+3 & P & 42 & Ridge & B4 & E & -0.0661 [-0.1678, 0.0449] & -2.000 & no \\
+3 & P & 42 & PLS & PM & 4 & 0.1649 [-0.0025, 0.3661] & -- & -- \\
+3 & P & 42 & PLS & PM & 7 & -0.1285 [-0.2571, 0.0016] & -- & -- \\
+3 & P & 42 & Ridge & PM & 4 & 0.1269 [-0.0265, 0.3173] & -- & -- \\
+3 & P & 42 & Ridge & PM & 7 & -0.0984 [-0.1815, -0.0030] & -- & -- \\
+3 & P & 7 & Hybrid & BR & S & 0.0710 [-0.0132, 0.1811] & -0.235 & yes \\
+3 & P & 7 & Hybrid & B4 & S & -0.3038 [-0.4292, -0.1831] & -0.624 & no \\
+3 & P & 7 & Hybrid & BR & E & 0.0675 [-0.0520, 0.1850] & -0.123 & yes \\
+3 & P & 7 & Hybrid & B4 & E & -0.6616 [-0.8490, -0.4956] & 1.640 & no \\
+3 & P & 7 & PLS & BR & S & 0.4296 [0.2631, 0.6038] & -1.065 & no \\
+3 & P & 7 & PLS & B4 & S & -0.1389 [-0.2119, -0.0765] & -0.329 & no \\
+3 & P & 7 & PLS & BR & E & 0.3067 [-0.0025, 0.6792] & -0.090 & yes \\
+3 & P & 7 & PLS & B4 & E & -0.6020 [-0.7874, -0.4426] & 2.309 & no \\
+3 & P & 7 & Ridge & BR & S & 0.0483 [-0.0128, 0.1055] & 0.341 & no \\
+3 & P & 7 & Ridge & B4 & S & -0.0071 [-0.0341, 0.0165] & 0.279 & no \\
+3 & P & 7 & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+3 & P & 7 & Ridge & B4 & E & -0.0661 [-0.1678, 0.0449] & -2.000 & no \\
+3 & P & 7 & PLS & PM & 4 & 0.1405 [-0.0061, 0.3152] & -- & -- \\
+3 & P & 7 & PLS & PM & 7 & -0.0628 [-0.2130, 0.0604] & -- & -- \\
+3 & P & 7 & Ridge & PM & 4 & 0.1025 [-0.0270, 0.2630] & -- & -- \\
+3 & P & 7 & Ridge & PM & 7 & -0.0327 [-0.1256, 0.0574] & -- & -- \\
+3 & P & 99 & Hybrid & BR & S & 0.0788 [-0.0015, 0.1634] & 0.017 & yes \\
+3 & P & 99 & Hybrid & B4 & S & -0.3563 [-0.5144, -0.2166] & 0.091 & yes \\
+3 & P & 99 & Hybrid & BR & E & 0.2368 [0.0784, 0.4055] & -0.957 & no \\
+3 & P & 99 & Hybrid & B4 & E & -0.5872 [-0.7907, -0.4171] & 1.457 & no \\
+3 & P & 99 & PLS & BR & S & 0.4296 [0.2631, 0.6038] & -1.065 & no \\
+3 & P & 99 & PLS & B4 & S & -0.1389 [-0.2119, -0.0765] & -0.329 & no \\
+3 & P & 99 & PLS & BR & E & 0.3067 [-0.0025, 0.6792] & -0.090 & yes \\
+3 & P & 99 & PLS & B4 & E & -0.6020 [-0.7874, -0.4426] & 2.309 & no \\
+3 & P & 99 & Ridge & BR & S & 0.0483 [-0.0128, 0.1055] & 0.341 & no \\
+3 & P & 99 & Ridge & B4 & S & -0.0071 [-0.0341, 0.0165] & 0.279 & no \\
+3 & P & 99 & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+3 & P & 99 & Ridge & B4 & E & -0.0661 [-0.1678, 0.0449] & -2.000 & no \\
+3 & P & 99 & PLS & PM & 4 & 0.2166 [0.0602, 0.3835] & -- & -- \\
+3 & P & 99 & PLS & PM & 7 & -0.1242 [-0.2895, 0.0211] & -- & -- \\
+3 & P & 99 & Ridge & PM & 4 & 0.1786 [0.0457, 0.3340] & -- & -- \\
+3 & P & 99 & Ridge & PM & 7 & -0.0941 [-0.1498, -0.0387] & -- & -- \\
+3 & U & 42 & Hybrid & BR & S & 0.0387 [-0.0095, 0.0857] & -0.328 & no \\
+3 & U & 42 & Hybrid & B4 & S & -0.2047 [-0.3534, -0.0762] & -0.114 & yes \\
+3 & U & 42 & Hybrid & BR & E & 0.0615 [0.0125, 0.1091] & 0.333 & no \\
+3 & U & 42 & Hybrid & B4 & E & -0.3159 [-0.5032, -0.1300] & 1.942 & no \\
+3 & U & 42 & PLS & BR & S & 0.0814 [-0.0464, 0.2115] & -0.377 & no \\
+3 & U & 42 & PLS & B4 & S & 0.0732 [-0.1334, 0.2744] & -0.298 & no \\
+3 & U & 42 & PLS & BR & E & 0.2428 [-0.0172, 0.5253] & -2.499 & no \\
+3 & U & 42 & PLS & B4 & E & 0.0144 [-0.1851, 0.2219] & 0.708 & no \\
+3 & U & 42 & Ridge & BR & S & -0.0835 [-0.2020, 0.0493] & -0.047 & yes \\
+3 & U & 42 & Ridge & B4 & S & -0.0368 [-0.0682, -0.0029] & 0.269 & no \\
+3 & U & 42 & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+3 & U & 42 & Ridge & B4 & E & 0.0775 [-0.0330, 0.1981] & -2.000 & no \\
+3 & U & 42 & PLS & PM & 4 & -0.1792 [-0.3083, -0.0360] & -- & -- \\
+3 & U & 42 & PLS & PM & 7 & -0.4037 [-0.8023, 0.0359] & -- & -- \\
+3 & U & 42 & Ridge & PM & 4 & -0.0950 [-0.2009, 0.0349] & -- & -- \\
+3 & U & 42 & Ridge & PM & 7 & -0.2638 [-0.3529, -0.1655] & -- & -- \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\section{V3: design-only fixed subsets and orders}
+V3 is a bounded follow-up motivated by V2's poor common order and inconclusive stopping comparison. It is not a fresh confirmatory experiment. It keeps the existing P and U banks, initial endpoint pair, PLS and ridge settings, outer roles and seed-42 source arrays. All six bank/held-season designs were locked before evaluation arrays were parsed. There is no new bank, channel-count or model-hyperparameter search after outcomes are inspected.
+
+\subsection{Design-group cross-fitting and exhaustive selection}
+Only reserved design populations generate wavelength-selection scores. For each of the 64 reachable masks and each family, leave one design population out, fit on every other design population and score its held observations. The design sets contain 9, 9 and 6 populations; leave-one-population-out fitting therefore uses 8, 8 and 5 groups. Optical values and fitting assays cross the inherited float32 boundary, while squared errors use the original float64 assay values. Equal scan weights preserve the actual original estimator; unequal population/season representation is reported explicitly rather than hidden by an invented fruit weight.
+
+At each depth 2--8 choose the mask with minimum pooled design out-of-fold MSE; exact ties use lexicographically sorted local indices. These seven subsets need not be nested and are evaluated as separate fixed-budget scanners. Separately enumerate all 720 endpoint-first orders and choose the one minimizing the sum of design MSE over prefixes 2--7, giving each depth equal weight. The full-bank term is constant and omitted. Exact ties use lexicographic complete order. Retain all mask/order scores and the top-two margins. The independently selected fixed-six subset can differ from the first six channels of the globally selected order.
+
+The six designs are hash-locked before source evaluation reads. Held/calibration/core predictions are then reused from V2's 64-mask arrays after row, group, bank, mask and feature checks. Thus no altered fit is introduced by the order comparison. Catalog-order logistic stoppers are reused exactly; designed-order logistic stoppers are fitted using the corresponding core out-of-fold predictions and the same reserved calibration groups, with V2's learner, events, grid and threshold rules unchanged. PLS and ridge select their own designs; cross-family differences therefore do not isolate the learner at identical channel subsets.
+
+The primary exact-budget contrast is designed-order minus catalog-order RMSEP at four readings in P/PLS for each held season. Independently selected fixed four versus catalog four is a second contrast; six readings is a prespecified engineering sensitivity. The same +0.25 pp/at-most-six-reading relative screen is applied to fixed and adaptive points. The two-reference scientific comparison requires an achieved difference of at most 0.25 readings, which is a tolerance, not exact cost equality. The fixed-subset selection criterion is a tuning statistic; evaluated results are conditional on this chosen design. The 1,000-draw paired population bootstrap does not include repeated subset/order selection or unknown fruit identities.
+
+V3 saves 768 mask-score rows, 8,640 order-score rows, 12 selected family/bank/season designs, all 348 evaluated policy rows, 1,188,188 scan-level prediction rows, 2,016 threshold-curve rows and 96 paired contrasts. The exhaustive search tables remain machine-readable; the tables below display every selected configuration and every scored fixed/adaptive operating point. No favorable threshold is selected from the held curves.
+
+\clearpage
+\begingroup\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rrrr}
+\caption{V3 design-set composition, identical for P/U and both predictor families. Held-season-1 design is dominated by season 3.}\label{tab:designcomposition}\\
+\toprule
+Held season & Source season & Design populations & Design scans \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Held season & Source season & Design populations & Design scans \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & 2 & 1 & 40 \\
+1 & 3 & 8 & 958 \\
+2 & 1 & 3 & 211 \\
+2 & 3 & 6 & 742 \\
+3 & 1 & 4 & 661 \\
+3 & 2 & 2 & 196 \\
+\end{longtable}
+\endgroup
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlllrrr}
+\caption{Every V3 selected nested order (nm) and design score. Score is the summed design MSE over depths 2--7; margin is second-best minus best.}\label{tab:orders}\\
+\toprule
+Season & Bank & Predictor & Selected order (nm) & Score & Catalog score & Margin \\
+\midrule
+\endfirsthead
+\multicolumn{7}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Predictor & Selected order (nm) & Score & Catalog score & Margin \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & PLS & 720, 940, 910, 890, 820, 760, 800, 780 & 29.0114 & 57.1991 & 0.1221 \\
+1 & P & Ridge & 720, 940, 910, 890, 820, 800, 780, 760 & 54.3283 & 56.2940 & 0.0125 \\
+1 & U & PLS & 720, 940, 910, 850, 820, 800, 740, 780 & 41.7472 & 51.2284 & 0.2793 \\
+1 & U & Ridge & 720, 940, 910, 850, 780, 800, 820, 740 & 53.8340 & 55.5774 & 0.0015 \\
+2 & P & PLS & 720, 940, 910, 890, 820, 780, 800, 760 & 15.1060 & 22.8091 & 0.0233 \\
+2 & P & Ridge & 720, 940, 760, 820, 910, 780, 800, 890 & 22.7411 & 23.7565 & 0.0077 \\
+2 & U & PLS & 720, 940, 820, 850, 910, 800, 780, 740 & 19.1669 & 22.1743 & 0.0327 \\
+2 & U & Ridge & 720, 940, 740, 910, 850, 780, 820, 800 & 22.6733 & 23.5424 & 0.0256 \\
+3 & P & PLS & 720, 940, 910, 890, 820, 760, 800, 780 & 33.5169 & 62.2180 & 0.1819 \\
+3 & P & Ridge & 720, 940, 910, 890, 760, 820, 800, 780 & 60.4296 & 63.7390 & 0.0225 \\
+3 & U & PLS & 720, 940, 910, 850, 820, 800, 780, 740 & 45.1937 & 55.1938 & 0.2673 \\
+3 & U & Ridge & 720, 940, 910, 740, 850, 780, 820, 800 & 60.2625 & 63.3573 & 0.0746 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rllrlr}
+\caption{All 84 independently selected V3 fixed subsets, including depths 2--8. Design RMSEP is a selection statistic, not held-season accuracy.}\label{tab:subsets}\\
+\toprule
+Season & Bank & Predictor & Readings & Selected centers (nm) & Design RMSEP \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Predictor & Readings & Selected centers (nm) & Design RMSEP \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & PLS & 2 & 720, 940 & 2.9642 \\
+1 & P & PLS & 3 & 720, 910, 940 & 3.0197 \\
+1 & P & PLS & 4 & 720, 890, 910, 940 & 2.2674 \\
+1 & P & PLS & 5 & 720, 820, 890, 910, 940 & 1.4034 \\
+1 & P & PLS & 6 & 720, 780, 800, 890, 910, 940 & 1.2355 \\
+1 & P & PLS & 7 & 720, 760, 800, 820, 890, 910, 940 & 1.4790 \\
+1 & P & PLS & 8 & 720, 760, 780, 800, 820, 890, 910, 940 & 1.8384 \\
+1 & P & Ridge & 2 & 720, 940 & 2.9524 \\
+1 & P & Ridge & 3 & 720, 910, 940 & 2.9899 \\
+1 & P & Ridge & 4 & 720, 890, 910, 940 & 3.0092 \\
+1 & P & Ridge & 5 & 720, 820, 890, 910, 940 & 3.0278 \\
+1 & P & Ridge & 6 & 720, 800, 820, 890, 910, 940 & 3.0348 \\
+1 & P & Ridge & 7 & 720, 780, 800, 820, 890, 910, 940 & 3.0397 \\
+1 & P & Ridge & 8 & 720, 760, 780, 800, 820, 890, 910, 940 & 3.0537 \\
+1 & U & PLS & 2 & 720, 940 & 2.9642 \\
+1 & U & PLS & 3 & 720, 910, 940 & 3.0197 \\
+1 & U & PLS & 4 & 720, 850, 910, 940 & 2.8491 \\
+1 & U & PLS & 5 & 720, 820, 850, 910, 940 & 2.4872 \\
+1 & U & PLS & 6 & 720, 800, 820, 850, 910, 940 & 2.2083 \\
+1 & U & PLS & 7 & 720, 740, 800, 820, 850, 910, 940 & 2.1591 \\
+1 & U & PLS & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 2.6981 \\
+1 & U & Ridge & 2 & 720, 940 & 2.9524 \\
+1 & U & Ridge & 3 & 720, 910, 940 & 2.9899 \\
+1 & U & Ridge & 4 & 720, 850, 910, 940 & 2.9994 \\
+1 & U & Ridge & 5 & 720, 780, 850, 910, 940 & 3.0064 \\
+1 & U & Ridge & 6 & 720, 780, 800, 850, 910, 940 & 3.0100 \\
+1 & U & Ridge & 7 & 720, 780, 800, 820, 850, 910, 940 & 3.0138 \\
+1 & U & Ridge & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 3.0282 \\
+2 & P & PLS & 2 & 720, 940 & 1.9941 \\
+2 & P & PLS & 3 & 720, 760, 940 & 1.9497 \\
+2 & P & PLS & 4 & 720, 890, 910, 940 & 1.8237 \\
+2 & P & PLS & 5 & 720, 820, 890, 910, 940 & 1.0428 \\
+2 & P & PLS & 6 & 720, 780, 800, 890, 910, 940 & 0.9593 \\
+2 & P & PLS & 7 & 720, 780, 800, 820, 890, 910, 940 & 1.2497 \\
+2 & P & PLS & 8 & 720, 760, 780, 800, 820, 890, 910, 940 & 1.6279 \\
+2 & P & Ridge & 2 & 720, 940 & 1.9915 \\
+2 & P & Ridge & 3 & 720, 760, 940 & 1.9311 \\
+2 & P & Ridge & 4 & 720, 760, 820, 940 & 1.9516 \\
+2 & P & Ridge & 5 & 720, 760, 820, 910, 940 & 1.9335 \\
+2 & P & Ridge & 6 & 720, 760, 780, 820, 910, 940 & 1.9353 \\
+2 & P & Ridge & 7 & 720, 760, 780, 800, 820, 910, 940 & 1.9372 \\
+2 & P & Ridge & 8 & 720, 760, 780, 800, 820, 890, 910, 940 & 1.9411 \\
+2 & U & PLS & 2 & 720, 940 & 1.9941 \\
+2 & U & PLS & 3 & 720, 740, 940 & 1.8940 \\
+2 & U & PLS & 4 & 720, 800, 850, 940 & 1.8674 \\
+2 & U & PLS & 5 & 720, 820, 850, 910, 940 & 1.6602 \\
+2 & U & PLS & 6 & 720, 800, 820, 850, 910, 940 & 1.6093 \\
+2 & U & PLS & 7 & 720, 780, 800, 820, 850, 910, 940 & 1.3584 \\
+2 & U & PLS & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 1.8883 \\
+2 & U & Ridge & 2 & 720, 940 & 1.9915 \\
+2 & U & Ridge & 3 & 720, 740, 940 & 1.9203 \\
+2 & U & Ridge & 4 & 720, 740, 910, 940 & 1.9432 \\
+2 & U & Ridge & 5 & 720, 740, 850, 910, 940 & 1.9443 \\
+2 & U & Ridge & 6 & 720, 740, 780, 850, 910, 940 & 1.9327 \\
+2 & U & Ridge & 7 & 720, 740, 780, 820, 850, 910, 940 & 1.9308 \\
+2 & U & Ridge & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 1.9318 \\
+3 & P & PLS & 2 & 720, 940 & 3.2007 \\
+3 & P & PLS & 3 & 720, 760, 940 & 3.2696 \\
+3 & P & PLS & 4 & 720, 890, 910, 940 & 2.3729 \\
+3 & P & PLS & 5 & 720, 820, 890, 910, 940 & 1.4759 \\
+3 & P & PLS & 6 & 720, 760, 800, 890, 910, 940 & 1.4557 \\
+3 & P & PLS & 7 & 720, 760, 780, 800, 890, 910, 940 & 1.5582 \\
+3 & P & PLS & 8 & 720, 760, 780, 800, 820, 890, 910, 940 & 1.8752 \\
+3 & P & Ridge & 2 & 720, 940 & 3.2112 \\
+3 & P & Ridge & 3 & 720, 910, 940 & 3.1263 \\
+3 & P & Ridge & 4 & 720, 890, 910, 940 & 3.1512 \\
+3 & P & Ridge & 5 & 720, 760, 820, 910, 940 & 3.1643 \\
+3 & P & Ridge & 6 & 720, 760, 820, 890, 910, 940 & 3.1698 \\
+3 & P & Ridge & 7 & 720, 760, 780, 800, 820, 910, 940 & 3.1841 \\
+3 & P & Ridge & 8 & 720, 760, 780, 800, 820, 890, 910, 940 & 3.1919 \\
+3 & U & PLS & 2 & 720, 940 & 3.2007 \\
+3 & U & PLS & 3 & 720, 740, 940 & 3.1955 \\
+3 & U & PLS & 4 & 720, 800, 850, 940 & 3.1043 \\
+3 & U & PLS & 5 & 720, 820, 850, 910, 940 & 2.2639 \\
+3 & U & PLS & 6 & 720, 800, 820, 850, 910, 940 & 2.2298 \\
+3 & U & PLS & 7 & 720, 780, 800, 820, 850, 910, 940 & 2.0016 \\
+3 & U & PLS & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 2.8851 \\
+3 & U & Ridge & 2 & 720, 940 & 3.2112 \\
+3 & U & Ridge & 3 & 720, 910, 940 & 3.1263 \\
+3 & U & Ridge & 4 & 720, 740, 910, 940 & 3.1548 \\
+3 & U & Ridge & 5 & 720, 740, 850, 910, 940 & 3.1579 \\
+3 & U & Ridge & 6 & 720, 740, 780, 850, 910, 940 & 3.1809 \\
+3 & U & Ridge & 7 & 720, 740, 780, 820, 850, 910, 940 & 3.1832 \\
+3 & U & Ridge & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 3.1938 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlllrrrrrrr}
+\caption{Every V3 fixed-length operating point: 252 RMSEP values. Catalog/Designed are nested prefixes; Subset is the independently selected mask at each depth.}\label{tab:v3fixed}\\
+\toprule
+Season & Bank & Predictor & Variant & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule
+\endfirsthead
+\multicolumn{11}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Predictor & Variant & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & PLS & Catalog & 2.3813 & 2.3722 & 2.3717 & 2.1602 & 2.1501 & 2.1548 & 1.2418 \\
+1 & P & PLS & Designed & 2.3813 & 2.3358 & 2.0268 & 1.2473 & 1.2197 & 1.2271 & 1.2418 \\
+1 & P & PLS & Subset & 2.3813 & 2.3358 & 2.0268 & 1.2473 & 1.2154 & 1.2271 & 1.2418 \\
+1 & P & Ridge & Catalog & 2.3832 & 2.3731 & 2.3718 & 2.2486 & 2.2488 & 2.2460 & 2.1740 \\
+1 & P & Ridge & Designed & 2.3832 & 2.3425 & 2.3244 & 2.3290 & 2.2857 & 2.2336 & 2.1740 \\
+1 & P & Ridge & Subset & 2.3832 & 2.3425 & 2.3244 & 2.3290 & 2.2857 & 2.2336 & 2.1740 \\
+1 & U & PLS & Catalog & 2.3813 & 2.3722 & 2.2858 & 2.2379 & 1.8722 & 1.9664 & 1.9780 \\
+1 & U & PLS & Designed & 2.3813 & 2.3358 & 2.3428 & 1.8940 & 1.7243 & 1.9739 & 1.9780 \\
+1 & U & PLS & Subset & 2.3813 & 2.3358 & 2.3428 & 1.8940 & 1.7243 & 1.9739 & 1.9780 \\
+1 & U & Ridge & Catalog & 2.3832 & 2.3731 & 2.2968 & 2.2811 & 2.1782 & 2.1538 & 2.1540 \\
+1 & U & Ridge & Designed & 2.3832 & 2.3425 & 2.3093 & 2.1822 & 2.1822 & 2.1784 & 2.1540 \\
+1 & U & Ridge & Subset & 2.3832 & 2.3425 & 2.3093 & 2.1822 & 2.1822 & 2.1784 & 2.1540 \\
+2 & P & PLS & Catalog & 1.8136 & 1.7994 & 1.7702 & 1.5792 & 1.6229 & 1.6324 & 1.2932 \\
+2 & P & PLS & Designed & 1.8136 & 1.7509 & 1.1706 & 0.8867 & 0.8884 & 0.9461 & 1.2932 \\
+2 & P & PLS & Subset & 1.8136 & 1.7665 & 1.1706 & 0.8867 & 0.9670 & 0.9461 & 1.2932 \\
+2 & P & Ridge & Catalog & 1.8141 & 1.7999 & 1.7828 & 1.6858 & 1.6873 & 1.6863 & 1.5944 \\
+2 & P & Ridge & Designed & 1.8141 & 1.7676 & 1.7400 & 1.5952 & 1.5969 & 1.5942 & 1.5944 \\
+2 & P & Ridge & Subset & 1.8141 & 1.7676 & 1.7400 & 1.5952 & 1.5969 & 1.5942 & 1.5944 \\
+2 & U & PLS & Catalog & 1.8136 & 1.7994 & 1.7322 & 1.7100 & 1.2311 & 1.3453 & 1.3568 \\
+2 & U & PLS & Designed & 1.8136 & 1.7994 & 1.7118 & 1.2059 & 1.3708 & 1.0405 & 1.3568 \\
+2 & U & PLS & Subset & 1.8136 & 1.7639 & 1.7128 & 1.2059 & 1.3708 & 1.0405 & 1.3568 \\
+2 & U & Ridge & Catalog & 1.8141 & 1.7999 & 1.7508 & 1.7390 & 1.5658 & 1.5584 & 1.5599 \\
+2 & U & Ridge & Designed & 1.8141 & 1.7668 & 1.7520 & 1.5628 & 1.5617 & 1.5584 & 1.5599 \\
+2 & U & Ridge & Subset & 1.8141 & 1.7668 & 1.7520 & 1.5628 & 1.5617 & 1.5584 & 1.5599 \\
+3 & P & PLS & Catalog & 2.5228 & 2.5529 & 2.6223 & 2.3250 & 2.3409 & 2.3663 & 1.2070 \\
+3 & P & PLS & Designed & 2.5228 & 2.5996 & 2.0364 & 1.0544 & 1.1250 & 1.0151 & 1.2070 \\
+3 & P & PLS & Subset & 2.5228 & 2.4494 & 2.0364 & 1.0544 & 1.2075 & 1.2492 & 1.2070 \\
+3 & P & Ridge & Catalog & 2.5182 & 2.5480 & 2.5842 & 2.3978 & 2.3966 & 2.3964 & 2.3339 \\
+3 & P & Ridge & Designed & 2.5182 & 2.5789 & 2.5463 & 2.4616 & 2.3343 & 2.3361 & 2.3339 \\
+3 & P & Ridge & Subset & 2.5182 & 2.5789 & 2.5463 & 2.3419 & 2.3343 & 2.3403 & 2.3339 \\
+3 & U & PLS & Catalog & 2.5228 & 2.5529 & 2.3564 & 2.2343 & 1.9208 & 2.1113 & 2.1453 \\
+3 & U & PLS & Designed & 2.5228 & 2.5996 & 2.5049 & 2.0324 & 1.7081 & 1.8294 & 2.1453 \\
+3 & U & PLS & Subset & 2.5228 & 2.4269 & 2.2958 & 2.0324 & 1.7081 & 1.8294 & 2.1453 \\
+3 & U & Ridge & Catalog & 2.5182 & 2.5480 & 2.4406 & 2.3879 & 2.2955 & 2.2512 & 2.2491 \\
+3 & U & Ridge & Designed & 2.5182 & 2.5789 & 2.5262 & 2.2916 & 2.2564 & 2.2512 & 2.2491 \\
+3 & U & Ridge & Subset & 2.5182 & 2.5789 & 2.5262 & 2.2916 & 2.2564 & 2.2512 & 2.2491 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlllllrrrlll}
+\caption{Every V3 adaptive operating point on catalog and designed orders. Scientific points have no engineering pass label.}\label{tab:v3adaptive}\\
+\toprule
+Season & Bank & Predictor & Order & Obj. & Point & $\tau$ & RMSEP & Readings & Missed/early & Cal & Held \\
+\midrule
+\endfirsthead
+\multicolumn{12}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Predictor & Order & Obj. & Point & $\tau$ & RMSEP & Readings & Missed/early & Cal & Held \\
+\midrule
+\endhead
+\midrule
+\multicolumn{12}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & PLS & Catalog & B & S & 0.70 & 2.3814 & 2.001 & 2266/3914 & -- & -- \\
+1 & P & PLS & Catalog & B & E & 0.00 & 1.2418 & 8.000 & 0/0 & no & no \\
+1 & P & PLS & Catalog & R & S & 0.70 & 2.0250 & 4.515 & 1760/3243 & -- & -- \\
+1 & P & PLS & Catalog & R & E & 0.50 & 1.2939 & 7.692 & 179/395 & no & no \\
+1 & P & PLS & Designed & B & S & 0.55 & 2.0016 & 4.020 & 1720/3914 & -- & -- \\
+1 & P & PLS & Designed & B & E & 0.40 & 1.7492 & 4.602 & 802/3914 & yes & no \\
+1 & P & PLS & Designed & R & S & 0.55 & 1.9629 & 4.115 & 1561/3914 & -- & -- \\
+1 & P & PLS & Designed & R & E & 0.40 & 1.7845 & 4.458 & 1005/3914 & yes & no \\
+1 & P & Ridge & Catalog & B & S & 0.10 & 2.3202 & 4.100 & 320/3914 & -- & -- \\
+1 & P & Ridge & Catalog & B & E & 0.50 & 2.3832 & 2.000 & 940/3914 & yes & yes \\
+1 & P & Ridge & Catalog & R & S & 0.75 & 2.3003 & 3.926 & 584/2778 & -- & -- \\
+1 & P & Ridge & Catalog & R & E & 0.90 & 2.3838 & 2.016 & 942/3910 & yes & yes \\
+1 & P & Ridge & Designed & B & S & 0.15 & 2.3457 & 3.286 & 686/3881 & -- & -- \\
+1 & P & Ridge & Designed & B & E & 0.35 & 2.3832 & 2.000 & 940/3914 & yes & yes \\
+1 & P & Ridge & Designed & R & S & 0.75 & 2.2371 & 5.296 & 427/2060 & -- & -- \\
+1 & P & Ridge & Designed & R & E & 1.00 & 2.3832 & 2.000 & 940/3914 & yes & yes \\
+1 & U & PLS & Catalog & B & S & 0.50 & 2.2892 & 3.156 & 1524/3914 & -- & -- \\
+1 & U & PLS & Catalog & B & E & 0.40 & 1.8826 & 5.940 & 195/3914 & yes & yes \\
+1 & U & PLS & Catalog & R & S & 0.65 & 2.0061 & 4.558 & 890/3914 & -- & -- \\
+1 & U & PLS & Catalog & R & E & 0.65 & 2.0061 & 4.558 & 890/3914 & yes & yes \\
+1 & U & PLS & Designed & B & S & 0.45 & 2.2235 & 4.123 & 1101/3914 & -- & -- \\
+1 & U & PLS & Designed & B & E & 0.45 & 2.2235 & 4.123 & 1101/3914 & yes & yes \\
+1 & U & PLS & Designed & R & S & 0.60 & 2.1929 & 4.395 & 826/3914 & -- & -- \\
+1 & U & PLS & Designed & R & E & 0.60 & 2.1929 & 4.395 & 826/3914 & yes & yes \\
+1 & U & Ridge & Catalog & B & S & 0.10 & 2.3321 & 3.692 & 526/3914 & -- & -- \\
+1 & U & Ridge & Catalog & B & E & 0.55 & 2.3832 & 2.000 & 1044/3914 & yes & yes \\
+1 & U & Ridge & Catalog & R & S & 0.75 & 2.2645 & 4.243 & 567/3084 & -- & -- \\
+1 & U & Ridge & Catalog & R & E & 0.85 & 2.3794 & 2.232 & 1010/3912 & yes & yes \\
+1 & U & Ridge & Designed & B & S & 0.15 & 2.2964 & 3.401 & 558/3914 & -- & -- \\
+1 & U & Ridge & Designed & B & E & 0.45 & 2.3832 & 2.000 & 1044/3914 & yes & yes \\
+1 & U & Ridge & Designed & R & S & 0.80 & 2.2813 & 3.645 & 679/3154 & -- & -- \\
+1 & U & Ridge & Designed & R & E & 1.00 & 2.3832 & 2.000 & 1044/3914 & yes & yes \\
+2 & P & PLS & Catalog & B & S & 0.50 & 1.8128 & 2.002 & 613/1363 & -- & -- \\
+2 & P & PLS & Catalog & B & E & 0.45 & 1.3571 & 7.383 & 117/426 & no & no \\
+2 & P & PLS & Catalog & R & S & 0.70 & 1.7765 & 2.371 & 585/1362 & -- & -- \\
+2 & P & PLS & Catalog & R & E & 0.65 & 1.4048 & 6.900 & 179/613 & no & no \\
+2 & P & PLS & Designed & B & S & 0.30 & 1.2147 & 3.839 & 207/1363 & -- & -- \\
+2 & P & PLS & Designed & B & E & 0.40 & 1.3017 & 3.585 & 267/1363 & yes & yes \\
+2 & P & PLS & Designed & R & S & 0.55 & 1.1692 & 4.004 & 183/1363 & -- & -- \\
+2 & P & PLS & Designed & R & E & 0.55 & 1.1692 & 4.004 & 183/1363 & yes & yes \\
+2 & P & Ridge & Catalog & B & S & 0.20 & 1.7285 & 3.765 & 134/1363 & -- & -- \\
+2 & P & Ridge & Catalog & B & E & 0.35 & 1.8141 & 2.000 & 309/1363 & yes & yes \\
+2 & P & Ridge & Catalog & R & S & 0.70 & 1.6796 & 5.280 & 110/771 & -- & -- \\
+2 & P & Ridge & Catalog & R & E & 0.80 & 1.8128 & 2.009 & 306/1363 & yes & yes \\
+2 & P & Ridge & Designed & B & S & 0.20 & 1.7086 & 3.745 & 133/1363 & -- & -- \\
+2 & P & Ridge & Designed & B & E & 0.25 & 1.8141 & 2.000 & 309/1363 & yes & yes \\
+2 & P & Ridge & Designed & R & S & 0.65 & 1.6679 & 4.295 & 113/1186 & -- & -- \\
+2 & P & Ridge & Designed & R & E & 1.00 & 1.8141 & 2.000 & 309/1363 & yes & yes \\
+2 & U & PLS & Catalog & B & S & 0.40 & 1.3749 & 4.999 & 352/1363 & -- & -- \\
+2 & U & PLS & Catalog & B & E & 0.40 & 1.3749 & 4.999 & 352/1363 & yes & yes \\
+2 & U & PLS & Catalog & R & S & 0.60 & 1.3669 & 4.902 & 357/1363 & -- & -- \\
+2 & U & PLS & Catalog & R & E & 0.70 & 1.7577 & 2.552 & 556/1363 & yes & no \\
+2 & U & PLS & Designed & B & S & 0.40 & 1.3325 & 4.255 & 321/1363 & -- & -- \\
+2 & U & PLS & Designed & B & E & 0.40 & 1.3325 & 4.255 & 321/1363 & yes & yes \\
+2 & U & PLS & Designed & R & S & 0.60 & 1.5800 & 3.172 & 446/1363 & -- & -- \\
+2 & U & PLS & Designed & R & E & 0.70 & 1.7672 & 2.358 & 564/1363 & yes & no \\
+2 & U & Ridge & Catalog & B & S & 0.25 & 1.7807 & 2.867 & 273/1363 & -- & -- \\
+2 & U & Ridge & Catalog & B & E & 0.30 & 1.8141 & 2.000 & 323/1363 & yes & no \\
+2 & U & Ridge & Catalog & R & S & 0.65 & 1.6857 & 4.519 & 164/1229 & -- & -- \\
+2 & U & Ridge & Catalog & R & E & 0.80 & 1.8122 & 2.018 & 319/1363 & yes & no \\
+2 & U & Ridge & Designed & B & S & 0.20 & 1.6759 & 4.076 & 110/1363 & -- & -- \\
+2 & U & Ridge & Designed & B & E & 0.35 & 1.8141 & 2.000 & 323/1363 & yes & no \\
+2 & U & Ridge & Designed & R & S & 0.70 & 1.6573 & 4.212 & 120/1195 & -- & -- \\
+2 & U & Ridge & Designed & R & E & 1.00 & 1.8141 & 2.000 & 323/1363 & yes & no \\
+3 & P & PLS & Catalog & B & S & 0.60 & 2.4834 & 3.671 & 2813/4526 & -- & -- \\
+3 & P & PLS & Catalog & B & E & 0.50 & 2.0202 & 6.309 & 1369/2299 & no & no \\
+3 & P & PLS & Catalog & R & S & 0.55 & 2.0538 & 4.736 & 1615/2904 & -- & -- \\
+3 & P & PLS & Catalog & R & E & 0.50 & 1.7135 & 6.399 & 839/1555 & no & no \\
+3 & P & PLS & Designed & B & S & 0.50 & 2.2410 & 3.747 & 2447/4966 & -- & -- \\
+3 & P & PLS & Designed & B & E & 0.30 & 1.2678 & 5.007 & 836/4966 & yes & yes \\
+3 & P & PLS & Designed & R & S & 0.40 & 1.8415 & 3.821 & 1737/4946 & -- & -- \\
+3 & P & PLS & Designed & R & E & 0.35 & 1.6804 & 4.386 & 1361/4861 & yes & no \\
+3 & P & Ridge & Catalog & B & S & 0.10 & 2.5771 & 4.279 & 786/4966 & -- & -- \\
+3 & P & Ridge & Catalog & B & E & 1.00 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & Ridge & Catalog & R & S & 0.65 & 2.5289 & 3.938 & 968/3524 & -- & -- \\
+3 & P & Ridge & Catalog & R & E & 0.75 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & Ridge & Designed & B & S & 0.05 & 2.5652 & 3.746 & 875/4966 & -- & -- \\
+3 & P & Ridge & Designed & B & E & 1.00 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & P & Ridge & Designed & R & S & 0.60 & 2.4921 & 5.261 & 719/2467 & -- & -- \\
+3 & P & Ridge & Designed & R & E & 1.00 & 2.5182 & 2.000 & 1341/4966 & yes & yes \\
+3 & U & PLS & Catalog & B & S & 0.50 & 2.4296 & 3.702 & 2113/4966 & -- & -- \\
+3 & U & PLS & Catalog & B & E & 0.40 & 2.3708 & 4.708 & 2008/4966 & yes & yes \\
+3 & U & PLS & Catalog & R & S & 0.60 & 2.3482 & 4.079 & 1804/3973 & -- & -- \\
+3 & U & PLS & Catalog & R & E & 0.45 & 2.1280 & 7.207 & 291/815 & no & no \\
+3 & U & PLS & Designed & B & S & 0.45 & 2.3789 & 4.252 & 1985/4966 & -- & -- \\
+3 & U & PLS & Designed & B & E & 0.45 & 2.3789 & 4.252 & 1985/4966 & yes & yes \\
+3 & U & PLS & Designed & R & S & 0.55 & 2.2173 & 4.636 & 1536/3864 & -- & -- \\
+3 & U & PLS & Designed & R & E & 0.50 & 2.1463 & 5.906 & 899/2548 & yes & yes \\
+3 & U & Ridge & Catalog & B & S & 0.15 & 2.4038 & 4.269 & 635/4966 & -- & -- \\
+3 & U & Ridge & Catalog & B & E & 0.35 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
+3 & U & Ridge & Catalog & R & S & 0.65 & 2.4873 & 4.316 & 1042/3267 & -- & -- \\
+3 & U & Ridge & Catalog & R & E & 0.75 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
+3 & U & Ridge & Designed & B & S & 0.05 & 2.5071 & 4.364 & 841/4966 & -- & -- \\
+3 & U & Ridge & Designed & B & E & 1.00 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
+3 & U & Ridge & Designed & R & S & 0.65 & 2.4841 & 4.385 & 1038/3239 & -- & -- \\
+3 & U & Ridge & Designed & R & E & 0.75 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\subsection{Complete V3 paired contrasts}
+In Table~\ref{tab:v3paired}, DC is designed-prefix minus catalog-prefix prediction at the same fixed depth; SC is independently selected subset minus catalog prefix at the same depth; BR is bank-reference minus rich-reference stopping on the designed order; and AS is bank-reference adaptive prediction on the designed order minus the selected fixed subset. AS uses selected fixed four for the scientific point and selected fixed six for the engineering point. Only the fixed-depth contrasts are exactly matched in reading count. The budget-tolerance flag does not turn an adaptive comparison into exact equality.
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlllllrl}
+\caption{All 96 V3 paired contrasts with sampled-population intervals and achieved budget comparability.}\label{tab:v3paired}\\
+\toprule
+Season & Bank & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta$readings & Budget \\
+\midrule
+\endfirsthead
+\multicolumn{8}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Season & Bank & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta$readings & Budget \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+1 & P & PLS & DC & 4 & -0.3450 [-0.5891, -0.1180] & 0.000 & yes \\
+1 & P & PLS & SC & 4 & -0.3450 [-0.5891, -0.1180] & 0.000 & yes \\
+1 & P & PLS & DC & 6 & -0.9303 [-1.2025, -0.6803] & 0.000 & yes \\
+1 & P & PLS & SC & 6 & -0.9347 [-1.1593, -0.6968] & 0.000 & yes \\
+1 & P & PLS & BR & S & 0.0387 [-0.0273, 0.1382] & -0.095 & yes \\
+1 & P & PLS & AS & S & -0.0252 [-0.0658, 0.0004] & 0.020 & yes \\
+1 & P & PLS & BR & E & -0.0352 [-0.0847, 0.0276] & 0.144 & yes \\
+1 & P & PLS & AS & E & 0.5338 [0.1852, 0.9196] & -1.398 & no \\
+1 & P & Ridge & DC & 4 & -0.0473 [-0.0622, -0.0344] & 0.000 & yes \\
+1 & P & Ridge & SC & 4 & -0.0473 [-0.0622, -0.0344] & 0.000 & yes \\
+1 & P & Ridge & DC & 6 & 0.0369 [-0.0147, 0.0979] & 0.000 & yes \\
+1 & P & Ridge & SC & 6 & 0.0369 [-0.0147, 0.0979] & 0.000 & yes \\
+1 & P & Ridge & BR & S & 0.1086 [0.0392, 0.1921] & -2.010 & no \\
+1 & P & Ridge & AS & S & 0.0213 [0.0002, 0.0413] & -0.714 & no \\
+1 & P & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+1 & P & Ridge & AS & E & 0.0974 [0.0612, 0.1368] & -4.000 & no \\
+1 & U & PLS & DC & 4 & 0.0570 [-0.1357, 0.2557] & 0.000 & yes \\
+1 & U & PLS & SC & 4 & 0.0570 [-0.1357, 0.2557] & 0.000 & yes \\
+1 & U & PLS & DC & 6 & -0.1479 [-0.2075, -0.0836] & 0.000 & yes \\
+1 & U & PLS & SC & 6 & -0.1479 [-0.2075, -0.0836] & 0.000 & yes \\
+1 & U & PLS & BR & S & 0.0306 [-0.1005, 0.1552] & -0.272 & no \\
+1 & U & PLS & AS & S & -0.1193 [-0.2246, -0.0249] & 0.123 & yes \\
+1 & U & PLS & BR & E & 0.0306 [-0.1005, 0.1552] & -0.272 & no \\
+1 & U & PLS & AS & E & 0.4992 [0.3078, 0.6937] & -1.877 & no \\
+1 & U & Ridge & DC & 4 & 0.0125 [-0.0653, 0.1047] & 0.000 & yes \\
+1 & U & Ridge & SC & 4 & 0.0125 [-0.0653, 0.1047] & 0.000 & yes \\
+1 & U & Ridge & DC & 6 & 0.0040 [-0.0027, 0.0103] & 0.000 & yes \\
+1 & U & Ridge & SC & 6 & 0.0040 [-0.0027, 0.0103] & 0.000 & yes \\
+1 & U & Ridge & BR & S & 0.0151 [-0.0388, 0.0746] & -0.244 & yes \\
+1 & U & Ridge & AS & S & -0.0129 [-0.0612, 0.0326] & -0.599 & no \\
+1 & U & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+1 & U & Ridge & AS & E & 0.2010 [0.1223, 0.2885] & -4.000 & no \\
+2 & P & PLS & DC & 4 & -0.5996 [-0.8257, -0.3817] & 0.000 & yes \\
+2 & P & PLS & SC & 4 & -0.5996 [-0.8257, -0.3817] & 0.000 & yes \\
+2 & P & PLS & DC & 6 & -0.7346 [-0.9557, -0.4471] & 0.000 & yes \\
+2 & P & PLS & SC & 6 & -0.6560 [-0.8943, -0.3559] & 0.000 & yes \\
+2 & P & PLS & BR & S & 0.0455 [0.0075, 0.0913] & -0.165 & yes \\
+2 & P & PLS & AS & S & 0.0442 [0.0062, 0.0904] & -0.161 & yes \\
+2 & P & PLS & BR & E & 0.1325 [0.0418, 0.2459] & -0.420 & no \\
+2 & P & PLS & AS & E & 0.3348 [0.1436, 0.5068] & -2.415 & no \\
+2 & P & Ridge & DC & 4 & -0.0428 [-0.1034, 0.0212] & 0.000 & yes \\
+2 & P & Ridge & SC & 4 & -0.0428 [-0.1034, 0.0212] & 0.000 & yes \\
+2 & P & Ridge & DC & 6 & -0.0905 [-0.1147, -0.0696] & 0.000 & yes \\
+2 & P & Ridge & SC & 6 & -0.0905 [-0.1147, -0.0696] & 0.000 & yes \\
+2 & P & Ridge & BR & S & 0.0407 [-0.0071, 0.0811] & -0.550 & no \\
+2 & P & Ridge & AS & S & -0.0314 [-0.0551, -0.0103] & -0.255 & no \\
+2 & P & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+2 & P & Ridge & AS & E & 0.2172 [0.1376, 0.2964] & -4.000 & no \\
+2 & U & PLS & DC & 4 & -0.0204 [-0.0674, 0.0345] & 0.000 & yes \\
+2 & U & PLS & SC & 4 & -0.0194 [-0.0405, 0.0054] & 0.000 & yes \\
+2 & U & PLS & DC & 6 & 0.1397 [0.0212, 0.2574] & 0.000 & yes \\
+2 & U & PLS & SC & 6 & 0.1397 [0.0212, 0.2574] & 0.000 & yes \\
+2 & U & PLS & BR & S & -0.2475 [-0.4488, -0.0608] & 1.084 & no \\
+2 & U & PLS & AS & S & -0.3803 [-0.5680, -0.1849] & 0.255 & no \\
+2 & U & PLS & BR & E & -0.4347 [-0.6483, -0.2049] & 1.897 & no \\
+2 & U & PLS & AS & E & -0.0383 [-0.2110, 0.1405] & -1.745 & no \\
+2 & U & Ridge & DC & 4 & 0.0012 [-0.0190, 0.0196] & 0.000 & yes \\
+2 & U & Ridge & SC & 4 & 0.0012 [-0.0190, 0.0196] & 0.000 & yes \\
+2 & U & Ridge & DC & 6 & -0.0041 [-0.0304, 0.0157] & 0.000 & yes \\
+2 & U & Ridge & SC & 6 & -0.0041 [-0.0304, 0.0157] & 0.000 & yes \\
+2 & U & Ridge & BR & S & 0.0186 [-0.0469, 0.0832] & -0.136 & yes \\
+2 & U & Ridge & AS & S & -0.0761 [-0.1472, -0.0243] & 0.076 & yes \\
+2 & U & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+2 & U & Ridge & AS & E & 0.2524 [0.1740, 0.3333] & -4.000 & no \\
+3 & P & PLS & DC & 4 & -0.5858 [-0.7998, -0.3882] & 0.000 & yes \\
+3 & P & PLS & SC & 4 & -0.5858 [-0.7998, -0.3882] & 0.000 & yes \\
+3 & P & PLS & DC & 6 & -1.2158 [-1.6477, -0.7444] & 0.000 & yes \\
+3 & P & PLS & SC & 6 & -1.1334 [-1.5648, -0.6799] & 0.000 & yes \\
+3 & P & PLS & BR & S & 0.3995 [0.0787, 0.7775] & -0.074 & yes \\
+3 & P & PLS & AS & S & 0.2046 [-0.0216, 0.4383] & -0.253 & no \\
+3 & P & PLS & BR & E & -0.4127 [-0.5974, -0.2161] & 0.621 & no \\
+3 & P & PLS & AS & E & 0.0603 [-0.1094, 0.2344] & -0.993 & no \\
+3 & P & Ridge & DC & 4 & -0.0379 [-0.0504, -0.0261] & 0.000 & yes \\
+3 & P & Ridge & SC & 4 & -0.0379 [-0.0504, -0.0261] & 0.000 & yes \\
+3 & P & Ridge & DC & 6 & -0.0623 [-0.0774, -0.0485] & 0.000 & yes \\
+3 & P & Ridge & SC & 6 & -0.0623 [-0.0774, -0.0485] & 0.000 & yes \\
+3 & P & Ridge & BR & S & 0.0731 [-0.0051, 0.1478] & -1.515 & no \\
+3 & P & Ridge & AS & S & 0.0189 [0.0033, 0.0329] & -0.254 & no \\
+3 & P & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+3 & P & Ridge & AS & E & 0.1839 [0.0516, 0.3305] & -4.000 & no \\
+3 & U & PLS & DC & 4 & 0.1485 [-0.0660, 0.3736] & 0.000 & yes \\
+3 & U & PLS & SC & 4 & -0.0606 [-0.1437, 0.0368] & 0.000 & yes \\
+3 & U & PLS & DC & 6 & -0.2127 [-0.3179, -0.0999] & 0.000 & yes \\
+3 & U & PLS & SC & 6 & -0.2127 [-0.3179, -0.0999] & 0.000 & yes \\
+3 & U & PLS & BR & S & 0.1615 [-0.0359, 0.3626] & -0.384 & no \\
+3 & U & PLS & AS & S & 0.0831 [-0.2043, 0.3395] & 0.252 & no \\
+3 & U & PLS & BR & E & 0.2325 [0.0291, 0.4377] & -1.654 & no \\
+3 & U & PLS & AS & E & 0.6708 [0.3690, 0.9615] & -1.748 & no \\
+3 & U & Ridge & DC & 4 & 0.0856 [0.0094, 0.1532] & 0.000 & yes \\
+3 & U & Ridge & SC & 4 & 0.0856 [0.0094, 0.1532] & 0.000 & yes \\
+3 & U & Ridge & DC & 6 & -0.0391 [-0.0830, -0.0016] & 0.000 & yes \\
+3 & U & Ridge & SC & 6 & -0.0391 [-0.0830, -0.0016] & 0.000 & yes \\
+3 & U & Ridge & BR & S & 0.0230 [-0.0584, 0.0965] & -0.021 & yes \\
+3 & U & Ridge & AS & S & -0.0191 [-0.0993, 0.0520] & 0.364 & no \\
+3 & U & Ridge & BR & E & 0.0000 [0.0000, 0.0000] & 0.000 & yes \\
+3 & U & Ridge & AS & E & 0.2618 [0.1383, 0.4048] & -4.000 & no \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+\begingroup\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{lllrrrr}
+\caption{Complete pairwise Jaccard overlap of V3 selected channel sets across outer design splits (168 values). This describes stability, not accuracy.}\label{tab:stability}\\
+\toprule
+Bank & Predictor & Design & Depth & Seasons 1/2 & Seasons 1/3 & Seasons 2/3 \\
+\midrule
+\endfirsthead
+\multicolumn{7}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Bank & Predictor & Design & Depth & Seasons 1/2 & Seasons 1/3 & Seasons 2/3 \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+P & PLS & Designed & 2 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Designed & 3 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Designed & 4 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Designed & 5 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Designed & 6 & 0.714 & 1.000 & 0.714 \\
+P & PLS & Designed & 7 & 0.750 & 1.000 & 0.750 \\
+P & PLS & Designed & 8 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Subset & 2 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Subset & 3 & 0.500 & 0.500 & 1.000 \\
+P & PLS & Subset & 4 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Subset & 5 & 1.000 & 1.000 & 1.000 \\
+P & PLS & Subset & 6 & 1.000 & 0.714 & 0.714 \\
+P & PLS & Subset & 7 & 0.750 & 0.750 & 0.750 \\
+P & PLS & Subset & 8 & 1.000 & 1.000 & 1.000 \\
+P & Ridge & Designed & 2 & 1.000 & 1.000 & 1.000 \\
+P & Ridge & Designed & 3 & 0.500 & 1.000 & 0.500 \\
+P & Ridge & Designed & 4 & 0.333 & 1.000 & 0.333 \\
+P & Ridge & Designed & 5 & 0.667 & 0.667 & 0.667 \\
+P & Ridge & Designed & 6 & 0.500 & 0.714 & 0.714 \\
+P & Ridge & Designed & 7 & 0.750 & 0.750 & 0.750 \\
+P & Ridge & Designed & 8 & 1.000 & 1.000 & 1.000 \\
+P & Ridge & Subset & 2 & 1.000 & 1.000 & 1.000 \\
+P & Ridge & Subset & 3 & 0.500 & 1.000 & 0.500 \\
+P & Ridge & Subset & 4 & 0.333 & 1.000 & 0.333 \\
+P & Ridge & Subset & 5 & 0.667 & 0.667 & 1.000 \\
+P & Ridge & Subset & 6 & 0.500 & 0.714 & 0.714 \\
+P & Ridge & Subset & 7 & 0.750 & 0.750 & 1.000 \\
+P & Ridge & Subset & 8 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Designed & 2 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Designed & 3 & 0.500 & 1.000 & 0.500 \\
+U & PLS & Designed & 4 & 0.600 & 1.000 & 0.600 \\
+U & PLS & Designed & 5 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Designed & 6 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Designed & 7 & 0.750 & 0.750 & 1.000 \\
+U & PLS & Designed & 8 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Subset & 2 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Subset & 3 & 0.500 & 0.500 & 1.000 \\
+U & PLS & Subset & 4 & 0.600 & 0.600 & 1.000 \\
+U & PLS & Subset & 5 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Subset & 6 & 1.000 & 1.000 & 1.000 \\
+U & PLS & Subset & 7 & 0.750 & 0.750 & 1.000 \\
+U & PLS & Subset & 8 & 1.000 & 1.000 & 1.000 \\
+U & Ridge & Designed & 2 & 1.000 & 1.000 & 1.000 \\
+U & Ridge & Designed & 3 & 0.500 & 1.000 & 0.500 \\
+U & Ridge & Designed & 4 & 0.600 & 0.600 & 1.000 \\
+U & Ridge & Designed & 5 & 0.667 & 0.667 & 1.000 \\
+U & Ridge & Designed & 6 & 0.714 & 0.714 & 1.000 \\
+U & Ridge & Designed & 7 & 0.750 & 0.750 & 1.000 \\
+U & Ridge & Designed & 8 & 1.000 & 1.000 & 1.000 \\
+U & Ridge & Subset & 2 & 1.000 & 1.000 & 1.000 \\
+U & Ridge & Subset & 3 & 0.500 & 1.000 & 0.500 \\
+U & Ridge & Subset & 4 & 0.600 & 0.600 & 1.000 \\
+U & Ridge & Subset & 5 & 0.667 & 0.667 & 1.000 \\
+U & Ridge & Subset & 6 & 0.714 & 0.714 & 1.000 \\
+U & Ridge & Subset & 7 & 0.750 & 0.750 & 1.000 \\
+U & Ridge & Subset & 8 & 1.000 & 1.000 & 1.000 \\
+\end{longtable}
+\endgroup
+\end{landscape}
+
+\section{V4: a frozen research artifact, not new validation}
+After V3, a separate finalization rule selected one six-channel candidate from development seasons 1--3 only. It retained P's eight-channel bank and 720/940-nm endpoints, enumerated all $\binom{6}{4}=15$ six-channel subsets, and generated leave-one-population-out predictions for each subset over all 94 development populations. Each scaler and PLS fit excluded its target population. The selection rule minimized pooled scan-weighted MSE, with lexicographic index ties. It did not vote among earlier fold winners or use seasons 4--5. The selected set is 720, 760, 820, 890, 910 and 940 nm, which differs from the three fold-specific V3 fixed-six sets. Therefore V3's performance cannot be assigned to this final artifact.
+
+The selected six-channel PLS, full-eight PLS (both six components) and rich-spectrum PLS (12 components with the inherited SNV/derivative transform) were then refitted on the identical 10,243 development rows. Reusing those rows for selection and final fitting is intentional model finalization; its selected cross-validation minimum is a tuning statistic. Six PLS components with six inputs imposes no component-count reduction relative to the six available features; no latent dimension-reduction advantage is claimed. All 15 selection scores are shown below explicitly as tuning evidence.
+
+The freeze retains portable coefficients, exact normalized response weights, channel order, preprocessing, row/group provenance, executable inference, reference sklearn models, dependencies and a hash manifest. Portable/reference parity on development inputs establishes computational agreement, not generalization. The CLI examples contain three development training rows for software demonstration only. No V4 later-season benchmark scoring, independent accuracy estimate, per-fruit interval or validated harvest recommendation is supplied. These boundaries do not make the completed original/V2/V3 dataset analyses incomplete. No physical field collection or harvest threshold is required to finish this paper.
+
+\clearpage
+\begingroup\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{longtable}{rlrrl}
+\caption{All V4 finalization scores: development LOPO tuning results only. These are not independent validation accuracy.}\label{tab:candidateselection}\\
+\toprule
+Index & Centers (nm) & Tuning MSE & Tuning RMSEP & Selected \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\tablename~\thetable{} (continued)}\\
+\toprule
+Index & Centers (nm) & Tuning MSE & Tuning RMSEP & Selected \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+0 & 720, 760, 780, 800, 820, 940 & 4.8634 & 2.2053 & no \\
+1 & 720, 760, 780, 800, 890, 940 & 4.6597 & 2.1586 & no \\
+2 & 720, 760, 780, 800, 910, 940 & 4.0532 & 2.0133 & no \\
+3 & 720, 760, 780, 820, 890, 940 & 4.5998 & 2.1447 & no \\
+4 & 720, 760, 780, 820, 910, 940 & 4.0564 & 2.0140 & no \\
+5 & 720, 760, 780, 890, 910, 940 & 1.7191 & 1.3111 & no \\
+6 & 720, 760, 800, 820, 890, 940 & 4.6006 & 2.1449 & no \\
+7 & 720, 760, 800, 820, 910, 940 & 4.0481 & 2.0120 & no \\
+8 & 720, 760, 800, 890, 910, 940 & 1.3821 & 1.1756 & no \\
+9 & 720, 760, 820, 890, 910, 940 & 1.0642 & 1.0316 & yes \\
+10 & 720, 780, 800, 820, 890, 940 & 4.6480 & 2.1559 & no \\
+11 & 720, 780, 800, 820, 910, 940 & 4.0654 & 2.0163 & no \\
+12 & 720, 780, 800, 890, 910, 940 & 1.0804 & 1.0394 & no \\
+13 & 720, 780, 820, 890, 910, 940 & 1.0756 & 1.0371 & no \\
+14 & 720, 800, 820, 890, 910, 940 & 1.1083 & 1.0528 & no \\
+\end{longtable}
+\endgroup
+
+\section{Evidence inventory, verification and claim boundaries}
+\subsection{Machine-readable evidence}
+The following paths are relative to the project root. CSV files preserve full numerical precision and additional quantities (MAE, signed bias, $R^2$, coverage, read-count distributions, threshold indices and event counts) beyond the compact PDF tables. No missing table cell is replaced by a favorable value. Empty conditional rates mean a zero denominator; other missing quantities retain their stated reason.
+\begin{itemize}
+\item Original: \path{results/external_metrics.csv} (176 operating points), \path{results/external_delta_sensitivity.csv} (352 unchanged-policy diagnostic rows), \path{results/external_group_metrics.csv} (1,760 population rows), \path{results/external_predictions.csv}, \path{results/calibration.json}, \path{results/action_diagnostics.json}, \path{results/paired_examples.json}, and the frozen bank/threshold/fit manifests.
+\item V2: \path{revisions/methodology_v2/results/} contains \path{predictor_metrics.csv} (1,512 core/calibration/held summaries), \path{policy_metrics.csv} (396 fixed/adaptive points), \path{policy_predictions.csv.gz} (1,352,076 scan-level predictions), \path{endpoint_rows.csv}, \path{endpoint_summary.csv}, \path{paired_comparisons.csv} (192 contrasts) and \path{threshold_curves.csv} (3,024 tuning/held curve rows).
+\item V3: \path{revisions/fixed_design_v3/results/} contains \path{design_subsets.csv} (768 search rows), \path{design_orders.csv} (8,640 search rows), \path{selected_designs.csv}, \path{design_composition.csv}, \path{selection_stability.csv} (168 overlaps), \path{metrics.csv} (348 policies), \path{predictions.csv.gz} (1,188,188 scan-level rows), \path{comparisons.csv} (96 contrasts), \path{threshold_curves.csv} (2,016 rows) and the pre-evaluation design lock.
+\item V4: \path{revisions/candidate_v4/results/selection_scores.csv}, all 94 LOPO checkpoints and \path{revisions/candidate_v4/frozen/manifest.json}. The freeze is an artifact inventory, not a new validation claim.
+\end{itemize}
+
+\subsection{Executed consistency checks}
+The V2 verifier reported 84,145 numerical/artifact checks and its software suite 22 tests; full resume preserved 86 checked scientific artifacts. V3 reported 107,679 checks and 19 software tests; full resume preserved 147 checked artifacts. V4 reported 1,115 freeze checks and byte-identical resume for 246 files. These are software/audit counts, not sample sizes or evidence of agronomic validity. Checks reconstruct metrics from paired predictions, verify target/fit separation and terminal identity, inspect every exact mask/order optimum, and compare portable inference with retained reference models. Prior versions remain preserved. Revision 5 separately verifies that reported cells and compiled source agree with these saved artifacts; it does not rerun predictive fitting.
+
+\subsection{What the dataset supports}
+The original primary objective comparison has achieved budgets differing by more than 0.25 readings in both later seasons. It therefore does not demonstrate an equal-cost adaptive-objective benefit. V2 isolates predictor choice and the estimator-switch explanation without establishing that the masked MLP alone caused the earlier poor four-reading comparison. V3 improves fixed selection/order in P/PLS but not uniformly across the independent bank or ridge sensitivity. Its selected fixed-six procedure passes the specified relative screen in all three development seasons, with different fold-specific subsets; that result is not a validated universal six-channel device. On the designed order, V3's primary objective comparisons fall within the registered budget margin but remain unequal in cost, and the bank-reference objective has no demonstrated RMSEP advantage. Full numerical details, including contrary sensitivities, are retained above.
+
+The paper makes no claim that adaptive acquisition is impossible or that one stopping event cannot help a different learner. It tests these particular predictors, optical assumptions, constrained banks, orders, labels and calibration rules. Population bootstrap uncertainty does not account for unknown fruit repeats, future seasons or the exploratory reuse of development data. A reference predictor's error is not an irreducible information limit; a relative screen against a weak reference is not proof of adequate absolute accuracy. Harvest quality, optimal picking dates, real energy, latency and physical optical transfer are unmeasured outcomes, so the empirical conclusions are restricted accordingly.
+
+\subsection{Source access and author inputs}
+The source-data record, manufacturer source material and available author code support the implemented comparisons. For several closely related mango journal papers, the original audit had bibliographic/abstract access without complete methods. Consequently the paper does not assert absence of prior art, exact reproduction of inaccessible methods or priority for combining these ideas. Those access limits bound the literature comparison; they do not prevent reporting the executed dataset study. Author names/affiliations, contributions, funding, conflicts and any institutional declarations remain genuine author inputs. No submission or endorsement is implied.
+
+\bibliographystyle{jnirs_sagev}
+\bibliography{references}
+\end{document}

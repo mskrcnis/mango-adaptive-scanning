@@ -1,0 +1,15 @@
+{
+  "executable": "/home/mskr/Research/Agro/Mango/.venv/bin/python",
+  "packages": {
+    "joblib": "1.4.2",
+    "numpy": "1.24.3",
+    "pandas": "2.0.3",
+    "pytest": "8.3.5",
+    "scikit-learn": "1.3.2",
+    "scipy": "1.10.1",
+    "threadpoolctl": "3.5.0"
+  },
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.17",
+  "python": "3.8.20",
+  "threadpool_limit": 2
+}

@@ -1,0 +1,99 @@
+# Prospective validation protocol: frozen fixed-six candidate
+
+Status: preparation complete; no new validation observations have been collected or scored. This protocol supports descriptive scientific validation once its collection and analysis design is finalized. Practical acceptance criteria are still unresolved. Missing application tolerances do not prevent freezing a research candidate or estimating its error on new observations.
+
+Frozen candidate: **720, 760, 820, 890, 910 and 940 nm**, with fixed-eight and rich-spectrum comparison models. The exact bundle hash is recorded in `validation/readiness.json`; the future collection-study registration remains unfinished.
+
+## Purpose and scope
+
+The intended purposes are a research paper establishing the method's capabilities and limitations, and eventual support for deciding when mangoes should be harvested. First evaluate one frozen, development-selected, six-channel spectral-replay predictor against a fixed eight-channel predictor and a rich-spectrum predictor on genuinely new mango populations. Version 3 supports this follow-up; it did not validate one universal six-channel configuration. Repeatedly used development seasons cannot provide independent confirmation. The current model estimates dry matter; it does not return a validated instruction to pick fruit.
+
+The planned candidate uses the existing primary bank and endpoint constraint, six channels selected solely from development data, and autoscaled PLS with six components. The full-bank comparator uses all eight primary-bank channels and autoscaled PLS with six components. The rich comparator uses the inherited twelve-component PLS, SNV and Savitzky–Golay second derivative (window 11, polynomial degree 2, wavelength spacing 3 nm). The candidate manifest and serialized bundle are authoritative for exact channel membership, operation order, fitted coefficients, training provenance and software. Record their hashes in the study registration before predicting new observations. If they differ from this description, reconcile and register the difference before acquiring validation outcomes.
+
+The initial validation target is the frozen **spectral replay**: measured spectra are processed by the existing optical simulator and model. Six simulated readings do not establish physical instrument accuracy, energy use, measurement time or economic usefulness. No new operating threshold or adaptive policy is selected in this protocol.
+
+## Eligible independent data
+
+All observations from the original dataset's seasons 1–5 are ineligible, including renamed copies, rescans of the same fruits, derived spectra and subsets. Seasons 4–5 were previously evaluated and are not a fresh confirmation set. A different public-file name alone is not evidence of independence.
+
+Recruit genuinely new fruits from new, prospectively defined harvest populations. Register the season, cultivar range, orchard or supplier, block or lot, harvest window, collection dates, handling/storage conditions, intended measurement setting and inclusion rules before assay linkage. Retain globally unique fruit IDs and scan IDs. Preserve populations intact; do not split repeated scans of one fruit or members of a harvest population between calibration and validation.
+
+Document source-file hashes, collection provenance and duplicate checks. Exact spectrum-byte hashes flag exact duplicates, but are insufficient to exclude transformed copies or rescans. Review fruit, lot, date and source lineage as well. Quarantine unresolved overlap and report it. An authorized collector must attest that the cohort is independent of the earlier dataset; never infer this from an absent matching hash.
+
+Register population definitions and dependence assumptions. Distinct harvest populations sharing a lot, block or other known dependence must share an `analysis_cluster_id` under a rule chosen without validation assays. The bootstrap unit is the independent population cluster, which may contain several recorded harvest populations. Different scan IDs or dates are not by themselves independent replicates.
+
+## Frozen collection plan and quality control
+
+Before collection, finalize the number of populations/clusters, fruit recruitment per population, scan sites and number of repeats per fruit, randomization or blocking of instrument order, permitted rescans, spectral calibration checks, acceptable environmental ranges, reference-laboratory procedure, and objective QC criteria. Record the sampling frame and departures; a convenience cohort supports only the sampled setting. No numeric sample size is assumed here.
+
+Plan precision at the **population-cluster** level, using an explicitly documented error/within-cluster correlation scenario, target confidence-interval width and feasible population count. Development observations may inform scenarios but are not new validation subjects. Record plausible alternative scenarios. Additional scans of one fruit and additional fruits in one population do not substitute for independent populations. Finalize the recruitment target and stopping rule before assay linkage; do not extend recruitment because the emerging RMSEP looks unfavorable.
+
+QC rules must specify spectral dimensionality/grid/units, finite values, instrument checks, saturation and corrupted files, missing channels, handling deviations, assay validity, and technical assay replicate reconciliation. Choose any numeric QC thresholds before validation outcomes. Do not remove fruit because prediction error is large, because it lies outside the observed assay range, or because one model performs poorly. Preserve exclusion reasons and the timestamp/role that made each decision.
+
+For spectral replay, use the frozen input wavelength grid and representation exactly. Do not extrapolate, silently impute absent channels, refit normalizers, change log conventions or add a spectral-transfer transform. A schema or instrument mismatch is an acquisition/compatibility failure that must be logged. Any transfer adaptation belongs to a separate calibration study described below.
+
+## Blinding and freeze sequence
+
+1. Register the study design, candidate/comparator bundle hashes, QC criteria, analysis plan and all intended metrics. Practical acceptance fields may remain explicitly null if the declared purpose is descriptive research only.
+2. Collect spectra and metadata under pseudonymous fruit IDs. Keep laboratory assay values and the assay-to-fruit linkage inaccessible to the person/process producing model predictions. The laboratory should not receive model predictions.
+3. Apply registered outcome-independent QC and freeze a complete enrollment/disposition manifest. Generate scan-level predictions with all three frozen models, preserve failures, then aggregate predictions to fruit level using the rule below. Freeze and hash input files, QC decisions, scan predictions and fruit predictions before assay linkage.
+4. Freeze the laboratory assay records independently. An authorized custodian releases the linkage only after recording the prediction-freeze hash and time. Join once for the registered analysis. Report missing or conflicting links rather than guessing.
+5. Run the frozen analysis, including every registered comparison and every exclusion/failure count. Report deviations. Model changes, new cutoffs or analysis choices after linkage are exploratory and require a new future validation cohort for confirmation.
+
+Writing a timestamp into a CSV is not independent evidence of blinding. Preserve access-controlled copies or custody records and a recorded hash manifest. These templates document the intended controls; they do not claim that collection or blinding has occurred.
+
+## Reference and fruit-level analysis unit
+
+The reference target is dry matter as a percentage of fresh weight: `100 × dry_mass_g / fresh_mass_g`, using a validated laboratory procedure agreed before collection. Record fresh mass, dry mass, assay method/version, batch, aliquot identity, drying endpoint and assay QC. Do not invent a drying temperature, duration or reference precision. Reconcile technical aliquot repeats by the registered assay SOP to produce **one final reference value per fruit**; retain the underlying assay records.
+
+The primary analysis unit is one fruit. For each model, compute the unweighted arithmetic mean of that fruit's predictions across all protocol-eligible paired scan repetitions. Compare that mean prediction with the single fruit-level reference. Do not average spectra before prediction and do not count repeated scans as separate primary observations. Record scan count and variation as repeatability descriptors.
+
+For replay, each input spectrum supplies all three model predictions, so scan eligibility should be common. If a scan cannot produce one of the three predictions, record the failure and exclude that scan from **all** three paired fruit means. A fruit enters the paired accuracy analysis only if it has the registered minimum eligible scan count for each model and a valid reference assay. Keep all enrolled fruits in a separate availability/failure denominator; missing predictions never count as successes. Report model-specific prediction availability and assay missingness, including patterns by population. A complete-case accuracy estimate does not remove potential missingness bias.
+
+## Prespecified descriptive analysis
+
+The primary endpoint is fruit-weighted RMSEP of the fixed-six candidate in dry-matter percentage points on the eligible paired set. The primary comparison is paired RMSEP difference, fixed-six minus full-eight. Rich-spectrum performance and fixed-six minus rich-spectrum are prespecified context comparisons, not irreducible accuracy bounds. Report all three RMSEPs, MAE, signed mean bias (prediction minus reference), sample size, cluster count, per-population sizes, and availability/failure proportions. Do not report practical pass/fail when its application-specific limits have not been justified and registered.
+
+Use each eligible fruit once with equal weight in pooled metrics; unequal population sizes therefore affect pooled weighting. Also report population-wise metrics and their unweighted mean as a descriptive sensitivity. Report new seasons separately in addition to pooled results; do not optimize weights or select a favorable season after linkage.
+
+Construct paired 95% percentile bootstrap intervals with 10,000 resamples and seed 42. Resample entire independent population clusters with replacement within each new season, preserving every fruit and all paired model outputs in each selected cluster. If one cluster spans season labels, resolve the cluster/season design before freeze; never split a dependence cluster merely to permit stratification. Recompute RMSEP and paired RMSEP differences for each resample, retaining multiplicity when a cluster is sampled more than once. Do not resample scans independently. Do not discard unfavorable bootstrap draws. Report zero-error or degenerate intervals and unavailable quantities explicitly.
+
+If a season has two or fewer independent clusters, do not report its population-bootstrap interval or a stratified pooled interval that purports to capture its population uncertainty; report point estimates and the insufficient-cluster limitation. This preserves the original brief's exclusion of population-level intervals based on only two populations. Having three or more clusters does not by itself establish adequate precision or justify an interval. Interval reporting additionally requires the preregistered cluster/precision plan to support the achieved independent-cluster count and dependence assumptions; otherwise report descriptive point estimates and explain why uncertainty remains insufficiently characterized.
+
+Intervals are conditional on the frozen candidate, sampled seasons and represented populations. They do not include candidate-selection uncertainty, establish performance in unseen future seasons, or supply multiplicity-adjusted evidence. Additional cultivar, orchard, storage or temperature analyses are descriptive unless specifically registered with adequate independent representation.
+
+## Practical acceptance and disposition
+
+Research and harvest-timing support are the intended applications. Acceptable absolute RMSEP, any comparative noninferiority margin and their practical justification remain unset in `validation/readiness.json`. Cultivar/market-specific harvest criteria and the consequences of an early or late decision are also unset. The version-3 relative allowance of 0.25 percentage points is a historical exploratory screen, not an automatically justified application tolerance. No local numerical result may be used to fill these acceptance values after validation outcomes are seen.
+
+If practical acceptance is intended, register the following before outcome linkage: the absolute RMSEP limit, a justified candidate-versus-full-eight margin, the accuracy/availability requirements, population scope, precision requirement, and any bias or failure limits needed for the application. A conservative planned accuracy gate is that the upper endpoint of the two-sided 95% candidate-RMSEP interval is no larger than the absolute limit **and** the upper endpoint of the paired RMSEP-difference interval is no larger than the registered comparative margin. Freeze the exact gate before using it, including whether both requirements and any availability limits must pass. An interval crossing a limit is inconclusive, not proof of equivalence.
+
+With these values unresolved, descriptive prospective validation may proceed after its design is frozen, but practical go/no-go remains **not evaluable**. A candidate can be frozen now as a research artifact. Passing a numerical gate alone cannot authorize hardware deployment beyond the measured population and instrument setting.
+
+## Additional validation for harvest decisions
+
+The harvest motivation has source support, but no universal cutoff is imported here. The [UC Davis mango fact sheet](https://postharvest.ucdavis.edu/produce-facts-sheets/mango) describes several maturity indicators and cultivar differences in fruit quality. The [UF/IFAS fresh-cut mango manual](https://ask.ifas.ufl.edu/publication/HS1443) discusses dry matter as an indicator of harvest maturity and subsequent eating quality; its fresh-cut handling context is not automatically this study's intended market.
+
+A [2022 primary study by de Freitas and colleagues](https://www.sciencedirect.com/science/article/pii/S0925521422000850) evaluated dry matter at harvest, ripe-fruit quality and consumer acceptance in Palmer and Tommy Atkins mangoes across two growing seasons. It reported only weak cultivar/season dependence of the minimum dry matter needed for its consumer-quality criterion. That scoped finding does not justify assigning an unexamined cultivar or market a cutoff. These statements were checked against the publisher's abstract and available page excerpts, not a claimed full-PDF review; the extension sources were checked on their institutional pages on 2026-11-26.
+
+Dry-matter prediction accuracy is one input to a harvest decision, not the decision's ground truth. The eventual harvest-support protocol must name the cultivar, market, storage/transport setting, target maturity/quality outcome and cost of harvesting too early or too late. Establish any dry-matter threshold or multivariable readiness criterion from an independent cultivar/market source and qualified agronomic input before validation labels are linked. Do not select it to maximize performance on this cohort. The current candidate must continue to return a dry-matter estimate until that decision rule is separately frozen and evaluated.
+
+Register a paired field design spanning the relevant decision window, including the recruitment schedule, reference maturity assessment and postharvest follow-up conditions. Record the actual harvest date/decision and the independently assessed maturity or quality outcome, with assessors blinded to model output where feasible. Specify how destructive dry-matter assays and later quality measurements will be allocated: a destructively assayed whole fruit cannot also supply an intact postharvest outcome. If separate sentinel or matched fruits are needed, record that pairing and its uncertainty rather than describing the outcomes as measurements of the same intact fruit. Keep fruit, population and any orchard/block allocation together in analysis.
+
+Before outcomes, freeze the model-to-decision mapping, all thresholds, the primary decision endpoint, acceptable early-pick and delayed-pick error rates, and a population-level precision plan. If a binary readiness reference is scientifically justified, report the full paired confusion matrix, sensitivity, specificity and false-ready/false-not-ready rates against that reference, with clustered uncertainty and explicit denominators. Also report dry-matter error near the registered threshold. A small overall RMSEP can coexist with consequential errors near a decision boundary.
+
+Agreement with an independently justified maturity rule supports only that agreement claim. Improved fruit quality, fewer premature harvests, higher returns or better harvest timing require their own prospectively measured outcomes and an appropriate comparison with current practice. Freeze that comparative field design before using model output to change picking behavior; do not infer benefit from replay RMSEP. Harvest-rule selection, agronomic review and prospective field testing remain future work, separate from research-model freezing.
+
+## Physical instrument validation is a separate step
+
+The current optical channels are simulated from full spectra. New real LED/detector readings may differ in spectral response, radiometry, geometry, temperature and calibration. Do not assume that a physical six-channel instrument can directly consume the simulated-feature PLS coefficients.
+
+Before a hardware accuracy study, document actual emitter and detector response, wavelength/response calibration, illumination and acquisition geometry, dark/white references, signal representation, repeatability, environmental conditions and instrument identifiers. If calibration transfer or new model fitting is needed, allocate a separate, population-disjoint calibration/transfer cohort. Label all its outcomes as development. Freeze the transfer mapping, channel calibration, preprocessing, model and collection procedure before measuring the independent hardware test cohort. Keep repeated scans/fruits/populations together. A cohort used to choose transfer settings cannot then serve as independent validation of those settings.
+
+Collect physical fixed-six, full-eight and reference-spectrum measurements on the same fruits under a registered paired design. Register scan sites, repeat counts, measurement order and timing, failure definitions, and aggregation before collection. Measure energy and latency directly if making those claims; a 6/8 simulated count alone provides no estimate. The replay study and physical study have separate frozen manifests, cohorts and conclusions.
+
+## Files and unresolved items
+
+`validation/readiness.json` records preparation state and unresolved fields. `validation/data_dictionary.md` defines header-only collection, assay-custody and prediction templates. They contain no actual participants, observations, performance or approval.
+
+The candidate manifest, completed study registration, sampling/precision plan, QC/SOP hashes, independent-data attestation, prediction freeze and assay-linkage record must be completed before the corresponding stage is declared ready. Preserve revisions and reasons; never overwrite a frozen protocol to conceal a post-outcome change.

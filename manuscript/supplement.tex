@@ -1,0 +1,240 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=18mm]{geometry}\usepackage{booktabs,longtable,graphicx,hyperref,pdflscape}
+\setlength{\belowcaptionskip}{5pt}
+\begin{document}
+\title{Supplement: adaptive mango spectral scanning}\author{Author review copy}\date{}\maketitle
+\section{Complete registered comparisons}
+All RMSEP values are dry-matter percentage points. Readings are simulated acquisition counts.
+The scientific operating points target four mean development readings; engineering points use the registered constraints.
+These settings were frozen before external scoring. Values are generated directly from the saved metrics table.
+\begin{landscape}\scriptsize
+\begin{longtable}{llllrrr}
+\toprule
+Season & Bank & Method & Point & RMSEP & Readings & Missed rate \\
+\midrule
+4 & correlation & full\_bank & reference & 1.330 & 8.00 & undefined \\
+4 & correlation & rich\_cnn & reference & 1.503 & 103.00 & undefined \\
+4 & correlation & rich\_pls & reference & 1.477 & 103.00 & undefined \\
+4 & correlation & proposed & scientific & 2.750 & 2.44 & 0.614 \\
+4 & correlation & single & scientific & 2.843 & 2.01 & 0.613 \\
+4 & swap\_mid & proposed & engineering & 1.261 & 7.94 & 0.667 \\
+4 & swap\_mid & full\_bank & reference & 1.232 & 8.00 & undefined \\
+4 & swap\_mid & ideal\_mlp\_16 & reference & 1.115 & 16.00 & undefined \\
+4 & swap\_mid & ideal\_mlp\_4 & reference & 2.394 & 4.00 & 0.560 \\
+4 & swap\_mid & ideal\_mlp\_8 & reference & 2.492 & 8.00 & undefined \\
+4 & swap\_mid & ideal\_plsr\_16 & reference & 1.299 & 16.00 & undefined \\
+4 & swap\_mid & ideal\_plsr\_4 & reference & 2.682 & 4.00 & 0.592 \\
+4 & swap\_mid & ideal\_plsr\_8 & reference & 2.781 & 8.00 & undefined \\
+4 & swap\_mid & ideal\_sparse\_svr\_16 & reference & 1.554 & 16.00 & undefined \\
+4 & swap\_mid & ideal\_sparse\_svr\_4 & reference & 2.364 & 4.00 & 0.521 \\
+4 & swap\_mid & ideal\_sparse\_svr\_8 & reference & 2.524 & 8.00 & undefined \\
+4 & swap\_mid & physical\_mlp\_4 & reference & 2.615 & 4.00 & 0.536 \\
+4 & swap\_mid & physical\_mlp\_8 & reference & 2.596 & 8.00 & undefined \\
+4 & swap\_mid & physical\_plsr\_4 & reference & 1.242 & 4.00 & 0.140 \\
+4 & swap\_mid & physical\_plsr\_8 & reference & 1.232 & 8.00 & undefined \\
+4 & swap\_mid & physical\_sparse\_svr\_4 & reference & 2.361 & 4.00 & 0.507 \\
+4 & swap\_mid & physical\_sparse\_svr\_8 & reference & 2.504 & 8.00 & undefined \\
+4 & swap\_mid & rich\_cnn & reference & 1.503 & 103.00 & undefined \\
+4 & swap\_mid & rich\_pls & reference & 1.477 & 103.00 & undefined \\
+4 & swap\_mid & walsh\_adapted & reference & 1.276 & 103.00 & undefined \\
+4 & swap\_mid & fixed\_length & scientific & 2.851 & 4.00 & 0.580 \\
+4 & swap\_mid & fixed\_order & scientific & 2.690 & 3.05 & 0.605 \\
+4 & swap\_mid & lookahead & scientific & 2.657 & 3.08 & 0.597 \\
+4 & swap\_mid & proposed & scientific & 2.672 & 3.10 & 0.604 \\
+4 & swap\_mid & random\_order & scientific & 2.662 & 3.17 & 0.608 \\
+4 & swap\_mid & single & scientific & 2.752 & 2.36 & 0.592 \\
+4 & swap\_mid & single\_cnn\_reference & scientific & 2.612 & 3.11 & 0.604 \\
+4 & swap\_mid & uncertainty & scientific & 2.364 & 4.91 & 0.624 \\
+4 & uniform & full\_bank & reference & 2.237 & 8.00 & undefined \\
+4 & uniform & rich\_cnn & reference & 1.503 & 103.00 & undefined \\
+4 & uniform & rich\_pls & reference & 1.477 & 103.00 & undefined \\
+4 & uniform & proposed & scientific & 2.553 & 5.39 & 0.410 \\
+4 & uniform & single & scientific & 2.834 & 2.33 & 0.405 \\
+5 & correlation & full\_bank & reference & 2.238 & 8.00 & undefined \\
+5 & correlation & rich\_cnn & reference & 1.614 & 103.00 & undefined \\
+5 & correlation & rich\_pls & reference & 2.229 & 103.00 & undefined \\
+5 & correlation & proposed & scientific & 2.172 & 3.05 & 0.205 \\
+5 & correlation & single & scientific & 2.201 & 2.00 & 0.219 \\
+5 & swap\_mid & proposed & engineering & 1.244 & 8.00 & undefined \\
+5 & swap\_mid & full\_bank & reference & 1.244 & 8.00 & undefined \\
+5 & swap\_mid & ideal\_mlp\_16 & reference & 1.455 & 16.00 & undefined \\
+5 & swap\_mid & ideal\_mlp\_4 & reference & 1.672 & 4.00 & 0.431 \\
+5 & swap\_mid & ideal\_mlp\_8 & reference & 1.718 & 8.00 & undefined \\
+5 & swap\_mid & ideal\_plsr\_16 & reference & 2.043 & 16.00 & undefined \\
+5 & swap\_mid & ideal\_plsr\_4 & reference & 1.837 & 4.00 & 0.456 \\
+5 & swap\_mid & ideal\_plsr\_8 & reference & 1.917 & 8.00 & undefined \\
+5 & swap\_mid & ideal\_sparse\_svr\_16 & reference & 1.558 & 16.00 & undefined \\
+5 & swap\_mid & ideal\_sparse\_svr\_4 & reference & 1.917 & 4.00 & 0.487 \\
+5 & swap\_mid & ideal\_sparse\_svr\_8 & reference & 1.795 & 8.00 & undefined \\
+5 & swap\_mid & physical\_mlp\_4 & reference & 1.594 & 4.00 & 0.406 \\
+5 & swap\_mid & physical\_mlp\_8 & reference & 1.684 & 8.00 & undefined \\
+5 & swap\_mid & physical\_plsr\_4 & reference & 1.853 & 4.00 & 0.759 \\
+5 & swap\_mid & physical\_plsr\_8 & reference & 1.244 & 8.00 & undefined \\
+5 & swap\_mid & physical\_sparse\_svr\_4 & reference & 1.530 & 4.00 & 0.369 \\
+5 & swap\_mid & physical\_sparse\_svr\_8 & reference & 1.604 & 8.00 & undefined \\
+5 & swap\_mid & rich\_cnn & reference & 1.614 & 103.00 & undefined \\
+5 & swap\_mid & rich\_pls & reference & 2.229 & 103.00 & undefined \\
+5 & swap\_mid & walsh\_adapted & reference & 1.778 & 103.00 & undefined \\
+5 & swap\_mid & fixed\_length & scientific & 2.230 & 4.00 & 0.512 \\
+5 & swap\_mid & fixed\_order & scientific & 2.013 & 4.64 & 0.529 \\
+5 & swap\_mid & lookahead & scientific & 1.911 & 4.74 & 0.510 \\
+5 & swap\_mid & proposed & scientific & 1.997 & 4.81 & 0.533 \\
+5 & swap\_mid & random\_order & scientific & 1.828 & 5.10 & 0.517 \\
+5 & swap\_mid & single & scientific & 2.171 & 2.37 & 0.500 \\
+5 & swap\_mid & single\_cnn\_reference & scientific & 2.126 & 3.26 & 0.510 \\
+5 & swap\_mid & uncertainty & scientific & 1.657 & 7.03 & 0.614 \\
+5 & uniform & full\_bank & reference & 1.496 & 8.00 & undefined \\
+5 & uniform & rich\_cnn & reference & 1.614 & 103.00 & undefined \\
+5 & uniform & rich\_pls & reference & 2.229 & 103.00 & undefined \\
+5 & uniform & proposed & scientific & 1.798 & 5.70 & 0.443 \\
+5 & uniform & single & scientific & 2.293 & 2.16 & 0.494 \\
+\bottomrule
+\end{longtable}
+\normalsize\end{landscape}
+\section{Training seeds and optical sensitivities}
+All seeds use the same frozen development-selected operating indices. No seed is selected using external outcomes.
+The response-shift rows apply the frozen physical predictor without retraining; ideal-point rows have their own development-fitted models and operating points.
+Rich-reference reading counts denote grid features, not physical LED costs. Missing rates have a zero early-stop denominator.
+\begin{landscape}\scriptsize
+\begin{longtable}{llrlrrr}
+\toprule
+Season & Bank & Seed & Method & RMSEP & Readings & Missed rate \\
+\midrule
+4 & correlation & 42 & proposed & 2.750 & 2.44 & 0.614 \\
+4 & correlation & 42 & single & 2.843 & 2.01 & 0.613 \\
+4 & swap\_mid & 7 & proposed & 2.700 & 3.26 & 0.597 \\
+4 & swap\_mid & 7 & single & 2.734 & 2.50 & 0.588 \\
+4 & swap\_mid & 42 & proposed & 2.672 & 3.10 & 0.604 \\
+4 & swap\_mid & 42 & single & 2.752 & 2.36 & 0.592 \\
+4 & swap\_mid & 99 & proposed & 2.709 & 2.50 & 0.561 \\
+4 & swap\_mid & 99 & single & 2.688 & 2.22 & 0.565 \\
+4 & uniform & 7 & proposed & 2.349 & 5.47 & 0.333 \\
+4 & uniform & 7 & single & 2.788 & 2.70 & 0.393 \\
+4 & uniform & 42 & proposed & 2.553 & 5.39 & 0.410 \\
+4 & uniform & 42 & single & 2.834 & 2.33 & 0.405 \\
+4 & uniform & 99 & proposed & 2.484 & 5.53 & 0.395 \\
+4 & uniform & 99 & single & 2.800 & 2.29 & 0.399 \\
+5 & correlation & 42 & proposed & 2.172 & 3.05 & 0.205 \\
+5 & correlation & 42 & single & 2.201 & 2.00 & 0.219 \\
+5 & swap\_mid & 7 & proposed & 1.975 & 5.23 & 0.594 \\
+5 & swap\_mid & 7 & single & 2.089 & 3.21 & 0.530 \\
+5 & swap\_mid & 42 & proposed & 1.997 & 4.81 & 0.533 \\
+5 & swap\_mid & 42 & single & 2.171 & 2.37 & 0.500 \\
+5 & swap\_mid & 99 & proposed & 2.196 & 3.58 & 0.540 \\
+5 & swap\_mid & 99 & single & 2.335 & 2.37 & 0.549 \\
+5 & uniform & 7 & proposed & 1.712 & 5.96 & 0.418 \\
+5 & uniform & 7 & single & 2.135 & 3.00 & 0.442 \\
+5 & uniform & 42 & proposed & 1.798 & 5.70 & 0.443 \\
+5 & uniform & 42 & single & 2.293 & 2.16 & 0.494 \\
+5 & uniform & 99 & proposed & 1.835 & 6.05 & 0.510 \\
+5 & uniform & 99 & single & 2.359 & 2.33 & 0.552 \\
+\bottomrule
+\end{longtable}
+\clearpage
+\begin{longtable}{lllrrr}
+\toprule
+Season & Scenario & Method & RMSEP & Readings & Missed rate \\
+\midrule
+4 & center\_minus3 & full\_bank & 1.448 & 8.00 & undefined \\
+4 & center\_minus3 & proposed & 3.038 & 2.82 & 0.577 \\
+4 & center\_minus3 & rich\_cnn & 1.503 & 103.00 & undefined \\
+4 & center\_minus3 & rich\_pls & 1.477 & 103.00 & undefined \\
+4 & center\_minus3 & single & 3.085 & 2.18 & 0.567 \\
+4 & center\_plus3 & full\_bank & 2.800 & 8.00 & undefined \\
+4 & center\_plus3 & proposed & 2.761 & 2.85 & 0.293 \\
+4 & center\_plus3 & rich\_cnn & 1.503 & 103.00 & undefined \\
+4 & center\_plus3 & rich\_pls & 1.477 & 103.00 & undefined \\
+4 & center\_plus3 & single & 2.661 & 2.51 & 0.281 \\
+4 & gaussian\_approximation & full\_bank & 78.505 & 8.00 & undefined \\
+4 & gaussian\_approximation & proposed & 7.429 & 2.18 & 0.000 \\
+4 & gaussian\_approximation & rich\_cnn & 1.503 & 103.00 & undefined \\
+4 & gaussian\_approximation & rich\_pls & 1.477 & 103.00 & undefined \\
+4 & gaussian\_approximation & single & 3.766 & 2.12 & 0.000 \\
+4 & ideal\_points & full\_bank & 1.496 & 8.00 & undefined \\
+4 & ideal\_points & proposed & 2.742 & 2.46 & 0.605 \\
+4 & ideal\_points & rich\_cnn & 1.503 & 103.00 & undefined \\
+4 & ideal\_points & rich\_pls & 1.477 & 103.00 & undefined \\
+4 & ideal\_points & single & 2.760 & 2.04 & 0.601 \\
+4 & width\_times0p9 & full\_bank & 8.714 & 8.00 & undefined \\
+4 & width\_times0p9 & proposed & 4.222 & 3.08 & 0.014 \\
+4 & width\_times0p9 & rich\_cnn & 1.503 & 103.00 & undefined \\
+4 & width\_times0p9 & rich\_pls & 1.477 & 103.00 & undefined \\
+4 & width\_times0p9 & single & 3.226 & 2.38 & 0.014 \\
+4 & width\_times1p1 & full\_bank & 7.824 & 8.00 & undefined \\
+4 & width\_times1p1 & proposed & 3.730 & 3.12 & 0.005 \\
+4 & width\_times1p1 & rich\_cnn & 1.503 & 103.00 & undefined \\
+4 & width\_times1p1 & rich\_pls & 1.477 & 103.00 & undefined \\
+4 & width\_times1p1 & single & 3.100 & 2.32 & 0.004 \\
+5 & center\_minus3 & full\_bank & 2.219 & 8.00 & undefined \\
+5 & center\_minus3 & proposed & 2.690 & 4.19 & 0.344 \\
+5 & center\_minus3 & rich\_cnn & 1.614 & 103.00 & undefined \\
+5 & center\_minus3 & rich\_pls & 2.229 & 103.00 & undefined \\
+5 & center\_minus3 & single & 2.671 & 2.21 & 0.320 \\
+5 & center\_plus3 & full\_bank & 2.293 & 8.00 & undefined \\
+5 & center\_plus3 & proposed & 1.795 & 3.88 & 0.183 \\
+5 & center\_plus3 & rich\_cnn & 1.614 & 103.00 & undefined \\
+5 & center\_plus3 & rich\_pls & 2.229 & 103.00 & undefined \\
+5 & center\_plus3 & single & 1.822 & 2.42 & 0.182 \\
+5 & gaussian\_approximation & full\_bank & 85.207 & 8.00 & undefined \\
+5 & gaussian\_approximation & proposed & 17.401 & 2.44 & 0.000 \\
+5 & gaussian\_approximation & rich\_cnn & 1.614 & 103.00 & undefined \\
+5 & gaussian\_approximation & rich\_pls & 2.229 & 103.00 & undefined \\
+5 & gaussian\_approximation & single & 2.059 & 2.21 & 0.000 \\
+5 & ideal\_points & full\_bank & 1.684 & 8.00 & undefined \\
+5 & ideal\_points & proposed & 2.007 & 2.12 & 0.324 \\
+5 & ideal\_points & rich\_cnn & 1.614 & 103.00 & undefined \\
+5 & ideal\_points & rich\_pls & 2.229 & 103.00 & undefined \\
+5 & ideal\_points & single & 2.010 & 2.08 & 0.316 \\
+5 & width\_times0p9 & full\_bank & 8.558 & 8.00 & undefined \\
+5 & width\_times0p9 & proposed & 5.375 & 4.69 & 0.005 \\
+5 & width\_times0p9 & rich\_cnn & 1.614 & 103.00 & undefined \\
+5 & width\_times0p9 & rich\_pls & 2.229 & 103.00 & undefined \\
+5 & width\_times0p9 & single & 2.405 & 2.38 & 0.006 \\
+5 & width\_times1p1 & full\_bank & 9.177 & 8.00 & undefined \\
+5 & width\_times1p1 & proposed & 5.863 & 4.84 & 0.000 \\
+5 & width\_times1p1 & rich\_cnn & 1.614 & 103.00 & undefined \\
+5 & width\_times1p1 & rich\_pls & 2.229 & 103.00 & undefined \\
+5 & width\_times1p1 & single & 2.512 & 2.37 & 0.000 \\
+\bottomrule
+\end{longtable}
+\normalsize\end{landscape}
+\section{Detailed learning and optical methods}
+The masked predictor has hidden layers 64 and 32 with ReLU activations. Inputs are standardized acquired values and a binary mask.
+Unobserved standardized placeholders are zero; an acquired zero remains distinguishable through the mask.
+Training uses 80 epochs and AdamW at 0.002. All 64 masks reachable from the two initial channels are enumerated for target generation;
+63 nonterminal masks train each controller. Each scan receives equal weight across masks.
+Three group-disjoint inner folds produce the assay-relative targets. No reference prediction for an acquired state was trained on that state's harvest population.
+Controllers have a shared 64/32 encoder with binary stop, signed action-gain, and residual-error heads, trained for 25 epochs.
+BCE and scaled action MSE have weight one; the auxiliary scaled residual MSE has weight 0.25.
+The full bank uses autoscaled PLS with six components. The rich PLS reference uses row SNV, an 11-point quadratic second derivative and 12 components.
+Full-spectrum preprocessing is used exclusively by the offline rich reference, never the sparse runtime controller.
+A compact two-convolution CNN is the second target reference; a separate Walsh-architecture adaptation uses the checked author architecture.
+Bank-design populations (15 percent of the non-calibration pool) are disjoint from fitting and calibration populations; isotonic mappings use complete sequential calibration paths, followed by outer-season evaluation.
+The conditional-Gaussian two-step acquisition baseline uses training covariance and three synthetic draws per continuation; it never uses a replay fruit's hidden readings for an action.
+The complete configuration, fold assignments, model settings and software versions accompany the frozen manifest.
+
+Digitized LED profiles are typical manufacturer plots, not individual device measurements. Integration uses relative intensity and wavelength-bin widths.
+The detector and reference response are flat assumptions. Base-10 absorbance is a conventional interpretation of the manufacturer's Log(1/Reflectance), not a verified firmware calibration.
+Center shifts of three nm and width factors 0.9 and 1.1 are illustrative perturbations, not validated tolerances. Declared manufacturer center ranges are retained separately in the catalog.
+Profile coverage is enforced at 95 percent; unsupported perturbations are explicitly excluded in the sensitivity records.
+
+\section{Unsuccessful comparisons and uncertainty}
+No outcome-driven threshold relaxation was allowed. All candidate bank scores and the full threshold frontier are retained in development\_scores.csv and development\_frontier.csv.
+Three seeds (7,42,99) for the primary and independent-bank objective comparisons are reported in the external metrics file.
+Their variability is distinct from paired harvest-population bootstrap uncertainty. Season 5 has only two harvest populations, so no population-level confidence interval is justified.
+No development refinement was used solely to obtain favorable external outcomes. The pipeline retains a deliberately interrupted attempt to verify recovery and every failed attempt in its ledger.
+The final manuscript cells are independently recomputed from the paired prediction file. Reporting-only generation never calls fitting code.
+
+\section{Audit and source access}
+The version-3 source contains 12,011 spectra, not 12,011 verified fruits. Its 103-channel comparison grid is exactly 684--990 nm in 3-nm increments.
+Metadata include cultivar and temperature categories, but no fruit identifier or per-record instrument serial identifier. No exact common-grid duplicate spectra were found.
+Earlier local work used the same external-season benchmarks, which is disclosed. No prior numerical results were used for the new model design.
+Six journal records had bibliographic/abstract verification but inaccessible full methods: Gutierrez 2019, Anderson 2020, Mishra 2023, Yang 2025, Yang 2026 and Ma 2026.
+The complete literature audit records which sources were read in full; inaccessible methods cannot establish absence of prior art.
+
+\section{Software handoff and physical validation}
+The application accepts one requested LED reading at a time. Its replay source is a real development example, with assay omitted from the distributed fixture.
+The adapter read\_channel(led\_id) can be replaced with a real emitter/photodiode driver. No full spectrum or assay is required by the controller.
+A future physical validation must compare adaptive and fixed acquisition on the same newly collected fruits with oven-dry reference values,
+measured optical response, energy, acquisition time, placement repeatability and later-season transfer. Software replay cannot establish these quantities.
+\end{document}

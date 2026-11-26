@@ -1,0 +1,82 @@
+[
+  {
+    "assay": 17.77294948,
+    "bank_prediction": 16.69402194811121,
+    "category": "premature_stop",
+    "g_bank": 0.0267520829353351,
+    "g_stop": 1.6983353436543176,
+    "group": "s4_pop112",
+    "proposed_prediction": 14.995686604456893,
+    "proposed_pulses": 2,
+    "rich_prediction": 16.720774031046545,
+    "row_id": "v3_011625",
+    "rule": "event nearest within-season median gain; stable row ID tie-break",
+    "season": 4,
+    "single_prediction": 14.995686604456893,
+    "single_pulses": 2
+  },
+  {
+    "assay": 19.78384528,
+    "bank_prediction": 18.47008037842874,
+    "category": "full_bank_limitation",
+    "g_bank": 1.0512903751025853,
+    "g_stop": 1.909053510435008,
+    "group": "s4_pop112",
+    "proposed_prediction": 16.561026867993732,
+    "proposed_pulses": 2,
+    "rich_prediction": 20.04631980646868,
+    "row_id": "v3_011677",
+    "rule": "event nearest within-season median gain; stable row ID tie-break",
+    "season": 4,
+    "single_prediction": 16.561026867993732,
+    "single_pulses": 2
+  },
+  {
+    "actual_one_step_gain": 1.326843372190588,
+    "category": "useful_continuation",
+    "pulses_before": 7,
+    "row_id": "v3_010912",
+    "rule": "continued material improvement nearest within-season median; row ID/depth tie-break",
+    "season": 4
+  },
+  {
+    "assay": 13.47832,
+    "bank_prediction": 14.201844488101042,
+    "category": "premature_stop",
+    "g_bank": -0.681863488015626,
+    "g_stop": 1.3899062455813471,
+    "group": "s5_pop128",
+    "proposed_prediction": 15.591750733682389,
+    "proposed_pulses": 2,
+    "rich_prediction": 12.072932023883332,
+    "row_id": "v3_011722",
+    "rule": "event nearest within-season median gain; stable row ID tie-break",
+    "season": 5,
+    "single_prediction": 15.591750733682389,
+    "single_pulses": 2
+  },
+  {
+    "assay": 14.81178,
+    "bank_prediction": 16.029854177480825,
+    "category": "full_bank_limitation",
+    "g_bank": 1.1574230652396444,
+    "g_stop": 0.0,
+    "group": "s5_pop128",
+    "proposed_prediction": 16.029854177480825,
+    "proposed_pulses": 8,
+    "rich_prediction": 14.75112888775882,
+    "row_id": "v3_011703",
+    "rule": "event nearest within-season median gain; stable row ID tie-break",
+    "season": 5,
+    "single_prediction": 15.002511015870423,
+    "single_pulses": 2
+  },
+  {
+    "actual_one_step_gain": 1.155347646465497,
+    "category": "useful_continuation",
+    "pulses_before": 7,
+    "row_id": "v3_011696",
+    "rule": "continued material improvement nearest within-season median; row ID/depth tie-break",
+    "season": 5
+  }
+]

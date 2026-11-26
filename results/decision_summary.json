@@ -1,0 +1,40 @@
+[
+  {
+    "bank_loss_rate": 0.1747237569060773,
+    "budget_comparable": false,
+    "early_n": 1250,
+    "missed_n": 755,
+    "n": 1448,
+    "objective_conclusion": "inconclusive: external budgets differ by more than 0.25 pulse",
+    "proposed_mean_pulses": 3.095994475138121,
+    "proposed_rmsep": 2.6716813824198264,
+    "prototype_accuracy_pass": false,
+    "prototype_both_pass": false,
+    "prototype_pulses_pass": true,
+    "pulse_difference": 0.7313535911602203,
+    "rmsep_difference": -0.0807840974455063,
+    "rmsep_increase_vs_bank": 1.4398398420098548,
+    "season": 4,
+    "single_mean_pulses": 2.3646408839779007,
+    "single_rmsep": 2.7524654798653327
+  },
+  {
+    "bank_loss_rate": 0.028125,
+    "budget_comparable": false,
+    "early_n": 199,
+    "missed_n": 106,
+    "n": 320,
+    "objective_conclusion": "inconclusive: external budgets differ by more than 0.25 pulse",
+    "proposed_mean_pulses": 4.809375,
+    "proposed_rmsep": 1.997119575653748,
+    "prototype_accuracy_pass": false,
+    "prototype_both_pass": false,
+    "prototype_pulses_pass": true,
+    "pulse_difference": 2.4406250000000003,
+    "rmsep_difference": -0.17437011848460604,
+    "rmsep_increase_vs_bank": 0.7533219056943914,
+    "season": 5,
+    "single_mean_pulses": 2.36875,
+    "single_rmsep": 2.171489694138354
+  }
+]

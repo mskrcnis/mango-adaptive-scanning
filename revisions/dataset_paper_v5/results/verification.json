@@ -1,0 +1,192 @@
+{
+  "check_count": 31,
+  "checks": [
+    {
+      "detail": {
+        "changed": [],
+        "files_checked": 1301,
+        "passed": true
+      },
+      "name": "prior_files_preserved",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "official_dataset_provenance",
+      "passed": true
+    },
+    {
+      "detail": "Opaque checksum verification only; raw spectra/outcome arrays are not parsed or rescored.",
+      "name": "dataset_bytes_unchanged",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "numerical_evidence_current",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "no_model_fitting",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "candidate_tuning_not_used_as_accuracy",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "compilation_inputs_current",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "compilation_successful",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "main_pdf_hash",
+      "passed": true
+    },
+    {
+      "detail": 17,
+      "name": "main_nonempty_pages",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "main_citations_resolved",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "main_no_template_placeholders",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "main_valid_page_bounds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "main_no_overflow",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_pdf_hash",
+      "passed": true
+    },
+    {
+      "detail": 53,
+      "name": "supplement_nonempty_pages",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_citations_resolved",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_no_template_placeholders",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_valid_page_bounds",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_no_overflow",
+      "passed": true
+    },
+    {
+      "detail": "All 17 final main-paper pages visually inspected on rendered contact sheets; related-work page 2 and reference page 16 inspected individually. No clipping, overlap, unresolved citations or illegible text. The dataset table remains below the related-work section. All 53 freshly rendered supplement pages are byte-identical to the previously visually reviewed page images; prior review retained in review_history/before_related_work_expansion.zip.",
+      "name": "visual_review_current",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "package_current",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "package_crc",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "package_files_current",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "isolated_package_compilation",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_review_current",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_sources_unchanged",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "supplement_numeric_audit",
+      "passed": true
+    },
+    {
+      "detail": null,
+      "name": "copied_evidence_tables",
+      "passed": true
+    },
+    {
+      "detail": 30,
+      "name": "expanded_references_current",
+      "passed": true
+    },
+    {
+      "detail": 93,
+      "name": "full_resume_byte_preservation",
+      "passed": true
+    }
+  ],
+  "cited_references": 30,
+  "failed_checks": [],
+  "journal_or_proceedings_references": 26,
+  "numeric_values_checked": 85198,
+  "numerical_check_count": 1507,
+  "passed": true,
+  "pdfs": {
+    "main": {
+      "pages": 17,
+      "path": "output/pdf/Mango_Dataset_Study.pdf",
+      "sha256": "cf2c5c2d2e83e96edc7a861cb442b09d8e89216f42207478dd8971288b37f457"
+    },
+    "supplement": {
+      "pages": 53,
+      "path": "output/pdf/Mango_Dataset_Supplement.pdf",
+      "sha256": "6799925fb69b8156b67d63a2c482ac826b41007c072692ffee23a29114bf7189"
+    }
+  },
+  "prior_preservation": {
+    "changed": [],
+    "files_checked": 1301,
+    "passed": true
+  },
+  "recomputed_policy_cells": 188,
+  "resume_files_unchanged": 93,
+  "scope": "Completed existing-dataset manuscript consolidation; no fitting, new fruit data or physical/harvest validation.",
+  "supplement_check_count": 19183,
+  "supplement_numeric_values": 5733
+}

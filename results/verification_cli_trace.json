@@ -1,0 +1,134 @@
+{
+  "example_row_id": "v3_000001",
+  "frozen_manifest_sha256": "9e75a2508137b22bd4b7d0e4b7f2d64e2e1e31bc45297e588ec4626e283b4863",
+  "method": "proposed",
+  "operating_point": "development-targeted primary scientific operating point",
+  "rule": "swap_mid",
+  "schema_version": 1,
+  "software_seconds": 0.00129021517932415,
+  "source": "development replay",
+  "state": {
+    "assay": null,
+    "assay_note": "Laboratory assay is not included in this demo fixture.",
+    "capacity": 8,
+    "done": true,
+    "measurement_note": "Simulated finite-band LED responses. Pulse counts represent simulated acquisition effort.",
+    "next_center_nm": null,
+    "next_led": null,
+    "p_stopgain": 0.4699020065328979,
+    "prediction": 17.180333740487526,
+    "pulses": 2,
+    "readings": [
+      {
+        "acquired": true,
+        "center_nm": 720,
+        "led_id": "LED720-03AU",
+        "value": -0.5757131576538086
+      },
+      {
+        "acquired": false,
+        "center_nm": 760,
+        "led_id": "LED760-03AU",
+        "value": null
+      },
+      {
+        "acquired": false,
+        "center_nm": 780,
+        "led_id": "LED780-03AU",
+        "value": null
+      },
+      {
+        "acquired": false,
+        "center_nm": 800,
+        "led_id": "LED800-01AU",
+        "value": null
+      },
+      {
+        "acquired": false,
+        "center_nm": 820,
+        "led_id": "LED820-01AU",
+        "value": null
+      },
+      {
+        "acquired": false,
+        "center_nm": 890,
+        "led_id": "LED890-03AU",
+        "value": null
+      },
+      {
+        "acquired": false,
+        "center_nm": 910,
+        "led_id": "LED910D-01",
+        "value": null
+      },
+      {
+        "acquired": true,
+        "center_nm": 940,
+        "led_id": "LED940D-05",
+        "value": -0.4801376461982727
+      }
+    ],
+    "threshold": 0.6,
+    "trace": [
+      {
+        "mask": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "next_channel": null,
+        "p_stopgain": 0.4699020065328979,
+        "predicted_error": null,
+        "prediction": 17.180333740487526,
+        "pulses": 2,
+        "readings": [
+          -0.5757131576538086,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          -0.4801376461982727
+        ],
+        "stop": true
+      }
+    ]
+  },
+  "threshold": 0.6,
+  "trace": [
+    {
+      "mask": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "next_channel": null,
+      "p_stopgain": 0.4699020065328979,
+      "predicted_error": null,
+      "prediction": 17.180333740487526,
+      "pulses": 2,
+      "readings": [
+        -0.5757131576538086,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -0.4801376461982727
+      ],
+      "stop": true
+    }
+  ]
+}

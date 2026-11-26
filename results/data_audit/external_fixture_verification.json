@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "fixture": "12 actual development spectra relabeled only inside temporary software test; no external assays opened",
+  "prediction_rows": 1056,
+  "metric_rows": 88,
+  "curve_rows": 812,
+  "checks": [
+    "every output generated",
+    "prediction freeze before target hook",
+    "no fit calls",
+    "resume no target reload",
+    "resume unchanged output hashes",
+    "incomplete export recovery reproduces all output hashes without duplicate rows"
+  ]
+}

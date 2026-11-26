@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "tests_passed": 19,
+  "exit_code": 0,
+  "seconds": 6.74,
+  "command": ".venv/bin/python -m pytest -q revisions/fixed_design_v3/test_design.py",
+  "output": "................... [100%]\n19 passed in 6.74s",
+  "test_source_sha256": "d5e94d9ed93da1219515995e54263c2229c148f30a96c0f1fcaba1a19a3a6bf7"
+}

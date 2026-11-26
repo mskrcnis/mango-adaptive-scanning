@@ -1,0 +1,86 @@
+{
+  "dependencies": {
+    "data/catalog/catalog.json": "1753072e3e08a7ff951bdc8feb7b54118645397fef043a63a7384b90c185ab57",
+    "data/catalog/profiles/LED720-03AU.csv": "65c5ad4e1f3fa74ee27b0358d6cd77b5920c900ab835af57e53676887ecb1e48",
+    "data/catalog/profiles/LED740-01AU.csv": "35bfdfd14683693e40ae79e97a132be81dd0cbe0da44783ad01c82963c1d2fd8",
+    "data/catalog/profiles/LED760-03AU.csv": "9771378e3c3bf4f5290f5098d119d84504abaa627b9fbccbd7fb798ebec6b26a",
+    "data/catalog/profiles/LED780-03AU.csv": "49f205811638b79989b93062898969f60ab95967c0c547162a0defe1ab4a84c9",
+    "data/catalog/profiles/LED800-01AU.csv": "66b151e10ea3653ef6d95b6ae5f386125d5e3768fad9a4565a1011cba38dd640",
+    "data/catalog/profiles/LED820-01AU.csv": "1ad9286b7db918939a33db15b6f3e7ee174aef0af21321feb7dd770d7359ef8c",
+    "data/catalog/profiles/LED850-03UP.csv": "49812371096ba8db5f858c4cc3cd81801ed1446b9b297055dfa93aaeb6830737",
+    "data/catalog/profiles/LED890-03AU.csv": "8b27bea09ebb828b0a14742547de7532ae6e5866c9f0b05b9fec84bcb2d4e94b",
+    "data/catalog/profiles/LED910D-01.csv": "83d2fd94f0e04bee923aa5179df3a0bfeeb33e679385130808558087a3b57198",
+    "data/catalog/profiles/LED940D-05.csv": "b2eab42f578913ceb5c691273ae6bfe1b3f16c884d2eeb0a6c10a07c9acdb5d0",
+    "data/manifest.json": "dee8f73750de60bf2c67677fcd6abf95e4d3f7052a7be6937c71b9eb875d109e",
+    "data/processed/development.csv": "4def3700270d122462fe972071b934b5f12a8665205c2757a72b99677a4b0caf",
+    "mango/optics.py": "bd0bcea51af33a485fdecbe50ed319cf1a047e5bf9882bdcd41f659a64639ec9",
+    "revisions/candidate_v4/engine.py": "7e3029ab25823b8f14f0f117f16ef5f7568fcd913c6fc9a859d264984850b725",
+    "revisions/candidate_v4/environment.json": "3e218b88757a424a1dec9b7f22cd933488f32bb742916d19044d526733dffc49",
+    "revisions/candidate_v4/inference.py": "92a16e7d9fd0be1d5ed2869a420b31a6cc39b5e5437e19d986cc76e0b97cef45",
+    "revisions/candidate_v4/pipeline.py": "9a72970954276fbd83d788734f3b9372e9866874984b95405697f5189a28021e",
+    "revisions/candidate_v4/selection_protocol.md": "54b22f50341150003dc2635e7e070ba5f55182a2b7ae3b484728e3b16663f3a2",
+    "revisions/candidate_v4/selection_spec.json": "2bee7a50e938a3e1e23c72a49bb8d759f0ae81978e9d92e583fbf762049295e8"
+  },
+  "dependency": "331d3fd399f1fa79c6cea49884da53b8d31e514d54b588f92f63c6dbb7209ad4",
+  "spec": {
+    "application_error_tolerance_pp": null,
+    "bank_catalog_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "bank_centers_nm": [
+      720,
+      760,
+      780,
+      800,
+      820,
+      890,
+      910,
+      940
+    ],
+    "candidate_count": 15,
+    "cross_validation": "leave one whole harvest population out, populations sorted lexicographically",
+    "development_seasons": [
+      1,
+      2,
+      3
+    ],
+    "expected_groups": 94,
+    "expected_scans": 10243,
+    "external_evaluation": false,
+    "fitting_dtype": "float32 input and assay boundary; sklearn autoscaling internally",
+    "harvest_dry_matter_threshold_percent": null,
+    "harvest_recommendations_enabled": false,
+    "objective": "equal scan weighted pooled out-of-population mean squared error",
+    "pls_components": {
+      "candidate": 6,
+      "full_bank": 6,
+      "rich": 12
+    },
+    "purpose": "finalize one fixed-six research candidate for new independent validation; intended application is harvest timing",
+    "registered_after_v3_exploratory_results": true,
+    "registered_before_this_revision_fitting": true,
+    "required_local_indices": [
+      0,
+      7
+    ],
+    "rich_preprocessing": {
+      "delta_nm": 3,
+      "derivative": 2,
+      "polyorder": 2,
+      "savgol_window": 11,
+      "snv": true
+    },
+    "schema_version": 1,
+    "scoring_assay_dtype": "float64",
+    "search_expansion": false,
+    "selected_channel_count": 6,
+    "tie_break": "exact score then lexicographic sorted acquired local indices"
+  }
+}

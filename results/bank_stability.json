@@ -1,0 +1,29 @@
+{
+  "fold_memberships": [
+    {
+      "bank_indices": "0,2,3,4,5,7,8,9",
+      "fold": 1
+    },
+    {
+      "bank_indices": "0,2,3,4,5,7,8,9",
+      "fold": 2
+    },
+    {
+      "bank_indices": "0,2,3,4,5,7,8,9",
+      "fold": 3
+    }
+  ],
+  "membership_count_out_of_3_folds": {
+    "LED720-03AU": 3,
+    "LED740-01AU": 0,
+    "LED760-03AU": 3,
+    "LED780-03AU": 3,
+    "LED800-01AU": 3,
+    "LED820-01AU": 3,
+    "LED850-03UP": 0,
+    "LED890-03AU": 3,
+    "LED910D-01": 3,
+    "LED940D-05": 3
+  },
+  "selected_rule": "swap_mid"
+}

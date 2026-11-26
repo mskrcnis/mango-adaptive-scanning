@@ -1,0 +1,10 @@
+{
+  "external_reads": false,
+  "paths": [
+    "data/catalog/catalog.json",
+    "data/processed/development.csv",
+    "data/processed/metadata.csv"
+  ],
+  "source_prediction_reads": false,
+  "stage": "design"
+}

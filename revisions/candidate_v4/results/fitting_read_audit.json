@@ -1,0 +1,18 @@
+{
+  "external_outcome_parsing": false,
+  "paths": [
+    "data/catalog/catalog.json",
+    "data/catalog/profiles/LED720-03AU.csv",
+    "data/catalog/profiles/LED760-03AU.csv",
+    "data/catalog/profiles/LED780-03AU.csv",
+    "data/catalog/profiles/LED800-01AU.csv",
+    "data/catalog/profiles/LED820-01AU.csv",
+    "data/catalog/profiles/LED890-03AU.csv",
+    "data/catalog/profiles/LED910D-01.csv",
+    "data/catalog/profiles/LED940D-05.csv",
+    "data/manifest.json",
+    "data/processed/development.csv"
+  ],
+  "prior_result_parsing": false,
+  "stage": "final_fitting"
+}

@@ -1,0 +1,93 @@
+{
+  "additional_validation": {
+    "cv_fits": 336,
+    "final_refits": 8,
+    "fits": 344,
+    "max_kkt_residual": 8.302826794528203e-08,
+    "path": "results/baseline_solver_validation.json",
+    "scope": "all three outer fitting partitions plus final fitting partition, full grid and uniform physical bank",
+    "sha256": "cd5ff17ccdf1948a0b700d630792f05566cc3716dfebead2dfb1ebccf74fc075",
+    "status": "passed",
+    "warnings": 0
+  },
+  "assessment_tolerance": 1e-07,
+  "attempts": [
+    {
+      "cv_warning_count": 28,
+      "elapsed_seconds": 19.886062782723457,
+      "max_iter": 4000,
+      "name": "coordinate_cyclic4000",
+      "record_origin": "Executed real-data sparse_order pilot; terminal output retained in session log; subsequent attempts have full JSON diagnostics.",
+      "refit_warning_count": 1,
+      "status": "failed_numerical_convergence",
+      "tol": 0.0001
+    },
+    {
+      "cv_warning_count": 22,
+      "diagnostics_path": "results/baseline_solver_attempt_random20000.json",
+      "diagnostics_sha256": "5d85982aa856f60984aab711c315b4a2932c0f226f006a4afbeec09abefc1265",
+      "elapsed_seconds": 3.8981435229070485,
+      "max_cv_kkt_residual": null,
+      "name": "coordinate_random20000",
+      "refit_kkt_residual": null,
+      "refit_warning_count": 1,
+      "status": "failed_numerical_convergence"
+    },
+    {
+      "cv_warning_count": 15,
+      "diagnostics_path": "results/baseline_solver_attempt_random50000.json",
+      "diagnostics_sha256": "868559e2dc8b4235eea9dff58f307e679b81827cb0a7ae68005a3932c6b9b016",
+      "elapsed_seconds": 6.544619656167924,
+      "max_cv_kkt_residual": null,
+      "name": "coordinate_random50000",
+      "refit_kkt_residual": null,
+      "refit_warning_count": 1,
+      "status": "failed_numerical_convergence"
+    },
+    {
+      "cv_warning_count": 18,
+      "diagnostics_path": "results/baseline_solver_attempt_cyclic50000.json",
+      "diagnostics_sha256": "a175b8889f7477fcd4dff81f5d4b5892c27568568c75e7e9c34a97827922018d",
+      "elapsed_seconds": 4.8832914819940925,
+      "max_cv_kkt_residual": null,
+      "name": "coordinate_cyclic50000",
+      "refit_kkt_residual": null,
+      "refit_warning_count": 1,
+      "status": "failed_numerical_convergence"
+    },
+    {
+      "cv_warning_count": 42,
+      "diagnostics_path": "results/baseline_solver_attempt_lassolars2000.json",
+      "diagnostics_sha256": "933a7dec10a126adbc71dbac179a3c85e6674195576c7d34f6f742aea2b09ab8",
+      "elapsed_seconds": 0.4700857400894165,
+      "max_cv_kkt_residual": 2.1101875672183135e-13,
+      "name": "lassolars_explicit_normalize2000",
+      "refit_kkt_residual": 1.52664868051898e-13,
+      "refit_warning_count": 1,
+      "status": "numerically_converged_deprecation_warning"
+    },
+    {
+      "cv_warning_count": 0,
+      "diagnostics_path": "results/baseline_solver_attempt_lassolars_default.json",
+      "diagnostics_sha256": "17c11b70cc137c610eda34c62d5772b58b3044fe8efffd60b7b63a567d5c133e",
+      "elapsed_seconds": 0.5015375511720777,
+      "max_cv_kkt_residual": 2.1101875672183135e-13,
+      "name": "lassolars_default",
+      "refit_kkt_residual": 1.52664868051898e-13,
+      "refit_warning_count": 0,
+      "status": "passed"
+    }
+  ],
+  "decision_basis": "Numerical convergence diagnostics only. No CV or external predictive metric was used to choose solver settings. Alpha itself remains selected by unchanged grouped CV.",
+  "final_baselines_code_sha256": "5001ad8f4082de6a918ca1b99483e9ca8bfdefc7bacf0710232bde752f187d02",
+  "scope": "outer held season1 core fitting groups,4003 development scans46 harvest populations; external features and assays not accessed",
+  "selected_solver": "LassoLars, max_iter2000, Gram precompute, float64 machine epsilon, no additional normalization under locked sklearn1.3.2",
+  "status": "resolved_before_static_fitting_and_external_scoring",
+  "unchanged": [
+    "14 alpha grid logspace(-4,-0.3,14)",
+    "three GroupKFold splits",
+    "fold-local StandardScaler",
+    "same L1 least-squares objective",
+    "final selected-alpha all-fitting refit"
+  ]
+}

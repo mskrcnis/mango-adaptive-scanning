@@ -1,0 +1,154 @@
+{
+  "scope": "Reporting-only integrated dataset supplement; no model fitting or reselection",
+  "source_files": {
+    "results/fold_assignments.json": "833e3a924ec38620916e68cfa582c97731c0fe59290a183634962e3c5eb3f5c6",
+    "results/external_metrics.csv": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5",
+    "results/external_delta_sensitivity.csv": "92c9167bf2d8d0befc4735570532e984b7321bdcd9a7201df0469d01a7948cdf",
+    "results/external_group_metrics.csv": "486cc3c95601d8b91efe6f4f8a58916b32ff5c5098e0a25c7aa0f31482d1a5ec",
+    "results/action_diagnostics.json": "7d7ec812ceaee2810e9987c1eaee55618b56d1212894f71da2215c97c88433b7",
+    "revisions/methodology_v2/results/predictor_metrics.csv": "06b8a810abe9f9f8c99ef1b115d1844c98aaa101013aea123e98b7244fb7e74f",
+    "revisions/methodology_v2/results/endpoint_summary.csv": "1b52471fc98e3601b5a9bd285e65b50c9a929b328b898397aaf85b7611611486",
+    "revisions/methodology_v2/results/policy_metrics.csv": "f66fe5501bb060794408a287d26b57888356ad91e22bb2c9834b9fc269bdc0f0",
+    "revisions/methodology_v2/results/paired_comparisons.csv": "fdcc3eb55d0f0ab5ef1725e4f47b77bc00809d52ee3b6678cfd375524bcba123",
+    "revisions/fixed_design_v3/results/design_composition.csv": "692a0e01aa571b4677e7e5ddd9d07dbde80eb3fead3ad9f27ce1a320a47864dd",
+    "revisions/fixed_design_v3/results/selected_designs.csv": "54479aaca26d2d91d0a47e81051570f623c2e794a92a3ab937e11069a36e49ba",
+    "revisions/fixed_design_v3/results/design_subsets.csv": "37c6da5ab166a37effa6ecc25e34b0d627acff9266341bd11f7f962d644b4210",
+    "revisions/fixed_design_v3/results/metrics.csv": "b7fb6d2805e7169913bcdefdf5afcca05c5fc4548c705be120d4d32739cd6b41",
+    "revisions/fixed_design_v3/results/comparisons.csv": "0eaa7cb7dc6526935e5329f30f0af44bda629255f5df8de9678ea1a3b42f39a3",
+    "revisions/fixed_design_v3/results/selection_stability.csv": "4476f62806503b480de69b58cc005ee678b7f05ca42dad203d77475e8384a023",
+    "revisions/candidate_v4/results/selection_scores.csv": "22a808b3de8ebf825bb7cab201ee95f0ef512ea597697aa198aea6cdb6f920f3",
+    "manuscript/supplement.tex": "99f86a2027aa36c2b84c4fb9a52a47f79d159e4750c24d79d0d3ac991ad592fb",
+    "docs/model_methods.md": "7b960c20eeb287e9c6c8cde04790d1aa358bb3afafea1ce0a3c5f60d823afab0",
+    "docs/protocol.md": "656fc864d63948174e9f1ca1c6657c010734d2ef08bf3e0996583271e3530837",
+    "docs/optics_audit.md": "c14923acdaa1acf49294ec059a9081859e1d502686bb35e55b2dfd91743c60ac",
+    "docs/walsh_reference.md": "112a705cb1d234bab68923d298f52ba642a503bd273e9cb61a336c4508427b81",
+    "revisions/methodology_v2/protocol.md": "e5a7c2d6e740dabb5c0f228838bcd72b6c47ab819ba4e27e3e70b78eac1653f8",
+    "revisions/methodology_v2/decision_report.md": "c34e3eb2e4873a25857cc9a5da20d14eae0b135075e70b5799626b4970b4729d",
+    "revisions/fixed_design_v3/protocol.md": "5b8a1af1644ef4680261d8d7572db7ccfeb37885b86c563d1884c1fe17d538bc",
+    "revisions/fixed_design_v3/decision_report.md": "9f980b527a4f56a2b90bf22f59400b07c85cf2c0526a91db923eb16bc817fe9c",
+    "revisions/candidate_v4/selection_protocol.md": "54b22f50341150003dc2635e7e070ba5f55182a2b7ae3b484728e3b16663f3a2",
+    "revisions/candidate_v4/decision_report.md": "084a950e6c0582d450b8dad821decc58d30af563002d7aca9f8550840241246d",
+    "revisions/dataset_paper_v5/scope.md": "e7f6f8e82c7d4414abbe9c0d0b7ed9fbc46f5998a12c6572643c817a2eb7faf2"
+  },
+  "tables": [
+    {
+      "label": "tab:roles",
+      "rows": 4,
+      "columns": 5,
+      "caption": "Original, V2 and V3 role counts: scans / harvest populations. Final O is the original final-fit partition, not the V4 refit."
+    },
+    {
+      "label": "tab:original",
+      "rows": 176,
+      "columns": 10,
+      "caption": "All original later-season scored operating points, reproduced from the frozen metrics."
+    },
+    {
+      "label": "tab:delta",
+      "rows": 176,
+      "columns": 10,
+      "caption": "Complete descriptive delta sensitivity: conditional missed rates and bank-loss rates for unchanged policies."
+    },
+    {
+      "label": "tab:season5groups",
+      "rows": 12,
+      "columns": 8,
+      "caption": "Season-5 primary-bank results by each of its two harvest populations; no population-bootstrap intervals are assigned."
+    },
+    {
+      "label": "tab:action",
+      "rows": 48,
+      "columns": 11,
+      "caption": "All saved action-head diagnostics (B: proposed bank-reference controller; R: rich-reference controller)."
+    },
+    {
+      "label": "tab:v2predictors",
+      "rows": 72,
+      "columns": 13,
+      "caption": "All held-season V2 predictor errors and all common-order fixed-length controls. Hybrid at depth 8 equals PLS."
+    },
+    {
+      "label": "tab:endpoint",
+      "rows": 12,
+      "columns": 7,
+      "caption": "All V2 endpoint decompositions: mean signed absolute-error reduction [95\\% population-bootstrap interval]."
+    },
+    {
+      "label": "tab:v2adaptive",
+      "rows": 144,
+      "columns": 12,
+      "caption": "All 144 V2 stopping operating points. Cal/Held denote engineering feasibility/success only; scientific rows have no such pass label."
+    },
+    {
+      "label": "tab:v2paired",
+      "rows": 192,
+      "columns": 9,
+      "caption": "All 192 V2 paired comparisons; no bank, predictor, seed or registered contrast is omitted."
+    },
+    {
+      "label": "tab:designcomposition",
+      "rows": 6,
+      "columns": 4,
+      "caption": "V3 design-set composition, identical for P/U and both predictor families. Held-season-1 design is dominated by season 3."
+    },
+    {
+      "label": "tab:orders",
+      "rows": 12,
+      "columns": 7,
+      "caption": "Every V3 selected nested order (nm) and design score. Score is the summed design MSE over depths 2--7; margin is second-best minus best."
+    },
+    {
+      "label": "tab:subsets",
+      "rows": 84,
+      "columns": 6,
+      "caption": "All 84 independently selected V3 fixed subsets, including depths 2--8. Design RMSEP is a selection statistic, not held-season accuracy."
+    },
+    {
+      "label": "tab:v3fixed",
+      "rows": 36,
+      "columns": 11,
+      "caption": "Every V3 fixed-length operating point: 252 RMSEP values. Catalog/Designed are nested prefixes; Subset is the independently selected mask at each depth."
+    },
+    {
+      "label": "tab:v3adaptive",
+      "rows": 96,
+      "columns": 12,
+      "caption": "Every V3 adaptive operating point on catalog and designed orders. Scientific points have no engineering pass label."
+    },
+    {
+      "label": "tab:v3paired",
+      "rows": 96,
+      "columns": 8,
+      "caption": "All 96 V3 paired contrasts with sampled-population intervals and achieved budget comparability."
+    },
+    {
+      "label": "tab:stability",
+      "rows": 56,
+      "columns": 7,
+      "caption": "Complete pairwise Jaccard overlap of V3 selected channel sets across outer design splits (168 values). This describes stability, not accuracy."
+    },
+    {
+      "label": "tab:candidateselection",
+      "rows": 15,
+      "columns": 5,
+      "caption": "All V4 finalization scores: development LOPO tuning results only. These are not independent validation accuracy."
+    }
+  ],
+  "prior_artifacts_modified": false,
+  "new_validation_performed": false,
+  "supplement_sha256": "69d8bb1b6d23f65256d084b7a12225b8bf17bb2742d11cc8af234b712cda0a17",
+  "table_count": 17,
+  "displayed_table_rows": 1237,
+  "source_stage_counts": {
+    "original_operating_points": 176,
+    "original_delta_rows": 352,
+    "v2_held_predictor_cells": 504,
+    "v2_adaptive_points": 144,
+    "v2_paired_contrasts": 192,
+    "v3_fixed_points": 252,
+    "v3_adaptive_points": 96,
+    "v3_paired_contrasts": 96,
+    "v3_selected_subsets": 84,
+    "v4_tuning_scores": 15
+  }
+}

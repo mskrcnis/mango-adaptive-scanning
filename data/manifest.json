@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "processed/composition.csv": "139bd1171a1a453373be974108229006469d3c9ff81e54714914335e24cb74cc",
+    "processed/development.csv": "4def3700270d122462fe972071b934b5f12a8665205c2757a72b99677a4b0caf",
+    "processed/external_features.csv": "e463531354b520790b36a91babffea1307ad11b307b082a02d3e66f5c626b4a6",
+    "processed/metadata.csv": "d1c11924736edb43ee9530eabd70f20e3bdf4e9511f38241f9c93d56eda93bec",
+    "sealed/NAnderson2020MendeleyMangoNIRDataV3.csv": "1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1",
+    "sealed/external_labels.csv": "7afbb98718297f70871188f4a3ad5ddba72aceb89e94e50a3d1217ff49211289"
+  },
+  "audit_path": "/home/mskr/Research/Agro/Mango/results/data_audit/audit.json",
+  "dataset_doi": "10.17632/46htwnp833.3",
+  "dataset_url": "https://data.mendeley.com/datasets/46htwnp833/3",
+  "expanded_multi_instrument_release_used": false,
+  "external_labels_summarized_or_used_for_preparation_decisions": false,
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "local_override": null,
+  "official_file": {
+    "content_details": {
+      "content_type": "text/csv",
+      "created_date": "2024-02-06T05:46:40.073Z",
+      "download_expiry_time": "2126-11-25T18:35:42.069023534Z",
+      "download_url": "https://data.mendeley.com/public-files/datasets/46htwnp833/files/4fd27b43-2cd4-4c18-b1ad-145edc596ddb/file_downloaded",
+      "id": "44b1d2b2-4d68-4452-8ef4-217d04449068",
+      "sha256_hash": "1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1",
+      "size": 35273684,
+      "view_url": "https://data.mendeley.com/public-files/datasets/46htwnp833/files/4fd27b43-2cd4-4c18-b1ad-145edc596ddb/file_viewed"
+    },
+    "filename": "NAnderson2020MendeleyMangoNIRDataV3.csv",
+    "id": "4fd27b43-2cd4-4c18-b1ad-145edc596ddb",
+    "last_modified_date": "2024-02-06T05:46:40.073Z",
+    "size": 35273684,
+    "status": "COMPLETED"
+  },
+  "official_identical_copies": [
+    {
+      "file_id": "4fd27b43-2cd4-4c18-b1ad-145edc596ddb",
+      "filename": "NAnderson2020MendeleyMangoNIRDataV3.csv",
+      "sha256": "1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1",
+      "version": 3
+    },
+    {
+      "file_id": "4fd27b43-2cd4-4c18-b1ad-145edc596ddb",
+      "filename": "NAnderson2020MendeleyMangoNIRDataV3.csv",
+      "sha256": "1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1",
+      "version": 4
+    },
+    {
+      "file_id": "10975117-717b-4504-a372-7845b4c42237",
+      "filename": "MangoDMC_NIR_Data_v3.csv",
+      "sha256": "1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1",
+      "version": 6
+    }
+  ],
+  "population_counts": {
+    "1": 25,
+    "2": 19,
+    "3": 50,
+    "4": 18,
+    "5": 2
+  },
+  "preparation_code_sha256": "78bf75bb0f82662744a1e62ba7acb9d3b392ff0ca0993a8d02f2c6d72b65c784",
+  "raw_sha256": "1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1",
+  "retrieval_failures": [],
+  "retrieved_utc": "2026-11-25T18:38:48.772847+00:00",
+  "scan_counts": {
+    "1": 3914,
+    "2": 1363,
+    "3": 4966,
+    "4": 1448,
+    "5": 320
+  },
+  "schema_version": 1,
+  "source_bytes": 35273684
+}

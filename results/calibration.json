@@ -1,0 +1,4652 @@
+{
+  "4|correlation|42|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 13,
+        "observed": 0.6923076923076923,
+        "predicted": 0.4838457848427724
+      },
+      {
+        "low": 0.5,
+        "n": 1202,
+        "observed": 0.6256239600665557,
+        "predicted": 0.5286367212134799
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 173,
+        "observed": 0.5260115606936416,
+        "predicted": 0.6805915807232126
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 589,
+        "observed": 0.5059422750424448,
+        "predicted": 0.7206350245856813
+      },
+      {
+        "low": 0.8,
+        "n": 26,
+        "observed": 0.5384615384615384,
+        "predicted": 0.8219714033956819
+      },
+      {
+        "low": 0.9,
+        "n": 20,
+        "observed": 0.9,
+        "predicted": 0.9952252555607088
+      }
+    ],
+    "brier": 0.26139265827947544,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2023,
+    "operating_point": "scientific",
+    "roles": "accuracy",
+    "rule": "correlation",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|correlation|42|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 107,
+        "observed": 0.3364485981308411,
+        "predicted": 0.47597600116648325
+      },
+      {
+        "low": 0.5,
+        "n": 923,
+        "observed": 0.5828819068255688,
+        "predicted": 0.5157287173861609
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 418,
+        "observed": 0.48086124401913877,
+        "predicted": 0.6377008330806714
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 8,
+        "observed": 0.5,
+        "predicted": 0.7456647398843931
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.25453107919914214,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1456,
+    "operating_point": "scientific",
+    "roles": "accuracy",
+    "rule": "correlation",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|center_minus3|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 187,
+        "observed": 0.48128342245989303,
+        "predicted": 0.4742356451340559
+      },
+      {
+        "low": 0.5,
+        "n": 1140,
+        "observed": 0.5929824561403508,
+        "predicted": 0.5644765264906677
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1185,
+        "observed": 0.4548523206751055,
+        "predicted": 0.6329539188981261
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 4,
+        "observed": 1.0,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 1.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.26000885054848466,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2520,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_minus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|center_minus3|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 49,
+        "observed": 0.40816326530612246,
+        "predicted": 0.49858356940509935
+      },
+      {
+        "low": 0.5,
+        "n": 1225,
+        "observed": 0.5077551020408163,
+        "predicted": 0.5204079804211365
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 279,
+        "observed": 0.5448028673835126,
+        "predicted": 0.6536752566742857
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 114,
+        "observed": 0.3508771929824561,
+        "predicted": 0.728838134575238
+      },
+      {
+        "low": 0.8,
+        "n": 10,
+        "observed": 0.3,
+        "predicted": 0.884317944509496
+      },
+      {
+        "low": 0.9,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.9090909090909091
+      }
+    ],
+    "brier": 0.25947270819407814,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1679,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_minus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|center_plus3|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.35
+      },
+      {
+        "low": 0.4,
+        "n": 422,
+        "observed": 0.14454976303317535,
+        "predicted": 0.4619922492364455
+      },
+      {
+        "low": 0.5,
+        "n": 892,
+        "observed": 0.3632286995515695,
+        "predicted": 0.5635154577087131
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1235,
+        "observed": 0.13765182186234817,
+        "predicted": 0.6305874215394369
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.30897825444252636,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2553,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_plus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|center_plus3|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 213,
+        "observed": 0.38028169014084506,
+        "predicted": 0.47239877828423027
+      },
+      {
+        "low": 0.5,
+        "n": 955,
+        "observed": 0.6324607329842932,
+        "predicted": 0.5267003939636157
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 593,
+        "observed": 0.49072512647554806,
+        "predicted": 0.6629544393313047
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 326,
+        "observed": 0.549079754601227,
+        "predicted": 0.7271133269570668
+      },
+      {
+        "low": 0.8,
+        "n": 16,
+        "observed": 0.3125,
+        "predicted": 0.8888888888888888
+      },
+      {
+        "low": 0.9,
+        "n": 1,
+        "observed": 0.0,
+        "predicted": 0.9090909090909091
+      }
+    ],
+    "brier": 0.26126101241199207,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 2104,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_plus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|gaussian_approximation|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 13,
+        "observed": 0.0,
+        "predicted": 0.0
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 118,
+        "observed": 0.0,
+        "predicted": 0.29842441569631006
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 75,
+        "observed": 0.0,
+        "predicted": 0.33637415020614403
+      },
+      {
+        "low": 0.4,
+        "n": 617,
+        "observed": 0.0,
+        "predicted": 0.4563370360897119
+      },
+      {
+        "low": 0.5,
+        "n": 613,
+        "observed": 0.0,
+        "predicted": 0.5669993479590743
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 262,
+        "observed": 0.0,
+        "predicted": 0.6325627474149091
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2649121690077657,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1698,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "gaussian_approximation",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|gaussian_approximation|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 562,
+        "observed": 0.5782918149466192,
+        "predicted": 0.43981907444403784
+      },
+      {
+        "low": 0.5,
+        "n": 787,
+        "observed": 0.6493011435832274,
+        "predicted": 0.5188958828019026
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 224,
+        "observed": 0.7633928571428571,
+        "predicted": 0.6562477435734496
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 52,
+        "observed": 0.6923076923076923,
+        "predicted": 0.7234560372546847
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2433061337616205,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1625,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "gaussian_approximation",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|ideal_points|proposed|ideal_scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 357,
+        "observed": 0.5406162464985994,
+        "predicted": 0.4732433428133094
+      },
+      {
+        "low": 0.5,
+        "n": 1042,
+        "observed": 0.6276391554702495,
+        "predicted": 0.560523402986585
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 665,
+        "observed": 0.6646616541353384,
+        "predicted": 0.6884201399284767
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.23639487904192122,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2064,
+    "operating_point": "ideal_scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "ideal_points",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|ideal_points|single|ideal_scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.0
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 24,
+        "observed": 0.5416666666666666,
+        "predicted": 0.38461538461538464
+      },
+      {
+        "low": 0.4,
+        "n": 518,
+        "observed": 0.5386100386100386,
+        "predicted": 0.48468250821451575
+      },
+      {
+        "low": 0.5,
+        "n": 571,
+        "observed": 0.5814360770577933,
+        "predicted": 0.5614418297343587
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 388,
+        "observed": 0.5335051546391752,
+        "predicted": 0.6263482171706242
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 1,
+        "observed": 0.0,
+        "predicted": 0.7105263157894737
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2531021039328275,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1504,
+    "operating_point": "ideal_scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "ideal_points",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|fixed_order|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 277,
+        "observed": 0.5234657039711191,
+        "predicted": 0.47105104519198543
+      },
+      {
+        "low": 0.5,
+        "n": 977,
+        "observed": 0.6284544524053224,
+        "predicted": 0.5640065145956912
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1514,
+        "observed": 0.47886393659180976,
+        "predicted": 0.6337342701074988
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.25917691859330844,
+    "label_reference": "bank",
+    "method": "fixed_order",
+    "n_states": 2768,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|lookahead|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 277,
+        "observed": 0.5234657039711191,
+        "predicted": 0.47105104519198543
+      },
+      {
+        "low": 0.5,
+        "n": 976,
+        "observed": 0.617827868852459,
+        "predicted": 0.5638886805681924
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1560,
+        "observed": 0.47884615384615387,
+        "predicted": 0.6334534039974129
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.26027117064346167,
+    "label_reference": "bank",
+    "method": "lookahead",
+    "n_states": 2813,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|proposed|engineering": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 7,
+        "observed": 0.7142857142857143,
+        "predicted": 0.3
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 38,
+        "observed": 0.6578947368421053,
+        "predicted": 0.34077720526711536
+      },
+      {
+        "low": 0.4,
+        "n": 1646,
+        "observed": 0.5224787363304981,
+        "predicted": 0.4672994117531967
+      },
+      {
+        "low": 0.5,
+        "n": 4818,
+        "observed": 0.632420091324201,
+        "predicted": 0.5638422146934982
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 2138,
+        "observed": 0.4560336763330215,
+        "predicted": 0.6331394922975562
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.9721031919545255
+      }
+    ],
+    "brier": 0.25161690396576075,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 8649,
+    "operating_point": "engineering",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 277,
+        "observed": 0.5234657039711191,
+        "predicted": 0.47105104519198543
+      },
+      {
+        "low": 0.5,
+        "n": 973,
+        "observed": 0.6269270298047277,
+        "predicted": 0.5639831057421261
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1585,
+        "observed": 0.45993690851735014,
+        "predicted": 0.6347602946944791
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.9721031919545255
+      }
+    ],
+    "brier": 0.2632845282710163,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2837,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|random_order|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 277,
+        "observed": 0.5234657039711191,
+        "predicted": 0.47105104519198543
+      },
+      {
+        "low": 0.5,
+        "n": 941,
+        "observed": 0.6333687566418703,
+        "predicted": 0.5635487240194438
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1693,
+        "observed": 0.4825753101004135,
+        "predicted": 0.6365697120527547
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.9860515959772628
+      }
+    ],
+    "brier": 0.2597427617823479,
+    "label_reference": "bank",
+    "method": "random_order",
+    "n_states": 2913,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|single_cnn_reference|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 4,
+        "observed": 0.5,
+        "predicted": 0.35
+      },
+      {
+        "low": 0.4,
+        "n": 311,
+        "observed": 0.5852090032154341,
+        "predicted": 0.4894642036760043
+      },
+      {
+        "low": 0.5,
+        "n": 1614,
+        "observed": 0.5749690210656754,
+        "predicted": 0.5478660619463498
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 942,
+        "observed": 0.535031847133758,
+        "predicted": 0.6644581857535126
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 49,
+        "observed": 0.7346938775510204,
+        "predicted": 0.7058823529411764
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2534087394541616,
+    "label_reference": "rich_cnn",
+    "method": "single_cnn_reference",
+    "n_states": 2920,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 97,
+        "observed": 0.28865979381443296,
+        "predicted": 0.48357353167066114
+      },
+      {
+        "low": 0.5,
+        "n": 1050,
+        "observed": 0.5638095238095238,
+        "predicted": 0.5255379297587666
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 496,
+        "observed": 0.530241935483871,
+        "predicted": 0.6551394069326312
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 246,
+        "observed": 0.524390243902439,
+        "predicted": 0.7288035986549688
+      },
+      {
+        "low": 0.8,
+        "n": 18,
+        "observed": 0.3333333333333333,
+        "predicted": 0.8888888888888888
+      },
+      {
+        "low": 0.9,
+        "n": 5,
+        "observed": 0.2,
+        "predicted": 0.909090909090909
+      }
+    ],
+    "brier": 0.25963447415350327,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1912,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|width_times0p9|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 290,
+        "observed": 0.027586206896551724,
+        "predicted": 0.4691717261298414
+      },
+      {
+        "low": 0.5,
+        "n": 958,
+        "observed": 0.010438413361169102,
+        "predicted": 0.5628034694919765
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1570,
+        "observed": 0.007643312101910828,
+        "predicted": 0.6345645782930142
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3535252793768014,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2818,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times0p9",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|width_times0p9|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 119,
+        "observed": 0.29411764705882354,
+        "predicted": 0.4838324670287781
+      },
+      {
+        "low": 0.5,
+        "n": 1030,
+        "observed": 0.587378640776699,
+        "predicted": 0.5250189390772311
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 502,
+        "observed": 0.5358565737051793,
+        "predicted": 0.6560706687996727
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 265,
+        "observed": 0.5169811320754717,
+        "predicted": 0.7285439147682389
+      },
+      {
+        "low": 0.8,
+        "n": 15,
+        "observed": 0.4666666666666667,
+        "predicted": 0.8888888888888891
+      },
+      {
+        "low": 0.9,
+        "n": 5,
+        "observed": 0.2,
+        "predicted": 0.909090909090909
+      }
+    ],
+    "brier": 0.25818175779808933,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1936,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times0p9",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|width_times1p1|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 252,
+        "observed": 0.0,
+        "predicted": 0.47138591833255655
+      },
+      {
+        "low": 0.5,
+        "n": 997,
+        "observed": 0.006018054162487462,
+        "predicted": 0.5639174313823141
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1619,
+        "observed": 0.006176652254478073,
+        "predicted": 0.6341658436744493
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.3566030043586818,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2870,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times1p1",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|42|width_times1p1|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 83,
+        "observed": 0.30120481927710846,
+        "predicted": 0.48830041517822415
+      },
+      {
+        "low": 0.5,
+        "n": 1072,
+        "observed": 0.5485074626865671,
+        "predicted": 0.5263652334988348
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 459,
+        "observed": 0.49673202614379086,
+        "predicted": 0.6531773205338387
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 221,
+        "observed": 0.5610859728506787,
+        "predicted": 0.7301641972514175
+      },
+      {
+        "low": 0.8,
+        "n": 19,
+        "observed": 0.42105263157894735,
+        "predicted": 0.888888888888889
+      },
+      {
+        "low": 0.9,
+        "n": 6,
+        "observed": 0.3333333333333333,
+        "predicted": 0.9090909090909091
+      }
+    ],
+    "brier": 0.26060175881403613,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1860,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times1p1",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|swap_mid|7|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 23,
+        "observed": 0.6086956521739131,
+        "predicted": 0.3956724318184756
+      },
+      {
+        "low": 0.4,
+        "n": 295,
+        "observed": 0.5254237288135594,
+        "predicted": 0.4671000721459519
+      },
+      {
+        "low": 0.5,
+        "n": 931,
+        "observed": 0.6197636949516648,
+        "predicted": 0.5585433895310824
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1820,
+        "observed": 0.4291208791208791,
+        "predicted": 0.6764391760147374
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.2824298986245761,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 3071,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 7
+  },
+  "4|swap_mid|7|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 586,
+        "observed": 0.44368600682593856,
+        "predicted": 0.4921561392356109
+      },
+      {
+        "low": 0.5,
+        "n": 464,
+        "observed": 0.6788793103448276,
+        "predicted": 0.5575873465470924
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 888,
+        "observed": 0.4617117117117117,
+        "predicted": 0.6486233671608402
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 152,
+        "observed": 0.4868421052631579,
+        "predicted": 0.7259197438468685
+      },
+      {
+        "low": 0.8,
+        "n": 5,
+        "observed": 0.6,
+        "predicted": 0.880952380952381
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2640632586402826,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 2095,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 7
+  },
+  "4|swap_mid|99|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 43,
+        "observed": 0.5348837209302325,
+        "predicted": 0.38886192359525157
+      },
+      {
+        "low": 0.4,
+        "n": 187,
+        "observed": 0.43315508021390375,
+        "predicted": 0.46052119797744073
+      },
+      {
+        "low": 0.5,
+        "n": 1172,
+        "observed": 0.5827645051194539,
+        "predicted": 0.5604902965650431
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 680,
+        "observed": 0.4411764705882353,
+        "predicted": 0.646326931613635
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 41,
+        "observed": 0.5365853658536586,
+        "predicted": 0.7152595842396987
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2628165192071076,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 2123,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 99
+  },
+  "4|swap_mid|99|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.017071926852813144
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 493,
+        "observed": 0.4198782961460446,
+        "predicted": 0.49706773900936735
+      },
+      {
+        "low": 0.5,
+        "n": 424,
+        "observed": 0.5683962264150944,
+        "predicted": 0.5454886996987445
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 545,
+        "observed": 0.5486238532110091,
+        "predicted": 0.6353283800102117
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 188,
+        "observed": 0.5319148936170213,
+        "predicted": 0.7197788646734579
+      },
+      {
+        "low": 0.8,
+        "n": 65,
+        "observed": 0.6615384615384615,
+        "predicted": 0.8025535092933291
+      },
+      {
+        "low": 0.9,
+        "n": 26,
+        "observed": 1.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.25086133487289763,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1743,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 99
+  },
+  "4|uniform|42|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 132,
+        "observed": 0.15151515151515152,
+        "predicted": 0.28339446559569137
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 254,
+        "observed": 0.43700787401574803,
+        "predicted": 0.356698001347576
+      },
+      {
+        "low": 0.4,
+        "n": 387,
+        "observed": 0.5012919896640827,
+        "predicted": 0.4261457055393358
+      },
+      {
+        "low": 0.5,
+        "n": 2969,
+        "observed": 0.38093634220276185,
+        "predicted": 0.5503227995446764
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 287,
+        "observed": 0.4076655052264808,
+        "predicted": 0.6480829508296567
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 1489,
+        "observed": 0.3861652115513768,
+        "predicted": 0.7032017932371354
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 81,
+        "observed": 0.4444444444444444,
+        "predicted": 0.9977367099506982
+      }
+    ],
+    "brier": 0.2877070434105548,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 5599,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|uniform|42|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 1,
+        "observed": 0.0,
+        "predicted": 0.2222222222222222
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 12,
+        "observed": 0.3333333333333333,
+        "predicted": 0.3526444929116685
+      },
+      {
+        "low": 0.4,
+        "n": 21,
+        "observed": 0.38095238095238093,
+        "predicted": 0.4609660002918429
+      },
+      {
+        "low": 0.5,
+        "n": 1221,
+        "observed": 0.5151515151515151,
+        "predicted": 0.5239422100237627
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 124,
+        "observed": 0.5725806451612904,
+        "predicted": 0.6393330427523647
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 380,
+        "observed": 0.4868421052631579,
+        "predicted": 0.7133546455179044
+      },
+      {
+        "low": 0.8,
+        "n": 100,
+        "observed": 0.5,
+        "predicted": 0.8616336295283662
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.26970314713066207,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1859,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 42
+  },
+  "4|uniform|7|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 202,
+        "observed": 0.13366336633663367,
+        "predicted": 0.2938167069658606
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 298,
+        "observed": 0.5033557046979866,
+        "predicted": 0.3777946384184012
+      },
+      {
+        "low": 0.4,
+        "n": 963,
+        "observed": 0.45275181723779856,
+        "predicted": 0.4805487837705211
+      },
+      {
+        "low": 0.5,
+        "n": 947,
+        "observed": 0.41816261879619854,
+        "predicted": 0.5477574238391932
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 3202,
+        "observed": 0.4415990006246096,
+        "predicted": 0.6288138756356607
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.7500452891092044
+      },
+      {
+        "low": 0.8,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.8249370069662885
+      },
+      {
+        "low": 0.9,
+        "n": 43,
+        "observed": 0.20930232558139536,
+        "predicted": 0.9985015975342297
+      }
+    ],
+    "brier": 0.27021845993514004,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 5658,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 7
+  },
+  "4|uniform|7|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 1,
+        "observed": 0.0,
+        "predicted": 0.391304347826087
+      },
+      {
+        "low": 0.4,
+        "n": 497,
+        "observed": 0.4426559356136821,
+        "predicted": 0.48483704734043315
+      },
+      {
+        "low": 0.5,
+        "n": 443,
+        "observed": 0.6027088036117382,
+        "predicted": 0.5631089355886496
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1011,
+        "observed": 0.5262116716122651,
+        "predicted": 0.6622565810022262
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 261,
+        "observed": 0.4789272030651341,
+        "predicted": 0.7151377467078965
+      },
+      {
+        "low": 0.8,
+        "n": 120,
+        "observed": 0.43333333333333335,
+        "predicted": 0.8179444949265485
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2714990147526308,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 2333,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 7
+  },
+  "4|uniform|99|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 46,
+        "observed": 0.13043478260869565,
+        "predicted": 0.2897839055155966
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 413,
+        "observed": 0.3922518159806295,
+        "predicted": 0.35079688040572243
+      },
+      {
+        "low": 0.4,
+        "n": 348,
+        "observed": 0.4511494252873563,
+        "predicted": 0.45061254443601784
+      },
+      {
+        "low": 0.5,
+        "n": 2352,
+        "observed": 0.41369047619047616,
+        "predicted": 0.5679998411291628
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 2038,
+        "observed": 0.38469087340529934,
+        "predicted": 0.6303069440206159
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 394,
+        "observed": 0.35786802030456855,
+        "predicted": 0.7618785008236091
+      },
+      {
+        "low": 0.8,
+        "n": 68,
+        "observed": 0.36764705882352944,
+        "predicted": 0.8339586218473289
+      },
+      {
+        "low": 0.9,
+        "n": 106,
+        "observed": 0.6037735849056604,
+        "predicted": 0.9965971778481428
+      }
+    ],
+    "brier": 0.2854586808764708,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 5765,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 99
+  },
+  "4|uniform|99|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 3,
+        "observed": 0.6666666666666666,
+        "predicted": 0.2727272727272727
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 5,
+        "observed": 0.0,
+        "predicted": 0.38235294117647056
+      },
+      {
+        "low": 0.4,
+        "n": 552,
+        "observed": 0.447463768115942,
+        "predicted": 0.4873731676240289
+      },
+      {
+        "low": 0.5,
+        "n": 573,
+        "observed": 0.5235602094240838,
+        "predicted": 0.5790616947401629
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 402,
+        "observed": 0.5696517412935324,
+        "predicted": 0.6510591442849477
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 251,
+        "observed": 0.6055776892430279,
+        "predicted": 0.7350937412535115
+      },
+      {
+        "low": 0.8,
+        "n": 8,
+        "observed": 0.625,
+        "predicted": 0.875
+      },
+      {
+        "low": 0.9,
+        "n": 29,
+        "observed": 0.896551724137931,
+        "predicted": 0.9992818633621661
+      }
+    ],
+    "brier": 0.24978985402481213,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 1823,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 4,
+    "seed": 99
+  },
+  "5|correlation|42|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 200,
+        "observed": 0.225,
+        "predicted": 0.546394934294367
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 98,
+        "observed": 0.16326530612244897,
+        "predicted": 0.6809199204157189
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 300,
+        "observed": 0.2833333333333333,
+        "predicted": 0.7264656808551062
+      },
+      {
+        "low": 0.8,
+        "n": 24,
+        "observed": 0.3333333333333333,
+        "predicted": 0.8244797192697115
+      },
+      {
+        "low": 0.9,
+        "n": 12,
+        "observed": 0.5833333333333334,
+        "predicted": 0.9945878521041007
+      }
+    ],
+    "brier": 0.36403771536982626,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 634,
+    "operating_point": "scientific",
+    "roles": "accuracy",
+    "rule": "correlation",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|correlation|42|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 98,
+        "observed": 0.2755102040816326,
+        "predicted": 0.537097314038276
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 222,
+        "observed": 0.17117117117117117,
+        "predicted": 0.635175530195333
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3298629478471235,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 320,
+    "operating_point": "scientific",
+    "roles": "accuracy",
+    "rule": "correlation",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|center_minus3|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 4,
+        "observed": 0.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 246,
+        "observed": 0.34959349593495936,
+        "predicted": 0.5712729158305855
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 701,
+        "observed": 0.39657631954350925,
+        "predicted": 0.6365595338944308
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2911537795390482,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 951,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_minus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|center_minus3|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 10,
+        "observed": 1.0,
+        "predicted": 0.49858356940509935
+      },
+      {
+        "low": 0.5,
+        "n": 209,
+        "observed": 0.31100478468899523,
+        "predicted": 0.5360302310974618
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 145,
+        "observed": 0.2482758620689655,
+        "predicted": 0.645747692848563
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 20,
+        "observed": 0.0,
+        "predicted": 0.728287504157889
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3137594093945495,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 384,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_minus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|center_plus3|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 18,
+        "observed": 0.05555555555555555,
+        "predicted": 0.47345635047332135
+      },
+      {
+        "low": 0.5,
+        "n": 223,
+        "observed": 0.19282511210762332,
+        "predicted": 0.5691351677211789
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 573,
+        "observed": 0.2024432809773124,
+        "predicted": 0.6343651212230144
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 4,
+        "observed": 0.25,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 23,
+        "observed": 0.17391304347826086,
+        "predicted": 0.9981335378076884
+      }
+    ],
+    "brier": 0.34522569171306067,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 841,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_plus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|center_plus3|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 232,
+        "observed": 0.13793103448275862,
+        "predicted": 0.5466596028412021
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 172,
+        "observed": 0.18604651162790697,
+        "predicted": 0.6538588308018866
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 50,
+        "observed": 0.32,
+        "predicted": 0.7280293298942
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.32809751587405717,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 454,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "center_plus3",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|gaussian_approximation|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 102,
+        "observed": 0.0,
+        "predicted": 0.47009702686560195
+      },
+      {
+        "low": 0.5,
+        "n": 204,
+        "observed": 0.0,
+        "predicted": 0.5655956294414013
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 141,
+        "observed": 0.0,
+        "predicted": 0.635357434367794
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 1,
+        "observed": 0.0,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.32466538865188915,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 448,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "gaussian_approximation",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|gaussian_approximation|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 64,
+        "observed": 0.140625,
+        "predicted": 0.48608921005791095
+      },
+      {
+        "low": 0.5,
+        "n": 233,
+        "observed": 0.3605150214592275,
+        "predicted": 0.5231504265711285
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 80,
+        "observed": 0.3,
+        "predicted": 0.6646224966622162
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 10,
+        "observed": 0.3,
+        "predicted": 0.7232732126139857
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2781227351996014,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 387,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "gaussian_approximation",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|ideal_points|proposed|ideal_scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 19,
+        "observed": 0.21052631578947367,
+        "predicted": 0.48210884180081853
+      },
+      {
+        "low": 0.5,
+        "n": 299,
+        "observed": 0.3311036789297659,
+        "predicted": 0.5551165730114869
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 39,
+        "observed": 0.20512820512820512,
+        "predicted": 0.6813851690369911
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2857069407023823,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 357,
+    "operating_point": "ideal_scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "ideal_points",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|ideal_points|single|ideal_scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 12,
+        "observed": 0.16666666666666666,
+        "predicted": 0.48664300392303367
+      },
+      {
+        "low": 0.5,
+        "n": 149,
+        "observed": 0.1610738255033557,
+        "predicted": 0.5761145633932115
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 185,
+        "observed": 0.1891891891891892,
+        "predicted": 0.6280303403877219
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3241135459369625,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 346,
+    "operating_point": "ideal_scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "ideal_points",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|fixed_order|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 206,
+        "observed": 0.5242718446601942,
+        "predicted": 0.5736021386883401
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 841,
+        "observed": 0.47324613555291317,
+        "predicted": 0.6323409995977902
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 0.5,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.27329836628899506,
+    "label_reference": "bank",
+    "method": "fixed_order",
+    "n_states": 1053,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|lookahead|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 200,
+        "observed": 0.505,
+        "predicted": 0.5732894352455564
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 867,
+        "observed": 0.5063437139561707,
+        "predicted": 0.6346400020305355
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 5,
+        "observed": 0.0,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 0.5,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.268385978901203,
+    "label_reference": "bank",
+    "method": "lookahead",
+    "n_states": 1078,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|proposed|engineering": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 4,
+        "observed": 1.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 689,
+        "observed": 0.5747460087082729,
+        "predicted": 0.5712679588566775
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1223,
+        "observed": 0.4938675388389207,
+        "predicted": 0.6341839115283823
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 0.75,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.2621816855828082,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1920,
+    "operating_point": "engineering",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 197,
+        "observed": 0.5279187817258884,
+        "predicted": 0.5736567301467231
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 895,
+        "observed": 0.48268156424581005,
+        "predicted": 0.6349500914485517
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 0.75,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.2702426556490947,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1098,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|random_order|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 178,
+        "observed": 0.5112359550561798,
+        "predicted": 0.5734257143593972
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 982,
+        "observed": 0.5112016293279023,
+        "predicted": 0.6371926700124239
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 4,
+        "observed": 0.0,
+        "predicted": 0.8
+      },
+      {
+        "low": 0.9,
+        "n": 6,
+        "observed": 0.5,
+        "predicted": 0.9833730100892323
+      }
+    ],
+    "brier": 0.26774825311675515,
+    "label_reference": "bank",
+    "method": "random_order",
+    "n_states": 1172,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|single_cnn_reference|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 6,
+        "observed": 0.5,
+        "predicted": 0.4903514817367329
+      },
+      {
+        "low": 0.5,
+        "n": 435,
+        "observed": 0.367816091954023,
+        "predicted": 0.5488820006375086
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 254,
+        "observed": 0.5,
+        "predicted": 0.6654379818961
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 8,
+        "observed": 0.5,
+        "predicted": 0.7058823529411765
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.2715541040966162,
+    "label_reference": "rich_cnn",
+    "method": "single_cnn_reference",
+    "n_states": 703,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 179,
+        "observed": 0.1787709497206704,
+        "predicted": 0.5616868653760267
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 213,
+        "observed": 0.2112676056338028,
+        "predicted": 0.6458200714547176
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 40,
+        "observed": 0.075,
+        "predicted": 0.7319903887115504
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3456094708648718,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 432,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|width_times0p9|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 212,
+        "observed": 0.0047169811320754715,
+        "predicted": 0.5736138363753994
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 856,
+        "observed": 0.012850467289719626,
+        "predicted": 0.6353271809544767
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.8024486226497596
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 0.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.38844149195411115,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1076,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times0p9",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|width_times0p9|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 181,
+        "observed": 0.16022099447513813,
+        "predicted": 0.5621431777673137
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 215,
+        "observed": 0.2,
+        "predicted": 0.6463216939241052
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 41,
+        "observed": 0.07317073170731707,
+        "predicted": 0.7311310145011165
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3479094616522055,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 437,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times0p9",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|width_times1p1|proposed|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.4699020065328979
+      },
+      {
+        "low": 0.5,
+        "n": 198,
+        "observed": 0.0,
+        "predicted": 0.573894366816511
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 904,
+        "observed": 0.0,
+        "predicted": 0.6350356530701515
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.8,
+        "n": 3,
+        "observed": 0.0,
+        "predicted": 0.8000000000000002
+      },
+      {
+        "low": 0.9,
+        "n": 1,
+        "observed": 0.0,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.3911330729508807,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1108,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times1p1",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|42|width_times1p1|single|response_shift": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 185,
+        "observed": 0.22702702702702704,
+        "predicted": 0.5633705331544812
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 215,
+        "observed": 0.20930232558139536,
+        "predicted": 0.649582051188191
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 32,
+        "observed": 0.03125,
+        "predicted": 0.7293139998157527
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3408887842357881,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 432,
+    "operating_point": "response_shift",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "width_times1p1",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|swap_mid|7|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 2,
+        "observed": 1.0,
+        "predicted": 0.4675281643472499
+      },
+      {
+        "low": 0.5,
+        "n": 205,
+        "observed": 0.5902439024390244,
+        "predicted": 0.5791689025495176
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 1009,
+        "observed": 0.4836471754212091,
+        "predicted": 0.6781428048424097
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 4,
+        "observed": 0.5,
+        "predicted": 0.7288910621677299
+      },
+      {
+        "low": 0.8,
+        "n": 2,
+        "observed": 0.0,
+        "predicted": 0.8294736362446402
+      },
+      {
+        "low": 0.9,
+        "n": 20,
+        "observed": 0.4,
+        "predicted": 0.9977562668587524
+      }
+    ],
+    "brier": 0.28595365729649624,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1242,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 7
+  },
+  "5|swap_mid|7|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 16,
+        "observed": 0.375,
+        "predicted": 0.49214659685863865
+      },
+      {
+        "low": 0.5,
+        "n": 98,
+        "observed": 0.23469387755102042,
+        "predicted": 0.5683879079108642
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 512,
+        "observed": 0.197265625,
+        "predicted": 0.6489978938651702
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 49,
+        "observed": 0.12244897959183673,
+        "predicted": 0.723001641115959
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.35678178000394684,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 675,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 7
+  },
+  "5|swap_mid|99|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 276,
+        "observed": 0.5398550724637681,
+        "predicted": 0.5824252826428004
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 475,
+        "observed": 0.5347368421052632,
+        "predicted": 0.6489765817187942
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 25,
+        "observed": 0.68,
+        "predicted": 0.7167342539740438
+      },
+      {
+        "low": 0.8,
+        "n": 2,
+        "observed": 0.5,
+        "predicted": 0.876901916761725
+      },
+      {
+        "low": 0.9,
+        "n": 4,
+        "observed": 0.75,
+        "predicted": 0.9795976624138669
+      }
+    ],
+    "brier": 0.25795082860235874,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 782,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 99
+  },
+  "5|swap_mid|99|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 12,
+        "observed": 0.75,
+        "predicted": 0.49768339768339825
+      },
+      {
+        "low": 0.5,
+        "n": 130,
+        "observed": 0.25384615384615383,
+        "predicted": 0.5519864706076743
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 166,
+        "observed": 0.2289156626506024,
+        "predicted": 0.6300197444720613
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 37,
+        "observed": 0.0,
+        "predicted": 0.7381159961805123
+      },
+      {
+        "low": 0.8,
+        "n": 58,
+        "observed": 0.06896551724137931,
+        "predicted": 0.8035235574477056
+      },
+      {
+        "low": 0.9,
+        "n": 21,
+        "observed": 0.0,
+        "predicted": 0.9975634627038652
+      }
+    ],
+    "brier": 0.4039608565627151,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 424,
+    "operating_point": "scientific",
+    "roles": "primary|adaptive|mean",
+    "rule": "swap_mid",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 99
+  },
+  "5|uniform|42|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 41,
+        "observed": 0.5121951219512195,
+        "predicted": 0.37682465482438654
+      },
+      {
+        "low": 0.4,
+        "n": 151,
+        "observed": 0.423841059602649,
+        "predicted": 0.42266373407907903
+      },
+      {
+        "low": 0.5,
+        "n": 628,
+        "observed": 0.44904458598726116,
+        "predicted": 0.5459920149630677
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 63,
+        "observed": 0.5079365079365079,
+        "predicted": 0.6504815307908554
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 460,
+        "observed": 0.4934782608695652,
+        "predicted": 0.7031792977691892
+      },
+      {
+        "low": 0.8,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.9,
+        "n": 7,
+        "observed": 0.8571428571428571,
+        "predicted": 0.9831166009745197
+      }
+    ],
+    "brier": 0.26907325098203544,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1350,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|uniform|42|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.5,
+        "n": 257,
+        "observed": 0.2529182879377432,
+        "predicted": 0.5558153804778782
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 59,
+        "observed": 0.11864406779661017,
+        "predicted": 0.6388588792609833
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 40,
+        "observed": 0.05,
+        "predicted": 0.7193126188557615
+      },
+      {
+        "low": 0.8,
+        "n": 11,
+        "observed": 0.0,
+        "predicted": 0.8516746411483254
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.33458834481158994,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 367,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 42
+  },
+  "5|uniform|7|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 88,
+        "observed": 0.42045454545454547,
+        "predicted": 0.3929988457476245
+      },
+      {
+        "low": 0.4,
+        "n": 280,
+        "observed": 0.3821428571428571,
+        "predicted": 0.47628403520741663
+      },
+      {
+        "low": 0.5,
+        "n": 160,
+        "observed": 0.33125,
+        "predicted": 0.5476918132579115
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 851,
+        "observed": 0.44770857814336074,
+        "predicted": 0.6358553815283016
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.7666979573239351
+      },
+      {
+        "low": 0.8,
+        "n": 1,
+        "observed": 1.0,
+        "predicted": 0.8876500716391363
+      },
+      {
+        "low": 0.9,
+        "n": 28,
+        "observed": 0.6071428571428571,
+        "predicted": 1.0
+      }
+    ],
+    "brier": 0.27221629616454973,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1409,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 7
+  },
+  "5|uniform|7|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 29,
+        "observed": 0.27586206896551724,
+        "predicted": 0.48630136986301364
+      },
+      {
+        "low": 0.5,
+        "n": 55,
+        "observed": 0.2727272727272727,
+        "predicted": 0.5613976951105636
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 414,
+        "observed": 0.16666666666666666,
+        "predicted": 0.6504286126955798
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 83,
+        "observed": 0.1686746987951807,
+        "predicted": 0.7167157424243243
+      },
+      {
+        "low": 0.8,
+        "n": 31,
+        "observed": 0.2903225806451613,
+        "predicted": 0.8178577186322936
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.37378579523624256,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 612,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 7
+  },
+  "5|uniform|99|nominal|proposed|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 60,
+        "observed": 0.4666666666666667,
+        "predicted": 0.37933160945953776
+      },
+      {
+        "low": 0.4,
+        "n": 151,
+        "observed": 0.4503311258278146,
+        "predicted": 0.4460921730368258
+      },
+      {
+        "low": 0.5,
+        "n": 538,
+        "observed": 0.35687732342007433,
+        "predicted": 0.5691939674948073
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 443,
+        "observed": 0.4469525959367946,
+        "predicted": 0.6313192174846766
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 169,
+        "observed": 0.6686390532544378,
+        "predicted": 0.756427310734802
+      },
+      {
+        "low": 0.8,
+        "n": 37,
+        "observed": 0.7837837837837838,
+        "predicted": 0.8374728121045631
+      },
+      {
+        "low": 0.9,
+        "n": 53,
+        "observed": 0.9245283018867925,
+        "predicted": 0.9913131586663996
+      }
+    ],
+    "brier": 0.2580646582064032,
+    "label_reference": "bank",
+    "method": "proposed",
+    "n_states": 1451,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 99
+  },
+  "5|uniform|99|nominal|single|scientific": {
+    "bins": [
+      {
+        "low": 0.0,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.1,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.2,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.30000000000000004,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      },
+      {
+        "low": 0.4,
+        "n": 16,
+        "observed": 0.5625,
+        "predicted": 0.490388633514417
+      },
+      {
+        "low": 0.5,
+        "n": 199,
+        "observed": 0.23618090452261306,
+        "predicted": 0.580149657631848
+      },
+      {
+        "low": 0.6000000000000001,
+        "n": 138,
+        "observed": 0.2318840579710145,
+        "predicted": 0.6508233538560567
+      },
+      {
+        "low": 0.7000000000000001,
+        "n": 61,
+        "observed": 0.26229508196721313,
+        "predicted": 0.7298856668261877
+      },
+      {
+        "low": 0.8,
+        "n": 2,
+        "observed": 0.5,
+        "predicted": 0.875
+      },
+      {
+        "low": 0.9,
+        "n": 0,
+        "observed": null,
+        "predicted": null
+      }
+    ],
+    "brier": 0.3322392581622069,
+    "label_reference": "rich_plsr",
+    "method": "single",
+    "n_states": 416,
+    "operating_point": "scientific",
+    "roles": "independent",
+    "rule": "uniform",
+    "scenario": "nominal",
+    "scope": "visited non-terminal states, repeated scan states; descriptive calibration only",
+    "season": 5,
+    "seed": 99
+  }
+}

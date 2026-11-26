@@ -1,0 +1,1 @@
+study_id,scan_id,fruit_id,scanned_at_utc,instrument_id,measurement_mode,scan_site,repeat_index,raw_file_path,raw_file_sha256,spectral_schema_id,acquisition_protocol_id,qc_status,qc_reason_code

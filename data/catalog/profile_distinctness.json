@@ -1,0 +1,10 @@
+{
+  "comparison": "cosine similarity of normalized discretized typical response weights on common grid",
+  "maximum_off_diagonal_cosine": 0.8405476152949579,
+  "closest_pair": [
+    "LED890-03AU",
+    "LED910D-01"
+  ],
+  "exactly_equal_pairs": [],
+  "interpretation": "All candidates have distinct response shapes/centers. No duplicate or near-identical chart profiles are counted as separate options; this does not establish real hardware distinguishability at a given noise level."
+}
