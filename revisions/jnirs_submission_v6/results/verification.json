@@ -29,6 +29,7 @@
     "main_all_scientific_numeric_tokens_preserved": true,
     "abstract_all_numeric_tokens_preserved": true,
     "supplement_all_scientific_numeric_tokens_preserved": true,
+    "all_17_supplement_tables_byte_identical_to_v5": true,
     "all_generated_table_sources_unchanged": true,
     "all_v5_files_preserved": true
   },
@@ -36,13 +37,13 @@
     "documents": {
       "main": {
         "pages": 16,
-        "sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
-        "size_bytes": 292125
+        "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
+        "size_bytes": 293890
       },
       "supplement": {
-        "pages": 52,
-        "sha256": "026df52037203f7ac53a366e52a13d449271db8bc796ebbb5d0af8280aeb1913",
-        "size_bytes": 256534
+        "pages": 28,
+        "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
+        "size_bytes": 242225
       }
     },
     "abstract_words_whitespace_count": 256,
@@ -53,7 +54,7 @@
     "v5_files_checked": 364,
     "altered_v5_files": [],
     "main_scientific_numeric_tokens": 255,
-    "supplement_scientific_numeric_tokens": 8662,
+    "supplement_scientific_numeric_tokens": 8635,
     "unchanged_table_fragments": 9
   },
   "scope": "Formatting, source preservation and document integrity. Existing numerical audits are inherited, not rerun model evaluations.",

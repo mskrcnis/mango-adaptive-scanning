@@ -15,6 +15,7 @@ OpenAI Codex assisted research-code implementation/debugging, execution and repo
 The accompanying materials comprise the manuscript PDF, editable LaTeX and bibliography sources, separate vector figures, and the supplementary methods/results PDF with its description.
 
 Sincerely,
-[Corresponding author]
-[Affiliation and postal address]
-[Email]
+S Kumar Reddy Mallidi
+Department of Computer Science and Engineering, Sri Vasavi Engineering College
+Pedatadepalli, Tadepalligudem 534101, West Godavari District, Andhra Pradesh, India
+satya.cnis@gmail.com

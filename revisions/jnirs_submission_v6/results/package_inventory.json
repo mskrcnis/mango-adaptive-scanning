@@ -1,8 +1,8 @@
 {
   "archive": "output/Mango_JNIRS_LaTeX_Source.zip",
-  "archive_bytes": 1760075,
+  "archive_bytes": 1763057,
   "archive_member_count": 79,
-  "archive_sha256": "59d36be8b53db5fcf07a5bdf1384fda1a38d30b0697ce4f4bd1cea9920a0d4d6",
+  "archive_sha256": "ff8e749578537a61763efeddc6d14028ce7333b64767ce010f9e2a470818666a",
   "fixed_zip_timestamp": [
     1980,
     1,
@@ -11,27 +11,27 @@
     0,
     0
   ],
-  "internal_manifest_sha256": "1fc6a35081f9923c7b6a7dfbccfb9792def8ad05298e4ac8f3436bd25657ad59",
+  "internal_manifest_sha256": "a8b7b277759e57e11a7d63fd6620b2f11d2fcd455c0bf8efc94424d7bfffe913",
   "members": [
     {
-      "bytes": 2518,
+      "bytes": 2851,
       "path": "AUTHOR_INPUTS.md",
-      "sha256": "f23a436274bcd6644a7a56d5e77462e75bb6f727832df1a0dd287b049d50d9b6"
+      "sha256": "eeeb258af49e2ec883b323405e0bed2f2c1ed85e913cbfb70059b9f6bedfe7b3"
     },
     {
-      "bytes": 5402,
+      "bytes": 5980,
       "path": "README.md",
-      "sha256": "50b28cfe4f620990044e1c1b8085e26d7e83838c4f03f119cab98645f7bfaea7"
+      "sha256": "c429276f76233bf4d85bf9d45ec290ddc6eee31a2ca9a0c3bc6bf6d4cd0d6f58"
     },
     {
-      "bytes": 2702,
+      "bytes": 3266,
       "path": "RUN_STATUS.md",
-      "sha256": "2cf035dce5195c6cabd2e4754017272a2126ef83173e9837d8712525c7ae1cb8"
+      "sha256": "a4f8f517bd323bd30c103f7c370c37d56dee2cc2649351abd4b4748209913592"
     },
     {
-      "bytes": 1828,
+      "bytes": 2572,
       "path": "author_details.tex",
-      "sha256": "62f394326eae21cffb0a8602e9a5eb2a033fa1634c28d6fbf6053963c3613939"
+      "sha256": "f49319cd0caa8c59ca85c7fa42d6a19d0d3340b4925ec679087483f8ce7e0d1c"
     },
     {
       "bytes": 10499,
@@ -49,19 +49,19 @@
       "sha256": "132084a929acf2302af760abe8002d41348d11864274b7eaeaa8d822aa7ee856"
     },
     {
-      "bytes": 6468,
+      "bytes": 4950,
       "path": "content_review.md",
-      "sha256": "8c67db135236c2a64b8dbb6274c66d63d4474e9d957557283190b53b589480c5"
+      "sha256": "bb6076b2076cd44054a56addcf8c3de4bafdc1f4613b28757cf0c19faed59944"
     },
     {
-      "bytes": 2107,
+      "bytes": 2249,
       "path": "cover_letter.txt",
-      "sha256": "d03dc6faa98271c98c690b3ff96a84ad2480fc4187e085cb180bde0c6fe11e0d"
+      "sha256": "e63dcc6aca7068f28d37920d768afdb8196317885c5e4c6b7d2405a84cff0f5a"
     },
     {
-      "bytes": 2146,
+      "bytes": 2148,
       "path": "declarations.tex",
-      "sha256": "af0fb5be52108cc4c6521da251f181aa3cc2d5b11ed46be8ea3b9d02c66ab9c0"
+      "sha256": "e603aea5554cd194c9d58b9262e4d7cbd10af797242fb35eb290b9a7da276138"
     },
     {
       "bytes": 4382,
@@ -279,9 +279,9 @@
       "sha256": "154ed08acdaf1debd231fd291ff9d7616b8c905958063ee432f99dc92c0ab9d0"
     },
     {
-      "bytes": 45415,
+      "bytes": 45404,
       "path": "main.tex",
-      "sha256": "17fe77981ef250897b26077ac976561c72aed54326a9c6948f87a805509da006"
+      "sha256": "2ee20757920522f62b19fa1b56ae9edab8ec7fd7330f74aec00a629ec2ed30e0"
     },
     {
       "bytes": 1036,
@@ -324,19 +324,19 @@
       "sha256": "a9d29ee4f715875f52248f991984370ee9d5b81eb0b8b9799353d1de28072d12"
     },
     {
-      "bytes": 33142,
+      "bytes": 67646,
       "path": "results/independent_content_review.json",
-      "sha256": "08df970003393c246d9edc1140940793c6e63047c7019530658f1e7e925fc02a"
+      "sha256": "f9595dfb0221ceff0cfc4fc5e3ee4c67bf0abf120f88eae5a294b214df6e8161"
     },
     {
-      "bytes": 4134,
+      "bytes": 6031,
       "path": "results/main_visual_review.json",
-      "sha256": "9647ea95278ab0c038801366e04667f9a3c0cb6a6fdc006b17d84f6eb0ddf553"
+      "sha256": "9c8e0b93aa7c2fc0c1b69647adb8828792fbbd7109025296c1da56b3ed2ed567"
     },
     {
-      "bytes": 18838,
+      "bytes": 11671,
       "path": "results/supplement_visual_review.json",
-      "sha256": "fde833fed97f65ae795db78365f29d379cd5acae1c82f5c06d64fdb740ce0ceb"
+      "sha256": "4ac2bb157112a984c408fa57ce3f599a45723bd8859b1bfb94349bcafbc00d3e"
     },
     {
       "bytes": 47959,
@@ -344,9 +344,9 @@
       "sha256": "27ecd7482777ea73c197b620cb3b4f4f832215efd23661e122117858b70500ae"
     },
     {
-      "bytes": 2419,
+      "bytes": 2478,
       "path": "results/verification.json",
-      "sha256": "e49a4bf707fd0b0306ac0557ac3eea1a0f905985a5361db01d1c7e3f5cb97338"
+      "sha256": "bf4e836de49d673b239d8643005cf195dc032a6861497f96aa5ee7ffde985bce"
     },
     {
       "bytes": 15374,
@@ -369,14 +369,14 @@
       "sha256": "17eb0016a410251b69a3ce0e0a295be58a8fe683767deb7312e08f4e11800032"
     },
     {
-      "bytes": 140754,
+      "bytes": 135594,
       "path": "supplement.tex",
-      "sha256": "094bcb0a77b53c8feaf563f1c143fc8f4f3fc49422df01eac95919ac5d913062"
+      "sha256": "ba7cf225c1887d4eaa73cbc37061a72a841c77032fbb9e29a565c57d51e95be7"
     },
     {
-      "bytes": 999,
+      "bytes": 1041,
       "path": "supplement_description.txt",
-      "sha256": "96fe9d4d3b81ac96aa4b320a23361d2cf2605cbdad11cf9ea96fd6f0f66b12f4"
+      "sha256": "b7ff4a20663081f56543eddfce9741e47c5f2a9f481582484fb61e6778cc87f5"
     },
     {
       "bytes": 1460,
@@ -394,29 +394,29 @@
       "sha256": "113da1cae672949bb2e496e095507e3897a7e20206ac7186e0870b9ee63abfaa"
     },
     {
-      "bytes": 7513,
+      "bytes": 8341,
       "path": "verification_report.md",
-      "sha256": "a8a3a022d19609381365e93bc103121f72e8f2610d0d60f7851dcc135865f9fe"
+      "sha256": "c8150059b4d0a46a7a89a56036445157a8c18d42ebb4321cd59c91128fdb709b"
     },
     {
-      "bytes": 7977,
+      "bytes": 8727,
       "path": "verify_package.py",
-      "sha256": "33e6d5b527fd3a6a890e8b14e508d661640124589c2064a8ce940c194dd0c12b"
+      "sha256": "59b10a1c85e568ba40176359da0133f56cc7096d22829d37a340690a400ac2f8"
     }
   ],
   "source_file_count": 78,
   "status": "pass",
   "submission_files": [
     {
-      "bytes": 292125,
+      "bytes": 293890,
       "path": "output/submission_files/Mango_JNIRS_Manuscript.pdf",
-      "sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
+      "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
       "source": "output/pdf/Mango_JNIRS_Manuscript.pdf"
     },
     {
-      "bytes": 256534,
+      "bytes": 242225,
       "path": "output/submission_files/Mango_JNIRS_Supplement.pdf",
-      "sha256": "026df52037203f7ac53a366e52a13d449271db8bc796ebbb5d0af8280aeb1913",
+      "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
       "source": "output/pdf/Mango_JNIRS_Supplement.pdf"
     },
     {
@@ -444,15 +444,15 @@
       "source": "figures/Figure_4.pdf"
     },
     {
-      "bytes": 2107,
+      "bytes": 2249,
       "path": "output/submission_files/Cover_Letter.txt",
-      "sha256": "d03dc6faa98271c98c690b3ff96a84ad2480fc4187e085cb180bde0c6fe11e0d",
+      "sha256": "e63dcc6aca7068f28d37920d768afdb8196317885c5e4c6b7d2405a84cff0f5a",
       "source": "cover_letter.txt"
     },
     {
-      "bytes": 999,
+      "bytes": 1041,
       "path": "output/submission_files/Supplement_Description.txt",
-      "sha256": "96fe9d4d3b81ac96aa4b320a23361d2cf2605cbdad11cf9ea96fd6f0f66b12f4",
+      "sha256": "b7ff4a20663081f56543eddfce9741e47c5f2a9f481582484fb61e6778cc87f5",
       "source": "supplement_description.txt"
     }
   ],

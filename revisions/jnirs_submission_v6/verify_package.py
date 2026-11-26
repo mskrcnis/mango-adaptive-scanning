@@ -21,6 +21,8 @@ def cited(text):
 def numbers(text):
     text = re.sub(r'\\cite\w*(?:\[[^\]]*\])*\{[^}]+\}', '', text)
     text = re.sub(r'\\includegraphics(?:\[[^\]]*\])?\{[^}]+\}', '', text)
+    # Page-layout space reservations are not scientific numeric claims.
+    text = re.sub(r'\\Needspace\{[^}]+\}', '', text)
     return re.findall(r'(?<![A-Za-z])[-+]?\d+(?:[.,]\d+)*', text)
 
 main = (HERE / 'main.tex').read_text()
@@ -99,9 +101,17 @@ if V5.is_dir():
     new_body = main.split('\\section{Introduction}',1)[1].split('\\input{declarations.tex}',1)[0]
     checks['main_all_scientific_numeric_tokens_preserved'] = numbers(old_body) == numbers(new_body)
     checks['abstract_all_numeric_tokens_preserved'] = numbers(previous.split('\\begin{abstract}',1)[1].split('\\end{abstract}',1)[0]) == numbers(main.split('\\begin{abstract}',1)[1].split('\\end{abstract}',1)[0])
-    old_supp = (V5 / 'manuscript/supplement.tex').read_text().split('\\section{Scope, provenance and interpretation}',1)[1].split('\\bibliographystyle',1)[0]
-    new_supp = supp.split('\\section{Scope, provenance and interpretation}',1)[1].split('\\bibliographystyle',1)[0]
+    # The final operational inventory was intentionally replaced with concise
+    # data/code availability. Preserve the complete scientific sections and
+    # separately require every supplementary table to remain byte-identical.
+    previous_supp = (V5 / 'manuscript/supplement.tex').read_text()
+    old_supp = previous_supp.split('\\section{Scope, provenance and interpretation}',1)[1].split('\\section{Evidence inventory, verification and claim boundaries}',1)[0]
+    new_supp = supp.split('\\section{Scope, provenance and interpretation}',1)[1].split('\\section{Data and code availability}',1)[0]
     checks['supplement_all_scientific_numeric_tokens_preserved'] = numbers(old_supp) == numbers(new_supp)
+    table_pattern = r'\\begin\{longtable\}.*?\\end\{longtable\}'
+    old_tables = re.findall(table_pattern, previous_supp, re.S)
+    new_tables = re.findall(table_pattern, supp, re.S)
+    checks['all_17_supplement_tables_byte_identical_to_v5'] = len(new_tables) == 17 and old_tables == new_tables
     table_paths = [p for p in (V5 / 'manuscript').glob('*.tex') if p.name not in ['main.tex','supplement.tex']]
     checks['all_generated_table_sources_unchanged'] = all(sha(path) == sha(HERE / path.name) for path in table_paths)
     before = json.loads((HERE / 'results/v5_preservation_before.json').read_text())

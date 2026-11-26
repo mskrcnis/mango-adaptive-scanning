@@ -7,12 +7,12 @@ This is a dataset-based computational study prepared for the *Journal of Near In
 ## Paper and source package
 
 - [Current JNIRS manuscript, 16 pages](revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Manuscript.pdf)
-- [Supplementary methods and results, 52 pages](revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Supplement.pdf)
+- [Supplementary methods and results, 28 pages](revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Supplement.pdf)
 - [Self-contained LaTeX/Overleaf ZIP](revisions/jnirs_submission_v6/output/Mango_JNIRS_LaTeX_Source.zip)
 - [Journal-conversion verification report](revisions/jnirs_submission_v6/verification_report.md)
-- [Author fields and journal-policy review still required](revisions/jnirs_submission_v6/AUTHOR_INPUTS.md)
+- [Remaining author declarations and journal-policy review](revisions/jnirs_submission_v6/AUTHOR_INPUTS.md)
 
-The manuscript retains all 30 references. It is an author-review draft, not an accepted or submitted article. Author names and dependent declarations remain explicit fields. Its software-access wording and historical status reports predate this repository release; the source and frozen bundles listed below are now distributed here. No journal submission is implied.
+The manuscript retains all 30 references. It is an author-review draft, not an accepted or submitted article. The supplied author names, affiliations and correspondence details appear in both PDFs, and the data/code availability statements link to this public repository. Contributions, funding, conflicts, human review and author approval remain to be completed. The supplement retains all 17 tables in 28 portrait pages, with unchanged table fonts and results; its final section has been shortened to data and code availability. No journal submission is implied.
 
 ## Verify the public repository
 

@@ -1,13 +1,13 @@
 # JNIRS manuscript preparation: final verification report
 
-Prepared 26 November 2026 for **Journal of Near Infrared Spectroscopy**, Original Research Article. The journal conversion is complete for author review. Author identities and author-dependent declarations remain explicit fields; nothing has been submitted or published.
+Prepared 26 November 2026 for **Journal of Near Infrared Spectroscopy**, Original Research Article. The journal conversion is complete for author review. The supplied author names, affiliations and correspondence details are included. Author-dependent declarations remain explicit fields. The repository is public; nothing has been submitted to a journal.
 
 ## Deliverables
 
 | Item | Verified contents |
 |---|---|
 | `output/pdf/Mango_JNIRS_Manuscript.pdf` | 16 pages; 4 figures; 6 tables; 30 cited references; 7 keywords; unstructured abstract |
-| `output/pdf/Mango_JNIRS_Supplement.pdf` | 52 pages; all 17 supplementary tables and preserved methods/results |
+| `output/pdf/Mango_JNIRS_Supplement.pdf` | 28 portrait pages; all 17 supplementary tables and preserved methods/results |
 | `output/Mango_JNIRS_LaTeX_Source.zip` | Self-contained LaTeX and BibTeX sources, Sage class/styles, editable tables, four vector figures, plotted data, supporting evidence tables, build scripts, documentation and checksum manifest |
 | `output/submission_files/` | Named copies of both PDFs, four vector figures, draft cover letter and supplementary-item description |
 | `author_details.tex` and `AUTHOR_INPUTS.md` | Central author fields and the remaining decisions before submission |
@@ -28,9 +28,9 @@ The distributed `sagej.cls` and `sagev.bst` remain unchanged. The documented loc
 
 | Verification | Result and evidence |
 |---|---|
-| Document/source checks | **30/30 passed**, `results/verification.json` |
-| Independent scientific-content review | **33/33 passed**, `results/independent_content_review.json` and `content_review.md` |
-| Full visual review | **68/68 pages inspected**; both hash-bound visual reports passed |
+| Document/source checks | **31/31 passed**, `results/verification.json` |
+| Independent content-preservation review | **33/33 current editorial/layout checks passed**, `results/independent_content_review.json`. The original 33-check conversion review is retained there as historical provenance. |
+| Full visual review | **44 pages covered**: all 28 supplement pages and the four changed main pages inspected in the current layout; 12 main pages pixel-identical to their prior individually inspected renders |
 | LaTeX and BibTeX diagnostics | No warnings, unresolved references, overfull boxes or underfull boxes in either final document |
 | Reference integrity | All 30 unique sources cited and rendered in first-citation order; no uncited padding or duplicate keys/DOIs |
 | Earlier-version preservation | All **364** snapshotted v5 files unchanged |
@@ -38,9 +38,9 @@ The distributed `sagej.cls` and `sagev.bst` remain unchanged. The documented loc
 
 These checks overlap in scope and should not be added together as independent scientific validations. No model fitting, raw-spectra evaluation or new seasonal scoring was performed during this conversion. Earlier numerical audits are inherited through preserved sources and tables; they were not rerun or counted as new experiments.
 
-All scientific text, numerical claims, equations and limitations are preserved after enumerated editorial changes. Both inline main tables, all 17 supplement table blocks, nine table-input files and 23 copied evidence files match v5. Figures 1, 3 and 4 are byte-identical to v5. Figure 2's 210 curve rows and four operating-point rows match saved results within decimal round-trip tolerance; only its presentation changed. The independent audit records the complete comparisons.
+All scientific text, numerical claims, equations and limitations before the former final operational inventory are preserved after enumerated citation and layout changes. The inventory was intentionally replaced by concise data/code availability, retaining missing-value interpretation. Both inline main tables, all 17 supplement table blocks, nine table-input files and 23 copied evidence files match v5. Figures 1, 3 and 4 are byte-identical to v5. Figure 2's 210 curve rows and four operating-point rows match saved results within decimal round-trip tolerance; only its presentation changed. The independent audit records the complete comparisons.
 
-The main PDF was rerendered after the final bibliography completion. Pages 1-15 had identical pixels to the previously inspected renders; page 16 was inspected again. The supplement remained byte-identical throughout that final change.
+The supplied author information appears in both documents. The supplement was reduced from 52 to 28 pages by removing unnecessary landscape and forced-page-break commands; every table block, font size and row-spacing setting is retained. Natural table widths are 84.34-135.71 mm within the 174 mm portrait text width. The final short table is kept together. The main references now follow the declarations without a forced break; its page count remains 16. Current visual reports bind all checks to the final PDF hashes.
 
 The package builder verifies every ZIP member against its internal `SHA256SUMS`, extracts outside the research workspace, clears project-specific TeX search paths and compiles from the extracted files. It verifies exact PDF bytes, extracted text, page counts and unchanged source inputs, then checks all eight named submission-file copies. `results/package_inventory.json` records the exact final archive hash and all member hashes. These packaging reports remain outside the ZIP to avoid circular hashes.
 
@@ -52,8 +52,8 @@ The dataset supports conditional improvements from fixed-channel selection, whil
 
 ## Author completion and limits
 
-Complete `author_details.tex` using actual author names, affiliations, correspondence, contributions, funding, competing interests, additional acknowledgements and the human verification actually performed. Decide how readers will access the complete research software and models. Confirm originality, all-author approval and any other submission declarations before using the draft cover letter.
+Names, affiliations and correspondence are supplied, and software availability now links to the public repository. Complete the remaining `author_details.tex` fields for contributions, funding, competing interests, additional acknowledgements and the human verification actually performed. Confirm originality, all-author approval and any other submission declarations before using the draft cover letter.
 
 The acknowledgements and cover letter disclose substantive Codex assistance. [Sage's AI policy](https://www.sagepub.com/journals/publication-ethics-policies/artificial-intelligence-policy) also contains restrictions whose application to this extensively assisted workflow is not resolved by a disclosure alone. The authors must assess that application and seek editorial clarification if needed before submission; this package does not certify eligibility or completed human review. `AUTHOR_INPUTS.md` quotes the relevant policy wording and explains the unresolved point.
 
-No upload to Overleaf or a journal system, external message, public repository release, author approval or acceptance is implied.
+The public repository is https://github.com/mskrcnis/mango-adaptive-scanning. No upload to Overleaf or a journal system, external message, author approval or acceptance is implied.

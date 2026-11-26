@@ -1,6 +1,6 @@
 # Public research release
 
-This repository distributes the existing research code, frozen inference bundles, numerical reports and current JNIRS manuscript package. It does not establish new scientific results or journal acceptance. The source paper remains an author-review draft, including its pending author fields and AI-policy review.
+This repository distributes the existing research code, frozen inference bundles, numerical reports and current JNIRS manuscript package. It does not establish new scientific results or journal acceptance. The source paper remains an author-review draft. Supplied author identities and correspondence details have been incorporated; contributions, funding, conflicts, human review, author approval and AI-policy review remain pending.
 
 ## Supported immediately from a clone
 
@@ -42,4 +42,4 @@ Release preparation also runs existing software tests and checks inference and m
 
 No blanket open-source license has been added. Third-party terms are recorded in `THIRD_PARTY_NOTICES.md`; public visibility is separate from licensing. The source and results are offered as a transparent research record subject to their applicable rights.
 
-The manuscript was prepared before this public release and contains historical statements that software access remains to be specified. Its final submission edition should cite this repository and complete actual author declarations. No authorship, funding, conflict, all-author approval, journal-policy eligibility or journal submission is asserted by publishing the repository.
+The current manuscript and supplement identify this public repository as the source of analysis code, frozen inference models and supporting result tables. Historical revision reports retain the access status that applied when they were written. The supplied author details do not resolve the remaining author declarations, all-author approval or journal-policy review. Publishing the repository does not assert completed human review, journal-policy eligibility or journal submission.

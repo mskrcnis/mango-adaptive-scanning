@@ -7,7 +7,7 @@ Prepared for **Journal of Near Infrared Spectroscopy**, Original Research Articl
 - `main.tex`: journal-targeted manuscript, with editable LaTeX tables and four vector figures.
 - `supplement.tex`: full supplementary methods and results, including 17 tables.
 - `references.bib`: 30 cited sources with Sage Vancouver journal abbreviations.
-- `author_details.tex`: author identity and author-dependent declaration fields to complete.
+- `author_details.tex`: supplied author identities, affiliations and correspondence details, with remaining author-dependent declaration fields.
 - `declarations.tex`: required journal declaration headings and AI-use disclosure.
 - `output/pdf/Mango_JNIRS_Manuscript.pdf` and `Mango_JNIRS_Supplement.pdf`: compiled author-review documents.
 - `output/Mango_JNIRS_LaTeX_Source.zip`: self-contained LaTeX/Overleaf source archive.
@@ -34,7 +34,7 @@ The optional document verifier requires Python and `pypdf`. The packaging verifi
 
 The live [JNIRS author instructions](https://journals.sagepub.com/author-instructions/jns) accept LaTeX and specify an unstructured abstract, at least five keywords, Sage Vancouver references and single-anonymized review. Authors therefore remain on the title page. The current guide gives no numerical full-article abstract limit or mandatory LaTeX layout.
 
-This edition uses `Review,sagev,times` with an author-side A4 review presentation in `jnirs_review.sty`. It retains Sage typography, presents a full-width title page, and removes fictitious publisher volume/issue/DOI metadata. These are layout choices, not additional journal mandates. The supplement uses a readable standalone A4 layout for its long and landscape tables; Sage publishes supplements as supplied.
+This edition uses `Review,sagev,times` with an author-side A4 review presentation in `jnirs_review.sty`. It retains Sage typography, presents a full-width title page, and removes fictitious publisher volume/issue/DOI metadata. These are layout choices, not additional journal mandates. The supplement uses a continuous portrait A4 layout for all 17 tables. Their natural widths fit within the text area, so no font reduction or landscape pages are needed; Sage publishes supplements as supplied.
 
 The unchanged Sage class is version 1.20, 17 January 2017, recovered from a pinned Posit `rticles` mirror. The version matches the publisher-linked Overleaf demonstration. The current official ZIP could not be downloaded (HTTP 403), so byte-equivalence with that ZIP is not asserted. Exact URLs, commit and hashes are in `template_provenance/mirror_source.json`.
 
@@ -42,9 +42,9 @@ The unchanged Sage class is version 1.20, 17 January 2017, recovered from a pinn
 
 ## Scope and author completion
 
-This source archive reproduces the documents. It does not contain the raw mango dataset, trained model checkpoints, replay application or complete model-training code. Those remain in the preserved research workspace. The public input dataset is DOI `10.17632/46htwnp833.3`; no new data collection or hardware experiment is required for this paper's stated computational scope.
+This source archive reproduces the documents. It does not contain the raw mango dataset, trained model checkpoints, replay application or complete model-training code. The [public research repository](https://github.com/mskrcnis/mango-adaptive-scanning) supplies analysis code, frozen inference models and supporting results, and documents the inputs required for full research reruns. The complete research workspace remains preserved separately. The public input dataset is DOI `10.17632/46htwnp833.3`; no new data collection or hardware experiment is required for this paper's stated computational scope.
 
-Complete `AUTHOR_INPUTS.md` before submission. Author identities, funding, conflicts, contributions, access to complete research software, actual human review and the applicability of Sage's AI policy remain author decisions. The draft cover letter does not invent all-author approval or exclusivity declarations. No submission or public release has occurred.
+The supplied author identities, affiliations and correspondence details appear in both PDFs. The supplement retains all 17 tables and ends with a concise data and code availability section. Complete `AUTHOR_INPUTS.md` before submission: funding, conflicts, contributions, actual human review, author approval and the applicability of Sage's AI policy remain unresolved. The draft cover letter includes the supplied corresponding-author details without inventing all-author approval or exclusivity declarations. The repository is public; no journal submission has occurred.
 
 ## Resume and verify
 

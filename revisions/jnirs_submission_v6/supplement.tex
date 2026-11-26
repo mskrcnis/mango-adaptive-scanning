@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=18mm]{geometry}
-\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,pdflscape}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,needspace}
 \usepackage[super,sort&compress]{natbib}
 \usepackage{times}
 \input{author_details.tex}
@@ -19,10 +19,14 @@
 \newcommand{\RMSEP}{\operatorname{RMSEP}}
 \begin{document}
 \title{Supplementary methods and complete operating-point results:\\Adaptive versus fixed spectral acquisition for mango dry-matter prediction: a seasonal benchmark and controlled diagnosis}
-\author{\AuthorNames}
+\author{\parbox{\dimexpr\textwidth-2\tabcolsep\relax}{\centering\AuthorNames}}
 \date{}
 \maketitle
-\tableofcontents
+{\small\AuthorAffiliations\par}
+\medskip
+{\small\textsuperscript{*}\textbf{Corresponding author:} \CorrespondingAuthor\par
+\textbf{Email:} \href{mailto:\CorrespondingEmail}{\CorrespondingEmail}\par}
+{\small\setlength{\parskip}{0pt}\tableofcontents}
 \clearpage
 \section{Scope, provenance and interpretation}
 This supplement integrates the completed original analysis (O), the matched-predictor and stopping diagnostic (revision 2, V2), the design-only fixed-subset/order analysis (revision 3, V3), and the final research-artifact freeze (revision 4, V4). These are distinct stages, not independent replications. The present consolidation (revision 5) only reads and reports saved evidence; it performs no refitting, threshold search, bank selection or later-season rescoring.
@@ -41,7 +45,6 @@ Each development fold holds out a complete season. Of the other seasons' harvest
 
 Every inner scaler, predictor and reference used to generate controller targets is fitted on the corresponding inner fitting groups. No held-season, calibration or bank-design target enters that fit. The exact row and group memberships are retained in \path{results/fold_assignments.json}. The final original later-season bundles use the same role-separation scheme on all development seasons; V4 intentionally uses a different finalization rule described below.
 
-\clearpage
 \begingroup\small
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -120,8 +123,6 @@ Paired uncertainty resamples complete harvest populations 1,000 times with seed 
 \section{Complete original later-season benchmark results}
 Table~\ref{tab:original} reports all 176 saved operating points, including original baselines, both additional seeds and every scored optical scenario. P, U and C identify the banks defined above. Point S is scientific, E is the original engineering point and Ref is a reference/static model. Scenario N is nominal, C-/C+ shifts centers by $-3/+3$ nm, W-/W+ scales width by 0.9/1.1, Gauss substitutes nominal Gaussian responses, and Points uses separately fitted ideal-point channels. Full-spectrum counts of 103 and ideal counts are feature counts, not directly comparable hardware costs. The ``missed/early'' entry exposes the denominator rather than treating an undefined rate as zero.
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -319,13 +320,10 @@ Season & Bank & Seed & Scenario & Method & Point & RMSEP & Readings & Missed/ear
 5 & P & 42 & Gauss & \texttt{single} & S & 2.0589 & 2.209 & 0/320 & 0.000 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \subsection{Alternative material-gain definitions}
 The following table preserves all 352 recorded diagnostic evaluations at $\delta=0.25$ and $1.00$ pp, paired by the same 176 frozen operating points. These definitions are applied to existing predictions only: controllers, calibration, thresholds and acquisition paths are unchanged. They are not retrained-$\delta$ experiments. A dash means zero early-stop denominator; a bank-loss rate can be zero because a shifted bank predictor has ceased to offer useful corrections, not because the sparse policy is accurate.
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -523,10 +521,7 @@ Season & Bank & Seed & Scenario & Method & Point & Miss .25 & Miss 1.0 & Bank .2
 5 & P & 42 & Gauss & \texttt{single} & S & 0.000 & 0.000 & 1.000 & 1.000 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -560,13 +555,10 @@ s5\_pop128 & 160 & \texttt{physical\_plsr\_4} & Ref & 1.9911 & 1.7013 & -1.6575 
 s5\_pop129 & 160 & \texttt{physical\_plsr\_4} & Ref & 1.7032 & 1.4689 & -1.3850 & 4.000 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \subsection{Action-head diagnostics}
 One-step diagnostics distinguish evaluator-forced full trajectories (F) from continuations actually taken by the frozen policy (A). Hindsight gains, rank correlations and regrets are evaluated after the decision using the assay and possible actions; they are never controller inputs. At each visited state the action regret is the hindsight-best signed gain minus the chosen signed gain. These are descriptive mechanism checks, not an independent performance endpoint. Table~\ref{tab:action} retains every saved season/method/depth/scope summary.
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -636,7 +628,6 @@ Season & Obj. & Scope & Depth & States & Pred. gain & Actual gain & Gain $>0$ & 
 5 & R & A & 7 & 6 & 1.0381 & -0.1958 & 0.500 & 0.000 & -- & 0.0000 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \section{V2: matched predictors, endpoint decomposition and stopping-only controls}
 V2 begins after the original study was inspected. It uses development seasons 1--3 only, the same role partitions and optical emulator, primary bank P at seeds 42/7/99 and sensitivity U at seed 42 (12 cases). Neither features nor assays from seasons 4--5 are loaded or rescored. No new bank is searched. All full-mask MLP entries are labeled \emph{Hybrid}: the seven-reading masked MLP dispatches to PLS at eight readings. A raw full-mask MLP estimate was not available and is not invented.
@@ -664,8 +655,6 @@ A policy stops at the first calibrated gain probability less than or equal to th
 
 Every fixed length 2--8 and every probability threshold on the registered grid is retained. Brier scores concern each objective's own event and cannot be read as a common-target superiority measure. An achieved mean-reading gap above 0.25 prevents an unqualified objective comparison even when both calibration selections targeted four. Paired contrasts below retain all seeds and both banks, including unfavorable and budget-incomparable cases; all corresponding predictive metrics remain in the companion CSVs.
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -759,10 +748,7 @@ Season & Bank & Seed & Predictor & Scope & Scans & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 3 & U & 42 & Ridge & Order & 4966 & 2.5182 & 2.5480 & 2.4406 & 2.3879 & 2.2955 & 2.2512 & 2.2491 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -796,10 +782,7 @@ Season & Bank & Seed & Groups & Total hybrid & MLP7 $\rightarrow$ PLS7 & PLS7 $\
 3 & U & 42 & 50 & 0.3249 [0.0033, 0.6402] & 0.3490 [0.0287, 0.6646] & -0.0241 [-0.0322, -0.0157] \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -965,13 +948,10 @@ Season & Bank & Seed & Predictor & Obj. & Point & $\tau$ & RMSEP & Readings & Mi
 3 & U & 42 & Ridge & R & E & 0.75 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \subsection{Complete V2 paired contrasts}
 For Table~\ref{tab:v2paired}, BR is bank-reference minus rich-reference stopping; B4 is bank-reference stopping minus the four-reading common-order predictor; PM is the named predictor minus the masked MLP at the identical depth. S/E denote scientific/engineering points, and 4/7 denote exact fixed depth. Positive $\Delta$RMSEP favors the second comparator; positive $\Delta$readings means the first spends more. ``Budget'' uses the registered absolute mean-reading gap at most 0.25. The paired intervals condition on the fitted pipeline and sampled harvest populations; they do not resolve unequal costs or repeated development use.
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1185,7 +1165,6 @@ Season & Bank & Seed & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & 
 3 & U & 42 & Ridge & PM & 7 & -0.2638 [-0.3529, -0.1655] & -- & -- \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \section{V3: design-only fixed subsets and orders}
 V3 is a bounded follow-up motivated by V2's poor common order and inconclusive stopping comparison. It is not a fresh confirmatory experiment. It keeps the existing P and U banks, initial endpoint pair, PLS and ridge settings, outer roles and seed-42 source arrays. All six bank/held-season designs were locked before evaluation arrays were parsed. There is no new bank, channel-count or model-hyperparameter search after outcomes are inspected.
@@ -1201,7 +1180,6 @@ The primary exact-budget contrast is designed-order minus catalog-order RMSEP at
 
 V3 saves 768 mask-score rows, 8,640 order-score rows, 12 selected family/bank/season designs, all 348 evaluated policy rows, 1,188,188 scan-level prediction rows, 2,016 threshold-curve rows and 96 paired contrasts. The exhaustive search tables remain machine-readable; the tables below display every selected configuration and every scored fixed/adaptive operating point. No favorable threshold is selected from the held curves.
 
-\clearpage
 \begingroup\small
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1230,8 +1208,6 @@ Held season & Source season & Design populations & Design scans \\
 \end{longtable}
 \endgroup
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1265,10 +1241,7 @@ Season & Bank & Predictor & Selected order (nm) & Score & Catalog score & Margin
 3 & U & Ridge & 720, 940, 910, 740, 850, 780, 820, 800 & 60.2625 & 63.3573 & 0.0746 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1374,10 +1347,7 @@ Season & Bank & Predictor & Readings & Selected centers (nm) & Design RMSEP \\
 3 & U & Ridge & 8 & 720, 740, 780, 800, 820, 850, 910, 940 & 3.1938 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1435,10 +1405,7 @@ Season & Bank & Predictor & Variant & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 3 & U & Ridge & Subset & 2.5182 & 2.5789 & 2.5262 & 2.2916 & 2.2564 & 2.2512 & 2.2491 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1556,13 +1523,10 @@ Season & Bank & Predictor & Order & Obj. & Point & $\tau$ & RMSEP & Readings & M
 3 & U & Ridge & Designed & R & E & 0.75 & 2.5182 & 2.000 & 1522/4966 & yes & no \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \subsection{Complete V3 paired contrasts}
 In Table~\ref{tab:v3paired}, DC is designed-prefix minus catalog-prefix prediction at the same fixed depth; SC is independently selected subset minus catalog prefix at the same depth; BR is bank-reference minus rich-reference stopping on the designed order; and AS is bank-reference adaptive prediction on the designed order minus the selected fixed subset. AS uses selected fixed four for the scientific point and selected fixed six for the engineering point. Only the fixed-depth contrasts are exactly matched in reading count. The budget-tolerance flag does not turn an adaptive comparison into exact equality.
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1680,10 +1644,7 @@ Season & Bank & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta
 3 & U & Ridge & AS & E & 0.2618 [0.1383, 0.4048] & -4.000 & no \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
-\clearpage
-\begin{landscape}
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
@@ -1761,7 +1722,6 @@ U & Ridge & Subset & 7 & 0.750 & 0.750 & 1.000 \\
 U & Ridge & Subset & 8 & 1.000 & 1.000 & 1.000 \\
 \end{longtable}
 \endgroup
-\end{landscape}
 
 \section{V4: a frozen research artifact, not new validation}
 After V3, a separate finalization rule selected one six-channel candidate from development seasons 1--3 only. It retained P's eight-channel bank and 720/940-nm endpoints, enumerated all $\binom{6}{4}=15$ six-channel subsets, and generated leave-one-population-out predictions for each subset over all 94 development populations. Each scaler and PLS fit excluded its target population. The selection rule minimized pooled scan-weighted MSE, with lexicographic index ties. It did not vote among earlier fold winners or use seasons 4--5. The selected set is 720, 760, 820, 890, 910 and 940 nm, which differs from the three fold-specific V3 fixed-six sets. Therefore V3's performance cannot be assigned to this final artifact.
@@ -1770,10 +1730,10 @@ The selected six-channel PLS, full-eight PLS (both six components) and rich-spec
 
 The freeze retains portable coefficients, exact normalized response weights, channel order, preprocessing, row/group provenance, executable inference, reference sklearn models, dependencies and a hash manifest. Portable/reference parity on development inputs establishes computational agreement, not generalization. The CLI examples contain three development training rows for software demonstration only. No V4 later-season benchmark scoring, independent accuracy estimate, per-fruit interval or validated harvest recommendation is supplied. These boundaries do not make the completed original/V2/V3 dataset analyses incomplete. No physical field collection or harvest threshold is required to finish this paper.
 
-\clearpage
 \begingroup\small
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
+\Needspace{24\baselineskip}
 \begin{longtable}{rlrrl}
 \caption{All V4 finalization scores: development LOPO tuning results only. These are not independent validation accuracy.}\label{tab:candidateselection}\\
 \toprule
@@ -1808,26 +1768,8 @@ Index & Centers (nm) & Tuning MSE & Tuning RMSEP & Selected \\
 \end{longtable}
 \endgroup
 
-\section{Evidence inventory, verification and claim boundaries}
-\subsection{Machine-readable evidence}
-The following paths are relative to the project root. CSV files preserve full numerical precision and additional quantities (MAE, signed bias, $R^2$, coverage, read-count distributions, threshold indices and event counts) beyond the compact PDF tables. No missing table cell is replaced by a favorable value. Empty conditional rates mean a zero denominator; other missing quantities retain their stated reason.
-\begin{itemize}
-\item Original: \path{results/external_metrics.csv} (176 operating points), \path{results/external_delta_sensitivity.csv} (352 unchanged-policy diagnostic rows), \path{results/external_group_metrics.csv} (1,760 population rows), \path{results/external_predictions.csv}, \path{results/calibration.json}, \path{results/action_diagnostics.json}, \path{results/paired_examples.json}, and the frozen bank/threshold/fit manifests.
-\item V2: \path{revisions/methodology_v2/results/} contains \path{predictor_metrics.csv} (1,512 core/calibration/held summaries), \path{policy_metrics.csv} (396 fixed/adaptive points), \path{policy_predictions.csv.gz} (1,352,076 scan-level predictions), \path{endpoint_rows.csv}, \path{endpoint_summary.csv}, \path{paired_comparisons.csv} (192 contrasts) and \path{threshold_curves.csv} (3,024 tuning/held curve rows).
-\item V3: \path{revisions/fixed_design_v3/results/} contains \path{design_subsets.csv} (768 search rows), \path{design_orders.csv} (8,640 search rows), \path{selected_designs.csv}, \path{design_composition.csv}, \path{selection_stability.csv} (168 overlaps), \path{metrics.csv} (348 policies), \path{predictions.csv.gz} (1,188,188 scan-level rows), \path{comparisons.csv} (96 contrasts), \path{threshold_curves.csv} (2,016 rows) and the pre-evaluation design lock.
-\item V4: \path{revisions/candidate_v4/results/selection_scores.csv}, all 94 LOPO checkpoints and \path{revisions/candidate_v4/frozen/manifest.json}. The freeze is an artifact inventory, not a new validation claim.
-\end{itemize}
-
-\subsection{Executed consistency checks}
-The V2 verifier reported 84,145 numerical/artifact checks and its software suite 22 tests; full resume preserved 86 checked scientific artifacts. V3 reported 107,679 checks and 19 software tests; full resume preserved 147 checked artifacts. V4 reported 1,115 freeze checks and byte-identical resume for 246 files. These are software/audit counts, not sample sizes or evidence of agronomic validity. Checks reconstruct metrics from paired predictions, verify target/fit separation and terminal identity, inspect every exact mask/order optimum, and compare portable inference with retained reference models. Prior versions remain preserved. Revision 5 separately verifies that reported cells and compiled source agree with these saved artifacts; it does not rerun predictive fitting.
-
-\subsection{What the dataset supports}
-The original primary objective comparison has achieved budgets differing by more than 0.25 readings in both later seasons. It therefore does not demonstrate an equal-cost adaptive-objective benefit. V2 isolates predictor choice and the estimator-switch explanation without establishing that the masked MLP alone caused the earlier poor four-reading comparison. V3 improves fixed selection/order in P/PLS but not uniformly across the independent bank or ridge sensitivity. Its selected fixed-six procedure passes the specified relative screen in all three development seasons, with different fold-specific subsets; that result is not a validated universal six-channel device. On the designed order, V3's primary objective comparisons fall within the registered budget margin but remain unequal in cost, and the bank-reference objective has no demonstrated RMSEP advantage. Full numerical details, including contrary sensitivities, are retained above.
-
-The paper makes no claim that adaptive acquisition is impossible or that one stopping event cannot help a different learner. It tests these particular predictors, optical assumptions, constrained banks, orders, labels and calibration rules. Population bootstrap uncertainty does not account for unknown fruit repeats, future seasons or the exploratory reuse of development data. A reference predictor's error is not an irreducible information limit; a relative screen against a weak reference is not proof of adequate absolute accuracy. Harvest quality, optimal picking dates, real energy, latency and physical optical transfer are unmeasured outcomes, so the empirical conclusions are restricted accordingly.
-
-\subsection{Source access and author inputs}
-The source-data record, manufacturer source material and available author code support the implemented comparisons. For several closely related mango journal papers, the original audit had bibliographic/abstract access without complete methods. Consequently the paper does not assert absence of prior art, exact reproduction of inaccessible methods or priority for combining these ideas. Those access limits bound the literature comparison; they do not prevent reporting the executed dataset study. Author names/affiliations, contributions, funding, conflicts and any institutional declarations remain genuine author inputs. No submission or endorsement is implied.
+\section{Data and code availability}
+The source spectra and dry-matter measurements are available from version 3 of the public mango dataset.\citep{andersondata2024} Analysis code, frozen inference models and supporting result tables are publicly available at \url{https://github.com/mskrcnis/mango-adaptive-scanning}. Machine-readable tables retain full numerical precision; undefined conditional rates indicate zero denominators, while other missing quantities retain their stated reason.
 
 \bibliographystyle{jnirs_sagev}
 \bibliography{references}
