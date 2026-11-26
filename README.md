@@ -12,7 +12,7 @@ This is a dataset-based computational study prepared for the *Journal of Near In
 - [Journal-conversion verification report](revisions/jnirs_submission_v6/verification_report.md)
 - [Remaining author declarations and journal-policy review](revisions/jnirs_submission_v6/AUTHOR_INPUTS.md)
 
-The manuscript retains all 30 references. It is an author-review draft, not an accepted or submitted article. The supplied author names, affiliations and correspondence details appear in both PDFs, and the data/code availability statements link to this public repository. Contributions, funding, conflicts, human review and author approval remain to be completed. The supplement retains all 17 tables in 28 portrait pages, with unchanged table fonts and results; its final section has been shortened to data and code availability. No journal submission is implied.
+The manuscript presents one final study using descriptive analysis names, without internal manuscript revision labels, and retains all 30 references. It is an author-review draft, not an accepted or submitted article. The supplied author names, affiliations and correspondence details appear in both PDFs, and the data/code availability statements link to this public repository. Contributions, funding, conflicts, human review and author approval remain to be completed. The supplement retains all 17 tables in 28 portrait pages, with unchanged table fonts and results; its final section has been shortened to data and code availability. No journal submission is implied.
 
 ## Verify the public repository
 

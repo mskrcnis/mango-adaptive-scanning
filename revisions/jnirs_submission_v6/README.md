@@ -1,6 +1,6 @@
 # JNIRS LaTeX manuscript edition
 
-Prepared for **Journal of Near Infrared Spectroscopy**, Original Research Article, using the verified dataset-only manuscript v5. Scientific results, interpretations, complete supplementary tables and all 30 cited sources are retained. No model fitting or new seasonal evaluation was performed.
+Prepared for **Journal of Near Infrared Spectroscopy**, Original Research Article, using the verified dataset-only analysis. Scientific results, interpretations, complete supplementary tables and all 30 cited sources are retained. No model fitting or new seasonal evaluation was performed.
 
 ## Main files
 
@@ -26,7 +26,7 @@ This requires pdfLaTeX and BibTeX with standard TeX Live packages. Python and th
 
 For Overleaf, upload the ZIP as a new project, select **pdfLaTeX**, and use **main.tex** as the main document. Select **supplement.tex** separately to build the supplement. The class, both bibliography styles, `.bib`, `.bbl`, figures and included table files are supplied. Set the manuscript file back to `main.tex` when finished. No upload to Overleaf has been performed by this task.
 
-The optional `prepare_figures.py` script requires Python, pandas and matplotlib; it regenerates Figure 2 from the included frozen CSV values. Its line/marker styles were changed to retain readability in monochrome. Figures 1, 3 and 4 retain the verified v5 PDF bytes. `figure_data/` supplies plotted data, and `evidence_tables/` contains the previously reported result tables.
+The optional `prepare_figures.py` script requires Python, pandas and matplotlib; it regenerates Figures 2 and 4 from the included frozen CSV values. Its line/marker styles were changed to retain readability in monochrome. Figures 1 and 3 retain their verified PDF bytes; Figure 4 uses descriptive benchmark labels with unchanged points and intervals. `figure_data/` supplies plotted data, and `evidence_tables/` contains the previously reported result tables.
 
 The optional document verifier requires Python and `pypdf`. The packaging verifier uses Python's standard library plus `bash`, `pdflatex`, `bibtex`, `pdfinfo` and `pdftotext`. These verification tools are separate from the basic LaTeX compilation requirements.
 
@@ -44,7 +44,7 @@ The unchanged Sage class is version 1.20, 17 January 2017, recovered from a pinn
 
 This source archive reproduces the documents. It does not contain the raw mango dataset, trained model checkpoints, replay application or complete model-training code. The [public research repository](https://github.com/mskrcnis/mango-adaptive-scanning) supplies analysis code, frozen inference models and supporting results, and documents the inputs required for full research reruns. The complete research workspace remains preserved separately. The public input dataset is DOI `10.17632/46htwnp833.3`; no new data collection or hardware experiment is required for this paper's stated computational scope.
 
-The supplied author identities, affiliations and correspondence details appear in both PDFs. The supplement retains all 17 tables and ends with a concise data and code availability section. Complete `AUTHOR_INPUTS.md` before submission: funding, conflicts, contributions, actual human review, author approval and the applicability of Sage's AI policy remain unresolved. The draft cover letter includes the supplied corresponding-author details without inventing all-author approval or exclusivity declarations. The repository is public; no journal submission has occurred.
+The supplied author identities, affiliations and correspondence details appear in both PDFs. Analysis headings and captions describe one final study without internal revision labels. The supplement retains all 17 tables and ends with a concise data and code availability section. Complete `AUTHOR_INPUTS.md` before submission: funding, conflicts, contributions, actual human review, author approval and the applicability of Sage's AI policy remain unresolved. The draft cover letter includes the supplied corresponding-author details without inventing all-author approval or exclusivity declarations. The repository is public; no journal submission has occurred.
 
 ## Resume and verify
 

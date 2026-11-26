@@ -1,8 +1,8 @@
 {
   "archive": "output/Mango_JNIRS_LaTeX_Source.zip",
-  "archive_bytes": 1763057,
+  "archive_bytes": 1758388,
   "archive_member_count": 79,
-  "archive_sha256": "ff8e749578537a61763efeddc6d14028ce7333b64767ce010f9e2a470818666a",
+  "archive_sha256": "520f9a071402a5fb1af69caf83b567e19391aaca07300b68135577b1186fd990",
   "build_command": [
     "bash",
     "build_pdfs.sh"
@@ -32,63 +32,63 @@
   "comparisons": {
     "main": {
       "delivered": {
-        "bytes": 293890,
-        "layout_text_bytes": 67450,
-        "layout_text_sha256": "c302f9767cf53c00a86b93e7bde74bd75d58845097e3a015f330f11817385d6c",
+        "bytes": 293557,
+        "layout_text_bytes": 66875,
+        "layout_text_sha256": "0c96f31685dea94f38e85486c7ddb847fc4796c64c7476cf10d3ae00cf53d1d9",
         "pages": 16,
-        "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60"
+        "sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc"
       },
       "delivered_pdf_unchanged_during_packaging": true,
       "exact_pdf_bytes_match": true,
       "extracted_layout_text_matches": true,
       "page_count_matches": true,
       "rebuilt": {
-        "bytes": 293890,
-        "layout_text_bytes": 67450,
-        "layout_text_sha256": "c302f9767cf53c00a86b93e7bde74bd75d58845097e3a015f330f11817385d6c",
+        "bytes": 293557,
+        "layout_text_bytes": 66875,
+        "layout_text_sha256": "0c96f31685dea94f38e85486c7ddb847fc4796c64c7476cf10d3ae00cf53d1d9",
         "pages": 16,
-        "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60"
+        "sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc"
       }
     },
     "supplement": {
       "delivered": {
-        "bytes": 242225,
-        "layout_text_bytes": 174658,
-        "layout_text_sha256": "522620f8da50762497b487e16b800bce63840c6548cb293a76c276c896dc85fd",
+        "bytes": 245695,
+        "layout_text_bytes": 174611,
+        "layout_text_sha256": "184abebef4bf9ae33904ae49f30a3a79d0215c53fcb2e037f766185effa5804d",
         "pages": 28,
-        "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f"
+        "sha256": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f"
       },
       "delivered_pdf_unchanged_during_packaging": true,
       "exact_pdf_bytes_match": true,
       "extracted_layout_text_matches": true,
       "page_count_matches": true,
       "rebuilt": {
-        "bytes": 242225,
-        "layout_text_bytes": 174658,
-        "layout_text_sha256": "522620f8da50762497b487e16b800bce63840c6548cb293a76c276c896dc85fd",
+        "bytes": 245695,
+        "layout_text_bytes": 174611,
+        "layout_text_sha256": "184abebef4bf9ae33904ae49f30a3a79d0215c53fcb2e037f766185effa5804d",
         "pages": 28,
-        "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f"
+        "sha256": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f"
       }
     }
   },
   "delivered_documents": {
     "main": {
-      "bytes": 293890,
-      "layout_text_bytes": 67450,
-      "layout_text_sha256": "c302f9767cf53c00a86b93e7bde74bd75d58845097e3a015f330f11817385d6c",
+      "bytes": 293557,
+      "layout_text_bytes": 66875,
+      "layout_text_sha256": "0c96f31685dea94f38e85486c7ddb847fc4796c64c7476cf10d3ae00cf53d1d9",
       "pages": 16,
-      "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60"
+      "sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc"
     },
     "supplement": {
-      "bytes": 242225,
-      "layout_text_bytes": 174658,
-      "layout_text_sha256": "522620f8da50762497b487e16b800bce63840c6548cb293a76c276c896dc85fd",
+      "bytes": 245695,
+      "layout_text_bytes": 174611,
+      "layout_text_sha256": "184abebef4bf9ae33904ae49f30a3a79d0215c53fcb2e037f766185effa5804d",
       "pages": 28,
-      "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f"
+      "sha256": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f"
     }
   },
-  "elapsed_seconds": 4.116,
-  "isolated_build_directory": "/tmp/mango-jnirs-build-ak6fsgv0",
+  "elapsed_seconds": 3.991,
+  "isolated_build_directory": "/tmp/mango-jnirs-build-pd49y_rx",
   "isolated_directory_removed_after_check": true,
   "passed": true,
   "scope": "Source-archive integrity and isolated document reproduction; no research fitting, numerical re-evaluation, or submission.",

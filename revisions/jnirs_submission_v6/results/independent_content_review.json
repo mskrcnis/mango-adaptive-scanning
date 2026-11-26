@@ -1,1558 +1,689 @@
 {
   "accepted_changes": [
-    "Four author names, order, affiliation indices, three affiliations and corresponding author contact supplied by user; LaTeX escaping normalized without changing facts.",
-    "Shared author macros update both manuscript and supplement; supplement title and contents formatting adjusted.",
-    "Final supplement inventory replaced by a brief data/code availability and missing-value statement; scientific sections and all 17 tables retained.",
-    "Actual released repository URL replaces an obsolete software-access placeholder.",
-    "Supplemental-material description in declarations.tex changes only provenance inventory to data/code availability, matching the shortened supplement.",
-    "Layout-only supplement restructuring: remove forced page breaks and landscape environments; all table blocks, fonts and spacing remain unchanged.",
-    "A Needspace guard outside S17 keeps its short 15-row finalization table together; the package import supports that layout guard.",
-    "Remove the main manuscript pre-bibliography clearpage without changing its text."
+    "Internal manuscript iteration labels and implementation chronology replaced by analysis names and final methods.",
+    "Scientific chronology retained where required: benchmark exposure and exploratory motivation remain explicit.",
+    "Caption wording and Final O row label renamed without changing scientific values.",
+    "Figure 4 labels Original held S4/S5 changed to Benchmark season 4/5; frozen data are unchanged.",
+    "Four supplemental indicator glyphs changed from mathbb{1} to mathbf{1} for legibility.",
+    "Final-model availability explicitly attributed to the public repository."
   ],
-  "audit_date_utc": "2026-11-26T10:50:15.318680+00:00",
-  "audit_kind": "independent author, supplement trim and layout-only preservation review",
-  "base_commit": "16bb146dc7431e97fe6d5521beeb3bc8890a852e",
-  "check_count": 33,
+  "audit_date_utc": "2026-11-26T11:07:15.575970+00:00",
+  "audit_kind": "independent final-paper editorial and scientific preservation review",
+  "baseline_commit": "4424f53182d6fc6c87e82da0a1578d4944fa5833",
+  "baseline_source_sha256": {
+    "revisions/jnirs_submission_v6/main.tex": "2ee20757920522f62b19fa1b56ae9edab8ec7fd7330f74aec00a629ec2ed30e0",
+    "revisions/jnirs_submission_v6/supplement.tex": "ba7cf225c1887d4eaa73cbc37061a72a841c77032fbb9e29a565c57d51e95be7"
+  },
+  "check_count": 30,
   "checks": [
     {
-      "name": "user_supplied_AuthorNames_exact",
-      "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
+      "baseline_count": 294,
+      "current_count": 294,
+      "extraction": "Unsigned digit tokens, after citation/label/ref/path/texttt/image-path and internal revision-code exclusion. Signs and operators checked separately through exact math and table comparison; complete changed prose manually reviewed.",
+      "name": "main_numeric_token_sequence_preserved",
       "passed": true
     },
     {
-      "name": "user_supplied_AuthorAffiliations_exact",
-      "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
+      "baseline_count": 8668,
+      "current_count": 8668,
+      "extraction": "Unsigned digit tokens, after citation/label/ref/path/texttt/image-path and internal revision-code exclusion. Signs and operators checked separately through exact math and table comparison; complete changed prose manually reviewed.",
+      "name": "supplement_numeric_token_sequence_preserved",
       "passed": true
     },
     {
-      "name": "user_supplied_CorrespondingAuthor_exact",
-      "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
+      "name": "abstract_numeric_claims_preserved",
+      "numeric_tokens": 27,
       "passed": true
     },
     {
-      "name": "user_supplied_CorrespondingEmail_exact",
-      "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
+      "count": 36,
+      "name": "all_main_math_blocks_identical",
       "passed": true
     },
     {
-      "name": "shared_author_macros_used_by_main_and_supplement",
+      "allowed_change": "Four \\mathbb{1} indicator glyphs changed to \\mathbf{1}; no mathematical meaning or numerical value changes.",
+      "baseline_indicator_count": 4,
+      "count": 73,
+      "current_indicator_count": 4,
+      "name": "all_supplement_math_blocks_identical_after_indicator_glyph_fix",
       "passed": true
     },
     {
-      "name": "supplement_displays_affiliations_and_correspondence",
-      "passed": true
-    },
-    {
-      "name": "main_source_equal_to_release_except_prebibliography_page_break",
-      "passed": true
-    },
-    {
-      "name": "supplement_scientific_sections_equal_to_release_after_layout_only_normalization",
-      "normalization": [
-        "Remove clearpage and begin/end landscape commands",
-        "Remove the explicit Needspace 24 baselineskip guard",
-        "Collapse whitespace"
+      "accepted_text_changes": [
+        "Original frozen-model benchmark -> Frozen-model seasonal benchmark",
+        "Stage -> Analysis",
+        "Original benchmark -> Seasonal benchmark",
+        "Fixed-design study -> Channel-design comparison",
+        "Final artifact -> Final six-channel model",
+        "Can one fixed candidate be saved for reproducible inference? -> Can one fixed candidate support reproducible inference?"
       ],
-      "normalized_sha256": "f0ba6a7d35ca07862dbbb6bc150b3bb35b9115b05c08df21c52b8e708eb180fe",
-      "passed": true,
-      "section_count": 7
-    },
-    {
-      "name": "supplement_scientific_sections_equal_to_v5_except_layout_and_four_prior_citation_punctuation_moves",
-      "normalized_sha256": "732531a13dafbeee630e5218138c8b830a07b444f56e69172de1eb8d2002fb48",
-      "passed": true
-    },
-    {
-      "name": "all_17_supplement_tables_byte_identical_to_release_and_v5",
-      "passed": true,
-      "table_count": 17,
-      "table_sha256": [
-        "0f1b1e64af068c63746193a4d88b3760ed5932638a4fa1bf9684fd5d0da6164a",
-        "0a3203e2c08544e1c2ed8fcdc069c7472a84ad6884eb58db33168c2bc59b7e8a",
-        "970fe0f1d4368c1172e7a70478c42e7b3d68125331f563fa0892d9c8d9d7f884",
-        "8b06e4d353a2a493dc007a6661145bcc3885d8a53fded560fa6cae3136172294",
-        "923c9f0f5bb718c08ac4dbbcc8d1b840b4a27674bbb37b93d0b2883a9495a728",
-        "84c296e96a869a9126568af733d4be127c97052ec941f7b4fd641965112ba467",
-        "8652740d80665f7766dc60ef06062c292425b6be657a3dc503919895a7e993e3",
-        "a738dde92eceea1b8c506a8f09b4315907146357c67b028024e6d13db05a6472",
-        "89ed6c0b644fd7b9a19589da8f5a9070ede101962c198d7924d5f3dd2a4da5b8",
-        "eb43c2d71239f3f5eb81a3da1d86231a93e9978bff0c4d1559a56894eb5bd49a",
-        "2edf94c2c8b178aa5e765f1f5ba1edb52cadd8483e3f64677c76e14c930444d8",
-        "11476cc623f64f415fb016d77efe7f2879544733ed357fc6938a80e232f64627",
-        "c7764ff6d9eba1d43da3b107d44ade76018c94f108e33a5b8a83af971cbfc996",
-        "4372e36a27a805d06a745743cd3214a6596681f034d6696419a06c5c42339215",
-        "141ec095bc5908320a70c21300ef429bcc8b98833ec7d7b8b6196556791abba2",
-        "82c297ef6d0ee48fe0322881601c3681c637ca2fa890170a2dc4fc941ebad563",
-        "e76bc97a05bdd073402d4372679a024349d0d858db355d07810574f6ed1d5eca"
-      ]
-    },
-    {
-      "name": "supplement_scientific_numeric_sequence_unchanged",
-      "note": "Scientific sections only; removed workflow inventory and layout-only Needspace guard excluded.",
-      "passed": true,
-      "token_count": 8654
-    },
-    {
-      "name": "old_inventory_heading_and_workflow_subsections_removed",
-      "passed": true
-    },
-    {
-      "name": "replacement_is_short_data_code_and_missing_value_statement",
-      "passed": true,
-      "whitespace_word_count": 54
-    },
-    {
-      "name": "public_repository_address_in_author_statement_and_supplement",
-      "note": "Checks the release URL carried into both documents; live public-access verification is outside this editorial audit.",
-      "passed": true
-    },
-    {
-      "citation_groups": 5,
-      "name": "original_four_supplement_citation_groups_preserved_with_one_dataset_repetition",
-      "passed": true,
-      "unique_keys": 4
-    },
-    {
-      "name": "30_source_bibliography_byte_identical_to_reviewed_release",
-      "passed": true
-    },
-    {
-      "file_count": 15,
-      "name": "all_other_prior_reviewed_core_artifacts_unchanged",
-      "passed": true
-    },
-    {
-      "file_count": 9,
-      "name": "all_9_table_input_files_preserved",
-      "passed": true
-    },
-    {
-      "file_count": 23,
-      "name": "all_23_copied_evidence_files_preserved",
-      "passed": true
-    },
-    {
-      "checked_phrases": [
-        "They had also been examined in earlier local work",
-        "Their conclusions are exploratory",
-        "Verified fruit identities and per-record instrument serial identities are unavailable",
-        "not validated harvest decisions",
-        "not measured energy or latency",
-        "model finalization",
-        "tuning statistic",
-        "not generalization",
-        "No V4 later-season benchmark scoring"
+      "name": "both_main_inline_tables_preserve_numeric_cells",
+      "numeric_tokens_per_table": [
+        17,
+        9
       ],
-      "name": "scientific_limits_remain_in_unchanged_methods_and_finalization_sections",
       "passed": true
     },
     {
-      "name": "remaining_author_declarations_still_explicit_inputs",
-      "passed": true
-    },
-    {
-      "name": "main_pdf_author_order_and_email_present",
-      "passed": true
-    },
-    {
-      "name": "main_pdf_affiliations_and_correspondence_present",
-      "passed": true
-    },
-    {
-      "diagnostics": [],
-      "name": "main_latex_and_bibtex_logs_clean",
-      "passed": true
-    },
-    {
-      "name": "main_delivered_pdf_matches_compiled_pdf",
-      "passed": true
-    },
-    {
-      "name": "supplement_pdf_author_order_and_email_present",
-      "passed": true
-    },
-    {
-      "name": "supplement_pdf_affiliations_and_correspondence_present",
-      "passed": true
-    },
-    {
-      "diagnostics": [],
-      "name": "supplement_latex_and_bibtex_logs_clean",
-      "passed": true
-    },
-    {
-      "name": "supplement_delivered_pdf_matches_compiled_pdf",
-      "passed": true
-    },
-    {
-      "after": "data/code availability",
-      "before": "provenance inventory",
-      "name": "declarations_change_only_removed_inventory_label",
-      "passed": true
-    },
-    {
-      "max_table_width_mm": 135.7078067524561,
-      "min_table_width_mm": 84.33830480143905,
-      "name": "all_17_table_widths_fit_portrait_without_scaling",
+      "allowed_change": "Captions renamed; only data-row wording Final O -> Benchmark fit is normalized. All numerical cells, intervals, flags and headers otherwise identical.",
+      "name": "all_17_supplement_table_headers_and_data_preserved",
       "passed": true,
-      "portrait_text_width_mm": 174,
       "tables": [
         {
-          "columns": 5,
-          "table_roman": "i",
-          "width_mm": 85.76749149024491
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "78b38d478274e407418c04d9cdf8b43a4d67100e76321a7e9e745b9f14f2d60d",
+          "numeric_tokens_in_header_and_body": 37,
+          "rows": 4,
+          "table": "S1"
         },
         {
-          "columns": 10,
-          "table_roman": "ii",
-          "width_mm": 135.7078067524561
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "57463d69749b16c424c5bf193634f6d4dc7183c014b931908aab5e5239f9d08e",
+          "numeric_tokens_in_header_and_body": 1135,
+          "rows": 176,
+          "table": "S2"
         },
         {
-          "columns": 10,
-          "table_roman": "iii",
-          "width_mm": 134.85036432821363
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "6d4610995895e0d09c7ed82d0606ed69fbc46256975453e179a2733c4e8e5896",
+          "numeric_tokens_in_header_and_body": 868,
+          "rows": 176,
+          "table": "S3"
         },
         {
-          "columns": 8,
-          "table_roman": "iv",
-          "width_mm": 105.90998671647989
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "276ef14c3fd4bd70a63c7d42dd55b641f5047b8b793b7912c8ddd6727e78a1ed",
+          "numeric_tokens_in_header_and_body": 86,
+          "rows": 12,
+          "table": "S4"
         },
         {
-          "columns": 11,
-          "table_roman": "v",
-          "width_mm": 126.89813289054933
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "77b600732a1e4c6d0cd404c517862c4c8c2434e60f1521e7f87ee9820b32b05d",
+          "numeric_tokens_in_header_and_body": 430,
+          "rows": 48,
+          "table": "S5"
         },
         {
-          "columns": 13,
-          "table_roman": "vi",
-          "width_mm": 133.66675666251558
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "12d3a6822a8f324a060dcd9f1dde81e0a65f98b1bba838f2a2ffd6fb9d89ff8c",
+          "numeric_tokens_in_header_and_body": 736,
+          "rows": 72,
+          "table": "S6"
         },
         {
-          "columns": 7,
-          "table_roman": "vii",
-          "width_mm": 130.1438887781929
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "973c16aba8ffcfc919b5ef10a88c20f808e7242f124361bde7e42d20485f2da3",
+          "numeric_tokens_in_header_and_body": 154,
+          "rows": 12,
+          "table": "S7"
         },
         {
-          "columns": 12,
-          "table_roman": "viii",
-          "width_mm": 118.55637855264979
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "5a1e96309bce28df68ae3dc7ae1c741aa7b3e019f3be426ce2b12829580d2c90",
+          "numeric_tokens_in_header_and_body": 1010,
+          "rows": 144,
+          "table": "S8"
         },
         {
-          "columns": 9,
-          "table_roman": "ix",
-          "width_mm": 117.40781845855821
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "3723db809972da1dad20acbdb41d19789a9649cbbb9d373073017bf40169eb39",
+          "numeric_tokens_in_header_and_body": 1228,
+          "rows": 192,
+          "table": "S9"
         },
         {
-          "columns": 4,
-          "table_roman": "x",
-          "width_mm": 84.33830480143905
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "28c5655031fb2a5ad5256fa0498701b1282345c6fc4bda82629a97218e9f308d",
+          "numeric_tokens_in_header_and_body": 26,
+          "rows": 6,
+          "table": "S10"
         },
         {
-          "columns": 7,
-          "table_roman": "xi",
-          "width_mm": 117.75828714542689
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "124071200a4c65b45c088ab8ed51520b671d6ec207834e66cab437993aadc0aa",
+          "numeric_tokens_in_header_and_body": 146,
+          "rows": 12,
+          "table": "S11"
         },
         {
-          "columns": 6,
-          "table_roman": "xii",
-          "width_mm": 110.9033694479037
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "e69e6d7d9424c28e0b0e4d91643b88e91242fe4d23bacdd626811cceaabd630b",
+          "numeric_tokens_in_header_and_body": 674,
+          "rows": 84,
+          "table": "S12"
         },
         {
-          "columns": 11,
-          "table_roman": "xiii",
-          "width_mm": 116.01521522070014
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "f6664b0c43aa18c489ad3324602b8880eccde599cb45e7137551298be4568b66",
+          "numeric_tokens_in_header_and_body": 304,
+          "rows": 36,
+          "table": "S13"
         },
         {
-          "columns": 12,
-          "table_roman": "xiv",
-          "width_mm": 123.71013590701536
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "f17f4be5d5e8e46580f89ceb478ad77fb063aae8fe9b99bc67038a1d17c95186",
+          "numeric_tokens_in_header_and_body": 578,
+          "rows": 96,
+          "table": "S14"
         },
         {
-          "columns": 8,
-          "table_roman": "xv",
-          "width_mm": 109.48173914487339
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "aee9998af3dac6d9308c8d4cf97b08db0168ec6de734d75371078144feca7dc2",
+          "numeric_tokens_in_header_and_body": 532,
+          "rows": 96,
+          "table": "S15"
         },
         {
-          "columns": 7,
-          "table_roman": "xvi",
-          "width_mm": 91.02180852359207
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "0114c460a49de9df861d2fa0e166b33f6cf524e5dbbf9243d3a6640d45c938bd",
+          "numeric_tokens_in_header_and_body": 238,
+          "rows": 56,
+          "table": "S16"
         },
         {
-          "columns": 5,
-          "table_roman": "xvii",
-          "width_mm": 102.99737254739173
+          "headers_and_data_identical": true,
+          "normalized_body_sha256": "1fbf28710022ba6ab90d2b8272e859155ace055ea76e0c39c4faaec12b96dfc6",
+          "numeric_tokens_in_header_and_body": 137,
+          "rows": 15,
+          "table": "S17"
         }
       ]
     },
     {
-      "command_count": 51,
-      "name": "all_table_font_and_spacing_commands_unchanged",
+      "name": "all_1237_supplement_data_rows_retained",
+      "passed": true,
+      "rows": 1237
+    },
+    {
+      "count": 9,
+      "files": [
+        {
+          "path": "revisions/jnirs_submission_v6/compact_stopping.tex",
+          "sha256": "132084a929acf2302af760abe8002d41348d11864274b7eaeaa8d822aa7ee856",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/generated_diagnostics.tex",
+          "sha256": "399b9705636ad679cf63272f28735dfe81a01e20446e7a4e0eb27fc7a38f4bde",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/generated_fixed.tex",
+          "sha256": "da2f3dfbdd5b45b1acaf8f247eea6ce2b3db1e3a0a92bfee5d847b6f38f02aaa",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/generated_primary.tex",
+          "sha256": "1155c254d6f1adf8f8113ec09d49887501b6f244c688931b5f721ebef15089d0",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/generated_stopping.tex",
+          "sha256": "a8c9d535ae435192fa7c1c9c60e4cc7669fc47422d64dcbaf5d81958955ceab2",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/original_controls_table.tex",
+          "sha256": "aa1ac80355016da04e902abb99b1a13261e59fb77df18b3a2b2707e765414983",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/original_mechanism_table.tex",
+          "sha256": "393f9716d061b80a046569f524eff6e47d5508b9c85c3d4c4d7e28b058b4fe63",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/original_primary_table.tex",
+          "sha256": "63c8a15581ea1d18f175763dd1c915b5df8869b241fbbcc7301ec51ad6d92e67",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/original_uncertainty_table.tex",
+          "sha256": "58dd8d58a494a12d9c5f3c1b83782e3268d2c1a5914725c107882bf4b5949dfd",
+          "unchanged": true
+        }
+      ],
+      "name": "nine_table_input_files_byte_identical_to_baseline",
       "passed": true
     },
     {
-      "name": "supplement_all_pages_portrait",
-      "pages": 28,
+      "count": 23,
+      "files": [
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/manifest.json",
+          "sha256": "3e4d12be516888467b4702da0ae3117af998d8845af01f5fdf98690087f842ab",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/external_delta_sensitivity.csv",
+          "sha256": "92c9167bf2d8d0befc4735570532e984b7321bdcd9a7201df0469d01a7948cdf",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/external_group_metrics.csv",
+          "sha256": "486cc3c95601d8b91efe6f4f8a58916b32ff5c5098e0a25c7aa0f31482d1a5ec",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/external_led_usage.csv",
+          "sha256": "3d000345dfe48a31cb71ce4c484206859c916ba733e3842cc2d4cebbf1421a53",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/external_metrics.csv",
+          "sha256": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/external_one_step_diagnostics.csv",
+          "sha256": "ba3751ddb45b32f3b8ad49abff639d3d837c036668646c80f158714341989f6a",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/frozen_curves.csv",
+          "sha256": "b918d4401deacbbfa3fcd2559c1898b1c540d3ddbb54421225c3541db9e924ba",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/paired_examples.csv",
+          "sha256": "1d6a229b2b713b78b9ea2bd1e1f78aa828d07d56c20dcf47ccac6fcda42e30a4",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/reference_agreement_errors.csv",
+          "sha256": "04244da9de69169682f6e8195849058e0674395fc78375d6a24e01f01887527c",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/original/selected_bank_parts.csv",
+          "sha256": "5a0d77fcc9d745b33832b8c6f175834b5c93333ffee79c6c0352a700df62bd7f",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v2/endpoint_summary.csv",
+          "sha256": "1b52471fc98e3601b5a9bd285e65b50c9a929b328b898397aaf85b7611611486",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v2/paired_comparisons.csv",
+          "sha256": "fdcc3eb55d0f0ab5ef1725e4f47b77bc00809d52ee3b6678cfd375524bcba123",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v2/policy_metrics.csv",
+          "sha256": "f66fe5501bb060794408a287d26b57888356ad91e22bb2c9834b9fc269bdc0f0",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v2/predictor_metrics.csv",
+          "sha256": "06b8a810abe9f9f8c99ef1b115d1844c98aaa101013aea123e98b7244fb7e74f",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v2/threshold_curves.csv",
+          "sha256": "f672cee8dd2a59d158e2c7f04856d41a1f6f1837e2f174709e520d6d874040c7",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/comparisons.csv",
+          "sha256": "0eaa7cb7dc6526935e5329f30f0af44bda629255f5df8de9678ea1a3b42f39a3",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/design_composition.csv",
+          "sha256": "692a0e01aa571b4677e7e5ddd9d07dbde80eb3fead3ad9f27ce1a320a47864dd",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/design_orders.csv",
+          "sha256": "0df07b0902dbb06a34b16232d6e5f00591947127e4d0c3483a425208fc20d1f9",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/design_subsets.csv",
+          "sha256": "37c6da5ab166a37effa6ecc25e34b0d627acff9266341bd11f7f962d644b4210",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/metrics.csv",
+          "sha256": "b7fb6d2805e7169913bcdefdf5afcca05c5fc4548c705be120d4d32739cd6b41",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/selected_designs.csv",
+          "sha256": "54479aaca26d2d91d0a47e81051570f623c2e794a92a3ab937e11069a36e49ba",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/selection_stability.csv",
+          "sha256": "4476f62806503b480de69b58cc005ee678b7f05ca42dad203d77475e8384a023",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/evidence_tables/v3/threshold_curves.csv",
+          "sha256": "785391d608897c37d14436cdf0d6967726303e6d4ae14eb08e04921e03337351",
+          "unchanged": true
+        }
+      ],
+      "name": "23_copied_evidence_files_byte_identical_to_baseline",
       "passed": true
+    },
+    {
+      "count": 5,
+      "files": [
+        {
+          "path": "revisions/jnirs_submission_v6/figure_data/Figure_1_profiles.csv",
+          "sha256": "c8931e2fcb46f4a0ff5323bb283dfd5d8dcdd4e9d4841fa6560b9dd3d7d1d824",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/figure_data/Figure_2_curves.csv",
+          "sha256": "27164fc50743c06a58c66395f0607f0aecc91cf380a1453d324fe345b4225d5a",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/figure_data/Figure_2_operating_points.csv",
+          "sha256": "533ee5606c27de51570e9b39d61af8be1ad756c23cf953cc24a60479a94ffde7",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/figure_data/Figure_3_fixed_curves.csv",
+          "sha256": "8cfdeeed2148c9cec77d21a4ee83186ae439fc7664a7bdfbc7eb6ade21dc950b",
+          "unchanged": true
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/figure_data/Figure_4_contrasts.csv",
+          "sha256": "7c458e1f662ff732c96fc620227ca3e0ea3aaed605fb61e0f60b7f82fe245d1c",
+          "unchanged": true
+        }
+      ],
+      "name": "five_frozen_figure_csvs_byte_identical_to_baseline",
+      "passed": true
+    },
+    {
+      "groups": 33,
+      "keys": [
+        "saranwong2004",
+        "subedi2007",
+        "wendel2018",
+        "anderson2020",
+        "anderson2021local",
+        "andersondata2024",
+        "sun2020temperature",
+        "mishra2021transfer",
+        "mishra2023",
+        "mishra2021preprocessing",
+        "mishra2021synergy",
+        "walsh2024",
+        "walshthesis2024",
+        "yang2025",
+        "yang2026",
+        "ma2026",
+        "dirks2022",
+        "norgaard2000ipls",
+        "araujo2001spa",
+        "li2009cars",
+        "gutierrez2019",
+        "huang2015",
+        "shim2018",
+        "covert2023",
+        "valancius2024",
+        "jazbec2024",
+        "baarc2026",
+        "varma2006",
+        "roberts2017",
+        "roithnercatalog"
+      ],
+      "name": "main_citation_identity_order_and_groups_preserved",
+      "passed": true,
+      "unique_sources": 30
+    },
+    {
+      "groups": 5,
+      "keys": [
+        "andersondata2024",
+        "roithnercatalog",
+        "walsh2024",
+        "valancius2024"
+      ],
+      "name": "supplement_citation_identity_order_and_groups_preserved",
+      "passed": true,
+      "unique_sources": 4
+    },
+    {
+      "entry_count": 30,
+      "name": "all_30_bibliography_entries_byte_identical",
+      "passed": true,
+      "sha256": "fb5c70ba9fa2c9b0877869d0c88f3500e1d27f4b7b68bd5fd5e64f19f2fa21ea"
+    },
+    {
+      "main_references": 30,
+      "name": "compiled_citations_resolve_without_reference_padding",
+      "passed": true,
+      "supplement_references": 4
+    },
+    {
+      "files": [
+        "revisions/jnirs_submission_v6/author_details.tex",
+        "revisions/jnirs_submission_v6/declarations.tex",
+        "revisions/jnirs_submission_v6/sagej.cls",
+        "revisions/jnirs_submission_v6/sagev.bst",
+        "revisions/jnirs_submission_v6/jnirs_sagev.bst",
+        "revisions/jnirs_submission_v6/jnirs_review.sty"
+      ],
+      "name": "author_declarations_and_class_style_inputs_unchanged",
+      "passed": true
+    },
+    {
+      "files": [
+        {
+          "path": "revisions/jnirs_submission_v6/figures/Figure_1.pdf",
+          "sha256": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382"
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/figures/Figure_2.pdf",
+          "sha256": "3cabcf4893bb09aa555dad41758bb79fd0cb99dfe9fe8178429a9503bb6127de"
+        },
+        {
+          "path": "revisions/jnirs_submission_v6/figures/Figure_3.pdf",
+          "sha256": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e"
+        }
+      ],
+      "name": "figures_1_2_3_byte_identical",
+      "passed": true
+    },
+    {
+      "allowed_labels": [
+        "Original held S4 -> Benchmark season 4",
+        "Original held S5 -> Benchmark season 5"
+      ],
+      "name": "figure_4_extracted_text_changes_only_two_analysis_labels",
+      "passed": true
+    },
+    {
+      "name": "figure_2_plotting_code_unchanged",
+      "passed": true
+    },
+    {
+      "contrast_rows": 8,
+      "finite_interval_endpoints": 28,
+      "finite_scientific_values": 44,
+      "manual_review": "Reviewed the appended plotting loop: the frozen row order, delta fields, interval endpoints, signs, colors, missing-interval marker and comparability band are retained; only the two benchmark row labels change. Page/plot visual inspection is separate.",
+      "name": "figure_4_scientific_plot_values_and_logic_preserved",
+      "passed": true,
+      "point_estimates": 16
+    },
+    {
+      "guards": {
+        "disjoint_supervised_bank_design": true,
+        "final_model_has_no_independent_accuracy": true,
+        "final_selection_minimum_tuning_only": true,
+        "negative_adaptive_conclusion": true,
+        "no_assignment_of_fold_accuracy_to_final_model": true,
+        "no_dimensionality_reduction_claim": true,
+        "no_harvest_efficacy": true,
+        "no_new_diagnostic_later_season_scoring": true,
+        "post_benchmark_exploratory_motivation": true,
+        "previous_benchmark_exposure": true,
+        "scan_weighting_and_selection_scope": true,
+        "simulated_optics_not_physical_device": true,
+        "two_population_interval_limit": true,
+        "unequal_budget_confounding": true,
+        "unknown_fruit_identities": true
+      },
+      "manual_review": "Entire main and supplement diff reviewed against baseline. The final methodology replaces implementation chronology, while benchmark exposure, exploratory motivation and all interpretive boundaries remain explicit. No scientific contradiction found.",
+      "name": "all_15_scientific_scope_and_interpretation_guards_retained",
+      "passed": true
+    },
+    {
+      "name": "official_dataset_version_3_and_doi_retained",
+      "note": "Official dataset versions are factual source metadata, not internal manuscript revision labels; version-4 availability context in the main manuscript also remains unchanged.",
+      "passed": true
+    },
+    {
+      "name": "model_distribution_statement_distinguishes_public_repository",
+      "note": "Repository distribution was verified separately by the parent; this audit checks the manuscript wording. The manuscript source ZIP is not described as containing frozen models.",
+      "passed": true
+    },
+    {
+      "delivery_matches_compiled_pdf": true,
+      "document": "main",
+      "log_diagnostics": [],
+      "name": "main_compiled_pdf_current_clean_and_delivery_identical",
+      "pages": 16,
+      "passed": true,
+      "sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc",
+      "source_dependencies_current": true,
+      "text_characters": 66692
+    },
+    {
+      "matches": [],
+      "name": "main_no_internal_revision_labels_rendered",
+      "passed": true
+    },
+    {
+      "name": "main_no_unresolved_citations_or_publisher_placeholders",
+      "passed": true
+    },
+    {
+      "delivery_matches_compiled_pdf": true,
+      "document": "supplement",
+      "log_diagnostics": [],
+      "name": "supplement_compiled_pdf_current_clean_and_delivery_identical",
+      "pages": 28,
+      "passed": true,
+      "sha256": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f",
+      "source_dependencies_current": true,
+      "text_characters": 173136
+    },
+    {
+      "matches": [],
+      "name": "supplement_no_internal_revision_labels_rendered",
+      "passed": true
+    },
+    {
+      "name": "supplement_no_unresolved_citations_or_publisher_placeholders",
+      "passed": true
+    },
+    {
+      "name": "historical_reviews_preserved_by_committed_reference",
+      "note": "Earlier audits are retained in Git at 4424f53; they are not recursively copied or relabeled as current checks.",
+      "passed": true,
+      "references": [
+        {
+          "commit": "4424f53182d6fc6c87e82da0a1578d4944fa5833",
+          "git_blob": "9a166c4ca19dfa6899d06a4434f86b4a43287ea7",
+          "path": "revisions/jnirs_submission_v6/results/independent_content_review.json",
+          "sha256": "f9595dfb0221ceff0cfc4fc5e3ee4c67bf0abf120f88eae5a294b214df6e8161"
+        },
+        {
+          "commit": "4424f53182d6fc6c87e82da0a1578d4944fa5833",
+          "git_blob": "8cd67f71d33cb661688565960c3cc29dcbf28d21",
+          "path": "revisions/jnirs_submission_v6/content_review.md",
+          "sha256": "bb6076b2076cd44054a56addcf8c3de4bafdc1f4613b28757cf0c19faed59944"
+        }
+      ]
     }
   ],
   "core_sha256": {
-    "revisions/dataset_paper_v5/manuscript/main.tex": "e9a2363365e75ff392a279854e613e5bd56afaa64d1c85b6a88245e3a586f6e0",
-    "revisions/dataset_paper_v5/manuscript/references.bib": "6a5894f81787f368538c5c368484f49fa3dae13b4e44249eb61626062c9d3244",
-    "revisions/dataset_paper_v5/manuscript/supplement.tex": "69d8bb1b6d23f65256d084b7a12225b8bf17bb2742d11cc8af234b712cda0a17",
-    "revisions/dataset_paper_v5/results/supplement_numeric_verification.json": "5d30b1ca90462f3db6457ac568f999103b18b66abd4235c915c3b41ac8b63ec3",
-    "revisions/dataset_paper_v5/results/verification.json": "0c4ead1480707b6e698b71266ce5a0aafc93de130ef97c6e4b9486e02f22d955",
     "revisions/jnirs_submission_v6/author_details.tex": "f49319cd0caa8c59ca85c7fa42d6a19d0d3340b4925ec679087483f8ce7e0d1c",
+    "revisions/jnirs_submission_v6/compact_stopping.tex": "132084a929acf2302af760abe8002d41348d11864274b7eaeaa8d822aa7ee856",
     "revisions/jnirs_submission_v6/declarations.tex": "e603aea5554cd194c9d58b9262e4d7cbd10af797242fb35eb290b9a7da276138",
+    "revisions/jnirs_submission_v6/figure_data/Figure_1_profiles.csv": "c8931e2fcb46f4a0ff5323bb283dfd5d8dcdd4e9d4841fa6560b9dd3d7d1d824",
+    "revisions/jnirs_submission_v6/figure_data/Figure_2_curves.csv": "27164fc50743c06a58c66395f0607f0aecc91cf380a1453d324fe345b4225d5a",
+    "revisions/jnirs_submission_v6/figure_data/Figure_2_operating_points.csv": "533ee5606c27de51570e9b39d61af8be1ad756c23cf953cc24a60479a94ffde7",
+    "revisions/jnirs_submission_v6/figure_data/Figure_3_fixed_curves.csv": "8cfdeeed2148c9cec77d21a4ee83186ae439fc7664a7bdfbc7eb6ade21dc950b",
+    "revisions/jnirs_submission_v6/figure_data/Figure_4_contrasts.csv": "7c458e1f662ff732c96fc620227ca3e0ea3aaed605fb61e0f60b7f82fe245d1c",
     "revisions/jnirs_submission_v6/figures/Figure_1.pdf": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382",
     "revisions/jnirs_submission_v6/figures/Figure_2.pdf": "3cabcf4893bb09aa555dad41758bb79fd0cb99dfe9fe8178429a9503bb6127de",
     "revisions/jnirs_submission_v6/figures/Figure_3.pdf": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e",
-    "revisions/jnirs_submission_v6/figures/Figure_4.pdf": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
+    "revisions/jnirs_submission_v6/figures/Figure_4.pdf": "e3b237204fb35a588dc25f8b6e44479fc6e21240c508f43671ea9c93020a95b1",
+    "revisions/jnirs_submission_v6/generated_diagnostics.tex": "399b9705636ad679cf63272f28735dfe81a01e20446e7a4e0eb27fc7a38f4bde",
+    "revisions/jnirs_submission_v6/generated_fixed.tex": "da2f3dfbdd5b45b1acaf8f247eea6ce2b3db1e3a0a92bfee5d847b6f38f02aaa",
+    "revisions/jnirs_submission_v6/generated_primary.tex": "1155c254d6f1adf8f8113ec09d49887501b6f244c688931b5f721ebef15089d0",
+    "revisions/jnirs_submission_v6/generated_stopping.tex": "a8c9d535ae435192fa7c1c9c60e4cc7669fc47422d64dcbaf5d81958955ceab2",
     "revisions/jnirs_submission_v6/jnirs_review.sty": "7e1b1afa30a8fabb01ae75234d29905d040c352e41bc6875ccc6123092820b33",
     "revisions/jnirs_submission_v6/jnirs_sagev.bst": "d9b05dcfe69e09dca9ddb6229c8939dfb1be25c9d57372da0c2aa5901368d611",
     "revisions/jnirs_submission_v6/main.bbl": "154ed08acdaf1debd231fd291ff9d7616b8c905958063ee432f99dc92c0ab9d0",
-    "revisions/jnirs_submission_v6/main.pdf": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
-    "revisions/jnirs_submission_v6/main.tex": "2ee20757920522f62b19fa1b56ae9edab8ec7fd7330f74aec00a629ec2ed30e0",
-    "revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Manuscript.pdf": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
-    "revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Supplement.pdf": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
-    "revisions/jnirs_submission_v6/prepare_figures.py": "262620a54676c13cb0f92bef4e00c0ac1693413622a54986529e4b1a122360a9",
+    "revisions/jnirs_submission_v6/main.pdf": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc",
+    "revisions/jnirs_submission_v6/main.tex": "7437e068aebcc85857b0bdd880ed26d600e730170a1917cd080fefe34039c8a5",
+    "revisions/jnirs_submission_v6/original_controls_table.tex": "aa1ac80355016da04e902abb99b1a13261e59fb77df18b3a2b2707e765414983",
+    "revisions/jnirs_submission_v6/original_mechanism_table.tex": "393f9716d061b80a046569f524eff6e47d5508b9c85c3d4c4d7e28b058b4fe63",
+    "revisions/jnirs_submission_v6/original_primary_table.tex": "63c8a15581ea1d18f175763dd1c915b5df8869b241fbbcc7301ec51ad6d92e67",
+    "revisions/jnirs_submission_v6/original_uncertainty_table.tex": "58dd8d58a494a12d9c5f3c1b83782e3268d2c1a5914725c107882bf4b5949dfd",
+    "revisions/jnirs_submission_v6/prepare_figures.py": "6fcde2986a6d4a5a08b3bd3ba4d9d3ababe146a55bc0cf78d5de62692c6e95a2",
     "revisions/jnirs_submission_v6/references.bib": "fb5c70ba9fa2c9b0877869d0c88f3500e1d27f4b7b68bd5fd5e64f19f2fa21ea",
+    "revisions/jnirs_submission_v6/sagej.cls": "4e736e371937216f5d1ef4470c2357c844755e0ebbade8888f0b94b8a17c9793",
+    "revisions/jnirs_submission_v6/sagev.bst": "113da1cae672949bb2e496e095507e3897a7e20206ac7186e0870b9ee63abfaa",
     "revisions/jnirs_submission_v6/supplement.bbl": "17eb0016a410251b69a3ce0e0a295be58a8fe683767deb7312e08f4e11800032",
-    "revisions/jnirs_submission_v6/supplement.pdf": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
-    "revisions/jnirs_submission_v6/supplement.tex": "ba7cf225c1887d4eaa73cbc37061a72a841c77032fbb9e29a565c57d51e95be7"
+    "revisions/jnirs_submission_v6/supplement.pdf": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f",
+    "revisions/jnirs_submission_v6/supplement.tex": "b59516eabd7fd59b96235fb3d2c3fa7e680c34a0346ec6e64a24648a259e2057"
   },
   "earlier_artifacts_modified": false,
   "failed_checks": [],
-  "historical_author_editorial_review": {
-    "original_report_sha256": "730f5b21e89e509490a1a347182378d3c64c1986d529b80de0aa60bc57a4f956",
-    "report": {
-      "accepted_changes": [
-        "Four author names, order, affiliation indices, three affiliations and corresponding author contact supplied by user; LaTeX escaping normalized without changing facts.",
-        "Shared author macros update both manuscript and supplement; supplement title and contents formatting adjusted.",
-        "Final supplement inventory replaced by a brief data/code availability and missing-value statement; scientific sections and all 17 tables retained.",
-        "Actual released repository URL replaces an obsolete software-access placeholder.",
-        "Supplemental-material description in declarations.tex changes only provenance inventory to data/code availability, matching the shortened supplement.",
-        "Layout-only supplement restructuring: remove forced page breaks and landscape environments; all table blocks, fonts and spacing remain unchanged.",
-        "A Needspace guard outside S17 keeps its short 15-row finalization table together; the package import supports that layout guard.",
-        "Remove the main manuscript pre-bibliography clearpage without changing its text."
-      ],
-      "audit_date_utc": "2026-11-26T10:45:13.125779+00:00",
-      "audit_kind": "independent author-metadata and supplement-editorial-update preservation review",
-      "base_commit": "16bb146dc7431e97fe6d5521beeb3bc8890a852e",
-      "check_count": 30,
-      "checks": [
-        {
-          "name": "user_supplied_AuthorNames_exact",
-          "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
-          "passed": true
-        },
-        {
-          "name": "user_supplied_AuthorAffiliations_exact",
-          "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
-          "passed": true
-        },
-        {
-          "name": "user_supplied_CorrespondingAuthor_exact",
-          "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
-          "passed": true
-        },
-        {
-          "name": "user_supplied_CorrespondingEmail_exact",
-          "normalization": "Only malformed LaTeX syntax corrected: leading command slash, plain star and plain email at sign.",
-          "passed": true
-        },
-        {
-          "name": "shared_author_macros_used_by_main_and_supplement",
-          "passed": true
-        },
-        {
-          "name": "supplement_displays_affiliations_and_correspondence",
-          "passed": true
-        },
-        {
-          "name": "main_source_equal_to_release_except_prebibliography_page_break",
-          "passed": true
-        },
-        {
-          "name": "supplement_scientific_sections_equal_to_release_after_layout_only_normalization",
-          "normalization": [
-            "Remove clearpage and begin/end landscape commands",
-            "Remove the explicit Needspace 24 baselineskip guard",
-            "Collapse whitespace"
-          ],
-          "normalized_sha256": "f0ba6a7d35ca07862dbbb6bc150b3bb35b9115b05c08df21c52b8e708eb180fe",
-          "passed": true,
-          "section_count": 7
-        },
-        {
-          "name": "supplement_scientific_sections_equal_to_v5_except_layout_and_four_prior_citation_punctuation_moves",
-          "normalized_sha256": "732531a13dafbeee630e5218138c8b830a07b444f56e69172de1eb8d2002fb48",
-          "passed": true
-        },
-        {
-          "name": "all_17_supplement_tables_byte_identical_to_release_and_v5",
-          "passed": true,
-          "table_count": 17,
-          "table_sha256": [
-            "0f1b1e64af068c63746193a4d88b3760ed5932638a4fa1bf9684fd5d0da6164a",
-            "0a3203e2c08544e1c2ed8fcdc069c7472a84ad6884eb58db33168c2bc59b7e8a",
-            "970fe0f1d4368c1172e7a70478c42e7b3d68125331f563fa0892d9c8d9d7f884",
-            "8b06e4d353a2a493dc007a6661145bcc3885d8a53fded560fa6cae3136172294",
-            "923c9f0f5bb718c08ac4dbbcc8d1b840b4a27674bbb37b93d0b2883a9495a728",
-            "84c296e96a869a9126568af733d4be127c97052ec941f7b4fd641965112ba467",
-            "8652740d80665f7766dc60ef06062c292425b6be657a3dc503919895a7e993e3",
-            "a738dde92eceea1b8c506a8f09b4315907146357c67b028024e6d13db05a6472",
-            "89ed6c0b644fd7b9a19589da8f5a9070ede101962c198d7924d5f3dd2a4da5b8",
-            "eb43c2d71239f3f5eb81a3da1d86231a93e9978bff0c4d1559a56894eb5bd49a",
-            "2edf94c2c8b178aa5e765f1f5ba1edb52cadd8483e3f64677c76e14c930444d8",
-            "11476cc623f64f415fb016d77efe7f2879544733ed357fc6938a80e232f64627",
-            "c7764ff6d9eba1d43da3b107d44ade76018c94f108e33a5b8a83af971cbfc996",
-            "4372e36a27a805d06a745743cd3214a6596681f034d6696419a06c5c42339215",
-            "141ec095bc5908320a70c21300ef429bcc8b98833ec7d7b8b6196556791abba2",
-            "82c297ef6d0ee48fe0322881601c3681c637ca2fa890170a2dc4fc941ebad563",
-            "e76bc97a05bdd073402d4372679a024349d0d858db355d07810574f6ed1d5eca"
-          ]
-        },
-        {
-          "name": "supplement_scientific_numeric_sequence_unchanged",
-          "note": "Scientific sections only; removed workflow inventory and layout-only Needspace guard excluded.",
-          "passed": true,
-          "token_count": 8654
-        },
-        {
-          "name": "old_inventory_heading_and_workflow_subsections_removed",
-          "passed": true
-        },
-        {
-          "name": "replacement_is_short_data_code_and_missing_value_statement",
-          "passed": true,
-          "whitespace_word_count": 54
-        },
-        {
-          "name": "public_repository_address_in_author_statement_and_supplement",
-          "note": "Checks the release URL carried into both documents; live public-access verification is outside this editorial audit.",
-          "passed": true
-        },
-        {
-          "citation_groups": 5,
-          "name": "original_four_supplement_citation_groups_preserved_with_one_dataset_repetition",
-          "passed": true,
-          "unique_keys": 4
-        },
-        {
-          "name": "30_source_bibliography_byte_identical_to_reviewed_release",
-          "passed": true
-        },
-        {
-          "file_count": 15,
-          "name": "all_other_prior_reviewed_core_artifacts_unchanged",
-          "passed": true
-        },
-        {
-          "file_count": 9,
-          "name": "all_9_table_input_files_preserved",
-          "passed": true
-        },
-        {
-          "file_count": 23,
-          "name": "all_23_copied_evidence_files_preserved",
-          "passed": true
-        },
-        {
-          "checked_phrases": [
-            "They had also been examined in earlier local work",
-            "Their conclusions are exploratory",
-            "Verified fruit identities and per-record instrument serial identities are unavailable",
-            "not validated harvest decisions",
-            "not measured energy or latency",
-            "model finalization",
-            "tuning statistic",
-            "not generalization",
-            "No V4 later-season benchmark scoring"
-          ],
-          "name": "scientific_limits_remain_in_unchanged_methods_and_finalization_sections",
-          "passed": true
-        },
-        {
-          "name": "remaining_author_declarations_still_explicit_inputs",
-          "passed": true
-        },
-        {
-          "name": "main_pdf_author_order_and_email_present",
-          "passed": true
-        },
-        {
-          "name": "main_pdf_affiliations_and_correspondence_present",
-          "passed": true
-        },
-        {
-          "diagnostics": [],
-          "name": "main_latex_and_bibtex_logs_clean",
-          "passed": true
-        },
-        {
-          "name": "main_delivered_pdf_matches_compiled_pdf",
-          "passed": true
-        },
-        {
-          "name": "supplement_pdf_author_order_and_email_present",
-          "passed": true
-        },
-        {
-          "name": "supplement_pdf_affiliations_and_correspondence_present",
-          "passed": true
-        },
-        {
-          "diagnostics": [],
-          "name": "supplement_latex_and_bibtex_logs_clean",
-          "passed": true
-        },
-        {
-          "name": "supplement_delivered_pdf_matches_compiled_pdf",
-          "passed": true
-        },
-        {
-          "after": "data/code availability",
-          "before": "provenance inventory",
-          "name": "declarations_change_only_removed_inventory_label",
-          "passed": true
-        },
-        {
-          "max_table_width_mm": 135.7078067524561,
-          "min_table_width_mm": 84.33830480143905,
-          "name": "all_17_table_widths_fit_portrait_without_scaling",
-          "passed": true,
-          "portrait_text_width_mm": 174,
-          "tables": [
-            {
-              "columns": 5,
-              "table_roman": "i",
-              "width_mm": 85.76749149024491
-            },
-            {
-              "columns": 10,
-              "table_roman": "ii",
-              "width_mm": 135.7078067524561
-            },
-            {
-              "columns": 10,
-              "table_roman": "iii",
-              "width_mm": 134.85036432821363
-            },
-            {
-              "columns": 8,
-              "table_roman": "iv",
-              "width_mm": 105.90998671647989
-            },
-            {
-              "columns": 11,
-              "table_roman": "v",
-              "width_mm": 126.89813289054933
-            },
-            {
-              "columns": 13,
-              "table_roman": "vi",
-              "width_mm": 133.66675666251558
-            },
-            {
-              "columns": 7,
-              "table_roman": "vii",
-              "width_mm": 130.1438887781929
-            },
-            {
-              "columns": 12,
-              "table_roman": "viii",
-              "width_mm": 118.55637855264979
-            },
-            {
-              "columns": 9,
-              "table_roman": "ix",
-              "width_mm": 117.40781845855821
-            },
-            {
-              "columns": 4,
-              "table_roman": "x",
-              "width_mm": 84.33830480143905
-            },
-            {
-              "columns": 7,
-              "table_roman": "xi",
-              "width_mm": 117.75828714542689
-            },
-            {
-              "columns": 6,
-              "table_roman": "xii",
-              "width_mm": 110.9033694479037
-            },
-            {
-              "columns": 11,
-              "table_roman": "xiii",
-              "width_mm": 116.01521522070014
-            },
-            {
-              "columns": 12,
-              "table_roman": "xiv",
-              "width_mm": 123.71013590701536
-            },
-            {
-              "columns": 8,
-              "table_roman": "xv",
-              "width_mm": 109.48173914487339
-            },
-            {
-              "columns": 7,
-              "table_roman": "xvi",
-              "width_mm": 91.02180852359207
-            },
-            {
-              "columns": 5,
-              "table_roman": "xvii",
-              "width_mm": 102.99737254739173
-            }
-          ]
-        },
-        {
-          "command_count": 51,
-          "name": "all_table_font_and_spacing_commands_unchanged",
-          "passed": true
-        },
-        {
-          "name": "supplement_all_pages_portrait",
-          "pages": 28,
-          "passed": true
-        }
-      ],
-      "core_sha256": {
-        "revisions/dataset_paper_v5/manuscript/main.tex": "e9a2363365e75ff392a279854e613e5bd56afaa64d1c85b6a88245e3a586f6e0",
-        "revisions/dataset_paper_v5/manuscript/references.bib": "6a5894f81787f368538c5c368484f49fa3dae13b4e44249eb61626062c9d3244",
-        "revisions/dataset_paper_v5/manuscript/supplement.tex": "69d8bb1b6d23f65256d084b7a12225b8bf17bb2742d11cc8af234b712cda0a17",
-        "revisions/dataset_paper_v5/results/supplement_numeric_verification.json": "5d30b1ca90462f3db6457ac568f999103b18b66abd4235c915c3b41ac8b63ec3",
-        "revisions/dataset_paper_v5/results/verification.json": "0c4ead1480707b6e698b71266ce5a0aafc93de130ef97c6e4b9486e02f22d955",
-        "revisions/jnirs_submission_v6/author_details.tex": "f49319cd0caa8c59ca85c7fa42d6a19d0d3340b4925ec679087483f8ce7e0d1c",
-        "revisions/jnirs_submission_v6/declarations.tex": "e603aea5554cd194c9d58b9262e4d7cbd10af797242fb35eb290b9a7da276138",
-        "revisions/jnirs_submission_v6/figures/Figure_1.pdf": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382",
-        "revisions/jnirs_submission_v6/figures/Figure_2.pdf": "3cabcf4893bb09aa555dad41758bb79fd0cb99dfe9fe8178429a9503bb6127de",
-        "revisions/jnirs_submission_v6/figures/Figure_3.pdf": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e",
-        "revisions/jnirs_submission_v6/figures/Figure_4.pdf": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
-        "revisions/jnirs_submission_v6/jnirs_review.sty": "7e1b1afa30a8fabb01ae75234d29905d040c352e41bc6875ccc6123092820b33",
-        "revisions/jnirs_submission_v6/jnirs_sagev.bst": "d9b05dcfe69e09dca9ddb6229c8939dfb1be25c9d57372da0c2aa5901368d611",
-        "revisions/jnirs_submission_v6/main.bbl": "154ed08acdaf1debd231fd291ff9d7616b8c905958063ee432f99dc92c0ab9d0",
-        "revisions/jnirs_submission_v6/main.pdf": "f40d9defd5d7e1d951bb517c6cbf6dd71961e0406f62e9a3b67e7ce2b52c3027",
-        "revisions/jnirs_submission_v6/main.tex": "17fe77981ef250897b26077ac976561c72aed54326a9c6948f87a805509da006",
-        "revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Manuscript.pdf": "f40d9defd5d7e1d951bb517c6cbf6dd71961e0406f62e9a3b67e7ce2b52c3027",
-        "revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Supplement.pdf": "fcc1f19303f34eab638c6a3843248709c81ca83226079571fee15743d9e4df4e",
-        "revisions/jnirs_submission_v6/prepare_figures.py": "262620a54676c13cb0f92bef4e00c0ac1693413622a54986529e4b1a122360a9",
-        "revisions/jnirs_submission_v6/references.bib": "fb5c70ba9fa2c9b0877869d0c88f3500e1d27f4b7b68bd5fd5e64f19f2fa21ea",
-        "revisions/jnirs_submission_v6/supplement.bbl": "17eb0016a410251b69a3ce0e0a295be58a8fe683767deb7312e08f4e11800032",
-        "revisions/jnirs_submission_v6/supplement.pdf": "fcc1f19303f34eab638c6a3843248709c81ca83226079571fee15743d9e4df4e",
-        "revisions/jnirs_submission_v6/supplement.tex": "c095ba32259a43879410f3978c662c207981058c635cdc7e65d5d2bab7337e34"
-      },
-      "earlier_artifacts_modified": false,
-      "failed_checks": [],
-      "limits": [
-        "This is an editorial preservation audit, not new scientific validation or renewed raw-data analysis.",
-        "The historical 33-check conversion review is retained as prior evidence; it has not been relabeled as a current full rerun.",
-        "Full page-by-page visual inspection is tracked separately by the parent reviewer.",
-        "Author names/contact information are taken exactly from user instructions; institutional status and affiliations were not independently researched.",
-        "Contribution, funding, conflicts, acknowledgement and human-review statements still need author completion.",
-        "No submission or acceptance claim is made."
-      ],
-      "new_model_fitting": false,
-      "passed_checks": 30,
-      "pdf_outputs": [
-        {
-          "bibtex_log_checked": true,
-          "document": "main",
-          "log_diagnostics": [],
-          "pages": 16,
-          "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
-          "text_characters": 57949
-        },
-        {
-          "bibtex_log_checked": true,
-          "document": "supplement",
-          "log_diagnostics": [],
-          "pages": 28,
-          "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
-          "text_characters": 101973
-        }
-      ],
-      "raw_dataset_access": false,
-      "status": "PASS"
+  "historical_review_references": [
+    {
+      "commit": "4424f53182d6fc6c87e82da0a1578d4944fa5833",
+      "git_blob": "9a166c4ca19dfa6899d06a4434f86b4a43287ea7",
+      "path": "revisions/jnirs_submission_v6/results/independent_content_review.json",
+      "sha256": "f9595dfb0221ceff0cfc4fc5e3ee4c67bf0abf120f88eae5a294b214df6e8161"
     },
-    "scope": "Prior 30-check author/contact and inventory-trim review, before the separately authorized layout optimization. Its 51-page supplement hash is historical."
-  },
-  "historical_conversion_review": {
-    "original_markdown_sha256": "8c67db135236c2a64b8dbb6274c66d63d4474e9d957557283190b53b589480c5",
-    "original_report_sha256": "08df970003393c246d9edc1140940793c6e63047c7019530658f1e7e925fc02a",
-    "report": {
-      "accepted_changes": [
-        "SAGE class/review layout and title/declaration macros",
-        "Paragraph headings promoted to subsubsections",
-        "Verified narrative author strings plus identical numeric citation keys; citation punctuation moved",
-        "RMSEP and PLS expanded in abstract",
-        "Figure path renaming; Figure 2 line/marker restyling from preserved results",
-        "Clarification that the research workspace retains model/app/CLI artifacts and the manuscript-source archive contains reporting materials",
-        "Verified journal abbreviations, two author parsing fixes, explicit dataset repository/type and arXiv archive field",
-        "Local bibliography style derivative emits missing conference years; original vendor files preserved",
-        "shim2018 absent pages completed as 1368--1378 from official NeurIPS metadata; one trailing bibliography blank line removed"
-      ],
-      "audit_date_utc": "2026-11-26T09:24:58.721890Z",
-      "audit_kind": "independent v5-to-v6 scientific-content and numeric preservation review",
-      "check_count": 33,
-      "checks": [
-        {
-          "actual_sha256": "f0965b43160e4a6e73b10caea2d1b7b8bf49d45c4a8d49293856a13728c62524",
-          "expected_sha256": "f0965b43160e4a6e73b10caea2d1b7b8bf49d45c4a8d49293856a13728c62524",
-          "name": "complete_main_scientific_body_equal_after_enumerated_editorial_changes",
-          "normalized_words": 5454,
-          "passed": true
-        },
-        {
-          "name": "abstract_equal_except_two_abbreviation_expansions",
-          "passed": true
-        },
-        {
-          "actual_sha256": "62bb132a1ea389dab9d42c255c98a1f55d74fdc186b03c6c92c7f3aada452534",
-          "expected_sha256": "62bb132a1ea389dab9d42c255c98a1f55d74fdc186b03c6c92c7f3aada452534",
-          "name": "complete_supplement_scientific_body_equal_after_citation_punctuation",
-          "normalized_words": 31423,
-          "passed": true
-        },
-        {
-          "name": "abstract_numeric_token_sequence_unchanged",
-          "note": "Includes numeric literals in prose, equations, inline tables and TeX formatting; citation keys and figure filenames excluded.",
-          "passed": true,
-          "token_count": 27
-        },
-        {
-          "name": "main_scientific_body_numeric_token_sequence_unchanged",
-          "note": "Includes numeric literals in prose, equations, inline tables and TeX formatting; citation keys and figure filenames excluded.",
-          "passed": true,
-          "token_count": 259
-        },
-        {
-          "name": "supplement_scientific_body_numeric_token_sequence_unchanged",
-          "note": "Includes numeric literals in prose, equations, inline tables and TeX formatting; citation keys and figure filenames excluded.",
-          "passed": true,
-          "token_count": 8829
-        },
-        {
-          "name": "main_all_inline_table_blocks_byte_identical",
-          "passed": true,
-          "table_count": 2,
-          "table_sha256": [
-            "0b49e9ce3e796975278e887f079c52481b9185fb3b63d410ce1698acdc812fc4",
-            "61343986b767b1e23680ce17ef51c06b3c531519ae4c0afc67a884fe4480b84f"
-          ]
-        },
-        {
-          "citation_groups": 33,
-          "name": "main_citation_key_sequence_identical",
-          "passed": true,
-          "unique_keys": 30
-        },
-        {
-          "name": "supplement_all_inline_table_blocks_byte_identical",
-          "passed": true,
-          "table_count": 17,
-          "table_sha256": [
-            "0f1b1e64af068c63746193a4d88b3760ed5932638a4fa1bf9684fd5d0da6164a",
-            "0a3203e2c08544e1c2ed8fcdc069c7472a84ad6884eb58db33168c2bc59b7e8a",
-            "970fe0f1d4368c1172e7a70478c42e7b3d68125331f563fa0892d9c8d9d7f884",
-            "8b06e4d353a2a493dc007a6661145bcc3885d8a53fded560fa6cae3136172294",
-            "923c9f0f5bb718c08ac4dbbcc8d1b840b4a27674bbb37b93d0b2883a9495a728",
-            "84c296e96a869a9126568af733d4be127c97052ec941f7b4fd641965112ba467",
-            "8652740d80665f7766dc60ef06062c292425b6be657a3dc503919895a7e993e3",
-            "a738dde92eceea1b8c506a8f09b4315907146357c67b028024e6d13db05a6472",
-            "89ed6c0b644fd7b9a19589da8f5a9070ede101962c198d7924d5f3dd2a4da5b8",
-            "eb43c2d71239f3f5eb81a3da1d86231a93e9978bff0c4d1559a56894eb5bd49a",
-            "2edf94c2c8b178aa5e765f1f5ba1edb52cadd8483e3f64677c76e14c930444d8",
-            "11476cc623f64f415fb016d77efe7f2879544733ed357fc6938a80e232f64627",
-            "c7764ff6d9eba1d43da3b107d44ade76018c94f108e33a5b8a83af971cbfc996",
-            "4372e36a27a805d06a745743cd3214a6596681f034d6696419a06c5c42339215",
-            "141ec095bc5908320a70c21300ef429bcc8b98833ec7d7b8b6196556791abba2",
-            "82c297ef6d0ee48fe0322881601c3681c637ca2fa890170a2dc4fc941ebad563",
-            "e76bc97a05bdd073402d4372679a024349d0d858db355d07810574f6ed1d5eca"
-          ]
-        },
-        {
-          "citation_groups": 4,
-          "name": "supplement_citation_key_sequence_identical",
-          "passed": true,
-          "unique_keys": 4
-        },
-        {
-          "count": 9,
-          "files": [
-            {
-              "file": "compact_stopping.tex",
-              "sha256": "132084a929acf2302af760abe8002d41348d11864274b7eaeaa8d822aa7ee856",
-              "unchanged": true
-            },
-            {
-              "file": "generated_diagnostics.tex",
-              "sha256": "399b9705636ad679cf63272f28735dfe81a01e20446e7a4e0eb27fc7a38f4bde",
-              "unchanged": true
-            },
-            {
-              "file": "generated_fixed.tex",
-              "sha256": "da2f3dfbdd5b45b1acaf8f247eea6ce2b3db1e3a0a92bfee5d847b6f38f02aaa",
-              "unchanged": true
-            },
-            {
-              "file": "generated_primary.tex",
-              "sha256": "1155c254d6f1adf8f8113ec09d49887501b6f244c688931b5f721ebef15089d0",
-              "unchanged": true
-            },
-            {
-              "file": "generated_stopping.tex",
-              "sha256": "a8c9d535ae435192fa7c1c9c60e4cc7669fc47422d64dcbaf5d81958955ceab2",
-              "unchanged": true
-            },
-            {
-              "file": "original_controls_table.tex",
-              "sha256": "aa1ac80355016da04e902abb99b1a13261e59fb77df18b3a2b2707e765414983",
-              "unchanged": true
-            },
-            {
-              "file": "original_mechanism_table.tex",
-              "sha256": "393f9716d061b80a046569f524eff6e47d5508b9c85c3d4c4d7e28b058b4fe63",
-              "unchanged": true
-            },
-            {
-              "file": "original_primary_table.tex",
-              "sha256": "63c8a15581ea1d18f175763dd1c915b5df8869b241fbbcc7301ec51ad6d92e67",
-              "unchanged": true
-            },
-            {
-              "file": "original_uncertainty_table.tex",
-              "sha256": "58dd8d58a494a12d9c5f3c1b83782e3268d2c1a5914725c107882bf4b5949dfd",
-              "unchanged": true
-            }
-          ],
-          "name": "all_copied_table_input_files_byte_identical",
-          "passed": true
-        },
-        {
-          "count": 23,
-          "files": [
-            {
-              "file": "evidence_tables/manifest.json",
-              "sha256": "3e4d12be516888467b4702da0ae3117af998d8845af01f5fdf98690087f842ab",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/external_delta_sensitivity.csv",
-              "sha256": "92c9167bf2d8d0befc4735570532e984b7321bdcd9a7201df0469d01a7948cdf",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/external_group_metrics.csv",
-              "sha256": "486cc3c95601d8b91efe6f4f8a58916b32ff5c5098e0a25c7aa0f31482d1a5ec",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/external_led_usage.csv",
-              "sha256": "3d000345dfe48a31cb71ce4c484206859c916ba733e3842cc2d4cebbf1421a53",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/external_metrics.csv",
-              "sha256": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/external_one_step_diagnostics.csv",
-              "sha256": "ba3751ddb45b32f3b8ad49abff639d3d837c036668646c80f158714341989f6a",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/frozen_curves.csv",
-              "sha256": "b918d4401deacbbfa3fcd2559c1898b1c540d3ddbb54421225c3541db9e924ba",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/paired_examples.csv",
-              "sha256": "1d6a229b2b713b78b9ea2bd1e1f78aa828d07d56c20dcf47ccac6fcda42e30a4",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/reference_agreement_errors.csv",
-              "sha256": "04244da9de69169682f6e8195849058e0674395fc78375d6a24e01f01887527c",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/original/selected_bank_parts.csv",
-              "sha256": "5a0d77fcc9d745b33832b8c6f175834b5c93333ffee79c6c0352a700df62bd7f",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v2/endpoint_summary.csv",
-              "sha256": "1b52471fc98e3601b5a9bd285e65b50c9a929b328b898397aaf85b7611611486",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v2/paired_comparisons.csv",
-              "sha256": "fdcc3eb55d0f0ab5ef1725e4f47b77bc00809d52ee3b6678cfd375524bcba123",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v2/policy_metrics.csv",
-              "sha256": "f66fe5501bb060794408a287d26b57888356ad91e22bb2c9834b9fc269bdc0f0",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v2/predictor_metrics.csv",
-              "sha256": "06b8a810abe9f9f8c99ef1b115d1844c98aaa101013aea123e98b7244fb7e74f",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v2/threshold_curves.csv",
-              "sha256": "f672cee8dd2a59d158e2c7f04856d41a1f6f1837e2f174709e520d6d874040c7",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/comparisons.csv",
-              "sha256": "0eaa7cb7dc6526935e5329f30f0af44bda629255f5df8de9678ea1a3b42f39a3",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/design_composition.csv",
-              "sha256": "692a0e01aa571b4677e7e5ddd9d07dbde80eb3fead3ad9f27ce1a320a47864dd",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/design_orders.csv",
-              "sha256": "0df07b0902dbb06a34b16232d6e5f00591947127e4d0c3483a425208fc20d1f9",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/design_subsets.csv",
-              "sha256": "37c6da5ab166a37effa6ecc25e34b0d627acff9266341bd11f7f962d644b4210",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/metrics.csv",
-              "sha256": "b7fb6d2805e7169913bcdefdf5afcca05c5fc4548c705be120d4d32739cd6b41",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/selected_designs.csv",
-              "sha256": "54479aaca26d2d91d0a47e81051570f623c2e794a92a3ab937e11069a36e49ba",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/selection_stability.csv",
-              "sha256": "4476f62806503b480de69b58cc005ee678b7f05ca42dad203d77475e8384a023",
-              "unchanged": true
-            },
-            {
-              "file": "evidence_tables/v3/threshold_curves.csv",
-              "sha256": "785391d608897c37d14436cdf0d6967726303e6d4ae14eb08e04921e03337351",
-              "unchanged": true
-            }
-          ],
-          "name": "all_copied_evidence_tables_byte_identical",
-          "passed": true
-        },
-        {
-          "name": "prior_supplement_numeric_proof_binds_v5_source",
-          "note": "The present audit proves preservation of these already validated tables; it does not rerun prediction-level calculations.",
-          "passed": true,
-          "prior_displayed_rows": 1237,
-          "prior_numeric_values_checked": 5733,
-          "prior_table_count": 17,
-          "proof_sha256": "5d30b1ca90462f3db6457ac568f999103b18b66abd4235c915c3b41ac8b63ec3"
-        },
-        {
-          "count": 30,
-          "journal_or_proceedings": 26,
-          "name": "bibliography_30_entry_keys_and_types_preserved",
-          "passed": true
-        },
-        {
-          "checked_entries": 30,
-          "checked_fields": [
-            "title",
-            "year",
-            "doi",
-            "url",
-            "volume",
-            "number",
-            "pages",
-            "booktitle",
-            "school",
-            "type",
-            "eprint",
-            "archiveprefix"
-          ],
-          "differences": [
-            {
-              "field": "pages",
-              "key": "shim2018",
-              "official_bibtex_note": "The official BibTeX export has an empty pages field; the separately linked official metadata JSON supplies the range.",
-              "source_evidence": {
-                "page_first": 1368,
-                "page_last": 1378
-              },
-              "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/e5841df2166dd424a57127423d276bbe-Metadata.json",
-              "v5": null,
-              "v6": "1368--1378"
-            }
-          ],
-          "name": "source_identity_preserved_except_verified_shim2018_pages_completion",
-          "note": "Only the previously absent page range was completed from official proceedings metadata; source identities and all other checked identity fields remain unchanged.",
-          "passed": true
-        },
-        {
-          "changes": [
-            {
-              "field": "author",
-              "key": "anderson2020",
-              "v5": "Anderson, N.T. and Walsh, K.B. and Subedi, P.P. and Hayes, C.H.",
-              "v6": "Anderson, N. T. and Walsh, K. B. and Subedi, P. P. and Hayes, C. H."
-            },
-            {
-              "field": "journal",
-              "key": "anderson2020",
-              "v5": "Postharvest Biology and Technology",
-              "v6": "Postharvest Biol Technol"
-            },
-            {
-              "field": "journal",
-              "key": "anderson2021local",
-              "v5": "Postharvest Biology and Technology",
-              "v6": "Postharvest Biol Technol"
-            },
-            {
-              "field": "howpublished",
-              "key": "andersondata2024",
-              "v5": null,
-              "v6": "Mendeley Data, version 3 [dataset]"
-            },
-            {
-              "field": "journal",
-              "key": "araujo2001spa",
-              "v5": "Chemometrics and Intelligent Laboratory Systems",
-              "v6": "Chemometr Intell Lab Syst"
-            },
-            {
-              "field": "archive",
-              "key": "baarc2026",
-              "v5": null,
-              "v6": "arXiv"
-            },
-            {
-              "field": "journal",
-              "key": "dirks2022",
-              "v5": "Chemometrics and Intelligent Laboratory Systems",
-              "v6": "Chemometr Intell Lab Syst"
-            },
-            {
-              "field": "journal",
-              "key": "gutierrez2019",
-              "v5": "Computers and Electronics in Agriculture",
-              "v6": "Comput Electron Agric"
-            },
-            {
-              "field": "journal",
-              "key": "huang2015",
-              "v5": "Sensors and Actuators B: Chemical",
-              "v6": "Sens Actuators B Chem"
-            },
-            {
-              "field": "author",
-              "key": "jazbec2024",
-              "v5": "Jazbec, Metod and Timans, Alexander and Veljkovi\\'{c}, Tin Had\\v{z}i and Sakmann, Kaspar and Zhang, Dan and Naesseth, Christian A. and Nalisnick, Eric",
-              "v6": "Jazbec, Metod and Timans, Alexander and Had\\v{z}i Veljkovi\\'{c}, Tin and Sakmann, Kaspar and Zhang, Dan and Naesseth, Christian A. and Nalisnick, Eric"
-            },
-            {
-              "field": "journal",
-              "key": "li2009cars",
-              "v5": "Analytica Chimica Acta",
-              "v6": "Anal Chim Acta"
-            },
-            {
-              "field": "journal",
-              "key": "ma2026",
-              "v5": "Journal of Food Science",
-              "v6": "J Food Sci"
-            },
-            {
-              "field": "journal",
-              "key": "mishra2021synergy",
-              "v5": "Chemometrics and Intelligent Laboratory Systems",
-              "v6": "Chemometr Intell Lab Syst"
-            },
-            {
-              "field": "journal",
-              "key": "mishra2021transfer",
-              "v5": "Journal of Chemometrics",
-              "v6": "J Chemom"
-            },
-            {
-              "field": "journal",
-              "key": "mishra2023",
-              "v5": "Postharvest Biology and Technology",
-              "v6": "Postharvest Biol Technol"
-            },
-            {
-              "field": "journal",
-              "key": "norgaard2000ipls",
-              "v5": "Applied Spectroscopy",
-              "v6": "Appl Spectrosc"
-            },
-            {
-              "field": "journal",
-              "key": "saranwong2004",
-              "v5": "Postharvest Biology and Technology",
-              "v6": "Postharvest Biol Technol"
-            },
-            {
-              "field": "journal",
-              "key": "subedi2007",
-              "v5": "Postharvest Biology and Technology",
-              "v6": "Postharvest Biol Technol"
-            },
-            {
-              "field": "journal",
-              "key": "sun2020temperature",
-              "v5": "Postharvest Biology and Technology",
-              "v6": "Postharvest Biol Technol"
-            },
-            {
-              "field": "journal",
-              "key": "walsh2024",
-              "v5": "Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy",
-              "v6": "Spectrochim Acta A Mol Biomol Spectrosc"
-            },
-            {
-              "field": "journal",
-              "key": "wendel2018",
-              "v5": "Computers and Electronics in Agriculture",
-              "v6": "Comput Electron Agric"
-            },
-            {
-              "field": "journal",
-              "key": "yang2025",
-              "v5": "Journal of Food Composition and Analysis",
-              "v6": "J Food Compos Anal"
-            },
-            {
-              "field": "journal",
-              "key": "yang2026",
-              "v5": "Food Chemistry",
-              "v6": "Food Chem"
-            },
-            {
-              "field": "pages",
-              "key": "shim2018",
-              "v5": null,
-              "v6": "1368--1378"
-            }
-          ],
-          "name": "bibliography_changes_limited_to_verified_formatting_and_metadata_fixes",
-          "passed": true
-        },
-        {
-          "name": "compiled_main_contains_each_of_30_cited_references_once",
-          "passed": true
-        },
-        {
-          "name": "compiled_author_initials_and_compound_surname_corrected",
-          "passed": true
-        },
-        {
-          "name": "all_four_compiled_proceedings_years_present",
-          "passed": true
-        },
-        {
-          "name": "compiled_dataset_thesis_preprint_types_explicit",
-          "passed": true
-        },
-        {
-          "name": "bibliography_style_derivative_has_only_documented_year_fix",
-          "passed": true
-        },
-        {
-          "name": "downloaded_class_and_style_originals_unmodified",
-          "passed": true
-        },
-        {
-          "figures": [
-            {
-              "figure": 1,
-              "sha256": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382",
-              "unchanged": true,
-              "v5_file": "revisions/dataset_paper_v5/figures/original/led_profiles.pdf",
-              "v6_file": "revisions/jnirs_submission_v6/figures/Figure_1.pdf"
-            },
-            {
-              "figure": 3,
-              "sha256": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e",
-              "unchanged": true,
-              "v5_file": "revisions/dataset_paper_v5/figures/fixed_budget_results.pdf",
-              "v6_file": "revisions/jnirs_submission_v6/figures/Figure_3.pdf"
-            },
-            {
-              "figure": 4,
-              "sha256": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
-              "unchanged": true,
-              "v5_file": "revisions/dataset_paper_v5/figures/controlled_contrasts.pdf",
-              "v6_file": "revisions/jnirs_submission_v6/figures/Figure_4.pdf"
-            }
-          ],
-          "name": "figures_1_3_4_byte_identical_to_v5",
-          "passed": true
-        },
-        {
-          "count": 26,
-          "files": [
-            {
-              "file": "figures/controlled_contrasts.pdf",
-              "sha256": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
-              "unchanged": true
-            },
-            {
-              "file": "figures/controlled_contrasts.png",
-              "sha256": "ef181ac5c681cc243096953ca6c29afd3652c4eb2ea80159ef0a41243f949a99",
-              "unchanged": true
-            },
-            {
-              "file": "figures/fixed_budget_results.pdf",
-              "sha256": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e",
-              "unchanged": true
-            },
-            {
-              "file": "figures/fixed_budget_results.png",
-              "sha256": "cfed048fc695f7d8fa0b7bf1f276e9186b40b9231298f48031998289ab279602",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/calibration.pdf",
-              "sha256": "0622a270a0e47f49799ce4344cd49731ba882bacefb6ecb217a511dd32fda853",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/calibration.png",
-              "sha256": "5545ae430981535c2bedb1e010b808f5ef0d4319b827a67f8bf292ea60f2136e",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/error_pulses.pdf",
-              "sha256": "2f00946c33745f4436bed771994838fd37b618f0b38b109a5e77782da256e1af",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/error_pulses.png",
-              "sha256": "7a6e024c4550aef439faf61b84d763d83171fe3dab337bdc17e4186b8b61a4a6",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/example_trace.pdf",
-              "sha256": "c26e8990645f91b2ebdacba1e8ea5144449b87aebcd3eb0fe4e3d445f1e4776f",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/example_trace.png",
-              "sha256": "d71257996037d0e28609cfec85003f85a9ad411f5dabb73558b07e66a3cfb4c5",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/led_profiles.pdf",
-              "sha256": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/led_profiles.png",
-              "sha256": "330fd222264577849808b23df2b6141f08a4e29e14886eb4c991209ec7748c4b",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/missed_and_bank_losses.pdf",
-              "sha256": "21b412b8198cf3e597fed6552d69d43183beb2f78dba58946c27eed7fe45e1ac",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/missed_and_bank_losses.png",
-              "sha256": "0e3113a29e88a47dc6d2ea06f70cc97b4360565e55324148c28d6b6b5b028d87",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/signed_gains.pdf",
-              "sha256": "7f0b9156756bab19228cd9b26d3bddae704d64bfe291fcb5e6c2b97cbfc773a4",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/signed_gains.png",
-              "sha256": "f3766b3f35d8dbc732a87bc3857f27a130857d64487e443daf7ee6ef0dfe9e15",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/study_design.pdf",
-              "sha256": "d780aaff53bce08d4d9612bb14f7044e9153b9f41528bc71025904ed2c2e4549",
-              "unchanged": true
-            },
-            {
-              "file": "figures/original/study_design.png",
-              "sha256": "747e2fdbfc08e79f97d799523c053fd2bbb53f6c76e6da96e0c447b7a0ad5441",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v2/predictors_by_depth.pdf",
-              "sha256": "1a387e3492d94f66fc00d651e3f827b8a4e2fa3ce93c59a8c39a6d9f06665f8d",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v2/predictors_by_depth.png",
-              "sha256": "9b20bc707f7482823dac79132e2c69a8aeb69c22d25f85088c2f1a34529044e8",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v2/stopping_frontiers.pdf",
-              "sha256": "5e21ce0c38a2b302968a264ab8ca150f3b2792ddd92a33fa82bb0145622e2280",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v2/stopping_frontiers.png",
-              "sha256": "1dbd5454f6bd4d8b5948df4b0950eecaff04184e353db00363a62a723bb7c499",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v3/designed_stopping_frontiers.pdf",
-              "sha256": "acd061c7a29fe8ff7f1295f6158353878dba6c5584941faf7daba748b1a23325",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v3/designed_stopping_frontiers.png",
-              "sha256": "78b902ad16c3a53e961cfca3a65f5cc064c162713e60cba3712759c1aa631d5f",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v3/fixed_design_curves.pdf",
-              "sha256": "665b32c772a5f15b5b79f9405e0c17811e95946274c56d1cc6ad5e38a9cead24",
-              "unchanged": true
-            },
-            {
-              "file": "figures/v3/fixed_design_curves.png",
-              "sha256": "e69d9bd8c5285bb33cf539b9b98b9facb57d63c74125542bd1be6dbba706632e",
-              "unchanged": true
-            }
-          ],
-          "name": "retained_legacy_figure_files_byte_identical",
-          "passed": true
-        },
-        {
-          "absolute_tolerance": 1e-12,
-          "datasets": [
-            {
-              "columns": 25,
-              "file": "Figure_2_curves.csv",
-              "max_abs_difference": 8.881784197001252e-16,
-              "mismatches": [],
-              "numeric_cells": 4410,
-              "rows": 210,
-              "sha256": "27164fc50743c06a58c66395f0607f0aecc91cf380a1453d324fe345b4225d5a",
-              "source_sha256": "b918d4401deacbbfa3fcd2559c1898b1c540d3ddbb54421225c3541db9e924ba"
-            },
-            {
-              "columns": 28,
-              "file": "Figure_2_operating_points.csv",
-              "max_abs_difference": 0.0,
-              "mismatches": [],
-              "numeric_cells": 92,
-              "rows": 4,
-              "sha256": "533ee5606c27de51570e9b39d61af8be1ad756c23cf953cc24a60479a94ffde7",
-              "source_sha256": "80188b33923f72b4741f5f44183fa543d55d9b5e3aca747084996d30a9c60be5"
-            }
-          ],
-          "name": "figure_2_all_210_curve_and_4_operating_rows_match_saved_results",
-          "note": "Maximum discrepancy is decimal CSV round-trip error; every column, identifier and row selection checked. Plot script inspected: RMSEP vs mean_pulses, five methods, both seasons, all 21 frozen thresholds, four scientific operating markers; no fit or selection.",
-          "passed": true,
-          "plotted_coordinate_count": 428
-        },
-        {
-          "guards": {
-            "candidate_tuning_only": true,
-            "component_count_limit": true,
-            "exploratory_reuse": true,
-            "no_adaptive_advantage": true,
-            "no_harvest_rule": true,
-            "no_new_season45_scoring": true,
-            "original_unequal_budgets": true,
-            "simulated_optics": true,
-            "two_population_interval_limit": true,
-            "unknown_fruit_identity": true
-          },
-          "name": "all_ten_substantive_result_and_limitation_guards_retained",
-          "passed": true
-        },
-        {
-          "name": "declarations_distinguish_source_archive_from_research_workspace",
-          "passed": true
-        },
-        {
-          "name": "author_declarations_remain_explicit_unfilled_inputs",
-          "passed": true
-        },
-        {
-          "bibtex_log_checked": true,
-          "log_diagnostics": [],
-          "name": "main_compiled_output_current_and_clean",
-          "pages": 16,
-          "passed": true,
-          "sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
-          "source_dependencies_current": true
-        },
-        {
-          "literals": {
-            "0.731": true,
-            "0.967": true,
-            "1.207": true,
-            "1.215": true,
-            "1.997": true,
-            "10,243": true,
-            "12,011": true,
-            "2.171": true,
-            "2.441": true,
-            "2.672": true,
-            "2.752": true
-          },
-          "name": "main_pdf_key_result_and_cohort_literals_present",
-          "passed": true
-        },
-        {
-          "name": "main_pdf_no_undefined_citations_or_generic_journal_header",
-          "passed": true
-        },
-        {
-          "bibtex_log_checked": true,
-          "log_diagnostics": [],
-          "name": "supplement_compiled_output_current_and_clean",
-          "pages": 52,
-          "passed": true,
-          "sha256": "026df52037203f7ac53a366e52a13d449271db8bc796ebbb5d0af8280aeb1913",
-          "source_dependencies_current": true
-        },
-        {
-          "all_other_core_source_hashes_unchanged": true,
-          "changed_core_artifacts": [
-            "revisions/jnirs_submission_v6/main.bbl",
-            "revisions/jnirs_submission_v6/main.pdf",
-            "revisions/jnirs_submission_v6/references.bib"
-          ],
-          "compiled_bibliography_contains_range": true,
-          "current_bib_minus_pages_line_and_restored_terminal_blankline_matches_previous_hash": true,
-          "formatting_only_additional_change": "One terminal blank line removed from references.bib.",
-          "metadata_completion": {
-            "field": "pages",
-            "key": "shim2018",
-            "official_bibtex_note": "The official BibTeX export has an empty pages field; the separately linked official metadata JSON supplies the range.",
-            "source_evidence": {
-              "page_first": 1368,
-              "page_last": 1378
-            },
-            "source_url": "https://proceedings.neurips.cc/paper_files/paper/2018/file/e5841df2166dd424a57127423d276bbe-Metadata.json",
-            "v5": null,
-            "v6": "1368--1378"
-          },
-          "name": "verified_shim2018_page_completion_and_post_rebuild_core_preservation",
-          "passed": true
-        }
-      ],
-      "core_sha256": {
-        "revisions/dataset_paper_v5/manuscript/main.tex": "e9a2363365e75ff392a279854e613e5bd56afaa64d1c85b6a88245e3a586f6e0",
-        "revisions/dataset_paper_v5/manuscript/references.bib": "6a5894f81787f368538c5c368484f49fa3dae13b4e44249eb61626062c9d3244",
-        "revisions/dataset_paper_v5/manuscript/supplement.tex": "69d8bb1b6d23f65256d084b7a12225b8bf17bb2742d11cc8af234b712cda0a17",
-        "revisions/dataset_paper_v5/results/supplement_numeric_verification.json": "5d30b1ca90462f3db6457ac568f999103b18b66abd4235c915c3b41ac8b63ec3",
-        "revisions/dataset_paper_v5/results/verification.json": "0c4ead1480707b6e698b71266ce5a0aafc93de130ef97c6e4b9486e02f22d955",
-        "revisions/jnirs_submission_v6/author_details.tex": "62f394326eae21cffb0a8602e9a5eb2a033fa1634c28d6fbf6053963c3613939",
-        "revisions/jnirs_submission_v6/declarations.tex": "af0fb5be52108cc4c6521da251f181aa3cc2d5b11ed46be8ea3b9d02c66ab9c0",
-        "revisions/jnirs_submission_v6/figures/Figure_1.pdf": "ad40325ef5818e898435e0c2bd7c7435b87946e952cc4c6727e5a15a79fb5382",
-        "revisions/jnirs_submission_v6/figures/Figure_2.pdf": "3cabcf4893bb09aa555dad41758bb79fd0cb99dfe9fe8178429a9503bb6127de",
-        "revisions/jnirs_submission_v6/figures/Figure_3.pdf": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e",
-        "revisions/jnirs_submission_v6/figures/Figure_4.pdf": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
-        "revisions/jnirs_submission_v6/jnirs_review.sty": "7e1b1afa30a8fabb01ae75234d29905d040c352e41bc6875ccc6123092820b33",
-        "revisions/jnirs_submission_v6/jnirs_sagev.bst": "d9b05dcfe69e09dca9ddb6229c8939dfb1be25c9d57372da0c2aa5901368d611",
-        "revisions/jnirs_submission_v6/main.bbl": "154ed08acdaf1debd231fd291ff9d7616b8c905958063ee432f99dc92c0ab9d0",
-        "revisions/jnirs_submission_v6/main.pdf": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
-        "revisions/jnirs_submission_v6/main.tex": "17fe77981ef250897b26077ac976561c72aed54326a9c6948f87a805509da006",
-        "revisions/jnirs_submission_v6/prepare_figures.py": "262620a54676c13cb0f92bef4e00c0ac1693413622a54986529e4b1a122360a9",
-        "revisions/jnirs_submission_v6/references.bib": "fb5c70ba9fa2c9b0877869d0c88f3500e1d27f4b7b68bd5fd5e64f19f2fa21ea",
-        "revisions/jnirs_submission_v6/supplement.bbl": "17eb0016a410251b69a3ce0e0a295be58a8fe683767deb7312e08f4e11800032",
-        "revisions/jnirs_submission_v6/supplement.pdf": "026df52037203f7ac53a366e52a13d449271db8bc796ebbb5d0af8280aeb1913",
-        "revisions/jnirs_submission_v6/supplement.tex": "094bcb0a77b53c8feaf563f1c143fc8f4f3fc49422df01eac95919ac5d913062"
-      },
-      "earlier_artifacts_modified": false,
-      "earlier_numeric_evidence": {
-        "v5_prediction_numeric_checks": 1507,
-        "v5_prediction_values_checked": 85198,
-        "v5_recomputed_policy_cells": 188,
-        "v5_supplement_checks": 19183,
-        "v5_supplement_numeric_values": 5733,
-        "v5_supplement_rows": 1237,
-        "v5_verification_passed": true
-      },
-      "failed_checks": [],
-      "limits": [
-        "This conversion audit establishes preservation of v5 scientific evidence; it does not perform new predictive validation or repeat the existing prediction-level numerical audit.",
-        "Figure 2 source CSV values and plotting logic were independently checked; rendered figure geometry and full visual page inspection are the root agent separate QA task.",
-        "Author identities, contribution/funding/conflict declarations, human verification and eventual complete software access remain genuine author inputs; this is not a submission or acceptance claim.",
-        "All dataset-reuse, exploratory-design, unknown-fruit, simulated-optics, limited-population and tuning-only qualifications remain in force."
-      ],
-      "new_model_fitting": false,
-      "passed_checks": 33,
-      "pdf_outputs": [
-        {
-          "bibtex_log_checked": true,
-          "document": "main",
-          "log_diagnostics": [],
-          "pages": 16,
-          "sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
-          "source_dependencies_current": true,
-          "text_characters": 57798
-        },
-        {
-          "bibtex_log_checked": true,
-          "document": "supplement",
-          "log_diagnostics": [],
-          "pages": 52,
-          "sha256": "026df52037203f7ac53a366e52a13d449271db8bc796ebbb5d0af8280aeb1913",
-          "source_dependencies_current": true,
-          "text_characters": 107732
-        }
-      ],
-      "raw_dataset_access": false,
-      "status": "PASS"
-    },
-    "scope": "Historical v5-to-v6 conversion review, retained verbatim for provenance. Its old whole-supplement token counts and old PDF hashes do not describe the shortened current supplement. The current review verifies preservation of the scientific sections and tables against that reviewed release."
-  },
-  "limits": [
-    "This is an editorial preservation audit, not new scientific validation or renewed raw-data analysis.",
-    "The historical 33-check conversion review is retained as prior evidence; it has not been relabeled as a current full rerun.",
-    "Full page-by-page visual inspection is tracked separately by the parent reviewer.",
-    "Author names/contact information are taken exactly from user instructions; institutional status and affiliations were not independently researched.",
-    "Contribution, funding, conflicts, acknowledgement and human-review statements still need author completion.",
-    "No submission or acceptance claim is made."
+    {
+      "commit": "4424f53182d6fc6c87e82da0a1578d4944fa5833",
+      "git_blob": "8cd67f71d33cb661688565960c3cc29dcbf28d21",
+      "path": "revisions/jnirs_submission_v6/content_review.md",
+      "sha256": "bb6076b2076cd44054a56addcf8c3de4bafdc1f4613b28757cf0c19faed59944"
+    }
   ],
+  "limits": [
+    "This is preservation against the previously reviewed release, not new predictive validation or a rerun of the earlier raw-data and prediction-level audits.",
+    "Numeric token counts include repeated headers/layout tokens under the declared extraction; exact table/body and math comparisons, plus manual diff review, supply the stronger value/sign/meaning checks.",
+    "Full rendered-page visual QA is performed separately by the parent and is not claimed here.",
+    "Public repository availability was verified separately by the parent; no new network availability audit was performed in this task.",
+    "Author contribution, funding, conflict and human-review inputs remain unchanged; no submission or acceptance claim is made."
+  ],
+  "manual_diff_review_completed": true,
   "new_model_fitting": false,
-  "passed_checks": 33,
+  "passed_checks": 30,
   "pdf_outputs": [
     {
-      "bibtex_log_checked": true,
+      "delivery_matches_compiled_pdf": true,
       "document": "main",
       "log_diagnostics": [],
       "pages": 16,
-      "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
-      "text_characters": 57949
+      "sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc",
+      "source_dependencies_current": true,
+      "text_characters": 66692
     },
     {
-      "bibtex_log_checked": true,
+      "delivery_matches_compiled_pdf": true,
       "document": "supplement",
       "log_diagnostics": [],
       "pages": 28,
-      "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
-      "text_characters": 101973
+      "sha256": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f",
+      "source_dependencies_current": true,
+      "text_characters": 173136
     }
   ],
   "raw_dataset_access": false,

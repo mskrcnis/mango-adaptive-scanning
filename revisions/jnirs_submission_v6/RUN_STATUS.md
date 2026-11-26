@@ -1,12 +1,12 @@
 # JNIRS manuscript preparation: completed for author review
 
-Completed 26 November 2026. Target: Journal of Near Infrared Spectroscopy, Original Research Article. Source: verified dataset-only paper v5 with all 30 cited references retained.
+Completed 26 November 2026. Target: Journal of Near Infrared Spectroscopy, Original Research Article. Source: verified dataset-only analyses with all 30 cited references retained.
 
 The 16-page manuscript, 28-page supplement, separate vector figures, draft cover letter and standalone LaTeX archive are under `output/`. Current journal requirements and template provenance are documented. The latest official template ZIP was access-blocked; the preserved Sage class was recovered from a pinned public mirror with the same version as the publisher-linked demonstration.
 
-Verification: 31 document/source checks, 33 current independent editorial/layout preservation checks, all 44 pages covered by current visual inspection or exact pixel matches, and 17 isolated-package checks passed. The original 33-check conversion audit remains historical evidence in the independent review JSON. Both PDFs compile without LaTeX or BibTeX warnings and reproduce byte for byte outside the research workspace. All 364 protected v5 files remain unchanged. No model fitting or seasonal rescoring occurred.
+Verification: 33 document/source checks, 30 current independent editorial preservation checks, all 44 pages covered by current visual inspection or exact pixel matches, and 17 isolated-package checks passed. Earlier conversion and editorial audits remain available through their recorded Git revisions and checksums. Both PDFs compile without LaTeX or BibTeX warnings and reproduce byte for byte outside the research workspace. All 364 protected v5 files remain unchanged. No model fitting or seasonal rescoring occurred.
 
-The latest editorial update adds the supplied authors, replaces the final operational inventory with concise data/code availability, and removes unnecessary page breaks and landscape pages. All 17 supplementary table blocks and scientific results remain unchanged.
+The latest editorial update presents one final study without internal manuscript revision labels. Descriptive method names replace those labels in headings, prose, captions and Figure 4; numerical results, cited sources and essential evaluation limits are retained. All 17 supplementary table headers and data are unchanged apart from the descriptive “Benchmark fit” row label. Four indicator glyphs were corrected for readability. The supplied authors, concise data/code availability and compact page layout are retained.
 
 Read `verification_report.md`, `results/verification.json`, `results/independent_content_review.json` and `results/isolated_compilation.json` for the executed evidence. The final unchanged rerun is recorded in `results/resume_verification.json`; its pass and archive hash must match the current `results/package_inventory.json`.
 

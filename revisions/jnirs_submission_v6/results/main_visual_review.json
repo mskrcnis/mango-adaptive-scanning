@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "reviewed_at_utc": "2026-11-26T10:49:33.788892+00:00",
-  "scope": "Editorial revision QA: inspect every changed page and carry forward individual visual approval only for pixel-identical retained pages. No new scientific evaluation.",
+  "reviewed_at_utc": "2026-11-26T11:04:12.670945+00:00",
+  "scope": "Final-study editorial revision: current main pages 1-13 directly inspected; pages 14-16 verified pixel-identical to previously individually reviewed renders. No new scientific evaluation.",
   "pdf_path": "revisions/jnirs_submission_v6/output/pdf/Mango_JNIRS_Manuscript.pdf",
-  "pdf_sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
+  "pdf_sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc",
   "pdf_page_count": 16,
   "pages_inspected": [
     1,
@@ -30,11 +30,6 @@
   "defects": [],
   "directly_reinspected_pages": [
     1,
-    14,
-    15,
-    16
-  ],
-  "pixel_identical_previously_inspected_pages": [
     2,
     3,
     4,
@@ -48,141 +43,147 @@
     12,
     13
   ],
+  "pixel_identical_previously_inspected_pages": [
+    14,
+    15,
+    16
+  ],
   "prior_review": {
-    "git_commit": "16bb146dc7431e97fe6d5521beeb3bc8890a852e",
+    "git_commit": "4424f53182d6fc6c87e82da0a1578d4944fa5833",
     "report_path": "revisions/jnirs_submission_v6/results/main_visual_review.json",
-    "report_sha256": "9647ea95278ab0c038801366e04667f9a3c0cb6a6fdc006b17d84f6eb0ddf553",
-    "pdf_sha256": "9a24f79980506b98a9778245234860bebeb0522711b5f78c7aadf15e2c0dd8d2",
-    "all_prior_pages_individually_inspected": true
+    "report_sha256": "9c8e0b93aa7c2fc0c1b69647adb8828792fbbd7109025296c1da56b3ed2ed567",
+    "pdf_sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
+    "all_prior_pages_covered": true
   },
   "checks": {
     "all_current_pages_covered_by_visual_inspection_or_exact_pixel_match": true,
     "all_changed_pages_reinspected": true,
     "no_clipped_or_overlapping_content": true,
     "all_table_and_figure_pages_preserved": true,
-    "clean_latex_log": true
+    "descriptive_analysis_names_fit": true,
+    "figure_4_relabeling_legible": true
   },
   "page_reviews": [
     {
       "page": 1,
       "status": "pass",
-      "image_sha256": "37b7cf49d78a684454092769dec2fedee85ccce453364deb91cd50b624aeccd8",
-      "review_method": "latest rendered page inspected after author and page-flow revision",
+      "image_sha256": "0577d4ecbdbf25ea8cd00041ebfc1c5619a592e1288153765358d6fa6736a662",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 2,
       "status": "pass",
-      "image_sha256": "3d1a313a2c8ef0b208cb536f0e970904b90898fe557b0f649ad07eefa19c5055",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "2f953164649972eebe590d2161dba4824e15323019857f9de6a4c9c9515e0b59",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 3,
       "status": "pass",
       "image_sha256": "7e373ef6fda06b26088d7c319561b7445ca32daf62eecb600ed6cae07bd61044",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 4,
       "status": "pass",
-      "image_sha256": "a8072205fe95fb258b2c7dc3ca53872487721e8c734ce6ebdbd09dcad0650d7c",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "5a6a0e7c87adb2b38d9f9fecfd469d68bf55cba0e2a260836c20266d50a56692",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 5,
       "status": "pass",
-      "image_sha256": "3643b2a9b18502985044e0b7b6a349a2d61c061a2e16ef78d37ac1899924dc19",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "7dc4f309a988a77cdc3b1c1c37d61fcb0ae31c8556defe2369cc890209e33482",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 6,
       "status": "pass",
-      "image_sha256": "8c9a24bd95a1d8eef80450cd0a035e7f96ab5f786c6ea37aaccfce926a872c17",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "8b1fe29c28cd662c912c6f986611263b205182c7265c76936afa266ee16b582e",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 7,
       "status": "pass",
-      "image_sha256": "b4023ae79cba9a3ebd33234e016f58c14b111084e7baff48d7b17ac582d05966",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "dc7077ae027fcb9fec73f15a84a637a5d868efee85451fef3e544dc8b5f99723",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 8,
       "status": "pass",
-      "image_sha256": "adb9f3859459798b8f137f13fa8e19179ec085f5ed85516f23718a1feb5ad6bb",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "1d6f5a0ddb5cc11d7f88cecfc0a4028f6117a0638aac0d1d6d7ab0262400b84a",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 9,
       "status": "pass",
-      "image_sha256": "3ad9b41742a6a357f067dfb8133625077e0d0b1cd5f05c054be89b451667bdff",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "54a1891bc8c33ddec8ad92fd954673b25da0ea89ac515f55a231cd21ead90046",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 10,
       "status": "pass",
-      "image_sha256": "74f6632e3a35d05f26da6f474d7e1336aae43f9ab5239317716e7dff0ff303c9",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "cc8ba525a1cfbba39feaf7ba90285aae050299cc7a4a22858d2b903b97c62894",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 11,
       "status": "pass",
-      "image_sha256": "f1ccfe2d89fd432fca4514f43d7f5b628d869f532d33e6fd63a7db744e77aa7f",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "b03eef44272ab4026078d5d951e7e2dca3e648e940a7c245355658a7c33264f6",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 12,
       "status": "pass",
-      "image_sha256": "fbc87ade76e790e4e3ae196eda83452f7a21a2880af0b4c6d7642823fce9a59c",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "441ec202a362ea7b97e9032197f2d1f9171fba11e86d75f7083047429ed00ca3",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 13,
       "status": "pass",
-      "image_sha256": "7ac3b6af6fd72655998f6c5aaab4219205c5dd788e12f1cec9ddf2672bd0a94f",
-      "review_method": "pixel-identical to previously individually inspected page",
+      "image_sha256": "d90fc5a1fe609210a601a90ea743a1dedb34af044938ea2b55a098e6e4168e54",
+      "review_method": "current rendered page directly inspected",
       "defects": []
     },
     {
       "page": 14,
       "status": "pass",
       "image_sha256": "074f066883104867c0a167dd9bb3491bb228e1fc15b9a9eacef300d0493f8df5",
-      "review_method": "latest rendered page inspected after author and page-flow revision",
+      "review_method": "pixel-identical to previously individually inspected page",
       "defects": []
     },
     {
       "page": 15,
       "status": "pass",
       "image_sha256": "6bb9e54b6bf4ad5e5f6ab2437459ab618cfd04833424d2e678bf8edcc44881d4",
-      "review_method": "latest rendered page inspected after author and page-flow revision",
+      "review_method": "pixel-identical to previously individually inspected page",
       "defects": []
     },
     {
       "page": 16,
       "status": "pass",
       "image_sha256": "9e1464435f8d220ac542fdb2df6f2f7258046087718eda1c9f789bcd25039c21",
-      "review_method": "latest rendered page inspected after author and page-flow revision",
+      "review_method": "pixel-identical to previously individually inspected page",
       "defects": []
     }
   ],
   "observations": [
-    "Supplied author details fit without clipping.",
-    "References follow declarations naturally; the forced break was removed without changing reference text or font size.",
+    "Descriptive analysis names replace internal revision labels in prose, captions and Figure 4.",
+    "Authors, tables, equations, figures and references fit without clipping or overlap.",
     "Author-dependent declarations remain pending."
   ],
   "limitations": [
-    "Valid only for the recorded PDF and image hashes.",
-    "This is layout verification, not new empirical validation."
+    "Valid only for recorded PDF and render hashes.",
+    "Layout verification is not empirical validation."
   ]
 }

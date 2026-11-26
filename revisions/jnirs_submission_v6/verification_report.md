@@ -16,9 +16,9 @@ The source ZIP reproduces the documents without the research workspace. It is no
 
 ## Journal requirements and implementation
 
-The current [JNIRS author instructions](https://journals.sagepub.com/author-instructions/jns) were checked. This edition uses the Sage class with `Review,sagev,times`, an author-side A4 review presentation, an unstructured abstract, seven keywords, superscript citations and Sage Vancouver references. Author names remain on the title page because review is single-anonymized. Required declaration headings, a supplemental-material statement and a draft cover letter are supplied. Figure 2 uses distinct markers and line styles; all four supplied graphics are vector PDFs.
+The [JNIRS author instructions](https://journals.sagepub.com/author-instructions/jns) were checked during journal preparation. This edition uses the Sage class with `Review,sagev,times`, an author-side A4 review presentation, an unstructured abstract, seven keywords, superscript citations and Sage Vancouver references. Author names remain on the title page because review is single-anonymized. Required declaration headings, a supplemental-material statement and a draft cover letter are supplied. Figure 2 uses distinct markers and line styles; all four supplied graphics are vector PDFs.
 
-The current instructions state no numerical full-article abstract limit or compulsory LaTeX column layout. The 256-word abstract is retained; the A4 review layout is a preparation choice, not a journal mandate.
+The current instructions state no numerical full-article abstract limit or compulsory LaTeX column layout. The 253-word abstract is used; the A4 review layout is a preparation choice, not a journal mandate.
 
 The official template ZIP returned HTTP 403. The unchanged Sage class, version 1.20 dated 17 January 2017, was recovered from a pinned public Posit `rticles` mirror; its version matches the publisher-linked Overleaf demonstration. Byte-equivalence to the currently blocked official ZIP is **not established**. URLs, pinned revision, original-file hashes and this limitation are recorded in `template_provenance/mirror_source.json` and `guideline_audit.md`.
 
@@ -28,9 +28,9 @@ The distributed `sagej.cls` and `sagev.bst` remain unchanged. The documented loc
 
 | Verification | Result and evidence |
 |---|---|
-| Document/source checks | **31/31 passed**, `results/verification.json` |
-| Independent content-preservation review | **33/33 current editorial/layout checks passed**, `results/independent_content_review.json`. The original 33-check conversion review is retained there as historical provenance. |
-| Full visual review | **44 pages covered**: all 28 supplement pages and the four changed main pages inspected in the current layout; 12 main pages pixel-identical to their prior individually inspected renders |
+| Document/source checks | **33/33 passed**, `results/verification.json` |
+| Independent content-preservation review | **30/30 current editorial checks passed**, `results/independent_content_review.json`. Earlier reviews remain available through their recorded Git revisions and checksums. |
+| Full visual review | **44 pages covered**: all 28 supplement pages and main pages 1–13 inspected in the current layout; main pages 14–16 pixel-identical to their prior individually inspected renders |
 | LaTeX and BibTeX diagnostics | No warnings, unresolved references, overfull boxes or underfull boxes in either final document |
 | Reference integrity | All 30 unique sources cited and rendered in first-citation order; no uncited padding or duplicate keys/DOIs |
 | Earlier-version preservation | All **364** snapshotted v5 files unchanged |
@@ -38,9 +38,11 @@ The distributed `sagej.cls` and `sagev.bst` remain unchanged. The documented loc
 
 These checks overlap in scope and should not be added together as independent scientific validations. No model fitting, raw-spectra evaluation or new seasonal scoring was performed during this conversion. Earlier numerical audits are inherited through preserved sources and tables; they were not rerun or counted as new experiments.
 
-All scientific text, numerical claims, equations and limitations before the former final operational inventory are preserved after enumerated citation and layout changes. The inventory was intentionally replaced by concise data/code availability, retaining missing-value interpretation. Both inline main tables, all 17 supplement table blocks, nine table-input files and 23 copied evidence files match v5. Figures 1, 3 and 4 are byte-identical to v5. Figure 2's 210 curve rows and four operating-point rows match saved results within decimal round-trip tolerance; only its presentation changed. The independent audit records the complete comparisons.
+The paper now presents one final study with descriptive analysis names in place of internal revision labels. Editorial prose, section headings and captions were revised; scientific quantities, comparisons, cited source identities and interpretation limits are retained. Post-benchmark exploratory timing, prior exposure to development seasons and the final model's tuning-only evidence remain explicit. The former operational inventory is replaced by concise data/code availability, retaining missing-value interpretation.
 
-The supplied author information appears in both documents. The supplement was reduced from 52 to 28 pages by removing unnecessary landscape and forced-page-break commands; every table block, font size and row-spacing setting is retained. Natural table widths are 84.34-135.71 mm within the 174 mm portrait text width. The final short table is kept together. The main references now follow the declarations without a forced break; its page count remains 16. Current visual reports bind all checks to the final PDF hashes.
+Both inline main tables, all 17 supplementary table headers and data, nine table-input files, five plotted-data CSVs and 23 copied evidence files retain their values. The supplementary role label “Final O” is now “Benchmark fit”; the four indicator symbols use a readable bold numeral instead of the previous malformed blackboard-bold glyph. All mathematical content is otherwise unchanged. Figures 1 and 3 retain their original bytes. Figure 2 retains the previously verified presentation and data. Figure 4 changes only two benchmark-season labels; all eight contrasts, their point estimates and intervals, and other chart geometry are unchanged.
+
+The supplied author information appears in both documents. The supplement remains 28 portrait pages, reduced from 52 in the preceding layout edit; font sizes and row spacing are retained, and the final short table is kept together. The main manuscript remains 16 pages. Current visual reports bind their observations to the final PDF hashes.
 
 The package builder verifies every ZIP member against its internal `SHA256SUMS`, extracts outside the research workspace, clears project-specific TeX search paths and compiles from the extracted files. It verifies exact PDF bytes, extracted text, page counts and unchanged source inputs, then checks all eight named submission-file copies. `results/package_inventory.json` records the exact final archive hash and all member hashes. These packaging reports remain outside the ZIP to avoid circular hashes.
 
@@ -48,7 +50,7 @@ The final unchanged rerun is recorded in `results/resume_verification.json`, inc
 
 ## Scientific conclusion retained
 
-The dataset supports conditional improvements from fixed-channel selection, while the proposed adaptive stopping objective did not establish an advantage. Original unequal budgets, exploratory reuse of development seasons, unknown fruit identities, model-relative references and simulated optical responses remain visible limitations. No harvest decision, measured scanner performance, independent new-cohort validation or universally optimal six-channel device is claimed. Additional field or hardware work is outside this dataset-only paper's scope.
+The dataset supports conditional improvements from fixed-channel selection, while the proposed adaptive stopping objective did not establish an advantage. Unequal benchmark budgets, exploratory reuse of development seasons, unknown fruit identities, model-relative references and simulated optical responses remain visible limitations. No harvest decision, measured scanner performance, independent new-cohort validation or universally optimal six-channel device is claimed. Additional field or hardware work is outside this dataset-only paper's scope.
 
 ## Author completion and limits
 

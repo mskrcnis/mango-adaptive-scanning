@@ -1,8 +1,8 @@
 {
   "archive": "output/Mango_JNIRS_LaTeX_Source.zip",
-  "archive_bytes": 1763057,
+  "archive_bytes": 1758388,
   "archive_member_count": 79,
-  "archive_sha256": "ff8e749578537a61763efeddc6d14028ce7333b64767ce010f9e2a470818666a",
+  "archive_sha256": "520f9a071402a5fb1af69caf83b567e19391aaca07300b68135577b1186fd990",
   "fixed_zip_timestamp": [
     1980,
     1,
@@ -11,7 +11,7 @@
     0,
     0
   ],
-  "internal_manifest_sha256": "a8b7b277759e57e11a7d63fd6620b2f11d2fcd455c0bf8efc94424d7bfffe913",
+  "internal_manifest_sha256": "25bd6deeb566c0cd1db0ef4176ba7cd8b21200b38bf63cda40aa6b3004899208",
   "members": [
     {
       "bytes": 2851,
@@ -19,14 +19,14 @@
       "sha256": "eeeb258af49e2ec883b323405e0bed2f2c1ed85e913cbfb70059b9f6bedfe7b3"
     },
     {
-      "bytes": 5980,
+      "bytes": 6148,
       "path": "README.md",
-      "sha256": "c429276f76233bf4d85bf9d45ec290ddc6eee31a2ca9a0c3bc6bf6d4cd0d6f58"
+      "sha256": "3ec37f458fc44025acec5c9e317934d80d00c6ad429e5eedb2b918d64987fe71"
     },
     {
-      "bytes": 3266,
+      "bytes": 3531,
       "path": "RUN_STATUS.md",
-      "sha256": "a4f8f517bd323bd30c103f7c370c37d56dee2cc2649351abd4b4748209913592"
+      "sha256": "450481d8fb4c718707d68e2f90f67725a9ad187c1ddef19b80c279ff97cddab8"
     },
     {
       "bytes": 2572,
@@ -49,14 +49,14 @@
       "sha256": "132084a929acf2302af760abe8002d41348d11864274b7eaeaa8d822aa7ee856"
     },
     {
-      "bytes": 4950,
+      "bytes": 4780,
       "path": "content_review.md",
-      "sha256": "bb6076b2076cd44054a56addcf8c3de4bafdc1f4613b28757cf0c19faed59944"
+      "sha256": "1c368617302c2666e16d613ddac0bedfa9c842565fac448f7fc0de05c8deadbb"
     },
     {
-      "bytes": 2249,
+      "bytes": 2267,
       "path": "cover_letter.txt",
-      "sha256": "e63dcc6aca7068f28d37920d768afdb8196317885c5e4c6b7d2405a84cff0f5a"
+      "sha256": "16a6cb2a6cfc3148770537a3d925aa22f6a7799bbad9061a3a1c4d189a2e9474"
     },
     {
       "bytes": 2148,
@@ -204,9 +204,9 @@
       "sha256": "7c458e1f662ff732c96fc620227ca3e0ea3aaed605fb61e0f60b7f82fe245d1c"
     },
     {
-      "bytes": 1031,
+      "bytes": 1121,
       "path": "figure_data/README.md",
-      "sha256": "bd80a4f1ede68e11e52dd5f82db6e2fbf48b7e689e0aceb2677f761368c1b7b5"
+      "sha256": "d62569a8f47ee642ab40cb7f60b99a05589184ff8e3856521bc8420731212751"
     },
     {
       "bytes": 20310,
@@ -224,9 +224,9 @@
       "sha256": "5076765a2b8f8336ffa9f53a855945c1568d3083b365773f971d7670e180f95e"
     },
     {
-      "bytes": 16332,
+      "bytes": 16604,
       "path": "figures/Figure_4.pdf",
-      "sha256": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa"
+      "sha256": "e3b237204fb35a588dc25f8b6e44479fc6e21240c508f43671ea9c93020a95b1"
     },
     {
       "bytes": 718,
@@ -279,9 +279,9 @@
       "sha256": "154ed08acdaf1debd231fd291ff9d7616b8c905958063ee432f99dc92c0ab9d0"
     },
     {
-      "bytes": 45404,
+      "bytes": 44876,
       "path": "main.tex",
-      "sha256": "2ee20757920522f62b19fa1b56ae9edab8ec7fd7330f74aec00a629ec2ed30e0"
+      "sha256": "7437e068aebcc85857b0bdd880ed26d600e730170a1917cd080fefe34039c8a5"
     },
     {
       "bytes": 1036,
@@ -309,9 +309,9 @@
       "sha256": "a2a7aac6b2700b40f4a380829c946965bb381fcad1993bc616c7118eb8576e06"
     },
     {
-      "bytes": 2266,
+      "bytes": 4674,
       "path": "prepare_figures.py",
-      "sha256": "262620a54676c13cb0f92bef4e00c0ac1693413622a54986529e4b1a122360a9"
+      "sha256": "6fcde2986a6d4a5a08b3bd3ba4d9d3ababe146a55bc0cf78d5de62692c6e95a2"
     },
     {
       "bytes": 13944,
@@ -324,19 +324,19 @@
       "sha256": "a9d29ee4f715875f52248f991984370ee9d5b81eb0b8b9799353d1de28072d12"
     },
     {
-      "bytes": 67646,
+      "bytes": 30565,
       "path": "results/independent_content_review.json",
-      "sha256": "f9595dfb0221ceff0cfc4fc5e3ee4c67bf0abf120f88eae5a294b214df6e8161"
+      "sha256": "da42d57448ffc8f83de640fe222ff1cfb587b1b1412eb2c32d8d5ed9467298d5"
     },
     {
-      "bytes": 6031,
+      "bytes": 5838,
       "path": "results/main_visual_review.json",
-      "sha256": "9c8e0b93aa7c2fc0c1b69647adb8828792fbbd7109025296c1da56b3ed2ed567"
+      "sha256": "fd04b9c1b775dc798ed9de930bf71f81626b7629c7ae3abd5070346e516a7f1e"
     },
     {
-      "bytes": 11671,
+      "bytes": 17506,
       "path": "results/supplement_visual_review.json",
-      "sha256": "4ac2bb157112a984c408fa57ce3f599a45723bd8859b1bfb94349bcafbc00d3e"
+      "sha256": "da0c739cb7e9f2e8fe1b4884347122954ee9c0a31c855cd35195379bf62652de"
     },
     {
       "bytes": 47959,
@@ -344,9 +344,9 @@
       "sha256": "27ecd7482777ea73c197b620cb3b4f4f832215efd23661e122117858b70500ae"
     },
     {
-      "bytes": 2478,
+      "bytes": 2599,
       "path": "results/verification.json",
-      "sha256": "bf4e836de49d673b239d8643005cf195dc032a6861497f96aa5ee7ffde985bce"
+      "sha256": "262107621984c37305eabda78cded384a60f2c23a43e007424f8453d0aaf1d17"
     },
     {
       "bytes": 15374,
@@ -369,14 +369,14 @@
       "sha256": "17eb0016a410251b69a3ce0e0a295be58a8fe683767deb7312e08f4e11800032"
     },
     {
-      "bytes": 135594,
+      "bytes": 135279,
       "path": "supplement.tex",
-      "sha256": "ba7cf225c1887d4eaa73cbc37061a72a841c77032fbb9e29a565c57d51e95be7"
+      "sha256": "b59516eabd7fd59b96235fb3d2c3fa7e680c34a0346ec6e64a24648a259e2057"
     },
     {
-      "bytes": 1041,
+      "bytes": 1051,
       "path": "supplement_description.txt",
-      "sha256": "b7ff4a20663081f56543eddfce9741e47c5f2a9f481582484fb61e6778cc87f5"
+      "sha256": "1b21c1a5e41074ad3f536ac67f10ddaf66c81b0bd8e4897c2492ff0106c3d7ac"
     },
     {
       "bytes": 1460,
@@ -394,29 +394,29 @@
       "sha256": "113da1cae672949bb2e496e095507e3897a7e20206ac7186e0870b9ee63abfaa"
     },
     {
-      "bytes": 8341,
+      "bytes": 8697,
       "path": "verification_report.md",
-      "sha256": "c8150059b4d0a46a7a89a56036445157a8c18d42ebb4321cd59c91128fdb709b"
+      "sha256": "d8502342deedd73328faca824ac2f056d3bf212a939cd59a28fc35de0195dbb5"
     },
     {
-      "bytes": 8727,
+      "bytes": 9518,
       "path": "verify_package.py",
-      "sha256": "59b10a1c85e568ba40176359da0133f56cc7096d22829d37a340690a400ac2f8"
+      "sha256": "252863e6a4b882455661f240dbfb9b204e1ff1319ec4a0a646a6d0b9bda00225"
     }
   ],
   "source_file_count": 78,
   "status": "pass",
   "submission_files": [
     {
-      "bytes": 293890,
+      "bytes": 293557,
       "path": "output/submission_files/Mango_JNIRS_Manuscript.pdf",
-      "sha256": "6dec11a43bc766967ade0d246f4b3b8ad6f9276af8bfa72f63da0fe5a5c73a60",
+      "sha256": "395341530fdd766ecb817f04a492c7c9b17efcfab7fc314fa0f3b92cc8bc3ddc",
       "source": "output/pdf/Mango_JNIRS_Manuscript.pdf"
     },
     {
-      "bytes": 242225,
+      "bytes": 245695,
       "path": "output/submission_files/Mango_JNIRS_Supplement.pdf",
-      "sha256": "153b51d29edfbe8d233c3896118074a5dd834e18e0b15dfd47912cae46284a7f",
+      "sha256": "94fc983b0c70be99ca794b89c71887b89172706ce4c4e8e0da2c75fb7d27a94f",
       "source": "output/pdf/Mango_JNIRS_Supplement.pdf"
     },
     {
@@ -438,21 +438,21 @@
       "source": "figures/Figure_3.pdf"
     },
     {
-      "bytes": 16332,
+      "bytes": 16604,
       "path": "output/submission_files/Figure_4.pdf",
-      "sha256": "1200160c34658ed7111f29acfd930d027e55a0c09784e6d1e7d2a4c106bba6aa",
+      "sha256": "e3b237204fb35a588dc25f8b6e44479fc6e21240c508f43671ea9c93020a95b1",
       "source": "figures/Figure_4.pdf"
     },
     {
-      "bytes": 2249,
+      "bytes": 2267,
       "path": "output/submission_files/Cover_Letter.txt",
-      "sha256": "e63dcc6aca7068f28d37920d768afdb8196317885c5e4c6b7d2405a84cff0f5a",
+      "sha256": "16a6cb2a6cfc3148770537a3d925aa22f6a7799bbad9061a3a1c4d189a2e9474",
       "source": "cover_letter.txt"
     },
     {
-      "bytes": 1041,
+      "bytes": 1051,
       "path": "output/submission_files/Supplement_Description.txt",
-      "sha256": "b7ff4a20663081f56543eddfce9741e47c5f2a9f481582484fb61e6778cc87f5",
+      "sha256": "1b21c1a5e41074ad3f536ac67f10ddaf66c81b0bd8e4897c2492ff0106c3d7ac",
       "source": "supplement_description.txt"
     }
   ],

@@ -23,6 +23,11 @@ def numbers(text):
     text = re.sub(r'\\includegraphics(?:\[[^\]]*\])?\{[^}]+\}', '', text)
     # Page-layout space reservations are not scientific numeric claims.
     text = re.sub(r'\\Needspace\{[^}]+\}', '', text)
+    # Historical manuscript revision numbers are editorial metadata, unlike
+    # the official dataset version and all experimental quantities.
+    text = re.sub(r'\brevision [1-5]\b', 'revision', text, flags=re.I)
+    # The displayed input checksum moved to the retained dataset provenance.
+    text = re.sub(r'\b[a-f0-9]{64}\b', '', text)
     return re.findall(r'(?<![A-Za-z])[-+]?\d+(?:[.,]\d+)*', text)
 
 main = (HERE / 'main.tex').read_text()
@@ -63,6 +68,8 @@ for name, delivery in [('main','Mango_JNIRS_Manuscript.pdf'), ('supplement','Man
     checks[name + '_no_blank_pages'] = all(len(t.strip()) > 80 for t in texts)
     checks[name + '_no_unresolved_citations_or_publisher_placeholders'] = not any(
         token in '\n'.join(texts) for token in ['ToBeAssigned', 'Journal Title', 'XX(X)', '??'])
+    checks[name + '_no_internal_revision_labels_rendered'] = not re.search(
+        r'\bV[1-5]\b|\brevision\s+[1-5]\b|\bFinal O\b', '\n'.join(texts), re.I)
     checks[name + '_delivery_matches_compiled_pdf'] = sha(path) == sha(HERE / (name + '.pdf'))
     details['documents'][name] = {'pages':len(texts), 'sha256':sha(path), 'size_bytes':path.stat().st_size}
     visual_path = HERE / 'results' / (name + '_visual_review.json')
@@ -103,7 +110,8 @@ if V5.is_dir():
     checks['abstract_all_numeric_tokens_preserved'] = numbers(previous.split('\\begin{abstract}',1)[1].split('\\end{abstract}',1)[0]) == numbers(main.split('\\begin{abstract}',1)[1].split('\\end{abstract}',1)[0])
     # The final operational inventory was intentionally replaced with concise
     # data/code availability. Preserve the complete scientific sections and
-    # separately require every supplementary table to remain byte-identical.
+    # separately preserve every table header, numeric value and method identifier.
+    # Captions use descriptive analysis names in place of internal revision tags.
     previous_supp = (V5 / 'manuscript/supplement.tex').read_text()
     old_supp = previous_supp.split('\\section{Scope, provenance and interpretation}',1)[1].split('\\section{Evidence inventory, verification and claim boundaries}',1)[0]
     new_supp = supp.split('\\section{Scope, provenance and interpretation}',1)[1].split('\\section{Data and code availability}',1)[0]
@@ -111,7 +119,11 @@ if V5.is_dir():
     table_pattern = r'\\begin\{longtable\}.*?\\end\{longtable\}'
     old_tables = re.findall(table_pattern, previous_supp, re.S)
     new_tables = re.findall(table_pattern, supp, re.S)
-    checks['all_17_supplement_tables_byte_identical_to_v5'] = len(new_tables) == 17 and old_tables == new_tables
+    def table_data(table):
+        return table.split('\\toprule', 1)[1].replace('Final O &', 'Benchmark fit &')
+    checks['all_17_supplement_table_headers_and_data_preserved'] = (
+        len(new_tables) == len(old_tables) == 17
+        and [table_data(t) for t in old_tables] == [table_data(t) for t in new_tables])
     table_paths = [p for p in (V5 / 'manuscript').glob('*.tex') if p.name not in ['main.tex','supplement.tex']]
     checks['all_generated_table_sources_unchanged'] = all(sha(path) == sha(HERE / path.name) for path in table_paths)
     before = json.loads((HERE / 'results/v5_preservation_before.json').read_text())

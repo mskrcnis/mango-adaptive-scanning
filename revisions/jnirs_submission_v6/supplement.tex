@@ -29,27 +29,27 @@
 {\small\setlength{\parskip}{0pt}\tableofcontents}
 \clearpage
 \section{Scope, provenance and interpretation}
-This supplement integrates the completed original analysis (O), the matched-predictor and stopping diagnostic (revision 2, V2), the design-only fixed-subset/order analysis (revision 3, V3), and the final research-artifact freeze (revision 4, V4). These are distinct stages, not independent replications. The present consolidation (revision 5) only reads and reports saved evidence; it performs no refitting, threshold search, bank selection or later-season rescoring.
+This supplement reports the methods and complete results for the seasonal benchmark, matched-predictor diagnosis, channel-design comparison and final six-channel model. Together, these analyses assess fixed-budget prediction, the effect of predictor and acquisition-order choices, and the behavior of the two stopping objectives.
 
-All empirical observations come from version 3 of the same public mango dataset.\citep{andersondata2024} Seasons 4 and 5 are later-season benchmark splits within that dataset. They are not a new external dataset collected for this paper. They had also been examined in earlier local work; their benchmark reuse is disclosed. V2 and V3 were motivated after the original analysis and reuse development seasons 1--3. Their conclusions are exploratory even though each revision fixed its own rules before its new computations. V4 is a selected final model artifact, not an independently evaluated fourth study.
+All empirical observations come from version 3 of the same public mango dataset.\citep{andersondata2024} Seasons 4 and 5 are later-season benchmark splits within that dataset, rather than a newly collected external dataset, and had previously been examined. The matched-predictor diagnosis and channel-design comparison were motivated after inspection of the seasonal benchmark and reuse development seasons 1--3. Their rules were fixed before their respective comparisons, but this reuse makes their conclusions exploratory. The final six-channel model is selected and fitted on development data; its selection scores describe tuning rather than independent validation.
 
-The paper asks what prediction accuracy can be obtained at fixed simulated acquisition counts, whether a bank-reference stopping objective has a demonstrated advantage under matched controls, and how predictor choice and acquisition order explain observed behavior. A negative adaptive-objective result is a substantive outcome. Harvest timing supplies motivation only: observed targets are dry matter, not validated harvest decisions or postharvest quality outcomes. Physical hardware, a harvest threshold and new field collection are outside the completed dataset-study scope; they are not missing prerequisites for this empirical report.
+The study evaluates prediction accuracy at fixed simulated acquisition counts, whether the bank-reference stopping objective improves matched comparisons, and how predictor choice and acquisition order explain observed behavior. Harvest timing supplies motivation only: observed targets are dry matter, not validated harvest decisions or postharvest quality outcomes. Hardware performance and harvest thresholds are not measured endpoints.
 
-Errors are in dry-matter percentage points (pp). A ``reading'' is one simulated finite-band acquisition unless an ideal-point or full-spectrum grid count is explicitly named. Such counts are not measured energy or latency. In original result identifiers, \texttt{physical\_...} means a model using the finite-band emulator; it does not mean physically measured LED hardware. ``Full bank'' and ``rich reference'' name fitted predictors, not error-free oracles or information-theoretic limits.
+Errors are in dry-matter percentage points (pp). A ``reading'' is one simulated finite-band acquisition unless an ideal-point or full-spectrum grid count is explicitly named. Such counts are not measured energy or latency. In benchmark result identifiers, \texttt{physical\_...} means a model using the finite-band emulator; it does not mean physically measured LED hardware. ``Full bank'' and ``rich reference'' name fitted predictors, not error-free oracles or information-theoretic limits.
 
 \subsection{Observations and grouping}
-The verified source contains 12,011 spectral scans, not 12,011 verified unique fruits. Its common comparison grid is 103 wavelengths from 684 to 990 nm in steps of 3 nm. Seasons 1, 2 and 3 contain 3,914, 1,363 and 4,966 scans in 25, 19 and 50 documented harvest populations; seasons 4 and 5 contain 1,448 and 320 scans in 18 and 2 populations. Verified fruit identities and per-record instrument serial identities are unavailable. Consequently all analyses are scan-weighted and keep each documented season/population together. No fruit identities or fruit weights are inferred from similar spectra or equal assay values. The source hash is \path{1e0e450417ed96b47b3808556706afa84a2e6441a76e380a8b64b18d85fddee1}. Exact common-grid duplicate spectra were not found in the recorded audit.
+The verified source contains 12,011 spectral scans, not 12,011 verified unique fruits. Its common comparison grid is 103 wavelengths from 684 to 990 nm in steps of 3 nm. Seasons 1, 2 and 3 contain 3,914, 1,363 and 4,966 scans in 25, 19 and 50 documented harvest populations; seasons 4 and 5 contain 1,448 and 320 scans in 18 and 2 populations. Verified fruit identities and per-record instrument serial identities are unavailable. Consequently all analyses are scan-weighted and keep each documented season/population together. No fruit identities or fruit weights are inferred from similar spectra or equal assay values. The source checksum is retained with the analysis code. No exact duplicate spectra were found on the common comparison grid.
 
-\subsection{Split roles and the pre-benchmark leakage repair}
-Each development fold holds out a complete season. Of the other seasons' harvest groups, 20\% are reserved for calibration using seed 31415. A further 15\% of the non-calibration groups are reserved for bank design using seed 2718. Remaining groups fit predictors and controllers. An audit identified that using supervised bank construction on all fitting labels could let a target population's outcome influence its own bank before out-of-fold target generation. Preliminary descendants were invalidated, archived and rerun with the separate design groups before the original later-season scoring. The final results in this supplement use the corrected partitions. This repair is distinct from the later exploratory V2/V3 questions.
+\subsection{Split roles and information separation}
+Each development fold holds out a complete season. Of the other seasons' harvest groups, 20\% are reserved for calibration using seed 31415. A further 15\% of the non-calibration groups are reserved for bank design using seed 2718. Remaining groups fit predictors and controllers. Supervised bank construction uses only the reserved design groups. Separating these groups from predictor and controller fitting prevents a target population's outcome from influencing its bank before out-of-fold target generation.
 
-Every inner scaler, predictor and reference used to generate controller targets is fitted on the corresponding inner fitting groups. No held-season, calibration or bank-design target enters that fit. The exact row and group memberships are retained in \path{results/fold_assignments.json}. The final original later-season bundles use the same role-separation scheme on all development seasons; V4 intentionally uses a different finalization rule described below.
+Every inner scaler, predictor and reference used to generate controller targets is fitted on the corresponding inner fitting groups. No held-season, calibration or bank-design target enters that fit. The analysis code provides the exact row and group memberships. The seasonal benchmark uses the same role-separation scheme across all development seasons. The final six-channel model instead uses the development-only selection and refitting rule described below.
 
 \begingroup\small
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{lllll}
-\caption{Original, V2 and V3 role counts: scans / harvest populations. Final O is the original final-fit partition, not the V4 refit.}\label{tab:roles}\\
+\caption{Role counts for the seasonal benchmark, matched-predictor diagnosis and channel-design comparison: scans / harvest populations. Benchmark fit denotes the partition used for later-season evaluation; the final six-channel model is fitted separately.}\label{tab:roles}\\
 \toprule
 Held season & Core fit & Design & Calibration & Held evaluation \\
 \midrule
@@ -67,7 +67,7 @@ Held season & Core fit & Design & Calibration & Held evaluation \\
 1 & 4003 / 46 & 998 / 9 & 1328 / 14 & 3914 / 25 \\
 2 & 5656 / 51 & 953 / 9 & 2271 / 15 & 1363 / 19 \\
 3 & 3054 / 29 & 857 / 6 & 1366 / 9 & 4966 / 50 \\
-Final O & 6826 / 63 & 1300 / 12 & 2117 / 19 & 0 / 0 \\
+Benchmark fit & 6826 / 63 & 1300 / 12 & 2117 / 19 & 0 / 0 \\
 \end{longtable}
 \endgroup
 
@@ -79,18 +79,18 @@ For apparent absorbance $A_{ik}$ at wavelength $\lambda_k$, the emulator first f
 \]
 Endpoint quadrature widths are 1.5 nm and interior widths 3 nm. A per-row numerical absorbance shift stabilizes exponentials without changing this ratio. Averaging absorbances instead of intensities would be a different forward model. The F-750 documentation gives Log(1/Reflectance), but the logarithm base was not verified at firmware level; base 10 is an explicitly adopted apparent-absorbance convention. Detector and reference response are assumed flat because calibrated response curves are absent.
 
-Ten distinct component families have digitized typical manufacturer emission plots.\citep{roithnercatalog} Their nominal centers are 720, 740, 760, 780, 800, 820, 850, 890, 910 and 940 nm. Source PDFs, rendered plots, traced pixels, curve CSVs and hashes are retained in \path{data/catalog/}. The interpolation is of an emitter response onto the observed spectral grid, not imputation of an unobserved fruit reading. Each admitted trace has at least 95\% of its modeled response mass inside the observed wavelength range. Mass outside each plotted curve's finite support is assumed zero; coverage is therefore a modeled property, not a certified real-device bound. Absolute emitted power is discarded by normalization.
+Ten distinct component families have digitized typical manufacturer emission plots.\citep{roithnercatalog} Their nominal centers are 720, 740, 760, 780, 800, 820, 850, 890, 910 and 940 nm. The code repository provides the manufacturer source material, digitized curves and provenance records. The interpolation is of an emitter response onto the observed spectral grid, not imputation of an unobserved fruit reading. Each admitted trace has at least 95\% of its modeled response mass inside the observed wavelength range. Mass outside each plotted curve's finite support is assumed zero; coverage is therefore a modeled property, not a certified real-device bound. Absolute emitted power is discarded by normalization.
 
-The primary eight-channel bank P (\texttt{swap\_mid}) has centers 720, 760, 780, 800, 820, 890, 910 and 940 nm. The catalog-only sensitivity U (\texttt{uniform}) has centers 720, 740, 780, 800, 820, 850, 910 and 940 nm. Original bank C denotes the supervised correlation rule; its membership is separately retained by fold and final role. Every policy initially acquires the lowest and highest bank centers and charges both readings. At eight installed channels there are $2^6=64$ reachable masks, of which 63 are nonterminal, and $6!=720$ orders of the remaining channels.
+The primary eight-channel bank P (\texttt{swap\_mid}) has centers 720, 760, 780, 800, 820, 890, 910 and 940 nm. The catalog-only sensitivity U (\texttt{uniform}) has centers 720, 740, 780, 800, 820, 850, 910 and 940 nm. Bank C denotes the supervised correlation rule; its membership is separately retained by fold and final role. Every policy initially acquires the lowest and highest bank centers and charges both readings. At eight installed channels there are $2^6=64$ reachable masks, of which 63 are nonterminal, and $6!=720$ orders of the remaining channels.
 
 At sparse inference, only acquired scalar readings and their binary availability mask enter the model. Missing values are replaced with training means before scaling, then zeroed; an acquired zero remains distinguishable through the mask. No sparse inference uses full-spectrum SNV, a full-spectrum derivative, hidden readings, assay, season, population or reference prediction. The full spectrum is used offline to generate emulator channels and by the explicitly rich comparator. The sequential API requests one channel at a time. Its read boundary and saved traces test software behavior, not an optical device.
 
 \subsection{Optical sensitivity definitions}
-Original sensitivity rows include center shifts of $\pm3$ nm, width multipliers 0.9 and 1.1, a Gaussian response constructed from catalog nominal peak/width, and ideal grid-point channels. These are declared simulation perturbations, not certified manufacturer tolerances. The shifted-width/Gaussian scenarios apply the nominally trained finite-band models without retraining; ideal-point models have their own development fitting and operating points. The Gaussian substitution is especially different for parts whose drawn curve width differs from the tabulated typical width. Large prediction errors after a response change are retained. If the full-bank comparator fails under mismatch, a low missed-correction fraction relative to that failed predictor does not establish safe stopping. No unsupported profile was silently renormalized into eligibility; the saved scored sensitivity exclusions list is empty for the registered scored scenarios.
+Benchmark sensitivity rows include center shifts of $\pm3$ nm, width multipliers 0.9 and 1.1, a Gaussian response constructed from catalog nominal peak/width, and ideal grid-point channels. These are declared simulation perturbations, not certified manufacturer tolerances. The shifted-width/Gaussian scenarios apply the nominally trained finite-band models without retraining; ideal-point models have their own development fitting and operating points. The Gaussian substitution is especially different for parts whose drawn curve width differs from the tabulated typical width. Large prediction errors after a response change are retained. If the full-bank comparator fails under mismatch, a low missed-correction fraction relative to that failed predictor does not establish safe stopping. No unsupported profile was silently renormalized into eligibility; the saved scored sensitivity exclusions list is empty for the registered scored scenarios.
 
-\section{Original predictive and acquisition methods}
+\section{Seasonal benchmark: predictive and acquisition methods}
 \subsection{Partial predictor and references}
-The masked multilayer perceptron (MLP) has 64/32 ReLU hidden units and a scalar standardized-assay output. Input width is twice the number of installed channels (values plus mask). It trains for 80 epochs using one randomly chosen reachable nonterminal mask per scan per epoch, AdamW at 0.002, weight decay $10^{-4}$ and batch size 2,048. The executed workflow uses equal scan weights, rather than the unused group-weighting default in the lower-level training helper. The MLP is not trained as a raw full-mask predictor. At full acquisition the pipeline dispatches to its frozen complete-bank PLS with six components and autoscaling. This estimator switch motivates the V2 decomposition below.
+The masked multilayer perceptron (MLP) has 64/32 ReLU hidden units and a scalar standardized-assay output. Input width is twice the number of installed channels (values plus mask). It trains for 80 epochs using one randomly chosen reachable nonterminal mask per scan per epoch, AdamW at 0.002, weight decay $10^{-4}$ and batch size 2,048. Each scan receives equal weight. The MLP is not trained as a raw full-mask predictor. At full acquisition the pipeline dispatches to its frozen complete-bank PLS with six components and autoscaling. This estimator switch motivates the matched-predictor endpoint decomposition below.
 
 The primary rich predictor applies row SNV, then an 11-point Savitzky--Golay second derivative with polynomial degree two and 3-nm spacing, then autoscaled PLS with 12 components. Standard deviations in SNV are bounded below by $10^{-8}$. PLS uses a 500-iteration limit; component counts are capped by feature count and the number of training rows minus one. A generic secondary spectral CNN uses convolutions with 8 and 16 channels, kernels 7 and 5, factor-two average pooling and a 32-unit dense layer, trained for 55 epochs. It supplies a separately labeled single-CNN-reference controller sensitivity, not the primary stopping target.
 
@@ -102,32 +102,32 @@ For scan $i$, acquired set $S$, assay $y_i$, partial prediction $f_S$, bank pred
  e_{S,i}=|y_i-f_S|,\quad e_{B,i}=|y_i-f_B|,\quad e_{F,i}=|y_i-f_F|,\qquad
  g_{B,i}(S)=e_{S,i}-e_{B,i},\quad g_{F,i}(S)=e_{S,i}-e_{F,i}.
 \]
-The proposed (bank-reference) label is $\mathbb{1}\{g_B>0.50\}$; the rich-reference comparator uses $\mathbb{1}\{g_F>0.50\}$. Positive labels mean additional bank/rich prediction can materially correct this fitted state's absolute assay error. Signed one-step action targets are $e_S-e_{S\cup\{j\}}$ for every unread $j$; negative gains are retained. Each controller has a shared 64/32 ReLU encoder, a binary gain head, one signed action-gain score per LED and an auxiliary absolute-error estimate. The loss is binary cross-entropy plus scaled action MSE plus 0.25 times scaled absolute-error MSE. All 63 nonterminal masks receive equal weight within each scan, and three group-disjoint inner folds generate every training target. Controllers train for 25 epochs with matched initialization, state sequence, action labels and effort. Shared encoders can nevertheless learn different action scores, which is why the original joint-controller comparison does not isolate stopping alone.
+The proposed (bank-reference) label is $\mathbf{1}\{g_B>0.50\}$; the rich-reference comparator uses $\mathbf{1}\{g_F>0.50\}$. Positive labels mean additional bank/rich prediction can materially correct this fitted state's absolute assay error. Signed one-step action targets are $e_S-e_{S\cup\{j\}}$ for every unread $j$; negative gains are retained. Each controller has a shared 64/32 ReLU encoder, a binary gain head, one signed action-gain score per LED and an auxiliary absolute-error estimate. The loss is binary cross-entropy plus scaled action MSE plus 0.25 times scaled absolute-error MSE. All 63 nonterminal masks receive equal weight within each scan, and three group-disjoint inner folds generate every training target. Controllers train for 25 epochs with matched initialization, state sequence, action labels and effort. Shared encoders can nevertheless learn different action scores, which is why the seasonal benchmark joint-controller comparison does not isolate stopping alone.
 
 Isotonic calibration uses disjoint calibration groups along complete sequential paths. Final stopping follows the calibrated probability and frozen threshold, with termination forced at eight readings. Full-mask dispatch makes the bank-relative terminal gain exactly zero. Rich-reference error can remain lower or higher than bank error; neither error is constrained to be an optical lower bound.
 
-\subsection{Baseline definitions and numerical repair}
+\subsection{Baseline definitions and numerical implementation}
 Fixed ordering ranks channels by mean training out-of-fold one-step gain from the initial state. Fixed-length controls follow this order at lengths 2--8; seeded random ordering uses a reproducible permutation. The uncertainty comparator thresholds the same observed-input error head and follows the proposed action head. The look-ahead comparator uses a training-fitted regularized conditional Gaussian over standardized channels, three conditional draws per prospective reading and a two-step branch in which the second choice depends on the imagined first reading. It minimizes estimated terminal residual risk. The terminal residual model is ridge fitted to out-of-fold full-bank absolute errors. Actual hidden replay readings never supply imagined future observations. This is a bounded conditional-risk approximation, not an implementation of acquisition-conditioned oracle.\citep{valancius2024}
 
 Static finite-band controls use budgets 4 and 8; ideal point controls use 4, 8 and 16 measured-grid features. A training-only sparse ordering tunes 14 Lasso penalties from $10^{-4}$ to $10^{-0.3}$ with three grouped folds and fold-specific scaling, then refits on core groups. The selected feature sets are given to autoscaled PLS with $\min(6,K)$ components, standardized RBF SVR ($C=10$, $\epsilon=0.1$, gamma=scale), or standardized 64/32 MLP regression (160 iterations, batch 256, L2 parameter 0.01, no early stopping). These static networks are not the masked runtime MLP.
 
-Before later-season scoring, coordinate-descent Lasso remained unconverged even at 50,000 iterations. Deterministic LassoLars solved the same objective with a 2,000-step limit and Gram precomputation. The held-season-1 solver audit had all 42 inner fits and the final refit without convergence warnings, KKT residual below $2.2\times10^{-13}$ and primal--dual gap below $4.7\times10^{-11}$. Solver choice used convergence diagnostics only; neither its penalty grid nor partitions changed. Unsuccessful attempts remain archived.
+Coordinate-descent Lasso did not converge within 50,000 iterations. The sparse-selection baseline therefore uses deterministic LassoLars to solve the same objective with a 2,000-step limit and Gram precomputation. For held season 1, all 42 inner fits and the final refit converged without warnings, KKT residual below $2.2\times10^{-13}$ and primal--dual gap below $4.7\times10^{-11}$. Solver choice was based on convergence diagnostics before later-season scoring; the penalty grid and partitions were unchanged.
 
-\subsection{Original operating points and uncertainty}
-The original scientific rule minimizes distance from four mean development readings, then worst-season RMSEP, then threshold, over the fixed grid $0,0.05,\ldots,1$. Its stricter engineering search requires every development season to satisfy missed-correction rate at most 10\%, bank-loss rate at most 10\%, RMSEP at most rich-reference RMSEP +0.25 pp and mean readings at most four. Undefined missed rates cannot pass that search. When infeasible, the recorded fallback minimizes the largest normalized violation, then worst-season RMSEP and mean readings; it is not relabeled feasible. A separate illustrative screening statement uses at most +0.25 pp versus the full bank and at least 25\% fewer mean readings. These two sets of criteria must not be conflated. The original development engineering search was infeasible; every original E row is its recorded descriptive fallback, not a feasible selected prototype.
+\subsection{Benchmark operating points and uncertainty}
+The benchmark scientific rule minimizes distance from four mean development readings, then worst-season RMSEP, then threshold, over the fixed grid $0,0.05,\ldots,1$. Its stricter engineering search requires every development season to satisfy missed-correction rate at most 10\%, bank-loss rate at most 10\%, RMSEP at most rich-reference RMSEP +0.25 pp and mean readings at most four. Undefined missed rates cannot pass that search. When infeasible, the recorded fallback minimizes the largest normalized violation, then worst-season RMSEP and mean readings; it is not relabeled feasible. A separate illustrative screening statement uses at most +0.25 pp versus the full bank and at least 25\% fewer mean readings. These two sets of criteria must not be conflated. The benchmark development engineering search was infeasible; every benchmark E row is its recorded descriptive fallback, not a feasible selected prototype.
 
-A missed material correction is an early stop with $e_S-e_B>\delta$. Its conditional rate is missed count divided by early-stop count, undefined when no scans stop early. The unconditional rate divides by all scans. Bank-loss rate uses $e_B-e_F>\delta$. Agreement between two predictions is not equivalent to correctness against the assay. All original operating decisions were frozen before the later-season benchmark outcomes were loaded. Achieved mean-reading differences exceeding 0.25 make objective comparisons budget-confounded; plotting a held-data frontier does not permit threshold retuning.
+A missed material correction is an early stop with $e_S-e_B>\delta$. Its conditional rate is missed count divided by early-stop count, undefined when no scans stop early. The unconditional rate divides by all scans. Bank-loss rate uses $e_B-e_F>\delta$. Agreement between two predictions is not equivalent to correctness against the assay. All benchmark operating decisions were frozen before the later-season benchmark outcomes were loaded. Achieved mean-reading differences exceeding 0.25 make objective comparisons budget-confounded; plotting a held-data frontier does not permit threshold retuning.
 
-Paired uncertainty resamples complete harvest populations 1,000 times with seed 42, where the registered minimum group count is met. Original and V2 rules require at least five populations; V3 held seasons have 25, 19 and 50. Season 5 has only two populations and therefore has no reported population-bootstrap interval. Intervals condition on sampled populations, fitted models and selected designs, not new-season uncertainty. No multiplicity adjustment or seed-selection claim is made. Seeds 7, 42 and 99 describe fitting variation, not independent biological replication.
+Paired uncertainty resamples complete harvest populations 1,000 times with seed 42, where the registered minimum group count is met. The seasonal benchmark and matched-predictor diagnosis require at least five populations; the channel-design held seasons have 25, 19 and 50. Season 5 has only two populations and therefore has no reported population-bootstrap interval. Intervals condition on sampled populations, fitted models and selected designs, not new-season uncertainty. No multiplicity adjustment or seed-selection claim is made. Seeds 7, 42 and 99 describe fitting variation, not independent biological replication.
 
-\section{Complete original later-season benchmark results}
-Table~\ref{tab:original} reports all 176 saved operating points, including original baselines, both additional seeds and every scored optical scenario. P, U and C identify the banks defined above. Point S is scientific, E is the original engineering point and Ref is a reference/static model. Scenario N is nominal, C-/C+ shifts centers by $-3/+3$ nm, W-/W+ scales width by 0.9/1.1, Gauss substitutes nominal Gaussian responses, and Points uses separately fitted ideal-point channels. Full-spectrum counts of 103 and ideal counts are feature counts, not directly comparable hardware costs. The ``missed/early'' entry exposes the denominator rather than treating an undefined rate as zero.
+\section{Complete later-season benchmark results}
+Table~\ref{tab:original} reports all 176 saved operating points, including all benchmark baselines, both additional seeds and every scored optical scenario. P, U and C identify the banks defined above. Point S is scientific, E is the benchmark engineering point and Ref is a reference/static model. Scenario N is nominal, C-/C+ shifts centers by $-3/+3$ nm, W-/W+ scales width by 0.9/1.1, Gauss substitutes nominal Gaussian responses, and Points uses separately fitted ideal-point channels. Full-spectrum counts of 103 and ideal counts are feature counts, not directly comparable hardware costs. The ``missed/early'' entry exposes the denominator rather than treating an undefined rate as zero.
 
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlrlllrrlr}
-\caption{All original later-season scored operating points, reproduced from the frozen metrics.}\label{tab:original}\\
+\caption{All later-season benchmark operating points, reproduced from the frozen metrics.}\label{tab:original}\\
 \toprule
 Season & Bank & Seed & Scenario & Method & Point & RMSEP & Readings & Missed/early & Rate \\
 \midrule
@@ -629,18 +629,18 @@ Season & Obj. & Scope & Depth & States & Pred. gain & Actual gain & Gain $>0$ & 
 \end{longtable}
 \endgroup
 
-\section{V2: matched predictors, endpoint decomposition and stopping-only controls}
-V2 begins after the original study was inspected. It uses development seasons 1--3 only, the same role partitions and optical emulator, primary bank P at seeds 42/7/99 and sensitivity U at seed 42 (12 cases). Neither features nor assays from seasons 4--5 are loaded or rescored. No new bank is searched. All full-mask MLP entries are labeled \emph{Hybrid}: the seven-reading masked MLP dispatches to PLS at eight readings. A raw full-mask MLP estimate was not available and is not invented.
+\section{Matched-predictor diagnosis}
+The matched-predictor diagnosis was motivated after benchmark inspection and is exploratory. It uses development seasons 1--3 only, the same role partitions and optical emulator, primary bank P at seeds 42/7/99 and sensitivity U at seed 42 (12 cases). No features or assays from seasons 4--5 enter this diagnosis, and no new bank is searched. All full-mask MLP entries are labeled \emph{Hybrid}: the seven-reading masked MLP dispatches to PLS at eight readings. No raw full-mask MLP estimate is available.
 
 \subsection{Subset-specific prediction and the common order}
-For each of the 64 reachable masks, fit a separate autoscaled PLS with $\min(6,|S|)$ components or a StandardScaler-plus-ridge model with $\alpha=10$. Hyperparameters are fixed. Three-fold grouped out-of-fold predictions reuse exactly the original core target partitions; calibration and held-season predictions use all core fitting groups. Scalers are fitted only within their associated fitting fold. Existing MLP predictions are reused on those same rows and masks. At eight channels, subset PLS reproduces the original complete-bank predictor.
+For each of the 64 reachable masks, fit a separate autoscaled PLS with $\min(6,|S|)$ components or a StandardScaler-plus-ridge model with $\alpha=10$. Hyperparameters are fixed. Three-fold grouped out-of-fold predictions reuse the benchmark core target partitions; calibration and held-season predictions use all core fitting groups. Scalers are fitted only within their associated fitting fold. Existing MLP predictions are reused on those same rows and masks. At eight channels, subset PLS reproduces the benchmark complete-bank predictor.
 
 All predictor families and both stopping objectives follow one assay-independent catalog order: begin with endpoints; repeatedly choose the unread center with largest minimum distance to the acquired centers, breaking ties by the lower center/index. For P the order is 720, 940, 820, 890, 760, 780, 800, 910 nm; U is 720, 940, 820, 780, 850, 910, 740, 800 nm. This ensures identical acquired subsets in family comparisons, but does not assert predictive optimality of wavelength spacing.
 
 At depth $d$, the common-order error uses its single prefix. The all-mask RMSEP pools squared errors over scans and every reachable depth-$d$ mask with equal mask weight before taking the square root; it is not the mean of mask RMSEPs. The numbers of masks at depths 2--8 are 1, 6, 15, 20, 15, 6 and 1. No best held-data subset is selected. Table~\ref{tab:v2predictors} reports all 504 held predictor-depth cells, compacted to 72 rows. Common-order rows also contain all 252 fixed-length policy RMSEPs. Additional core-OOF/calibration summaries are retained in the 1,512-row source file; their errors are training/tuning diagnostics, not independent validation.
 
 \subsection{Endpoint identity}
-For every scan on the common order, V2 separates the signed hybrid absolute-error reduction into
+For every scan on the common order, the signed hybrid absolute-error reduction is decomposed as
 \[
  |y-f_{\mathrm{MLP},7}|-|y-f_{\mathrm{PLS},8}|
  =\bigl(|y-f_{\mathrm{MLP},7}|-|y-f_{\mathrm{PLS},7}|\bigr)
@@ -649,9 +649,9 @@ For every scan on the common order, V2 separates the signed hybrid absolute-erro
 The first term changes estimator at an identical seven-channel subset. The second adds the final channel within PLS. Means preserve this identity; individual confidence intervals need not add endpoint-by-endpoint. Negative terms are retained. For P most average improvement persists within PLS, whereas U's last channel slightly worsens mean absolute error and the estimator replacement accounts for its positive hybrid endpoint change. This is bank/order-dependent model behavior, not irreducible spectral information.
 
 \subsection{Matched stopping learner and threshold rules}
-Each predictor family supplies its own $f_S$ and $f_B$; $f_F$ is the saved rich PLS. Two logistic regressions use identical observed standardized readings and masks, identical six nonterminal states per scan, $C=1$, L-BFGS, tolerance $10^{-7}$, maximum 2,000 iterations and no class/group reweighting. A one-class training event uses its constant probability. A convergence warning fails the fit rather than silently providing an unconverged policy. There is no action head in V2: only $\mathbb{1}\{e_S-e_B>.5\}$ versus $\mathbb{1}\{e_S-e_F>.5\}$ differs. Isotonic regression fits all nonterminal calibration-path states with probabilities clipped outside its fitting range. The same reserved calibration groups then select thresholds; this is tuning, with the held season remaining separate.
+Each predictor family supplies its own $f_S$ and $f_B$; $f_F$ is the saved rich PLS. Two logistic regressions use identical observed standardized readings and masks, identical six nonterminal states per scan, $C=1$, L-BFGS, tolerance $10^{-7}$, maximum 2,000 iterations and no class/group reweighting. A one-class training event uses its constant probability. A convergence warning fails the fit rather than silently providing an unconverged policy. There is no action head in the matched stopping comparison: only $\mathbf{1}\{e_S-e_B>.5\}$ versus $\mathbf{1}\{e_S-e_F>.5\}$ differs. Isotonic regression fits all nonterminal calibration-path states with probabilities clipped outside its fitting range. The same reserved calibration groups then select thresholds; this is tuning, with the held season remaining separate.
 
-A policy stops at the first calibrated gain probability less than or equal to threshold, with forced stop at depth eight. The scientific threshold is closest to four mean calibration readings, then smallest calibration RMSEP, then lower threshold. The engineering threshold uses the separate two-condition screen: mean readings at most six and RMSEP no more than 0.25 pp above its own same-family full bank; among feasible thresholds choose fewest readings, then RMSEP, then lower threshold. If none is feasible, the explicitly descriptive fallback minimizes largest normalized violation, total violation, RMSEP, readings and threshold in that order. Calibration feasibility (Cal) and held-season screen success (Held) are separate table entries. These rules differ from the stricter original engineering search.
+A policy stops at the first calibrated gain probability less than or equal to threshold, with forced stop at depth eight. The scientific threshold is closest to four mean calibration readings, then smallest calibration RMSEP, then lower threshold. The engineering threshold uses the separate two-condition screen: mean readings at most six and RMSEP no more than 0.25 pp above its own same-family full bank; among feasible thresholds choose fewest readings, then RMSEP, then lower threshold. If none is feasible, the explicitly descriptive fallback minimizes largest normalized violation, total violation, RMSEP, readings and threshold in that order. Calibration feasibility (Cal) and held-season screen success (Held) are separate table entries. These rules differ from the stricter seasonal benchmark engineering search.
 
 Every fixed length 2--8 and every probability threshold on the registered grid is retained. Brier scores concern each objective's own event and cannot be read as a common-target superiority measure. An achieved mean-reading gap above 0.25 prevents an unqualified objective comparison even when both calibration selections targeted four. Paired contrasts below retain all seeds and both banks, including unfavorable and budget-incomparable cases; all corresponding predictive metrics remain in the companion CSVs.
 
@@ -659,7 +659,7 @@ Every fixed length 2--8 and every probability threshold on the registered grid i
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlrllrrrrrrrr}
-\caption{All held-season V2 predictor errors and all common-order fixed-length controls. Hybrid at depth 8 equals PLS.}\label{tab:v2predictors}\\
+\caption{All held-season matched-predictor errors and common-order fixed-length controls. Hybrid at depth 8 equals PLS.}\label{tab:v2predictors}\\
 \toprule
 Season & Bank & Seed & Predictor & Scope & Scans & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \midrule
@@ -753,7 +753,7 @@ Season & Bank & Seed & Predictor & Scope & Scans & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlrrlll}
-\caption{All V2 endpoint decompositions: mean signed absolute-error reduction [95\% population-bootstrap interval].}\label{tab:endpoint}\\
+\caption{All matched-predictor endpoint decompositions: mean signed absolute-error reduction [95\% population-bootstrap interval].}\label{tab:endpoint}\\
 \toprule
 Season & Bank & Seed & Groups & Total hybrid & MLP7 $\rightarrow$ PLS7 & PLS7 $\rightarrow$ PLS8 \\
 \midrule
@@ -787,7 +787,7 @@ Season & Bank & Seed & Groups & Total hybrid & MLP7 $\rightarrow$ PLS7 & PLS7 $\
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlrlllrrrlll}
-\caption{All 144 V2 stopping operating points. Cal/Held denote engineering feasibility/success only; scientific rows have no such pass label.}\label{tab:v2adaptive}\\
+\caption{All 144 matched-predictor stopping operating points. Cal/Held denote engineering feasibility/success only; scientific rows have no such pass label.}\label{tab:v2adaptive}\\
 \toprule
 Season & Bank & Seed & Predictor & Obj. & Point & $\tau$ & RMSEP & Readings & Missed/early & Cal & Held \\
 \midrule
@@ -949,14 +949,14 @@ Season & Bank & Seed & Predictor & Obj. & Point & $\tau$ & RMSEP & Readings & Mi
 \end{longtable}
 \endgroup
 
-\subsection{Complete V2 paired contrasts}
+\subsection{Complete matched-predictor paired contrasts}
 For Table~\ref{tab:v2paired}, BR is bank-reference minus rich-reference stopping; B4 is bank-reference stopping minus the four-reading common-order predictor; PM is the named predictor minus the masked MLP at the identical depth. S/E denote scientific/engineering points, and 4/7 denote exact fixed depth. Positive $\Delta$RMSEP favors the second comparator; positive $\Delta$readings means the first spends more. ``Budget'' uses the registered absolute mean-reading gap at most 0.25. The paired intervals condition on the fitted pipeline and sampled harvest populations; they do not resolve unequal costs or repeated development use.
 
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlrllllrl}
-\caption{All 192 V2 paired comparisons; no bank, predictor, seed or registered contrast is omitted.}\label{tab:v2paired}\\
+\caption{All 192 matched-predictor paired comparisons; no bank, predictor, seed or registered contrast is omitted.}\label{tab:v2paired}\\
 \toprule
 Season & Bank & Seed & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta$readings & Budget \\
 \midrule
@@ -1166,25 +1166,25 @@ Season & Bank & Seed & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & 
 \end{longtable}
 \endgroup
 
-\section{V3: design-only fixed subsets and orders}
-V3 is a bounded follow-up motivated by V2's poor common order and inconclusive stopping comparison. It is not a fresh confirmatory experiment. It keeps the existing P and U banks, initial endpoint pair, PLS and ridge settings, outer roles and seed-42 source arrays. All six bank/held-season designs were locked before evaluation arrays were parsed. There is no new bank, channel-count or model-hyperparameter search after outcomes are inspected.
+\section{Channel-design comparison}
+The channel-design comparison was motivated by the matched-predictor diagnosis, which showed poor common-order performance and an inconclusive stopping comparison. It is exploratory rather than a fresh confirmatory experiment. It keeps the existing P and U banks, initial endpoint pair, PLS and ridge settings, outer roles and seed-42 source arrays. All six bank/held-season designs were locked before evaluation arrays were parsed. There is no new bank, channel-count or model-hyperparameter search after outcomes are inspected.
 
 \subsection{Design-group cross-fitting and exhaustive selection}
-Only reserved design populations generate wavelength-selection scores. For each of the 64 reachable masks and each family, leave one design population out, fit on every other design population and score its held observations. The design sets contain 9, 9 and 6 populations; leave-one-population-out fitting therefore uses 8, 8 and 5 groups. Optical values and fitting assays cross the inherited float32 boundary, while squared errors use the original float64 assay values. Equal scan weights preserve the actual original estimator; unequal population/season representation is reported explicitly rather than hidden by an invented fruit weight.
+Only reserved design populations generate wavelength-selection scores. For each of the 64 reachable masks and each family, leave one design population out, fit on every other design population and score its held observations. The design sets contain 9, 9 and 6 populations; leave-one-population-out fitting therefore uses 8, 8 and 5 groups. Optical values and fitting assays cross the inherited float32 boundary, while squared errors use the original float64 assay values. Equal scan weights preserve the benchmark estimator; unequal population/season representation is reported explicitly, and no unverified fruit weights are assigned.
 
 At each depth 2--8 choose the mask with minimum pooled design out-of-fold MSE; exact ties use lexicographically sorted local indices. These seven subsets need not be nested and are evaluated as separate fixed-budget scanners. Separately enumerate all 720 endpoint-first orders and choose the one minimizing the sum of design MSE over prefixes 2--7, giving each depth equal weight. The full-bank term is constant and omitted. Exact ties use lexicographic complete order. Retain all mask/order scores and the top-two margins. The independently selected fixed-six subset can differ from the first six channels of the globally selected order.
 
-The six designs are hash-locked before source evaluation reads. Held/calibration/core predictions are then reused from V2's 64-mask arrays after row, group, bank, mask and feature checks. Thus no altered fit is introduced by the order comparison. Catalog-order logistic stoppers are reused exactly; designed-order logistic stoppers are fitted using the corresponding core out-of-fold predictions and the same reserved calibration groups, with V2's learner, events, grid and threshold rules unchanged. PLS and ridge select their own designs; cross-family differences therefore do not isolate the learner at identical channel subsets.
+The six designs are hash-locked before source evaluation reads. Held/calibration/core predictions reuse the matched-predictor 64-mask arrays after row, group, bank, mask and feature checks. Thus no altered fit is introduced by the order comparison. Catalog-order logistic stoppers are reused exactly; designed-order logistic stoppers are fitted using the corresponding core out-of-fold predictions and the same reserved calibration groups, with the matched-predictor learner, events, grid and threshold rules unchanged. PLS and ridge select their own designs; cross-family differences therefore do not isolate the learner at identical channel subsets.
 
 The primary exact-budget contrast is designed-order minus catalog-order RMSEP at four readings in P/PLS for each held season. Independently selected fixed four versus catalog four is a second contrast; six readings is a prespecified engineering sensitivity. The same +0.25 pp/at-most-six-reading relative screen is applied to fixed and adaptive points. The two-reference scientific comparison requires an achieved difference of at most 0.25 readings, which is a tolerance, not exact cost equality. The fixed-subset selection criterion is a tuning statistic; evaluated results are conditional on this chosen design. The 1,000-draw paired population bootstrap does not include repeated subset/order selection or unknown fruit identities.
 
-V3 saves 768 mask-score rows, 8,640 order-score rows, 12 selected family/bank/season designs, all 348 evaluated policy rows, 1,188,188 scan-level prediction rows, 2,016 threshold-curve rows and 96 paired contrasts. The exhaustive search tables remain machine-readable; the tables below display every selected configuration and every scored fixed/adaptive operating point. No favorable threshold is selected from the held curves.
+The channel-design comparison reports 768 mask-score rows, 8,640 order-score rows, 12 selected family/bank/season designs, all 348 evaluated policy rows, 1,188,188 scan-level prediction rows, 2,016 threshold-curve rows and 96 paired contrasts. The exhaustive search tables remain machine-readable; the tables below display every selected configuration and every scored fixed/adaptive operating point. No favorable threshold is selected from the held curves.
 
 \begingroup\small
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rrrr}
-\caption{V3 design-set composition, identical for P/U and both predictor families. Held-season-1 design is dominated by season 3.}\label{tab:designcomposition}\\
+\caption{Channel-design set composition, identical for P/U and both predictor families. Held-season-1 design is dominated by season 3.}\label{tab:designcomposition}\\
 \toprule
 Held season & Source season & Design populations & Design scans \\
 \midrule
@@ -1212,7 +1212,7 @@ Held season & Source season & Design populations & Design scans \\
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlllrrr}
-\caption{Every V3 selected nested order (nm) and design score. Score is the summed design MSE over depths 2--7; margin is second-best minus best.}\label{tab:orders}\\
+\caption{Every selected nested order (nm) and design score. Score is the summed design MSE over depths 2--7; margin is second-best minus best.}\label{tab:orders}\\
 \toprule
 Season & Bank & Predictor & Selected order (nm) & Score & Catalog score & Margin \\
 \midrule
@@ -1246,7 +1246,7 @@ Season & Bank & Predictor & Selected order (nm) & Score & Catalog score & Margin
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rllrlr}
-\caption{All 84 independently selected V3 fixed subsets, including depths 2--8. Design RMSEP is a selection statistic, not held-season accuracy.}\label{tab:subsets}\\
+\caption{All 84 independently selected fixed subsets, including depths 2--8. Design RMSEP is a selection statistic, not held-season accuracy.}\label{tab:subsets}\\
 \toprule
 Season & Bank & Predictor & Readings & Selected centers (nm) & Design RMSEP \\
 \midrule
@@ -1352,7 +1352,7 @@ Season & Bank & Predictor & Readings & Selected centers (nm) & Design RMSEP \\
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlllrrrrrrr}
-\caption{Every V3 fixed-length operating point: 252 RMSEP values. Catalog/Designed are nested prefixes; Subset is the independently selected mask at each depth.}\label{tab:v3fixed}\\
+\caption{Every channel-design fixed-length operating point: 252 RMSEP values. Catalog/Designed are nested prefixes; Subset is the independently selected mask at each depth.}\label{tab:v3fixed}\\
 \toprule
 Season & Bank & Predictor & Variant & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \midrule
@@ -1410,7 +1410,7 @@ Season & Bank & Predictor & Variant & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlllllrrrlll}
-\caption{Every V3 adaptive operating point on catalog and designed orders. Scientific points have no engineering pass label.}\label{tab:v3adaptive}\\
+\caption{Every channel-design adaptive operating point on catalog and designed orders. Scientific points have no engineering pass label.}\label{tab:v3adaptive}\\
 \toprule
 Season & Bank & Predictor & Order & Obj. & Point & $\tau$ & RMSEP & Readings & Missed/early & Cal & Held \\
 \midrule
@@ -1524,14 +1524,14 @@ Season & Bank & Predictor & Order & Obj. & Point & $\tau$ & RMSEP & Readings & M
 \end{longtable}
 \endgroup
 
-\subsection{Complete V3 paired contrasts}
+\subsection{Complete channel-design paired contrasts}
 In Table~\ref{tab:v3paired}, DC is designed-prefix minus catalog-prefix prediction at the same fixed depth; SC is independently selected subset minus catalog prefix at the same depth; BR is bank-reference minus rich-reference stopping on the designed order; and AS is bank-reference adaptive prediction on the designed order minus the selected fixed subset. AS uses selected fixed four for the scientific point and selected fixed six for the engineering point. Only the fixed-depth contrasts are exactly matched in reading count. The budget-tolerance flag does not turn an adaptive comparison into exact equality.
 
 \begingroup\footnotesize
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{rlllllrl}
-\caption{All 96 V3 paired contrasts with sampled-population intervals and achieved budget comparability.}\label{tab:v3paired}\\
+\caption{All 96 channel-design paired contrasts with sampled-population intervals and achieved budget comparability.}\label{tab:v3paired}\\
 \toprule
 Season & Bank & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta$readings & Budget \\
 \midrule
@@ -1649,7 +1649,7 @@ Season & Bank & Predictor & Contrast & Point & $\Delta$RMSEP [95\% CI] & $\Delta
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \begin{longtable}{lllrrrr}
-\caption{Complete pairwise Jaccard overlap of V3 selected channel sets across outer design splits (168 values). This describes stability, not accuracy.}\label{tab:stability}\\
+\caption{Complete pairwise Jaccard overlap of the selected channel sets across outer design splits (168 values). This describes stability, not accuracy.}\label{tab:stability}\\
 \toprule
 Bank & Predictor & Design & Depth & Seasons 1/2 & Seasons 1/3 & Seasons 2/3 \\
 \midrule
@@ -1723,19 +1723,19 @@ U & Ridge & Subset & 8 & 1.000 & 1.000 & 1.000 \\
 \end{longtable}
 \endgroup
 
-\section{V4: a frozen research artifact, not new validation}
-After V3, a separate finalization rule selected one six-channel candidate from development seasons 1--3 only. It retained P's eight-channel bank and 720/940-nm endpoints, enumerated all $\binom{6}{4}=15$ six-channel subsets, and generated leave-one-population-out predictions for each subset over all 94 development populations. Each scaler and PLS fit excluded its target population. The selection rule minimized pooled scan-weighted MSE, with lexicographic index ties. It did not vote among earlier fold winners or use seasons 4--5. The selected set is 720, 760, 820, 890, 910 and 940 nm, which differs from the three fold-specific V3 fixed-six sets. Therefore V3's performance cannot be assigned to this final artifact.
+\section{Final six-channel model}
+A separate selection rule produces the final six-channel model using development seasons 1--3 only. It retained P's eight-channel bank and 720/940-nm endpoints, enumerated all $\binom{6}{4}=15$ six-channel subsets, and generated leave-one-population-out predictions for each subset over all 94 development populations. Each scaler and PLS fit excluded its target population. The selection rule minimized pooled scan-weighted MSE, with lexicographic index ties. It did not vote among earlier fold winners or use seasons 4--5. The selected set is 720, 760, 820, 890, 910 and 940 nm, which differs from the three fold-specific fixed-six sets in the channel-design comparison. Their evaluated performance therefore cannot be assigned to this final model.
 
 The selected six-channel PLS, full-eight PLS (both six components) and rich-spectrum PLS (12 components with the inherited SNV/derivative transform) were then refitted on the identical 10,243 development rows. Reusing those rows for selection and final fitting is intentional model finalization; its selected cross-validation minimum is a tuning statistic. Six PLS components with six inputs imposes no component-count reduction relative to the six available features; no latent dimension-reduction advantage is claimed. All 15 selection scores are shown below explicitly as tuning evidence.
 
-The freeze retains portable coefficients, exact normalized response weights, channel order, preprocessing, row/group provenance, executable inference, reference sklearn models, dependencies and a hash manifest. Portable/reference parity on development inputs establishes computational agreement, not generalization. The CLI examples contain three development training rows for software demonstration only. No V4 later-season benchmark scoring, independent accuracy estimate, per-fruit interval or validated harvest recommendation is supplied. These boundaries do not make the completed original/V2/V3 dataset analyses incomplete. No physical field collection or harvest threshold is required to finish this paper.
+The public repository provides the final model with portable coefficients, exact normalized response weights, channel order, preprocessing, row/group provenance, executable inference, reference sklearn models and dependencies. Portable/reference parity on development inputs establishes computational agreement, not generalization. The three example rows are development training observations supplied only to demonstrate inference. The final model has not been scored on the later-season benchmark and has no independent accuracy estimate, per-fruit interval or validated harvest recommendation.
 
 \begingroup\small
 \setlength{\tabcolsep}{3.5pt}
 \renewcommand{\arraystretch}{1.10}
 \Needspace{24\baselineskip}
 \begin{longtable}{rlrrl}
-\caption{All V4 finalization scores: development LOPO tuning results only. These are not independent validation accuracy.}\label{tab:candidateselection}\\
+\caption{All final six-channel model selection scores: development LOPO tuning results only. These are not independent validation accuracy.}\label{tab:candidateselection}\\
 \toprule
 Index & Centers (nm) & Tuning MSE & Tuning RMSEP & Selected \\
 \midrule

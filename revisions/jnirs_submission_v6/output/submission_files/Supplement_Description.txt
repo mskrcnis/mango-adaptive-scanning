@@ -8,6 +8,6 @@ Authors: S Kumar Reddy Mallidi; Rajeswara Rao Ramisetty; Ravi Kiran Varma Penmat
 
 File: Mango_JNIRS_Supplement.pdf
 
-Description: Detailed computational methods, dataset and split provenance, optical simulation assumptions, complete original and exploratory comparisons, unsuccessful configurations, uncertainty estimates, and data/code availability. The analyses use one public mango spectral dataset. Simulated acquisition counts are not measured hardware energy or latency, and the study does not validate a harvest decision.
+Description: Detailed computational methods, dataset and split provenance, optical simulation assumptions, complete seasonal-benchmark and exploratory comparisons, unsuccessful configurations, uncertainty estimates, and data/code availability. The analyses use one public mango spectral dataset. Simulated acquisition counts are not measured hardware energy or latency, and the study does not validate a harvest decision.
 
 Upload this PDF as Supplemental Material with this title and description. Upload the source ZIP as LaTeX/source material, not as the scientific supplement; Sage advises avoiding ZIPs for published supplemental files when possible.

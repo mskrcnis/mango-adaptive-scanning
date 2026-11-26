@@ -7,4 +7,4 @@ These CSVs contain the plotted values. They are extracts or deterministic repres
 - Figure 3: v5 tables_fixed_curves.csv, copied unchanged.
 - Figure 4: v5 tables_comparisons.csv filtered to two_minus_single and original or PLS rows, exactly as the original figure builder. Season 5 intervals remain absent.
 
-The PDFs for Figures 1, 3 and 4 retain the verified v5 bytes. `prepare_figures.py` rebuilds the restyled Figure 2 using only these included CSVs.
+The PDFs for Figures 1 and 3 retain their verified source bytes. `prepare_figures.py` rebuilds Figures 2 and 4 using only these included CSVs. Figure 4 uses descriptive seasonal-benchmark labels; all points and intervals are unchanged.
